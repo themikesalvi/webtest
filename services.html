@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services - XLNZ Productions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1a1a2e;
+            --secondary: #e94560;
+            --accent: #f47068;
+            --light: #f5f5f5;
+            --dark: #0f0f1e;
+            --gray: #6c6c80;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--primary);
+            color: white;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo i {
+            margin-right: 10px;
+            color: var(--secondary);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 25px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            font-size: 16px;
+        }
+        
+        nav ul li a:hover {
+            color: var(--secondary);
+        }
+        
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(26, 26, 46, 0.9), rgba(26, 26, 46, 0.9)), url('https://picsum.photos/seed/xlnz-services/1920/1080.jpg') no-repeat center center/cover;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--secondary);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        .btn:hover {
+            background-color: var(--accent);
+            transform: translateY(-2px);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--secondary);
+            margin-left: 15px;
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--secondary);
+        }
+        
+        /* Services Section */
+        .services {
+            padding: 100px 0;
+            background-color: var(--light);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 40px;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .section-title p {
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto;
+            color: var(--gray);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+        
+        .service-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .service-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .service-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .service-card:hover .service-image img {
+            transform: scale(1.1);
+        }
+        
+        .service-content {
+            padding: 30px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .service-content i {
+            font-size: 48px;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+        
+        .service-content h3 {
+            font-size: 24px;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .service-content p {
+            color: var(--gray);
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+        
+        .service-features {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+        
+        .service-features li {
+            padding: 5px 0;
+            font-size: 14px;
+            color: var(--gray);
+        }
+        
+        .service-features li i {
+            color: var(--secondary);
+            margin-right: 8px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 50px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .footer-logo i {
+            margin-right: 10px;
+            color: var(--secondary);
+        }
+        
+        .footer-about p {
+            margin-bottom: 20px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .footer-links h4 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links ul li a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links ul li a:hover {
+            color: var(--secondary);
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 14px;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: block;
+            }
+            
+            nav {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: var(--primary);
+                padding: 20px 0;
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s ease;
+            }
+            
+            nav.active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav ul li {
+                margin: 10px 0;
+            }
+            
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .section-title h2 {
+                font-size: 32px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 28px;
+            }
+            
+            .hero p {
+                font-size: 16px;
+            }
+            
+            .btn, .btn-outline {
+                display: block;
+                width: 100%;
+                margin-bottom: 15px;
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container header-content">
+            <a href="index.html" class="logo"><i class="fas fa-film"></i> XLNZ Productions</a>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav id="nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="packages.html">Packages</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>Our Services</h1>
+            <p>Comprehensive production solutions for all your creative needs</p>
+            <div class="hero-buttons">
+                <a href="packages.html" class="btn">View Packages</a>
+                <a href="contact.html" class="btn btn-outline">Get Quote</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>What We Offer</h2>
+                <p>Professional production services tailored to your specific needs</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card" id="podcast">
+                    <div class="service-image">
+                        <img src="https://picsum.photos/seed/xlnz-podcast-service/400/200.jpg" alt="Podcast Production">
+                    </div>
+                    <div class="service-content">
+                        <i class="fas fa-microphone"></i>
+                        <h3>Podcast Production</h3>
+                        <p>Professional podcast recording, editing, and distribution services to help you share your voice with the world.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Professional audio recording</li>
+                            <li><i class="fas fa-check"></i> Audio editing & mixing</li>
+                            <li><i class="fas fa-check"></i> Intro/outro music</li>
+                            <li><i class="fas fa-check"></i> Sound design</li>
+                            <li><i class="fas fa-check"></i> Distribution assistance</li>
+                        </ul>
+                        <a href="packages.html" class="btn">View Packages</a>
+                    </div>
+                </div>
+                
+                <div class="service-card" id="standup">
+                    <div class="service-image">
+                        <img src="https://picsum.photos/seed/xlnz-standup-service/400/200.jpg" alt="Stand-Up Specials">
+                    </div>
+                    <div class="service-content">
+                        <i class="fas fa-laugh"></i>
+                        <h3>Stand-Up Specials</h3>
+                        <p>From comedy skits to stand-up specials, we help comedians capture and deliver their unique brand of humor.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Multi-camera setup</li>
+                            <li><i class="fas fa-check"></i> Professional audio</li>
+                            <li><i class="fas fa-check"></i> Advanced editing</li>
+                            <li><i class="fas fa-check"></i> Color correction</li>
+                            <li><i class="fas fa-check"></i> Audience capture</li>
+                        </ul>
+                        <a href="packages.html" class="btn">View Packages</a>
+                    </div>
+                </div>
+                
+                <div class="service-card" id="film">
+                    <div class="service-image">
+                        <img src="https://picsum.photos/seed/xlnz-film-service/400/200.jpg" alt="Film Production">
+                    </div>
+                    <div class="service-content">
+                        <i class="fas fa-video"></i>
+                        <h3>Film Production</h3>
+                        <p>Full-service film production from pre-production planning to post-production and final delivery.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Script development</li>
+                            <li><i class="fas fa-check"></i> Pre-production planning</li>
+                            <li><i class="fas fa-check"></i> Professional filming</li>
+                            <li><i class="fas fa-check"></i> Post-production</li>
+                            <li><i class="fas fa-check"></i> Distribution support</li>
+                        </ul>
+                        <a href="packages.html" class="btn">View Packages</a>
+                    </div>
+                </div>
+                
+                <div class="service-card" id="commercial">
+                    <div class="service-image">
+                        <img src="https://picsum.photos/seed/xlnz-commercial-service/400/200.jpg" alt="Commercial/Skit">
+                    </div>
+                    <div class="service-content">
+                        <i class="fas fa-bullhorn"></i>
+                        <h3>Commercial/Skit</h3>
+                        <p>Compelling commercial content that captures attention and drives results for your business.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Concept development</li>
+                            <li><i class="fas fa-check"></i> Script writing</li>
+                            <li><i class="fas fa-check"></i> Professional filming</li>
+                            <li><i class="fas fa-check"></i> Advanced editing</li>
+                            <li><i class="fas fa-check"></i> Platform optimization</li>
+                        </ul>
+                        <a href="packages.html" class="btn">View Packages</a>
+                    </div>
+                </div>
+                
+                <div class="service-card" id="social">
+                    <div class="service-image">
+                        <img src="https://picsum.photos/seed/xlnz-social-service/400/200.jpg" alt="Social Media for Brands">
+                    </div>
+                    <div class="service-content">
+                        <i class="fas fa-share-alt"></i>
+                        <h3>Social Media for Brands</h3>
+                        <p>Engaging social media content that builds brand awareness and drives engagement across platforms.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> B-roll footage</li>
+                            <li><i class="fas fa-check"></i> Professional editing</li>
+                            <li><i class="fas fa-check"></i> Music licensing</li>
+                            <li><i class="fas fa-check"></i> Social media optimization</li>
+                            <li><i class="fas fa-check"></i> Analytics reports</li>
+                        </ul>
+                        <a href="packages.html" class="btn">View Packages</a>
+                    </div>
+                </div>
+                
+                <div class="service-card" id="testimonial">
+                    <div class="service-image">
+                        <img src="https://picsum.photos/seed/xlnz-testimonial-service/400/200.jpg" alt="Testimonials">
+                    </div>
+                    <div class="service-content">
+                        <i class="fas fa-users"></i>
+                        <h3>Testimonials</h3>
+                        <p>Professional testimonial videos that showcase your clients' experiences and build trust.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Client interviews</li>
+                            <li><i class="fas fa-check"></i> Professional filming</li>
+                            <li><i class="fas fa-check"></i> Advanced editing</li>
+                            <li><i class="fas fa-check"></i> Multiple versions</li>
+                            <li><i class="fas fa-check"></i> Platform optimization</li>
+                        </ul>
+                        <a href="packages.html" class="btn">View Packages</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <a href="index.html" class="footer-logo"><i class="fas fa-film"></i> XLNZ Productions</a>
+                    <p>Founded in 2023 by Buhzz Taylor and Mike Salvi, XLNZ Productions is Philadelphia's premier video production studio, specializing in podcasts, comedy, films, documentaries, and commercial content.</p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/xlnzproductions" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/@xlnzproductions" title="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="packages.html">Packages</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#podcast">Podcast Production</a></li>
+                        <li><a href="#standup">Stand-Up Specials</a></li>
+                        <li><a href="#film">Film Production</a></li>
+                        <li><a href="#commercial">Commercial/Skit</a></li>
+                        <li><a href="#social">Social Media for Brands</a></li>
+                        <li><a href="#testimonial">Testimonials</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li><a href="mailto:xlnzproductions@gmail.com">xlnzproductions@gmail.com</a></li>
+                        <li><a href="#">Philadelphia, PA</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 XLNZ Productions. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobileMenuToggle').addEventListener('click', function() {
+            document.getElementById('nav').classList.toggle('active');
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 100) {
+                header.style.backgroundColor = 'rgba(26, 26, 46, 0.95)';
+            } else {
+                header.style.backgroundColor = 'var(--primary)';
+            }
+        });
+    </script>
+</body>
+</html>
