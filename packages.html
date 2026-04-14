@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Production Packages - XLNZ Productions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1a1a2e;
+            --secondary: #e94560;
+            --accent: #f47068;
+            --light: #f5f5f5;
+            --dark: #0f0f1e;
+            --gray: #6c6c80;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--primary);
+            color: white;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo i {
+            margin-right: 10px;
+            color: var(--secondary);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 25px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            font-size: 16px;
+        }
+        
+        nav ul li a:hover {
+            color: var(--secondary);
+        }
+        
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(26, 26, 46, 0.9), rgba(26, 26, 46, 0.9)), url('https://picsum.photos/seed/xlnz-packages/1920/1080.jpg') no-repeat center center/cover;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--secondary);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        .btn:hover {
+            background-color: var(--accent);
+            transform: translateY(-2px);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--secondary);
+            margin-left: 15px;
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--secondary);
+        }
+        
+        /* Package Builder Section */
+        .package-builder {
+            padding: 100px 0;
+            background-color: var(--light);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 40px;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .section-title p {
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto;
+            color: var(--gray);
+        }
+        
+        .package-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        .package-header {
+            background-color: var(--primary);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .package-header h2 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+        
+        .package-header p {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+        
+        .package-content {
+            padding: 40px;
+        }
+        
+        .package-categories {
+            margin-bottom: 40px;
+        }
+        
+        .package-category {
+            margin-bottom: 50px;
+        }
+        
+        .package-category h3 {
+            font-size: 28px;
+            color: var(--primary);
+            margin-bottom: 25px;
+            text-align: center;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .package-category h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--secondary);
+        }
+        
+        .packages {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .package-card {
+            border: 2px solid #eee;
+            border-radius: 8px;
+            padding: 25px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .package-card:hover, .package-card.selected {
+            border-color: var(--secondary);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .package-card.selected {
+            background-color: rgba(233, 69, 96, 0.05);
+        }
+        
+        .package-card h4 {
+            font-size: 22px;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        .package-price {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 15px;
+        }
+        
+        .package-features {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+        
+        .package-features li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+            font-size: 14px;
+            text-align: left;
+        }
+        
+        .package-features li:last-child {
+            border-bottom: none;
+        }
+        
+        .package-features li i {
+            color: var(--secondary);
+            margin-right: 8px;
+        }
+        
+        .recommended-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--secondary);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        
+        .package-summary {
+            background-color: var(--light);
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        
+        .summary-title {
+            font-size: 20px;
+            color: var(--primary);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .summary-items {
+            margin-bottom: 20px;
+        }
+        
+        .summary-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .summary-item:last-child {
+            border-bottom: none;
+            font-weight: 600;
+            font-size: 18px;
+            color: var(--primary);
+            padding-top: 15px;
+        }
+        
+        .summary-total {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--secondary);
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .package-actions {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        .package-actions .btn {
+            padding: 15px 30px;
+            font-size: 18px;
+        }
+        
+        /* FAQ Section */
+        .faq {
+            padding: 100px 0;
+            background-color: white;
+        }
+        
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            margin-bottom: 20px;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            padding: 20px;
+            background-color: var(--light);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s ease;
+        }
+        
+        .faq-question:hover {
+            background-color: rgba(233, 69, 96, 0.1);
+        }
+        
+        .faq-question h3 {
+            margin: 0;
+            font-size: 18px;
+            color: var(--primary);
+        }
+        
+        .faq-question i {
+            color: var(--secondary);
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+        
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+        
+        .faq-item.active .faq-answer {
+            padding: 20px;
+            max-height: 500px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 50px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .footer-logo i {
+            margin-right: 10px;
+            color: var(--secondary);
+        }
+        
+        .footer-about p {
+            margin-bottom: 20px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .footer-links h4 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links ul li a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links ul li a:hover {
+            color: var(--secondary);
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 14px;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: block;
+            }
+            
+            nav {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: var(--primary);
+                padding: 20px 0;
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s ease;
+            }
+            
+            nav.active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav ul li {
+                margin: 10px 0;
+            }
+            
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .section-title h2 {
+                font-size: 32px;
+            }
+            
+            .packages {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 28px;
+            }
+            
+            .hero p {
+                font-size: 16px;
+            }
+            
+            .btn, .btn-outline {
+                display: block;
+                width: 100%;
+                margin-bottom: 15px;
+                margin-left: 0;
+            }
+            
+            .package-actions {
+                flex-direction: column;
+            }
+            
+            .package-actions .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container header-content">
+            <a href="index.html" class="logo"><i class="fas fa-film"></i> XLNZ Productions</a>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav id="nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="packages.html">Packages</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>Video Production Packages</h1>
+            <p>Choose the perfect package for your project needs</p>
+            <div class="hero-buttons">
+                <a href="#packages" class="btn">View Packages</a>
+                <a href="contact.html" class="btn btn-outline">Get Custom Quote</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Package Builder Section -->
+    <section class="package-builder" id="packages">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Production Packages</h2>
+                <p>Select from our range of packages tailored to different project types and durations</p>
+            </div>
+            <div class="package-container">
+                <div class="package-header">
+                    <h2>Build Your Custom Package</h2>
+                    <p>Select a package and add-ons to create a proposal tailored to your needs</p>
+                </div>
+                <div class="package-content">
+                    <div class="package-categories">
+                        <!-- Podcast Packages -->
+                        <div class="package-category">
+                            <h3>Podcasts</h3>
+                            <div class="packages">
+                                <div class="package-card" data-package="podcast-4" data-price="480">
+                                    <h4>4 Episodes</h4>
+                                    <div class="package-price">\$480</div>
+                                    <ul class="package-features">
+                                        <li><i class="fas fa-check"></i> Professional recording</li>
+                                        <li><i class="fas fa-check"></i> Audio editing & mixing</li>
+                                        <li><i class="fas fa-check"></i> Intro/outro music</li>
+                                        <li><i class="fas fa-check"></i> Digital delivery</li>
+                                    </ul>
+                                </div>
+                                <div class="package-card selected" data-package="podcast-8" data-price="800">
+                                    <div class="recommended-badge">Popular</div>
+                                    <h4>8 Episodes</h4>
+                                    <div class="package-price">\$800</div>
+                                    <ul class="package-features">
+                                        <li><i class="fas fa-check"></i> Professional recording</li>
+                                        <li><i class="fas fa-check"></i> Audio editing & mixing</li>
+                                        <li><i class="fas fa-check"></i> Intro/outro music</li>
+                                        <li><i class="fas fa-check"></i> Sound design</li>
+                                        <li><i class="fas fa-check"></i> Digital delivery</li>
+                                    </ul>
+                                </div>
+                                <div class="package-card" data-package="podcast-12" data-price="1020">
+                                    <h4>12 Episodes</h4>
+                                    <div class="package-price">\$1,020</div>
+                                    <ul class="package-features">
+                                        <li><i class="fas fa-check"></i> Professional recording</li>
+                                        <li><i class="fas fa-check"></i> Audio editing & mixing</li>
+                                        <li><i class="fas fa-check"></i> Custom intro/outro</li>
+                                        <li><i class="fas fa-check"></i> Sound design</li>
+                                        <li><i class="fas fa-check"></i> Priority delivery</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Stand-Up Specials Packages -->
+                        <div class="package-category">
+                            <h3>Stand-Up Specials</h3>
+                            <div class="packages">
+                                <div class="package-card" data-package="standup-15" data-price="500">
+                                    <h4>Up to 15 Minutes</h4>
+                                    <div class="package-price">\$500</div>
+                                    <ul class="package-features">
+                                        <li><i class="fas fa-check"></i> Multi-camera setup</li>
+                                        <li><i class="fas fa-check"></i> Professional audio</li>
+                                        <li><i class="fas fa-check"></i> Basic editing</li>
+                                        <li><i class="fas fa-check"></i> Digital delivery</li>
+                                    </ul>
+                                </div>
+                                <div class="package-card selected" data-package="standup-45" data-price="750">
+                                    <div class="recommended-badge">Popular</div>
+                                    <h4>20 to 45 Minutes</h4>
+                                    <div class="package-price">\$750</div>
+                                    <ul class="package-features">
+                                        <li><i class="fas fa-check"></i> Multi-camera setup</li>
+                                        <li><i class="fas fa-check"></i> Professional audio</li>
+                                        <li><i class="fas fa-check"></i> Advanced editing</li>
+                                        <li><i class="fas fa-check"></i> Color correction</li>
+                                        <li><i class="fas fa-check"></i> Digital delivery</li>
+                                    </ul>
+                                </div>
+                                <div class="package-card" data-package="standup-90" data-price="1200">
+                                    <h4>60 to 90 Minutes</h4>
+                                    <div class="package-price">\$1,200</div>
+                                    <ul class="package-features">
+                                        <li><i class="fas fa-check"></i> Multi-camera setup</li>
+                                        <li><i class="fas fa-check"></i> Professional audio</li>
+                                        <li><i class="fas fa-check"></i> Advanced editing</li>
+                                        <li><i class="fas fa-check"></i> Color correction</li>
+                                        <li><i class="fas fa-check"></i> Priority delivery</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Social Media for Brands Packages -->
+                        <div class="package-category">
+                            <h3>Social Media for Brands</h3>
+                            <div class="packages">
+                                <div class="package-card" data-package="social-onetime" data-price="400">
+                                    <h4>One Time</h4>
+                                    <div class="package-price">\$400</div>
+                                    <ul class="package-features">
+                                        <li><i class="fas fa-check"></i> B-roll footage</li>
+                                        <li><i class="fas fa-check"></i> Professional editing</li>
+                                        <li><i class="fas fa-check"></i> Music licensing</li>
+                                        <li><i class="fas fa-check"></i> Digital delivery</li>
+                                    </ul>
+                                </div>
+                                <div class="package-card selected" data-package="social-3months" data-price="1050">
+                                    <div class="recommended-badge">Popular</div>
+                                    <h4>3 Months</h4>
+                                    <div class="package-price">\$1,050</div>
+                                    <ul class="package-features">
+                                        <li><i class="fas fa-check"></i> Monthly B-roll footage</li>
+                                        <li><i class="fas fa-check"></i> Professional editing</li>
+                                        <li><i class="fas fa-check"></i> Music licensing</li>
+                                        <li><i class="fas fa-check"></i> Social media optimization</li>
+                                        <li><i class="fas fa-check"></i> Analytics report</li>
+                                    </ul>
+                                </div>
+                                <div class="package-card" data-package="social-6months" data-price="1800">
+                                    <h4>6 Months</h4>
+                                    <div class="package-price">\$1,800</div>
+                                    <ul class="package-features">
+                                        <li><i class="fas fa-check"></i> Monthly B-roll footage</li>
+                                        <li><i class="fas fa-check"></i> Professional editing</li>
+                                        <li><i class="fas fa-check"></i> Music licensing</li>
+                                        <li><i class="fas fa-check"></i> Social media optimization</li>
+                                        <li><i class="fas fa-check"></i> Detailed analytics</li>
+                                        <li><i class="fas fa-check"></i> Strategy consultation</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Commercial/Skit Packages -->
+                        <div class="package-category">
+                            <h3>Commercial/Skit</h3>
+                            <div class="packages">
+                                <div class="package-card" data-package="commercial-onetime" data-price="750">
+                                    <h4>One Time</h4>
+                                    <div class="package-price">\$750</div>
+                                    <ul class="package-features">
+                                        <li><i class="fas fa-check"></i> Script development</li>
+                                        <li><i class="fas fa-check"></i> Professional filming</li>
+                                        <li><i class="fas fa-check"></i> Basic editing</li>
+                                        <li><i class="fas fa-check"></i> Digital delivery</li>
+                                    </ul>
+                                </div>
+                                <div class="package-card selected" data-package="commercial-3months" data-price="2100">
+                                    <div class="recommended-badge">Popular</div>
+                                    <h4>3 Months</h4>
+                                    <div class="package-price">\$2,100</div>
+                                    <ul class="package-features">
+                                        <li><i class="fas fa-check"></i> Script development</li>
+                                        <li><i class="fas fa-check"></i> Professional filming</li>
+                                        <li><i class="fas fa-check"></
