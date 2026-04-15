@@ -3,563 +3,1044 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="XLNZ Productions - Philadelphia's premier video production studio. Specializing in podcasts, comedy, films, documentaries, and commercial content that captivates audiences and delivers results.">
+    <meta name="keywords" content="video production Philadelphia, podcast production, comedy specials, film production, commercial video, documentary, social media content">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="XLNZ Productions">
+    <link rel="canonical" href="https://www.xlnzproductions.com/">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="XLNZ Productions - Philadelphia's Premier Video Production Studio">
+    <meta property="og:description" content="Podcasts, comedy, films, documentaries, and commercial content that captivates audiences and delivers results.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.xlnzproductions.com/">
+    <meta property="og:image" content="https://www.xlnzproductions.com/images/og-image.jpg">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="XLNZ Productions - Philadelphia's Premier Video Production Studio">
+    <meta name="twitter:description" content="Podcasts, comedy, films, documentaries, and commercial content that captivates audiences and delivers results.">
+    <meta name="twitter:image" content="https://www.xlnzproductions.com/images/og-image.jpg">
+
+    <!-- Schema.org LocalBusiness Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "VideoProductionCompany",
+        "name": "XLNZ Productions",
+        "description": "Philadelphia's premier video production studio specializing in podcasts, comedy, films, documentaries, and commercial content.",
+        "url": "https://www.xlnzproductions.com",
+        "email": "xlnzproductions@gmail.com",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Philadelphia",
+            "addressRegion": "PA",
+            "addressCountry": "US"
+        },
+        "foundingDate": "2023",
+        "founders": [
+            {"@type": "Person", "name": "Buhzz Taylor"},
+            {"@type": "Person", "name": "Mike Salvi"}
+        ],
+        "sameAs": [
+            "https://www.instagram.com/xlnzproductions",
+            "https://www.youtube.com/@xlnzproductions"
+        ]
+    }
+    </script>
+
     <title>XLNZ Productions - Philadelphia's Premier Video Production Studio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <style>
         :root {
-            --primary: #1a1a2e;
-            --secondary: #e94560;
-            --accent: #f47068;
-            --light: #f5f5f5;
-            --dark: #0f0f1e;
-            --gray: #6c6c80;
+            --bg-primary: #0a0a0f;
+            --bg-secondary: #12122a;
+            --bg-card: #1a1a2e;
+            --accent: #e94560;
+            --accent-hover: #ff6b35;
+            --accent-gradient: linear-gradient(135deg, #e94560, #ff6b35);
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0b8;
+            --text-muted: #6c6c80;
+            --border: rgba(255, 255, 255, 0.08);
+            --glow: 0 0 40px rgba(233, 69, 96, 0.15);
         }
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: 'Open Sans', sans-serif;
-            color: #333;
-            line-height: 1.6;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
             overflow-x: hidden;
         }
-        
+
         h1, h2, h3, h4, h5, h6 {
             font-family: 'Montserrat', sans-serif;
-            font-weight: 600;
-            margin-bottom: 20px;
+            font-weight: 700;
+            line-height: 1.2;
         }
-        
+
         .container {
             width: 100%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 24px;
         }
-        
-        /* Header Styles */
+
+        /* ===== HEADER ===== */
         header {
-            background-color: var(--primary);
-            color: white;
             position: fixed;
-            width: 100%;
             top: 0;
             left: 0;
+            width: 100%;
             z-index: 1000;
-            transition: all 0.3s ease;
+            padding: 20px 0;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            background: transparent;
         }
-        
+
+        header.scrolled {
+            background: rgba(10, 10, 15, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            padding: 12px 0;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+        }
+
         .header-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 0;
         }
-        
+
         .logo {
-            font-size: 28px;
-            font-weight: 700;
-            color: white;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 26px;
+            font-weight: 800;
+            color: var(--text-primary);
             text-decoration: none;
             display: flex;
             align-items: center;
+            gap: 12px;
+            letter-spacing: -0.5px;
         }
-        
-        .logo i {
-            margin-right: 10px;
-            color: var(--secondary);
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--accent-gradient);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
         }
-        
+
         nav ul {
             display: flex;
             list-style: none;
+            gap: 8px;
         }
-        
-        nav ul li {
-            margin-left: 25px;
-        }
-        
+
         nav ul li a {
-            color: white;
+            color: var(--text-secondary);
             text-decoration: none;
             font-weight: 500;
-            transition: color 0.3s ease;
-            font-size: 16px;
+            font-size: 15px;
+            padding: 8px 16px;
+            border-radius: 6px;
+            transition: all 0.3s ease;
         }
-        
-        nav ul li a:hover {
-            color: var(--secondary);
+
+        nav ul li a:hover,
+        nav ul li a.active {
+            color: var(--text-primary);
+            background: rgba(233, 69, 96, 0.1);
         }
-        
+
+        .nav-cta {
+            background: var(--accent-gradient) !important;
+            color: var(--text-primary) !important;
+            font-weight: 600 !important;
+            padding: 10px 24px !important;
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 8px 25px rgba(233, 69, 96, 0.3);
+        }
+
         .mobile-menu-toggle {
             display: none;
             background: none;
             border: none;
-            color: white;
+            color: var(--text-primary);
             font-size: 24px;
             cursor: pointer;
+            padding: 8px;
         }
-        
-        /* Hero Section */
+
+        /* ===== HERO ===== */
         .hero {
-            background: linear-gradient(rgba(26, 26, 46, 0.9), rgba(26, 26, 46, 0.9)), url('https://picsum.photos/seed/xlnz-hero/1920/1080.jpg') no-repeat center center/cover;
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             align-items: center;
-            color: white;
-            text-align: center;
+            position: relative;
+            overflow: hidden;
+            padding: 120px 0 80px;
         }
-        
-        .hero-top-image {
-            margin-bottom: 30px;
-            text-align: center;
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(ellipse at 20% 50%, rgba(233, 69, 96, 0.08) 0%, transparent 60%),
+                        radial-gradient(ellipse at 80% 20%, rgba(255, 107, 53, 0.06) 0%, transparent 50%);
+            pointer-events: none;
         }
-        
-        .hero-top-image img {
-            max-width: 100%;
-            height: auto;
-            max-height: 200px;
-            border-radius: 8px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(to top, var(--bg-primary), transparent);
+            pointer-events: none;
         }
-        
+
+        /* Animated grid background */
+        .hero-grid {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image:
+                linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 60px 60px;
+            mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
+            -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
+        }
+
         .hero-content {
+            position: relative;
+            z-index: 2;
             max-width: 800px;
             margin: 0 auto;
+            text-align: center;
         }
-        
+
+        .hero-logo {
+            margin-bottom: 40px;
+        }
+
+        .hero-logo img {
+            max-width: 280px;
+            height: auto;
+            filter: drop-shadow(0 10px 40px rgba(233, 69, 96, 0.2));
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(233, 69, 96, 0.1);
+            border: 1px solid rgba(233, 69, 96, 0.2);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 24px;
+            letter-spacing: 0.5px;
+        }
+
+        .hero-badge i {
+            font-size: 12px;
+        }
+
         .hero h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
-            line-height: 1.2;
+            font-size: clamp(40px, 7vw, 72px);
+            font-weight: 900;
+            margin-bottom: 24px;
+            letter-spacing: -1px;
         }
-        
+
+        .hero h1 .gradient-text {
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
         .hero p {
-            font-size: 20px;
-            margin-bottom: 30px;
-            max-width: 700px;
+            font-size: clamp(18px, 2.5vw, 22px);
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+            max-width: 600px;
             margin-left: auto;
             margin-right: auto;
+            line-height: 1.6;
         }
-        
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
         .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            background-color: var(--secondary);
-            color: white;
-            text-decoration: none;
-            border-radius: 4px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 16px 36px;
+            border-radius: 8px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
             font-size: 16px;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            border: none;
         }
-        
-        .btn:hover {
-            background-color: var(--accent);
+
+        .btn-primary {
+            background: var(--accent-gradient);
+            color: var(--text-primary);
+            box-shadow: 0 4px 15px rgba(233, 69, 96, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(233, 69, 96, 0.4);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-primary);
+            border: 1px solid var(--border);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.2);
             transform: translateY(-2px);
         }
-        
-        .btn-outline {
-            background-color: transparent;
-            border: 2px solid var(--secondary);
-            margin-left: 15px;
-        }
-        
-        .btn-outline:hover {
-            background-color: var(--secondary);
-        }
-        
-        /* About Section */
-        .about {
-            padding: 100px 0;
-            background-color: var(--light);
-        }
-        
-        .about-content {
-            display: flex;
-            align-items: center;
-            gap: 50px;
-        }
-        
-        .about-image {
-            flex: 1;
-        }
-        
-        .about-image img {
-            width: 100%;
-            border-radius: 8px;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-        }
-        
-        .about-text {
-            flex: 1;
-        }
-        
-        .about-text h2 {
-            font-size: 36px;
-            color: var(--primary);
-            margin-bottom: 20px;
-        }
-        
-        .about-text p {
-            margin-bottom: 20px;
-            font-size: 16px;
-        }
-        
-        /* Services Section */
-        .services {
-            padding: 100px 0;
-            background-color: white;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 60px;
+
+        /* ===== STATS SECTION ===== */
+        .stats {
+            padding: 80px 0;
             position: relative;
         }
-        
-        .section-title h2 {
-            font-size: 40px;
-            color: var(--primary);
-            margin-bottom: 15px;
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 32px;
         }
-        
-        .section-title p {
+
+        .stat-item {
+            text-align: center;
+            padding: 32px 16px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .stat-item:hover {
+            background: rgba(233, 69, 96, 0.05);
+            border-color: rgba(233, 69, 96, 0.2);
+            transform: translateY(-4px);
+        }
+
+        .stat-number {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 48px;
+            font-weight: 900;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-size: 15px;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        /* ===== ABOUT SECTION ===== */
+        .about {
+            padding: 120px 0;
+            position: relative;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .about-image-wrapper {
+            position: relative;
+        }
+
+        .about-image-wrapper::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            right: 20px;
+            bottom: 20px;
+            border: 2px solid rgba(233, 69, 96, 0.2);
+            border-radius: 12px;
+            z-index: 0;
+        }
+
+        .about-image-wrapper img {
+            width: 100%;
+            border-radius: 12px;
+            position: relative;
+            z-index: 1;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .about-content .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--accent);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+        }
+
+        .about-content .section-label::before {
+            content: '';
+            width: 30px;
+            height: 2px;
+            background: var(--accent-gradient);
+        }
+
+        .about-content h2 {
+            font-size: clamp(32px, 4vw, 48px);
+            margin-bottom: 24px;
+        }
+
+        .about-content p {
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            font-size: 17px;
+        }
+
+        .about-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-top: 32px;
+        }
+
+        .about-feature {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--text-secondary);
+            font-size: 15px;
+        }
+
+        .about-feature i {
+            color: var(--accent);
+            font-size: 14px;
+        }
+
+        /* ===== SERVICES SECTION ===== */
+        .services {
+            padding: 120px 0;
+            background: var(--bg-secondary);
+            position: relative;
+        }
+
+        .services::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(ellipse at 50% 0%, rgba(233, 69, 96, 0.05) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 64px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--accent);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+        }
+
+        .section-header h2 {
+            font-size: clamp(32px, 4vw, 48px);
+            margin-bottom: 16px;
+        }
+
+        .section-header p {
+            color: var(--text-secondary);
             font-size: 18px;
-            max-width: 700px;
+            max-width: 600px;
             margin: 0 auto;
-            color: var(--gray);
         }
-        
+
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            position: relative;
+            z-index: 1;
         }
-        
+
         .service-card {
-            background-color: white;
-            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border);
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-            height: 100%;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
         }
-        
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--accent-gradient);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
         .service-card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-8px);
+            border-color: rgba(233, 69, 96, 0.3);
+            box-shadow: var(--glow);
         }
-        
+
+        .service-card:hover::before {
+            opacity: 1;
+        }
+
         .service-image {
             height: 200px;
             overflow: hidden;
+            position: relative;
         }
-        
+
         .service-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.5s ease;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        
+
         .service-card:hover .service-image img {
-            transform: scale(1.1);
+            transform: scale(1.08);
         }
-        
-        .service-content {
-            padding: 30px;
-        }
-        
-        .service-content h3 {
-            font-size: 24px;
-            color: var(--primary);
-            margin-bottom: 15px;
-        }
-        
-        .service-content p {
-            color: var(--gray);
-            margin-bottom: 20px;
-        }
-        
-        .service-content i {
-            font-size: 48px;
-            color: var(--secondary);
-            margin-bottom: 20px;
-        }
-        
-        /* Testimonials Section */
-        .testimonials {
-            padding: 100px 0;
-            background-color: var(--light);
-        }
-        
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        
-        .testimonial-card {
-            background-color: white;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            position: relative;
-        }
-        
-        .testimonial-card::before {
-            content: '"';
+
+        .service-image::after {
+            content: '';
             position: absolute;
-            top: 10px;
-            left: 20px;
-            font-size: 60px;
-            color: var(--secondary);
-            opacity: 0.2;
-            font-family: Georgia, serif;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 60%;
+            background: linear-gradient(to top, var(--bg-card), transparent);
         }
-        
-        .testimonial-text {
-            margin-bottom: 20px;
-            font-style: italic;
-            position: relative;
-            z-index: 1;
+
+        .service-content {
+            padding: 28px;
         }
-        
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-        }
-        
-        .author-image {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            margin-right: 15px;
-            object-fit: cover;
-        }
-        
-        .author-info h4 {
-            font-size: 18px;
-            margin-bottom: 5px;
-        }
-        
-        .author-info p {
-            font-size: 14px;
-            color: var(--gray);
-        }
-        
-        /* CTA Section */
-        .cta {
-            background-color: var(--primary);
-            color: white;
-            padding: 100px 0;
-            text-align: center;
-        }
-        
-        .cta h2 {
-            font-size: 36px;
-            margin-bottom: 20px;
-        }
-        
-        .cta p {
-            font-size: 18px;
-            margin-bottom: 30px;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        /* Footer */
-        footer {
-            background-color: var(--dark);
-            color: white;
-            padding: 50px 0 20px;
-        }
-        
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 30px;
-        }
-        
-        .footer-logo {
-            font-size: 28px;
-            font-weight: 700;
-            color: white;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            margin-bottom: 15px;
-        }
-        
-        .footer-logo i {
-            margin-right: 10px;
-            color: var(--secondary);
-        }
-        
-        .footer-about p {
-            margin-bottom: 20px;
-            color: rgba(255, 255, 255, 0.7);
-        }
-        
-        .footer-links h4 {
-            font-size: 18px;
-            margin-bottom: 20px;
-            color: white;
-        }
-        
-        .footer-links ul {
-            list-style: none;
-        }
-        
-        .footer-links ul li {
-            margin-bottom: 10px;
-        }
-        
-        .footer-links ul li a {
-            color: rgba(255, 255, 255, 0.7);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        
-        .footer-links ul li a:hover {
-            color: var(--secondary);
-        }
-        
-        .social-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-        
-        .social-links a {
+
+        .service-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(233, 69, 96, 0.1);
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 40px;
-            height: 40px;
-            background-color: rgba(255, 255, 255, 0.1);
-            color: white;
-            border-radius: 50%;
+            margin-bottom: 16px;
+        }
+
+        .service-icon i {
+            font-size: 20px;
+            color: var(--accent);
+        }
+
+        .service-content h3 {
+            font-size: 22px;
+            margin-bottom: 12px;
+        }
+
+        .service-content p {
+            color: var(--text-secondary);
+            font-size: 15px;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .service-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 14px;
+            text-decoration: none;
             transition: all 0.3s ease;
         }
-        
+
+        .service-link:hover {
+            gap: 12px;
+        }
+
+        .service-link i {
+            font-size: 12px;
+            transition: transform 0.3s ease;
+        }
+
+        .service-link:hover i {
+            transform: translateX(4px);
+        }
+
+        /* ===== FEATURED WORK SECTION ===== */
+        .featured {
+            padding: 120px 0;
+            position: relative;
+        }
+
+        .featured-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .featured-item {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            aspect-ratio: 16/10;
+            cursor: pointer;
+        }
+
+        .featured-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .featured-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .featured-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(10, 10, 15, 0.9) 0%, transparent 60%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 24px;
+            transition: all 0.3s ease;
+        }
+
+        .featured-item:hover .featured-overlay {
+            background: linear-gradient(to top, rgba(10, 10, 15, 0.95) 0%, rgba(233, 69, 96, 0.1) 100%);
+        }
+
+        .featured-category {
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+
+        .featured-overlay h3 {
+            font-size: 20px;
+            margin-bottom: 4px;
+        }
+
+        .featured-play {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.8);
+            width: 60px;
+            height: 60px;
+            background: var(--accent-gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .featured-play i {
+            font-size: 20px;
+            margin-left: 3px;
+        }
+
+        .featured-item:hover .featured-play {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        /* ===== CTA SECTION ===== */
+        .cta {
+            padding: 120px 0;
+            background: var(--bg-secondary);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(233, 69, 96, 0.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .cta-content {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .cta h2 {
+            font-size: clamp(32px, 5vw, 56px);
+            margin-bottom: 20px;
+        }
+
+        .cta p {
+            font-size: 18px;
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--bg-primary);
+            border-top: 1px solid var(--border);
+            padding: 64px 0 32px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 48px;
+            margin-bottom: 48px;
+        }
+
+        .footer-brand .logo {
+            margin-bottom: 16px;
+        }
+
+        .footer-brand p {
+            color: var(--text-secondary);
+            font-size: 15px;
+            margin-bottom: 24px;
+            line-height: 1.7;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 12px;
+        }
+
+        .social-links a {
+            width: 44px;
+            height: 44px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            font-size: 18px;
+            transition: all 0.3s ease;
+        }
+
         .social-links a:hover {
-            background-color: var(--secondary);
+            background: var(--accent);
+            border-color: var(--accent);
+            color: var(--text-primary);
             transform: translateY(-3px);
         }
-        
+
+        .footer-column h4 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--text-primary);
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-column ul li a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .footer-column ul li a:hover {
+            color: var(--accent);
+            transform: translateX(4px);
+        }
+
         .footer-bottom {
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 20px;
-            text-align: center;
-            color: rgba(255, 255, 255, 0.5);
+            border-top: 1px solid var(--border);
+            padding-top: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--text-muted);
             font-size: 14px;
         }
-        
-        /* Responsive Styles */
-        @media (max-width: 992px) {
-            .about-content {
-                flex-direction: column;
+
+        .footer-bottom a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-bottom a:hover {
+            color: var(--accent);
+        }
+
+        /* ===== SCROLL ANIMATIONS ===== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
-            
-            .about-text {
-                order: 2;
+
+            .featured-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
-            
-            .about-image {
-                order: 1;
+
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
-        
+
         @media (max-width: 768px) {
             .mobile-menu-toggle {
                 display: block;
             }
-            
+
             nav {
                 position: fixed;
-                top: 70px;
+                top: 0;
                 left: 0;
                 width: 100%;
-                background-color: var(--primary);
-                padding: 20px 0;
-                transform: translateY(-100%);
-                opacity: 0;
-                visibility: hidden;
-                transition: all 0.3s ease;
+                height: 100vh;
+                background: rgba(10, 10, 15, 0.98);
+                backdrop-filter: blur(20px);
+                -webkit-backdrop-filter: blur(20px);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transform: translateX(100%);
+                transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                z-index: 999;
             }
-            
+
             nav.active {
-                transform: translateY(0);
-                opacity: 1;
-                visibility: visible;
+                transform: translateX(0);
             }
-            
+
             nav ul {
                 flex-direction: column;
                 align-items: center;
+                gap: 16px;
             }
-            
-            nav ul li {
-                margin: 10px 0;
+
+            nav ul li a {
+                font-size: 24px;
+                padding: 12px 24px;
             }
-            
-            .hero h1 {
-                font-size: 36px;
+
+            .mobile-menu-close {
+                position: absolute;
+                top: 24px;
+                right: 24px;
+                background: none;
+                border: none;
+                color: var(--text-primary);
+                font-size: 28px;
+                cursor: pointer;
+                z-index: 1001;
             }
-            
-            .hero p {
-                font-size: 18px;
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
             }
-            
-            .section-title h2 {
-                font-size: 32px;
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .featured-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 12px;
+                text-align: center;
             }
         }
-        
-        @media (max-width: 576px) {
+
+        @media (max-width: 480px) {
             .hero h1 {
-                font-size: 28px;
+                font-size: 32px;
             }
-            
-            .hero p {
-                font-size: 16px;
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: stretch;
             }
-            
-            .btn, .btn-outline {
-                display: block;
-                width: 100%;
-                margin-bottom: 15px;
-                margin-left: 0;
+
+            .btn {
+                justify-content: center;
+            }
+
+            .about-features {
+                grid-template-columns: 1fr;
+            }
+
+            .stat-number {
+                font-size: 36px;
             }
         }
     </style>
 </head>
 <body>
+
     <!-- Header -->
     <header id="header">
         <div class="container header-content">
-            <a href="index.html" class="logo"><i class="fas fa-film"></i> XLNZ Productions</a>
-            <button class="mobile-menu-toggle" id="mobileMenuToggle">
+            <a href="index.html" class="logo">
+                <span class="logo-icon"><i class="fas fa-film"></i></span>
+                XLNZ
+            </a>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Open menu">
                 <i class="fas fa-bars"></i>
             </button>
             <nav id="nav">
+                <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">
+                    <i class="fas fa-times"></i>
+                </button>
                 <ul>
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html" class="active">Home</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="services.html">Services</a></li>
                     <li><a href="portfolio.html">Portfolio</a></li>
                     <li><a href="packages.html">Packages</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="contact.html" class="nav-cta">Get a Quote</a></li>
                 </ul>
             </nav>
         </div>
@@ -567,17 +1048,43 @@
 
     <!-- Hero Section -->
     <section class="hero">
+        <div class="hero-grid"></div>
         <div class="container hero-content">
-            <!-- YOUR LOGO -->
-            <div class="hero-top-image">
-                <img src="images/XLNZ Productions Logo Transparent Background.png" alt="XLNZ Productions Logo">
+            <div class="hero-logo">
+                <img src="images/XLNZ Productions Logo Transparent Background .png" alt="XLNZ Productions">
             </div>
-            
-            <h1>Philadelphia's Premier Video Production Studio</h1>
-            <p>Specializing in podcasts, comedy, films, documentaries, and commercial content that captivates audiences and delivers results.</p>
+            <div class="hero-badge">
+                <i class="fas fa-circle"></i> Philadelphia's Premier Production Studio
+            </div>
+            <h1>We Bring Your <span class="gradient-text">Creative Vision</span> to Life</h1>
+            <p>From podcasts to feature films, we craft compelling content that captivates audiences and delivers real results.</p>
             <div class="hero-buttons">
-                <a href="services.html" class="btn">Our Services</a>
-                <a href="portfolio.html" class="btn btn-outline">View Our Work</a>
+                <a href="services.html" class="btn btn-primary"><i class="fas fa-play"></i> View Our Work</a>
+                <a href="contact.html" class="btn btn-secondary"><i class="fas fa-arrow-right"></i> Start a Project</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item reveal">
+                    <div class="stat-number" data-target="15">15+</div>
+                    <div class="stat-label">Years Combined Experience</div>
+                </div>
+                <div class="stat-item reveal">
+                    <div class="stat-number" data-target="50">50+</div>
+                    <div class="stat-label">Projects Delivered</div>
+                </div>
+                <div class="stat-item reveal">
+                    <div class="stat-number" data-target="6">6</div>
+                    <div class="stat-label">Production Services</div>
+                </div>
+                <div class="stat-item reveal">
+                    <div class="stat-number" data-target="100">100%</div>
+                    <div class="stat-label">Client Satisfaction</div>
+                </div>
             </div>
         </div>
     </section>
@@ -585,20 +1092,30 @@
     <!-- About Section -->
     <section class="about" id="about">
         <div class="container">
-            <div class="section-title">
-                <h2>About XLNZ Productions</h2>
-                <p>Founded in 2023 by Buhzz Taylor and Mike Salvi, XLNZ Productions is Philadelphia's premier video production studio.</p>
-            </div>
-            <div class="about-content">
-                <div class="about-image">
-                    <img src="https://picsum.photos/seed/xlnz-about/600/400.jpg" alt="About XLNZ Productions">
+            <div class="about-grid">
+                <div class="about-image-wrapper reveal">
+                    <img src="https://picsum.photos/seed/xlnz-about/600/500.jpg" alt="XLNZ Productions team at work">
                 </div>
-                <div class="about-text">
-                    <h2>Our Story</h2>
-                    <p>Founded in 2023 by Buhzz Taylor and Mike Salvi, XLNZ Productions is Philadelphia's premier video production studio, specializing in podcasts, comedy, films, documentaries, and commercial content.</p>
+                <div class="about-content reveal">
+                    <div class="section-label">Our Story</div>
+                    <h2>Built on Passion.<br>Driven by Creativity.</h2>
+                    <p>Founded in 2023 by Buhzz Taylor and Mike Salvi, XLNZ Productions is Philadelphia's premier video production studio. We specialize in podcasts, comedy, films, documentaries, and commercial content.</p>
                     <p>With a combined experience of over 15 years in the entertainment industry, our founders bring a unique blend of creativity and technical expertise to every project.</p>
-                    <p>Our state-of-the-art facility in the heart of Philadelphia is equipped with the latest technology to bring your vision to life.</p>
-                    <a href="about.html" class="btn">Learn More About Us</a>
+                    <div class="about-features">
+                        <div class="about-feature">
+                            <i class="fas fa-check"></i> State-of-the-art facility
+                        </div>
+                        <div class="about-feature">
+                            <i class="fas fa-check"></i> Latest technology
+                        </div>
+                        <div class="about-feature">
+                            <i class="fas fa-check"></i> End-to-end production
+                        </div>
+                        <div class="about-feature">
+                            <i class="fas fa-check"></i> Custom solutions
+                        </div>
+                    </div>
+                    <a href="about.html" class="btn btn-primary" style="margin-top: 32px;">Learn More About Us <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
@@ -607,132 +1124,123 @@
     <!-- Services Section -->
     <section class="services" id="services">
         <div class="container">
-            <div class="section-title">
-                <h2>Our Services</h2>
-                <p>Comprehensive production solutions for all your creative needs</p>
+            <div class="section-header reveal">
+                <div class="section-label">What We Do</div>
+                <h2>Production Services</h2>
+                <p>Comprehensive solutions for all your creative needs</p>
             </div>
             <div class="services-grid">
-                <div class="service-card">
+                <div class="service-card reveal">
                     <div class="service-image">
-                        <img src="https://picsum.photos/seed/xlnz-podcast/400/300.jpg" alt="Podcast Production">
+                        <img src="https://picsum.photos/seed/xlnz-podcast/600/400.jpg" alt="Podcast Production">
                     </div>
                     <div class="service-content">
-                        <i class="fas fa-microphone"></i>
+                        <div class="service-icon"><i class="fas fa-microphone"></i></div>
                         <h3>Podcast Production</h3>
-                        <p>Professional podcast recording, editing, and distribution services to help you share your voice with the world.</p>
-                        <a href="services.html#podcast" class="btn">Learn More</a>
+                        <p>Professional recording, editing, and distribution to help you share your voice with the world.</p>
+                        <a href="services.html#podcast" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
-                
-                <div class="service-card">
+
+                <div class="service-card reveal">
                     <div class="service-image">
-                        <img src="https://picsum.photos/seed/xlnz-standup/400/300.jpg" alt="Stand-Up Specials">
+                        <img src="https://picsum.photos/seed/xlnz-standup/600/400.jpg" alt="Stand-Up Specials">
                     </div>
                     <div class="service-content">
-                        <i class="fas fa-laugh"></i>
+                        <div class="service-icon"><i class="fas fa-laugh"></i></div>
                         <h3>Stand-Up Specials</h3>
-                        <p>From comedy skits to stand-up specials, we help comedians capture and deliver their unique brand of humor.</p>
-                        <a href="services.html#standup" class="btn">Learn More</a>
+                        <p>From comedy skits to stand-up specials, we capture and deliver your unique brand of humor.</p>
+                        <a href="services.html#standup" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
-                
-                <div class="service-card">
+
+                <div class="service-card reveal">
                     <div class="service-image">
-                        <img src="https://picsum.photos/seed/xlnz-film/400/300.jpg" alt="Film Production">
+                        <img src="https://picsum.photos/seed/xlnz-film/600/400.jpg" alt="Film Production">
                     </div>
                     <div class="service-content">
-                        <i class="fas fa-video"></i>
+                        <div class="service-icon"><i class="fas fa-video"></i></div>
                         <h3>Film Production</h3>
-                        <p>Full-service film production from pre-production planning to post-production and final delivery.</p>
-                        <a href="services.html#film" class="btn">Learn More</a>
+                        <p>Full-service production from pre-production planning to post-production and final delivery.</p>
+                        <a href="services.html#film" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
-                
-                <div class="service-card">
+
+                <div class="service-card reveal">
                     <div class="service-image">
-                        <img src="https://picsum.photos/seed/xlnz-commercial/400/300.jpg" alt="Commercial/Skit">
+                        <img src="https://picsum.photos/seed/xlnz-commercial/600/400.jpg" alt="Commercial Production">
                     </div>
                     <div class="service-content">
-                        <i class="fas fa-bullhorn"></i>
-                        <h3>Commercial/Skit</h3>
-                        <p>Compelling commercial content that captures attention and drives results for your business.</p>
-                        <a href="services.html#commercial" class="btn">Learn More</a>
+                        <div class="service-icon"><i class="fas fa-bullhorn"></i></div>
+                        <h3>Commercial / Skit</h3>
+                        <p>Compelling commercial content that captures attention and drives real results for your business.</p>
+                        <a href="services.html#commercial" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
-                
-                <div class="service-card">
+
+                <div class="service-card reveal">
                     <div class="service-image">
-                        <img src="https://picsum.photos/seed/xlnz-social/400/300.jpg" alt="Social Media for Brands">
+                        <img src="https://picsum.photos/seed/xlnz-social/600/400.jpg" alt="Social Media Content">
                     </div>
                     <div class="service-content">
-                        <i class="fas fa-share-alt"></i>
+                        <div class="service-icon"><i class="fas fa-share-alt"></i></div>
                         <h3>Social Media for Brands</h3>
-                        <p>Engaging social media content that builds brand awareness and drives engagement across platforms.</p>
-                        <a href="services.html#social" class="btn">Learn More</a>
+                        <p>Engaging social content that builds brand awareness and drives engagement across platforms.</p>
+                        <a href="services.html#social" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
-                
-                <div class="service-card">
+
+                <div class="service-card reveal">
                     <div class="service-image">
-                        <img src="https://picsum.photos/seed/xlnz-testimonial/400/300.jpg" alt="Testimonials">
+                        <img src="https://picsum.photos/seed/xlnz-testimonial/600/400.jpg" alt="Testimonial Videos">
                     </div>
                     <div class="service-content">
-                        <i class="fas fa-users"></i>
+                        <div class="service-icon"><i class="fas fa-users"></i></div>
                         <h3>Testimonials</h3>
-                        <p>Professional testimonial videos that showcase your clients' experiences and build trust.</p>
-                        <a href="services.html#testimonial" class="btn">Learn More</a>
+                        <p>Professional testimonial videos that showcase client experiences and build trust.</p>
+                        <a href="services.html#testimonial" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section class="testimonials" id="testimonials">
+    <!-- Featured Work Section -->
+    <section class="featured" id="featured">
         <div class="container">
-            <div class="section-title">
-                <h2>Client Testimonials</h2>
-                <p>What our clients say about working with XLNZ Productions</p>
+            <div class="section-header reveal">
+                <div class="section-label">Our Work</div>
+                <h2>Featured Projects</h2>
+                <p>A glimpse at what we've been creating</p>
             </div>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="testimonial-text">
-                        "Working with XLNZ Productions was a game-changer for our podcast. Their professionalism and attention to detail elevated our content to a level we couldn't have achieved on our own."
+            <div class="featured-grid">
+                <div class="featured-item reveal">
+                    <img src="https://picsum.photos/seed/xlnz-work1/800/500.jpg" alt="Featured project">
+                    <div class="featured-overlay">
+                        <div class="featured-category">Podcast</div>
+                        <h3>Business Leaders Podcast</h3>
                     </div>
-                    <div class="testimonial-author">
-                        <img src="https://picsum.photos/seed/xlnz-client1/100/100.jpg" alt="Client Photo" class="author-image">
-                        <div class="author-info">
-                            <h4>Sarah Johnson</h4>
-                            <p>Host, Business Leaders Podcast</p>
-                        </div>
-                    </div>
+                    <div class="featured-play"><i class="fas fa-play"></i></div>
                 </div>
-                
-                <div class="testimonial-card">
-                    <div class="testimonial-text">
-                        "The team at XLNZ captured our brand's essence perfectly. Our social media engagement has increased by 300% since we started working with them."
+                <div class="featured-item reveal">
+                    <img src="https://picsum.photos/seed/xlnz-work2/800/500.jpg" alt="Featured project">
+                    <div class="featured-overlay">
+                        <div class="featured-category">Comedy Special</div>
+                        <h3>Stand-Up Showcase</h3>
                     </div>
-                    <div class="testimonial-author">
-                        <img src="https://picsum.photos/seed/xlnz-client2/100/100.jpg" alt="Client Photo" class="author-image">
-                        <div class="author-info">
-                            <h4>Michael Rodriguez</h4>
-                            <p>Marketing Director, Urban Eats</p>
-                        </div>
-                    </div>
+                    <div class="featured-play"><i class="fas fa-play"></i></div>
                 </div>
-                
-                <div class="testimonial-card">
-                    <div class="testimonial-text">
-                        "As a comedian, I needed a team that understood my vision and could capture my performance perfectly. XLNZ exceeded all expectations and delivered a special that I'm proud of."
+                <div class="featured-item reveal">
+                    <img src="https://picsum.photos/seed/xlnz-work3/800/500.jpg" alt="Featured project">
+                    <div class="featured-overlay">
+                        <div class="featured-category">Commercial</div>
+                        <h3>Urban Eats Campaign</h3>
                     </div>
-                    <div class="testimonial-author">
-                        <img src="https://picsum.photos/seed/xlnz-client3/100/100.jpg" alt="Client Photo" class="author-image">
-                        <div class="author-info">
-                            <h4>David Chen</h4>
-                            <p>Stand-up Comedian</p>
-                        </div>
-                    </div>
+                    <div class="featured-play"><i class="fas fa-play"></i></div>
                 </div>
+            </div>
+            <div style="text-align: center; margin-top: 48px;" class="reveal">
+                <a href="portfolio.html" class="btn btn-primary">View Full Portfolio <i class="fas fa-arrow-right"></i></a>
             </div>
         </div>
     </section>
@@ -740,28 +1248,36 @@
     <!-- CTA Section -->
     <section class="cta" id="cta">
         <div class="container">
-            <h2>Ready to Start Your Project?</h2>
-            <p>Let's collaborate to bring your creative vision to life with professional production services tailored to your needs.</p>
-            <a href="contact.html" class="btn">Get In Touch</a>
+            <div class="cta-content reveal">
+                <div class="section-label">Let's Create</div>
+                <h2>Ready to Start Your <span class="gradient-text">Next Project</span>?</h2>
+                <p>Let's collaborate to bring your creative vision to life with professional production services tailored to your needs.</p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Get a Free Quote</a>
+                    <a href="packages.html" class="btn btn-secondary"><i class="fas fa-box"></i> View Packages</a>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-about">
-                    <a href="index.html" class="footer-logo"><i class="fas fa-film"></i> XLNZ Productions</a>
-                    <p>Founded in 2023 by Buhzz Taylor and Mike Salvi, XLNZ Productions is Philadelphia's premier video production studio, specializing in podcasts, comedy, films, documentaries, and commercial content.</p>
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <span class="logo-icon"><i class="fas fa-film"></i></span>
+                        XLNZ
+                    </a>
+                    <p>Philadelphia's premier video production studio. Specializing in podcasts, comedy, films, documentaries, and commercial content.</p>
                     <div class="social-links">
-                        <a href="https://www.instagram.com/xlnzproductions" title="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.youtube.com/@xlnzproductions" title="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.instagram.com/xlnzproductions" title="Instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/@xlnzproductions" title="YouTube" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
-                <div class="footer-links">
-                    <h4>Quick Links</h4>
+                <div class="footer-column">
+                    <h4>Company</h4>
                     <ul>
-                        <li><a href="index.html">Home</a></li>
                         <li><a href="about.html">About Us</a></li>
                         <li><a href="services.html">Services</a></li>
                         <li><a href="portfolio.html">Portfolio</a></li>
@@ -769,45 +1285,97 @@
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
-                <div class="footer-links">
+                <div class="footer-column">
                     <h4>Services</h4>
                     <ul>
                         <li><a href="services.html#podcast">Podcast Production</a></li>
                         <li><a href="services.html#standup">Stand-Up Specials</a></li>
                         <li><a href="services.html#film">Film Production</a></li>
-                        <li><a href="services.html#commercial">Commercial/Skit</a></li>
-                        <li><a href="services.html#social">Social Media for Brands</a></li>
-                        <li><a href="services.html#testimonial">Testimonials</a></li>
+                        <li><a href="services.html#commercial">Commercial / Skit</a></li>
+                        <li><a href="services.html#social">Social Media</a></li>
                     </ul>
                 </div>
-                <div class="footer-links">
-                    <h4>Contact Info</h4>
+                <div class="footer-column">
+                    <h4>Contact</h4>
                     <ul>
-                        <li><a href="mailto:xlnzproductions@gmail.com">xlnzproductions@gmail.com</a></li>
-                        <li><a href="#">Philadelphia, PA</a></li>
+                        <li><a href="mailto:xlnzproductions@gmail.com"><i class="fas fa-envelope" style="margin-right: 8px;"></i> xlnzproductions@gmail.com</a></li>
+                        <li><a href="#"><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i> Philadelphia, PA</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2023 XLNZ Productions. All rights reserved.</p>
+                <span>XLNZ Productions</span>
+                <span>Philadelphia, PA</span>
             </div>
         </div>
     </footer>
 
     <script>
         // Mobile menu toggle
-        document.getElementById('mobileMenuToggle').addEventListener('click', function() {
-            document.getElementById('nav').classList.toggle('active');
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const mobileMenuClose = document.getElementById('mobileMenuClose');
+        const nav = document.getElementById('nav');
+
+        mobileMenuToggle.addEventListener('click', () => {
+            nav.classList.add('active');
+            document.body.style.overflow = 'hidden';
         });
-        
+
+        mobileMenuClose.addEventListener('click', () => {
+            nav.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('#nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+
+        // Close mobile menu on outside click
+        document.addEventListener('click', (e) => {
+            if (nav.classList.contains('active') &&
+                !nav.contains(e.target) &&
+                !mobileMenuToggle.contains(e.target)) {
+                nav.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+
+        // Header scroll effect
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Scroll reveal animation
+        const revealElements = document.querySelectorAll('.reveal');
+
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        revealElements.forEach(el => revealObserver.observe(el));
+
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
-                
                 const targetId = this.getAttribute('href');
                 if (targetId === '#') return;
-                
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
                     window.scrollTo({
@@ -817,16 +1385,7 @@
                 }
             });
         });
-        
-        // Header scroll effect
-        window.addEventListener('scroll', function() {
-            const header = document.getElementById('header');
-            if (window.scrollY > 100) {
-                header.style.backgroundColor = 'rgba(26, 26, 46, 0.95)';
-            } else {
-                header.style.backgroundColor = 'var(--primary)';
-            }
-        });
     </script>
+
 </body>
 </html>
