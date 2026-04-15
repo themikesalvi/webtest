@@ -194,6 +194,10 @@
             padding: 8px;
         }
 
+        .mobile-menu-close {
+            display: none;
+        }
+
         /* ===== HERO ===== */
         .hero {
             min-height: 100vh;
@@ -357,7 +361,7 @@
 
         .stats-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             gap: 32px;
         }
 
@@ -921,6 +925,19 @@
                 display: block;
             }
 
+            .mobile-menu-close {
+                display: block;
+                position: absolute;
+                top: 24px;
+                right: 24px;
+                background: none;
+                border: none;
+                color: var(--text-primary);
+                font-size: 28px;
+                cursor: pointer;
+                z-index: 1001;
+            }
+
             nav {
                 position: fixed;
                 top: 0;
@@ -951,18 +968,6 @@
             nav ul li a {
                 font-size: 24px;
                 padding: 12px 24px;
-            }
-
-            .mobile-menu-close {
-                position: absolute;
-                top: 24px;
-                right: 24px;
-                background: none;
-                border: none;
-                color: var(--text-primary);
-                font-size: 28px;
-                cursor: pointer;
-                z-index: 1001;
             }
 
             .about-grid {
@@ -1070,19 +1075,15 @@
         <div class="container">
             <div class="stats-grid">
                 <div class="stat-item reveal">
-                    <div class="stat-number" data-target="15">15+</div>
-                    <div class="stat-label">Years Combined Experience</div>
-                </div>
-                <div class="stat-item reveal">
-                    <div class="stat-number" data-target="50">50+</div>
+                    <div class="stat-number">500+</div>
                     <div class="stat-label">Projects Delivered</div>
                 </div>
                 <div class="stat-item reveal">
-                    <div class="stat-number" data-target="6">6</div>
+                    <div class="stat-number">6</div>
                     <div class="stat-label">Production Services</div>
                 </div>
                 <div class="stat-item reveal">
-                    <div class="stat-number" data-target="100">100%</div>
+                    <div class="stat-number">100%</div>
                     <div class="stat-label">Client Satisfaction</div>
                 </div>
             </div>
@@ -1100,7 +1101,7 @@
                     <div class="section-label">Our Story</div>
                     <h2>Built on Passion.<br>Driven by Creativity.</h2>
                     <p>Founded in 2023 by Buhzz Taylor and Mike Salvi, XLNZ Productions is Philadelphia's premier video production studio. We specialize in podcasts, comedy, films, documentaries, and commercial content.</p>
-                    <p>With a combined experience of over 15 years in the entertainment industry, our founders bring a unique blend of creativity and technical expertise to every project.</p>
+                    <p>Our founders bring a unique blend of creativity and technical expertise to every project, ensuring your vision comes to life exactly as you imagined it.</p>
                     <div class="about-features">
                         <div class="about-feature">
                             <i class="fas fa-check"></i> State-of-the-art facility
