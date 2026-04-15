@@ -3,689 +3,1394 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Portfolio - XLNZ Productions</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <meta name="description" content="XLNZ Productions portfolio showcasing our best video production work including podcasts, stand-up specials, commercials, documentaries, and more in Philadelphia.">
+    <meta name="keywords" content="video production portfolio, Philadelphia video production, podcast production, commercial video, documentary production">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="XLNZ Productions">
+    <link rel="canonical" href="https://www.xlnzproductions.com/portfolio">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Portfolio - XLNZ Productions">
+    <meta property="og:description" content="Explore our portfolio of professional video productions including podcasts, stand-up specials, commercials, and documentaries.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.xlnzproductions.com/portfolio">
+    <meta property="og:image" content="https://www.xlnzproductions.com/images/og-portfolio.jpg">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Portfolio - XLNZ Productions">
+    <meta name="twitter:description" content="Explore our portfolio of professional video productions including podcasts, stand-up specials, commercials, and documentaries.">
+
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "VideoProductionCompany",
+        "name": "XLNZ Productions",
+        "url": "https://www.xlnzproductions.com",
+        "priceRange": "$400-$3600",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Philadelphia",
+            "addressRegion": "PA",
+            "addressCountry": "US"
+        }
+    }
+    </script>
+
+    <title>Portfolio - XLNZ Productions | Philadelphia Video Production</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <style>
         :root {
-            --primary: #1a1a2e;
-            --secondary: #e94560;
-            --accent: #f47068;
-            --light: #f5f5f5;
-            --dark: #0f0f1e;
-            --gray: #6c6c80;
+            --bg-primary: #0a0a0f;
+            --bg-secondary: #12122a;
+            --bg-card: #1a1a2e;
+            --accent: #e94560;
+            --accent-hover: #ff6b35;
+            --accent-gradient: linear-gradient(135deg, #e94560, #ff6b35);
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0b8;
+            --text-muted: #6c6c80;
+            --border: rgba(255, 255, 255, 0.08);
+            --glow: 0 0 40px rgba(233, 69, 96, 0.15);
+            --success: #10b981;
         }
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: 'Open Sans', sans-serif;
-            color: #333;
-            line-height: 1.6;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
             overflow-x: hidden;
         }
-        
+
         h1, h2, h3, h4, h5, h6 {
             font-family: 'Montserrat', sans-serif;
-            font-weight: 600;
-            margin-bottom: 20px;
+            font-weight: 700;
+            line-height: 1.2;
         }
-        
+
         .container {
             width: 100%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 24px;
         }
-        
-        /* Header Styles */
+
+        /* ===== HEADER ===== */
         header {
-            background-color: var(--primary);
-            color: white;
             position: fixed;
-            width: 100%;
             top: 0;
             left: 0;
+            width: 100%;
             z-index: 1000;
-            transition: all 0.3s ease;
+            padding: 20px 0;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            background: transparent;
         }
-        
+
+        header.scrolled {
+            background: rgba(10, 10, 15, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            padding: 12px 0;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+        }
+
         .header-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 0;
         }
-        
+
         .logo {
-            font-size: 28px;
-            font-weight: 700;
-            color: white;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 26px;
+            font-weight: 800;
+            color: var(--text-primary);
             text-decoration: none;
             display: flex;
             align-items: center;
+            gap: 12px;
+            letter-spacing: -0.5px;
         }
-        
-        .logo i {
-            margin-right: 10px;
-            color: var(--secondary);
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--accent-gradient);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
         }
-        
+
         nav ul {
             display: flex;
             list-style: none;
+            gap: 8px;
         }
-        
-        nav ul li {
-            margin-left: 25px;
-        }
-        
+
         nav ul li a {
-            color: white;
+            color: var(--text-secondary);
             text-decoration: none;
             font-weight: 500;
-            transition: color 0.3s ease;
-            font-size: 16px;
+            font-size: 15px;
+            padding: 8px 16px;
+            border-radius: 6px;
+            transition: all 0.3s ease;
         }
-        
-        nav ul li a:hover {
-            color: var(--secondary);
+
+        nav ul li a:hover,
+        nav ul li a.active {
+            color: var(--text-primary);
+            background: rgba(233, 69, 96, 0.1);
         }
-        
+
+        .nav-cta {
+            background: var(--accent-gradient) !important;
+            color: var(--text-primary) !important;
+            font-weight: 600 !important;
+            padding: 10px 24px !important;
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 8px 25px rgba(233, 69, 96, 0.3);
+        }
+
         .mobile-menu-toggle {
             display: none;
             background: none;
             border: none;
-            color: white;
+            color: var(--text-primary);
             font-size: 24px;
             cursor: pointer;
+            padding: 8px;
         }
-        
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(rgba(26, 26, 46, 0.9), rgba(26, 26, 46, 0.9)), url('https://picsum.photos/seed/xlnz-portfolio/1920/1080.jpg') no-repeat center center/cover;
-            height: 60vh;
+
+        /* ===== PAGE HERO ===== */
+        .page-hero {
+            min-height: 60vh;
             display: flex;
             align-items: center;
-            color: white;
-            text-align: center;
-        }
-        
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .hero h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
-            line-height: 1.2;
-        }
-        
-        .hero p {
-            font-size: 20px;
-            margin-bottom: 30px;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            background-color: var(--secondary);
-            color: white;
-            text-decoration: none;
-            border-radius: 4px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-            font-size: 16px;
-        }
-        
-        .btn:hover {
-            background-color: var(--accent);
-            transform: translateY(-2px);
-        }
-        
-        .btn-outline {
-            background-color: transparent;
-            border: 2px solid var(--secondary);
-            margin-left: 15px;
-        }
-        
-        .btn-outline:hover {
-            background-color: var(--secondary);
-        }
-        
-        /* Portfolio Section */
-        .portfolio {
-            padding: 100px 0;
-            background-color: var(--light);
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 60px;
-            position: relative;
-        }
-        
-        .section-title h2 {
-            font-size: 40px;
-            color: var(--primary);
-            margin-bottom: 15px;
-        }
-        
-        .section-title p {
-            font-size: 18px;
-            max-width: 700px;
-            margin: 0 auto;
-            color: var(--gray);
-        }
-        
-        /* Filter Buttons */
-        .filter-buttons {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin-bottom: 50px;
-        }
-        
-        .filter-btn {
-            padding: 10px 20px;
-            background-color: white;
-            border: 1px solid var(--gray);
-            border-radius: 30px;
-            color: var(--gray);
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .filter-btn:hover,
-        .filter-btn.active {
-            background-color: var(--secondary);
-            border-color: var(--secondary);
-            color: white;
-        }
-        
-        /* Portfolio Grid */
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-bottom: 60px;
-        }
-        
-        .portfolio-item {
             position: relative;
             overflow: hidden;
-            border-radius: 8px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            height: 300px;
-            transition: transform 0.3s ease;
+            padding: 140px 0 80px;
         }
-        
-        .portfolio-item:hover {
-            transform: translateY(-10px);
-        }
-        
-        .portfolio-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-        
-        .portfolio-overlay {
+
+        .page-hero::before {
+            content: '';
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(rgba(26, 26, 46, 0.8), rgba(26, 26, 46, 0.8));
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+            background: radial-gradient(ellipse at 30% 50%, rgba(233, 69, 96, 0.08) 0%, transparent 60%),
+                        radial-gradient(ellipse at 70% 20%, rgba(255, 107, 53, 0.06) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .page-hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(to top, var(--bg-primary), transparent);
+            pointer-events: none;
+        }
+
+        .hero-grid {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image:
+                linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 60px 60px;
+            mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
+            -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
+        }
+
+        .page-hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .section-label {
+            display: inline-flex;
             align-items: center;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            padding: 20px;
+            gap: 8px;
+            color: var(--accent);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+        }
+
+        .section-label::before {
+            content: '';
+            width: 30px;
+            height: 2px;
+            background: var(--accent-gradient);
+        }
+
+        .page-hero h1 {
+            font-size: clamp(36px, 6vw, 64px);
+            font-weight: 900;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+
+        .page-hero h1 .gradient-text {
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .page-hero p {
+            font-size: 18px;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 32px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* ===== BUTTONS ===== */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 16px 36px;
+            border-radius: 8px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 16px;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--accent-gradient);
+            color: var(--text-primary);
+            box-shadow: 0 4px 15px rgba(233, 69, 96, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(233, 69, 96, 0.4);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-primary);
+            border: 1px solid var(--border);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .btn-sm {
+            padding: 10px 20px;
+            font-size: 13px;
+        }
+
+        /* ===== STATS BAR ===== */
+        .stats-bar {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 32px;
             text-align: center;
         }
-        
-        .portfolio-item:hover .portfolio-overlay {
+
+        .stat-item {
+            padding: 16px;
+        }
+
+        .stat-number {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 36px;
+            font-weight: 900;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 4px;
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        /* ===== PORTFOLIO SECTION ===== */
+        .portfolio-section {
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .section-header h2 {
+            font-size: clamp(32px, 4vw, 48px);
+            margin-bottom: 16px;
+        }
+
+        .section-header p {
+            color: var(--text-secondary);
+            font-size: 18px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* ===== FILTER ===== */
+        .filter-bar {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 48px;
+        }
+
+        .filter-btn {
+            padding: 10px 24px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border);
+            border-radius: 100px;
+            color: var(--text-secondary);
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn:hover {
+            background: rgba(233, 69, 96, 0.1);
+            border-color: rgba(233, 69, 96, 0.3);
+            color: var(--text-primary);
+        }
+
+        .filter-btn.active {
+            background: var(--accent-gradient);
+            border-color: transparent;
+            color: var(--text-primary);
+            box-shadow: 0 4px 15px rgba(233, 69, 96, 0.3);
+        }
+
+        /* ===== PORTFOLIO GRID ===== */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .portfolio-card {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+        }
+
+        .portfolio-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(233, 69, 96, 0.3);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .portfolio-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 50% 0%, rgba(233, 69, 96, 0.05) 0%, transparent 60%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .portfolio-card:hover::before {
             opacity: 1;
         }
-        
-        .portfolio-item:hover img {
+
+        .portfolio-card-image {
+            height: 220px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .portfolio-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .portfolio-card:hover .portfolio-card-image img {
             transform: scale(1.1);
         }
-        
-        .portfolio-overlay h3 {
+
+        .portfolio-card-image::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            background: linear-gradient(to top, var(--bg-card), transparent);
+            pointer-events: none;
+        }
+
+        .portfolio-card-badge {
+            position: absolute;
+            top: 16px;
+            left: 16px;
+            padding: 6px 14px;
+            background: rgba(10, 10, 15, 0.85);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 100px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent);
+            z-index: 2;
+        }
+
+        .portfolio-card-body {
+            padding: 24px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .portfolio-card-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--text-primary);
+        }
+
+        .portfolio-card-client {
+            font-size: 13px;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .portfolio-card-desc {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+
+        .portfolio-card-meta {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding-top: 16px;
+            border-top: 1px solid var(--border);
+        }
+
+        .portfolio-card-meta span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        .portfolio-card-meta i {
+            font-size: 12px;
+            color: var(--accent);
+        }
+
+        .portfolio-card-arrow {
+            position: absolute;
+            bottom: 24px;
+            right: 24px;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            font-size: 14px;
+            transition: all 0.3s ease;
+            z-index: 2;
+        }
+
+        .portfolio-card:hover .portfolio-card-arrow {
+            background: var(--accent);
+            border-color: var(--accent);
             color: white;
-            font-size: 22px;
-            margin-bottom: 10px;
+            transform: translate(4px, -4px);
         }
-        
-        .portfolio-overlay p {
-            color: var(--light);
-            margin-bottom: 15px;
+
+        /* ===== FEATURED PROJECT ===== */
+        .featured-section {
+            padding: 100px 0;
+            background: var(--bg-secondary);
+            position: relative;
         }
-        
-        .portfolio-overlay .btn {
-            padding: 8px 20px;
+
+        .featured-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(ellipse at 50% 50%, rgba(233, 69, 96, 0.05) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .featured-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .featured-image-wrapper {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+        }
+
+        .featured-image-wrapper img {
+            width: 100%;
+            display: block;
+            border-radius: 16px;
+        }
+
+        .featured-image-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(233, 69, 96, 0.1), transparent);
+            pointer-events: none;
+        }
+
+        .featured-play-btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80px;
+            height: 80px;
+            background: var(--accent-gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 30px rgba(233, 69, 96, 0.4);
+        }
+
+        .featured-play-btn i {
+            font-size: 28px;
+            color: white;
+            margin-left: 4px;
+        }
+
+        .featured-play-btn:hover {
+            transform: translate(-50%, -50%) scale(1.1);
+            box-shadow: 0 12px 40px rgba(233, 69, 96, 0.5);
+        }
+
+        .featured-content h3 {
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+
+        .featured-content .featured-client {
+            color: var(--accent);
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        .featured-content p {
+            color: var(--text-secondary);
+            font-size: 16px;
+            line-height: 1.7;
+            margin-bottom: 24px;
+        }
+
+        .featured-details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 32px;
+        }
+
+        .featured-detail {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .featured-detail-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(233, 69, 96, 0.1);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .featured-detail-icon i {
+            color: var(--accent);
             font-size: 14px;
         }
-        
-        .portfolio-categories {
-            margin-bottom: 15px;
+
+        .featured-detail-text {
+            font-size: 13px;
         }
-        
-        .portfolio-categories span {
-            display: inline-block;
-            padding: 5px 10px;
-            background-color: rgba(255, 255, 255, 0.2);
-            color: white;
-            border-radius: 20px;
-            font-size: 12px;
-            margin-right: 5px;
+
+        .featured-detail-label {
+            color: var(--text-muted);
+            font-weight: 500;
+            margin-bottom: 2px;
         }
-        
-        /* Featured Project Section */
-        .featured-project {
-            background-color: white;
-            padding: 60px 0;
+
+        .featured-detail-value {
+            color: var(--text-primary);
+            font-weight: 600;
         }
-        
-        .featured-content {
-            display: flex;
-            align-items: center;
-            gap: 50px;
+
+        /* ===== CTA SECTION ===== */
+        .cta {
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
         }
-        
-        .featured-image {
-            flex: 1;
+
+        .cta::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(233, 69, 96, 0.08) 0%, transparent 70%);
+            pointer-events: none;
         }
-        
-        .featured-image img {
-            width: 100%;
-            border-radius: 8px;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+
+        .cta-content {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            max-width: 700px;
+            margin: 0 auto;
         }
-        
-        .featured-text {
-            flex: 1;
-        }
-        
-        .featured-text h3 {
-            font-size: 32px;
-            color: var(--primary);
+
+        .cta h2 {
+            font-size: clamp(32px, 5vw, 48px);
             margin-bottom: 20px;
         }
-        
-        .featured-text p {
-            margin-bottom: 20px;
-            font-size: 16px;
-        }
-        
-        .project-details {
-            margin-bottom: 30px;
-        }
-        
-        .project-details div {
-            display: flex;
-            align-items: center;
-            margin-bottom: 10px;
-        }
-        
-        .project-details i {
+
+        .cta p {
             font-size: 18px;
-            margin-right: 10px;
-            color: var(--secondary);
+            color: var(--text-secondary);
+            margin-bottom: 40px;
         }
-        
-        /* Footer */
+
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* ===== FOOTER ===== */
         footer {
-            background-color: var(--dark);
-            color: white;
-            padding: 50px 0 20px;
+            background: var(--bg-primary);
+            border-top: 1px solid var(--border);
+            padding: 64px 0 32px;
         }
-        
-        .footer-content {
+
+        .footer-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 30px;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 48px;
+            margin-bottom: 48px;
         }
-        
-        .footer-logo {
-            font-size: 28px;
-            font-weight: 700;
-            color: white;
-            text-decoration: none;
+
+        .footer-brand .logo {
+            margin-bottom: 16px;
+        }
+
+        .footer-brand p {
+            color: var(--text-secondary);
+            font-size: 15px;
+            margin-bottom: 24px;
+            line-height: 1.7;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 12px;
+        }
+
+        .footer-social a {
+            width: 44px;
+            height: 44px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border);
+            border-radius: 8px;
             display: flex;
             align-items: center;
-            margin-bottom: 15px;
-        }
-        
-        .footer-logo i {
-            margin-right: 10px;
-            color: var(--secondary);
-        }
-        
-        .footer-about p {
-            margin-bottom: 20px;
-            color: rgba(255, 255, 255, 0.7);
-        }
-        
-        .footer-links h4 {
+            justify-content: center;
+            color: var(--text-secondary);
             font-size: 18px;
-            margin-bottom: 20px;
-            color: white;
+            transition: all 0.3s ease;
         }
-        
-        .footer-links ul {
+
+        .footer-social a:hover {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: var(--text-primary);
+            transform: translateY(-3px);
+        }
+
+        .footer-column h4 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .footer-column ul {
             list-style: none;
         }
-        
-        .footer-links ul li {
-            margin-bottom: 10px;
+
+        .footer-column ul li {
+            margin-bottom: 12px;
         }
-        
-        .footer-links ul li a {
-            color: rgba(255, 255, 255, 0.7);
+
+        .footer-column ul li a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .footer-column ul li a:hover {
+            color: var(--accent);
+            transform: translateX(4px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--border);
+            padding-top: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        .footer-bottom a {
+            color: var(--text-secondary);
             text-decoration: none;
             transition: color 0.3s ease;
         }
-        
-        .footer-links ul li a:hover {
-            color: var(--secondary);
+
+        .footer-bottom a:hover {
+            color: var(--accent);
         }
-        
-        .footer-bottom {
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 20px;
-            text-align: center;
-            color: rgba(255, 255, 255, 0.5);
-            font-size: 14px;
+
+        /* ===== SCROLL ANIMATIONS ===== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        
-        /* Responsive Styles */
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .featured-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
         @media (max-width: 992px) {
-            .featured-content {
-                flex-direction: column;
-            }
-            
-            .featured-text {
-                order: 2;
-            }
-            
-            .featured-image {
-                order: 1;
+            .portfolio-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
-        
+
         @media (max-width: 768px) {
             .mobile-menu-toggle {
                 display: block;
             }
-            
+
             nav {
                 position: fixed;
-                top: 70px;
+                top: 0;
                 left: 0;
                 width: 100%;
-                background-color: var(--primary);
-                padding: 20px 0;
-                transform: translateY(-100%);
-                opacity: 0;
-                visibility: hidden;
-                transition: all 0.3s ease;
+                height: 100vh;
+                background: rgba(10, 10, 15, 0.98);
+                backdrop-filter: blur(20px);
+                -webkit-backdrop-filter: blur(20px);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transform: translateX(100%);
+                transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                z-index: 999;
             }
-            
+
             nav.active {
-                transform: translateY(0);
-                opacity: 1;
-                visibility: visible;
+                transform: translateX(0);
             }
-            
+
             nav ul {
                 flex-direction: column;
                 align-items: center;
+                gap: 16px;
             }
-            
-            nav ul li {
-                margin: 10px 0;
+
+            nav ul li a {
+                font-size: 24px;
+                padding: 12px 24px;
             }
-            
-            .hero h1 {
-                font-size: 36px;
+
+            .mobile-menu-close {
+                position: absolute;
+                top: 24px;
+                right: 24px;
+                background: none;
+                border: none;
+                color: var(--text-primary);
+                font-size: 28px;
+                cursor: pointer;
+                z-index: 1001;
             }
-            
-            .hero p {
-                font-size: 18px;
-            }
-            
-            .section-title h2 {
-                font-size: 32px;
-            }
-            
+
             .portfolio-grid {
                 grid-template-columns: 1fr;
+                max-width: 500px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 24px;
+            }
+
+            .featured-details {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: stretch;
             }
         }
-        
+
         @media (max-width: 576px) {
-            .hero h1 {
-                font-size: 28px;
+            .page-hero h1 {
+                font-size: 32px;
             }
-            
-            .hero p {
-                font-size: 16px;
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: stretch;
             }
-            
-            .btn, .btn-outline {
-                display: block;
-                width: 100%;
-                margin-bottom: 15px;
-                margin-left: 0;
+
+            .btn {
+                justify-content: center;
+            }
+
+            .filter-bar {
+                gap: 8px;
+            }
+
+            .filter-btn {
+                padding: 8px 16px;
+                font-size: 12px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 12px;
+                text-align: center;
             }
         }
     </style>
 </head>
 <body>
+
     <!-- Header -->
     <header id="header">
         <div class="container header-content">
-            <a href="index.html" class="logo"><i class="fas fa-film"></i> XLNZ Productions</a>
-            <button class="mobile-menu-toggle" id="mobileMenuToggle">
+            <a href="index.html" class="logo">
+                <span class="logo-icon"><i class="fas fa-film"></i></span>
+                XLNZ
+            </a>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Open menu">
                 <i class="fas fa-bars"></i>
             </button>
             <nav id="nav">
+                <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">
+                    <i class="fas fa-times"></i>
+                </button>
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="services.html">Services</a></li>
-                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="portfolio.html" class="active">Portfolio</a></li>
                     <li><a href="packages.html">Packages</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="contact.html" class="nav-cta">Get a Quote</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container hero-content">
-            <h1>Our Portfolio</h1>
-            <p>A selection of projects we're proud to have produced</p>
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="hero-grid"></div>
+        <div class="container page-hero-content">
+            <div class="section-label">Our Work</div>
+            <h1>Project <span class="gradient-text">Portfolio</span></h1>
+            <p>From podcasts to documentaries, explore the stories we've helped bring to life across Philadelphia and beyond.</p>
             <div class="hero-buttons">
-                <a href="packages.html" class="btn">View Packages</a>
-                <a href="contact.html" class="btn btn-outline">Start Your Project</a>
+                <a href="#portfolio" class="btn btn-primary"><i class="fas fa-th-large"></i> View Projects</a>
+                <a href="contact.html" class="btn btn-secondary"><i class="fas fa-envelope"></i> Start a Project</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Bar -->
+    <section class="stats-bar">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item reveal">
+                    <div class="stat-number">47+</div>
+                    <div class="stat-label">Projects Completed</div>
+                </div>
+                <div class="stat-item reveal">
+                    <div class="stat-number">35+</div>
+                    <div class="stat-label">Happy Clients</div>
+                </div>
+                <div class="stat-item reveal">
+                    <div class="stat-number">6</div>
+                    <div class="stat-label">Service Categories</div>
+                </div>
+                <div class="stat-item reveal">
+                    <div class="stat-number">2+</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Portfolio Section -->
-    <section class="portfolio">
+    <section class="portfolio-section" id="portfolio">
         <div class="container">
-            <div class="section-title">
-                <h2>Recent Work</h2>
-                <p>Explore our diverse portfolio of video productions</p>
+            <div class="section-header reveal">
+                <div class="section-label" style="justify-content: center;">Recent Work</div>
+                <h2>Featured <span class="gradient-text">Projects</span></h2>
+                <p>Browse our portfolio of professional video productions</p>
             </div>
-            
-            <!-- Filter Buttons -->
-            <div class="filter-buttons">
+
+            <!-- Filter -->
+            <div class="filter-bar reveal">
                 <button class="filter-btn active" data-filter="all">All Projects</button>
                 <button class="filter-btn" data-filter="podcast">Podcasts</button>
                 <button class="filter-btn" data-filter="standup">Stand-Up</button>
-                <button class="filter-btn" data-filter="commercial">Commercial</button>
+                <button class="filter-btn" data-filter="commercial">Commercials</button>
                 <button class="filter-btn" data-filter="documentary">Documentary</button>
+                <button class="filter-btn" data-filter="social">Social Media</button>
                 <button class="filter-btn" data-filter="testimonial">Testimonials</button>
             </div>
-            
+
             <!-- Portfolio Grid -->
-            <div class="portfolio-grid">
-                <div class="portfolio-item" data-category="podcast">
-                    <img src="https://picsum.photos/seed/xlnz-podcast-1/400/300.jpg" alt="Business Leaders Podcast">
-                    <div class="portfolio-overlay">
-                        <h3>Business Leaders Podcast</h3>
-                        <div class="portfolio-categories">
-                            <span>Podcast</span>
+            <div class="portfolio-grid" id="portfolioGrid">
+
+                <!-- Project 1 -->
+                <div class="portfolio-card reveal" data-category="podcast">
+                    <div class="portfolio-card-image">
+                        <img src="https://picsum.photos/seed/xlnz-philconvos/400/220.jpg" alt="Philly Convos Podcast">
+                        <span class="portfolio-card-badge">Podcast</span>
+                    </div>
+                    <div class="portfolio-card-body">
+                        <div class="portfolio-card-client">Philly Convos</div>
+                        <h3 class="portfolio-card-title">Philly Convos Podcast</h3>
+                        <p class="portfolio-card-desc">Weekly interview series spotlighting Philadelphia entrepreneurs, artists, and community leaders making an impact in the city.</p>
+                        <div class="portfolio-card-meta">
+                            <span><i class="fas fa-clock"></i> 12 Episodes</span>
+                            <span><i class="fas fa-microphone"></i> Audio + Video</span>
                         </div>
-                        <p>Weekly podcast featuring interviews with Philadelphia's top entrepreneurs</p>
-                        <a href="#" class="btn">View Project</a>
+                    </div>
+                    <div class="portfolio-card-arrow"><i class="fas fa-arrow-right"></i></div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="portfolio-card reveal" data-category="standup">
+                    <div class="portfolio-card-image">
+                        <img src="https://picsum.photos/seed/xlnz-salvi-special/400/220.jpg" alt="Mike Salvi: No Filter">
+                        <span class="portfolio-card-badge">Stand-Up</span>
+                    </div>
+                    <div class="portfolio-card-body">
+                        <div class="portfolio-card-client">Mike Salvi</div>
+                        <h3 class="portfolio-card-title">No Filter: Live in Philly</h3>
+                        <p class="portfolio-card-desc">Multi-camera comedy special capturing Mike Salvi's sold-out hometown show at Helium Comedy Club with full audience reactions.</p>
+                        <div class="portfolio-card-meta">
+                            <span><i class="fas fa-clock"></i> 62 min</span>
+                            <span><i class="fas fa-video"></i> 4K Multi-Cam</span>
+                        </div>
+                    </div>
+                    <div class="portfolio-card-arrow"><i class="fas fa-arrow-right"></i></div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="portfolio-card reveal" data-category="commercial">
+                    <div class="portfolio-card-image">
+                        <img src="https://picsum.photos/seed/xlnz-reading-terminal/400/220.jpg" alt="Reading Terminal Market">
+                        <span class="portfolio-card-badge">Commercial</span>
+                    </div>
+                    <div class="portfolio-card-body">
+                        <div class="portfolio-card-client">Reading Terminal Market</div>
+                        <h3 class="portfolio-card-title">Taste of Philly Campaign</h3>
+                        <p class="portfolio-card-desc">Series of 15 and 30-second spots showcasing the iconic market's vendors, history, and culinary diversity for digital and broadcast.</p>
+                        <div class="portfolio-card-meta">
+                            <span><i class="fas fa-video"></i> 6 Spots</span>
+                            <span><i class="fas fa-bullhorn"></i> Broadcast + Digital</span>
+                        </div>
+                    </div>
+                    <div class="portfolio-card-arrow"><i class="fas fa-arrow-right"></i></div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="portfolio-card reveal" data-category="documentary">
+                    <div class="portfolio-card-image">
+                        <img src="https://picsum.photos/seed/xlnz-mural-doc/400/220.jpg" alt="Walls of Philly">
+                        <span class="portfolio-card-badge">Documentary</span>
+                    </div>
+                    <div class="portfolio-card-body">
+                        <div class="portfolio-card-client">Mural Arts Philadelphia</div>
+                        <h3 class="portfolio-card-title">Walls of Philly</h3>
+                        <p class="portfolio-card-desc">Short documentary exploring Philadelphia's vibrant mural arts program, featuring interviews with artists and community members.</p>
+                        <div class="portfolio-card-meta">
+                            <span><i class="fas fa-clock"></i> 28 min</span>
+                            <span><i class="fas fa-trophy"></i> Festival Selection</span>
+                        </div>
+                    </div>
+                    <div class="portfolio-card-arrow"><i class="fas fa-arrow-right"></i></div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="portfolio-card reveal" data-category="social">
+                    <div class="portfolio-card-image">
+                        <img src="https://picsum.photos/seed/xlnz-fitness-social/400/220.jpg" alt="Iron Temple Gym">
+                        <span class="portfolio-card-badge">Social Media</span>
+                    </div>
+                    <div class="portfolio-card-body">
+                        <div class="portfolio-card-client">Iron Temple Gym</div>
+                        <h3 class="portfolio-card-title">Iron Temple Content Series</h3>
+                        <p class="portfolio-card-desc">Monthly social media content package including member spotlights, trainer tips, and gym culture reels driving 300% engagement increase.</p>
+                        <div class="portfolio-card-meta">
+                            <span><i class="fas fa-share-alt"></i> 24 Posts</span>
+                            <span><i class="fas fa-chart-line"></i> +300% Engagement</span>
+                        </div>
+                    </div>
+                    <div class="portfolio-card-arrow"><i class="fas fa-arrow-right"></i></div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="portfolio-card reveal" data-category="testimonial">
+                    <div class="portfolio-card-image">
+                        <img src="https://picsum.photos/seed/xlnz-homecare-test/400/220.jpg" alt="Comfort Care Home Services">
+                        <span class="portfolio-card-badge">Testimonial</span>
+                    </div>
+                    <div class="portfolio-card-body">
+                        <div class="portfolio-card-client">Comfort Care Home Services</div>
+                        <h3 class="portfolio-card-title">Client Stories Campaign</h3>
+                        <p class="portfolio-card-desc">Series of heartfelt testimonial videos featuring families sharing their experiences, building trust and driving new client inquiries.</p>
+                        <div class="portfolio-card-meta">
+                            <span><i class="fas fa-users"></i> 8 Testimonials</span>
+                            <span><i class="fas fa-heart"></i> Healthcare</span>
+                        </div>
+                    </div>
+                    <div class="portfolio-card-arrow"><i class="fas fa-arrow-right"></i></div>
+                </div>
+
+                <!-- Project 7 -->
+                <div class="portfolio-card reveal" data-category="podcast">
+                    <div class="portfolio-card-image">
+                        <img src="https://picsum.photos/seed/xlnz-underground-pod/400/220.jpg" alt="Underground Philly">
+                        <span class="portfolio-card-badge">Podcast</span>
+                    </div>
+                    <div class="portfolio-card-body">
+                        <div class="portfolio-card-client">Underground Philly</div>
+                        <h3 class="portfolio-card-title">Underground Philly Podcast</h3>
+                        <p class="portfolio-card-desc">Deep-dive conversations uncovering Philadelphia's hidden gems, underground music scene, and untold neighborhood stories.</p>
+                        <div class="portfolio-card-meta">
+                            <span><i class="fas fa-clock"></i> 8 Episodes</span>
+                            <span><i class="fas fa-headphones"></i> Audio Production</span>
+                        </div>
+                    </div>
+                    <div class="portfolio-card-arrow"><i class="fas fa-arrow-right"></i></div>
+                </div>
+
+                <!-- Project 8 -->
+                <div class="portfolio-card reveal" data-category="commercial">
+                    <div class="portfolio-card-image">
+                        <img src="https://picsum.photos/seed/xlnz-restaurant-ad/400/220.jpg" alt="South Street Eats">
+                        <span class="portfolio-card-badge">Commercial</span>
+                    </div>
+                    <div class="portfolio-card-body">
+                        <div class="portfolio-card-client">South Street Eats</div>
+                        <h3 class="portfolio-card-title">South Street Eats Skit Series</h3>
+                        <p class="portfolio-card-desc">Comedy-driven skit commercials blending humor with appetite appeal, featuring local restaurant characters and Philly food culture.</p>
+                        <div class="portfolio-card-meta">
+                            <span><i class="fas fa-video"></i> 4 Skits</span>
+                            <span><i class="fas fa-laugh"></i> Comedy Series</span>
+                        </div>
+                    </div>
+                    <div class="portfolio-card-arrow"><i class="fas fa-arrow-right"></i></div>
+                </div>
+
+                <!-- Project 9 -->
+                <div class="portfolio-card reveal" data-category="standup">
+                    <div class="portfolio-card-image">
+                        <img src="https://picsum.photos/seed/xlnz-comedy-show/400/220.jpg" alt="XLNZ Comedy Night">
+                        <span class="portfolio-card-badge">Stand-Up</span>
+                    </div>
+                    <div class="portfolio-card-body">
+                        <div class="portfolio-card-client">XLNZ Comedy Night</div>
+                        <h3 class="portfolio-card-title">XLNZ Comedy Night Series</h3>
+                        <p class="portfolio-card-desc">Recurring comedy showcase filming featuring local and touring comedians, with multi-camera setup and professional audio mixing.</p>
+                        <div class="portfolio-card-meta">
+                            <span><i class="fas fa-clock"></i> 6 Shows</span>
+                            <span><i class="fas fa-video"></i> Live Recording</span>
+                        </div>
+                    </div>
+                    <div class="portfolio-card-arrow"><i class="fas fa-arrow-right"></i></div>
+                </div>
+
+                <!-- Project 10 -->
+                <div class="portfolio-card reveal" data-category="social">
+                    <div class="portfolio-card-image">
+                        <img src="https://picsum.photos/seed/xlnz-boutique-social/400/220.jpg" alt="Thread & Needle Boutique">
+                        <span class="portfolio-card-badge">Social Media</span>
+                    </div>
+                    <div class="portfolio-card-body">
+                        <div class="portfolio-card-client">Thread & Needle Boutique</div>
+                        <h3 class="portfolio-card-title">Style Spotlight Series</h3>
+                        <p class="portfolio-card-desc">Fashion-forward social content featuring seasonal collections, behind-the-scenes styling sessions, and customer lookbook features.</p>
+                        <div class="portfolio-card-meta">
+                            <span><i class="fas fa-share-alt"></i> 30+ Posts</span>
+                            <span><i class="fas fa-shopping-bag"></i> Retail</span>
+                        </div>
+                    </div>
+                    <div class="portfolio-card-arrow"><i class="fas fa-arrow-right"></i></div>
+                </div>
+
+                <!-- Project 11 -->
+                <div class="portfolio-card reveal" data-category="documentary">
+                    <div class="portfolio-card-image">
+                        <img src="https://picsum.photos/seed/xlnz-cheesesteak-doc/400/220.jpg" alt="Cheesesteak Chronicles">
+                        <span class="portfolio-card-badge">Documentary</span>
+                    </div>
+                    <div class="portfolio-card-body">
+                        <div class="portfolio-card-client">Independent</div>
+                        <h3 class="portfolio-card-title">Cheesesteak Chronicles</h3>
+                        <p class="portfolio-card-desc">Mouth-watering documentary exploring the history, rivalries, and craftsmanship behind Philadelphia's most iconic sandwich.</p>
+                        <div class="portfolio-card-meta">
+                            <span><i class="fas fa-clock"></i> 45 min</span>
+                            <span><i class="fas fa-trophy"></i> Philly Film Fest</span>
+                        </div>
+                    </div>
+                    <div class="portfolio-card-arrow"><i class="fas fa-arrow-right"></i></div>
+                </div>
+
+                <!-- Project 12 -->
+                <div class="portfolio-card reveal" data-category="testimonial">
+                    <div class="portfolio-card-image">
+                        <img src="https://picsum.photos/seed/xlnz-realty-test/400/220.jpg" alt="Keystone Realty Group">
+                        <span class="portfolio-card-badge">Testimonial</span>
+                    </div>
+                    <div class="portfolio-card-body">
+                        <div class="portfolio-card-client">Keystone Realty Group</div>
+                        <h3 class="portfolio-card-title">Homeowner Stories</h3>
+                        <p class="portfolio-card-desc">Professional testimonial series featuring happy homeowners sharing their journey, building credibility for Philadelphia's top realty team.</p>
+                        <div class="portfolio-card-meta">
+                            <span><i class="fas fa-users"></i> 5 Testimonials</span>
+                            <span><i class="fas fa-home"></i> Real Estate</span>
+                        </div>
+                    </div>
+                    <div class="portfolio-card-arrow"><i class="fas fa-arrow-right"></i></div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Project -->
+    <section class="featured-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-label" style="justify-content: center;">Spotlight</div>
+                <h2>Featured <span class="gradient-text">Project</span></h2>
+                <p>Our most recent and ambitious production</p>
+            </div>
+
+            <div class="featured-grid reveal">
+                <div class="featured-image-wrapper">
+                    <img src="https://picsum.photos/seed/xlnz-featured-philly-food/600/400.jpg" alt="Philly Food Stories Documentary">
+                    <div class="featured-image-overlay"></div>
+                    <div class="featured-play-btn">
+                        <i class="fas fa-play"></i>
                     </div>
                 </div>
-                
-                <div class="portfolio-item" data-category="commercial">
-                    <img src="https://picsum.photos/seed/xlnz-commercial-1/400/300.jpg" alt="Restaurant Commercial">
-                    <div class="portfolio-overlay">
-                        <h3>Restaurant Commercial</h3>
-                        <div class="portfolio-categories">
-                            <span>Commercial</span>
+                <div class="featured-content">
+                    <div class="featured-client">Philadelphia Food Commission</div>
+                    <h3>Philly Food Stories</h3>
+                    <p>A comprehensive exploration of Philadelphia's diverse culinary landscape, featuring interviews with renowned chefs, visits to iconic eateries, and a deep dive into the city's food culture that makes Philly a true food destination.</p>
+                    <p>Our team spent three months capturing the essence of the city's food scene—from bustling Reading Terminal Market to hidden gems tucked into neighborhood corners. The project involved extensive research, multiple location shoots across 15 restaurants, and careful post-production to bring each story to life.</p>
+
+                    <div class="featured-details">
+                        <div class="featured-detail">
+                            <div class="featured-detail-icon"><i class="fas fa-calendar"></i></div>
+                            <div class="featured-detail-text">
+                                <div class="featured-detail-label">Completed</div>
+                                <div class="featured-detail-value">March 2024</div>
+                            </div>
                         </div>
-                        <p>30-second commercial for a local Philadelphia restaurant chain</p>
-                        <a href="#" class="btn">View Project</a>
-                    </div>
-                </div>
-                
-                <div class="portfolio-item" data-category="documentary">
-                    <img src="https://picsum.photos/seed/xlnz-documentary-1/400/300.jpg" alt="City of Murals">
-                    <div class="portfolio-overlay">
-                        <h3>City of Murals</h3>
-                        <div class="portfolio-categories">
-                            <span>Documentary</span>
+                        <div class="featured-detail">
+                            <div class="featured-detail-icon"><i class="fas fa-clock"></i></div>
+                            <div class="featured-detail-text">
+                                <div class="featured-detail-label">Duration</div>
+                                <div class="featured-detail-value">45 minutes</div>
+                            </div>
                         </div>
-                        <p>Short documentary exploring Philadelphia's vibrant street art scene</p>
-                        <a href="#" class="btn">View Project</a>
-                    </div>
-                </div>
-                
-                <div class="portfolio-item" data-category="standup">
-                    <img src="https://picsum.photos/seed/xlnz-standup-1/400/300.jpg" alt="Comedy Sketch Series">
-                    <div class="portfolio-overlay">
-                        <h3>Comedy Sketch Series</h3>
-                        <div class="portfolio-categories">
-                            <span>Stand-Up</span>
+                        <div class="featured-detail">
+                            <div class="featured-detail-icon"><i class="fas fa-video"></i></div>
+                            <div class="featured-detail-text">
+                                <div class="featured-detail-label">Format</div>
+                                <div class="featured-detail-value">4K Documentary</div>
+                            </div>
                         </div>
-                        <p>Series of comedy sketches for a Philadelphia-based comedy troupe</p>
-                        <a href="#" class="btn">View Project</a>
-                    </div>
-                </div>
-                
-                <div class="portfolio-item" data-category="testimonial">
-                    <img src="https://picsum.photos/seed/xlnz-testimonial-1/400/300.jpg" alt="Client Testimonials">
-                    <div class="portfolio-overlay">
-                        <h3>Client Testimonials</h3>
-                        <div class="portfolio-categories">
-                            <span>Testimonial</span>
+                        <div class="featured-detail">
+                            <div class="featured-detail-icon"><i class="fas fa-trophy"></i></div>
+                            <div class="featured-detail-text">
+                                <div class="featured-detail-label">Recognition</div>
+                                <div class="featured-detail-value">Philly Film Fest Selection</div>
+                            </div>
                         </div>
-                        <p>Collection of client testimonials for a local business</p>
-                        <a href="#" class="btn">View Project</a>
                     </div>
-                </div>
-                
-                <div class="portfolio-item" data-category="podcast">
-                    <img src="https://picsum.photos/seed/xlnz-podcast-2/400/300.jpg" alt="Creative Minds Podcast">
-                    <div class="portfolio-overlay">
-                        <h3>Creative Minds Podcast</h3>
-                        <div class="portfolio-categories">
-                            <span>Podcast</span>
-                        </div>
-                        <p>Interviews with artists and creatives from around the Philadelphia area</p>
-                        <a href="#" class="btn">View Project</a>
-                    </div>
-                </div>
-                
-                <div class="portfolio-item" data-category="standup">
-                    <img src="https://picsum.photos/seed/xlnz-standup-2/400/300.jpg" alt="Stand-up Special">
-                    <div class="portfolio-overlay">
-                        <h3>Stand-up Special</h3>
-                        <div class="portfolio-categories">
-                            <span>Stand-Up</span>
-                        </div>
-                        <p>Full-length stand-up comedy special for a touring comedian</p>
-                        <a href="#" class="btn">View Project</a>
-                    </div>
-                </div>
-                
-                <div class="portfolio-item" data-category="commercial">
-                    <img src="https://picsum.photos/seed/xlnz-commercial-2/400/300.jpg" alt="Brand Campaign">
-                    <div class="portfolio-overlay">
-                        <h3>Brand Campaign</h3>
-                        <div class="portfolio-categories">
-                            <span>Commercial</span>
-                        </div>
-                        <p>Multi-platform campaign for a Philadelphia-based fashion brand</p>
-                        <a href="#" class="btn">View Project</a>
-                    </div>
-                </div>
-                
-                <div class="portfolio-item" data-category="documentary">
-                    <img src="https://picsum.photos/seed/xlnz-documentary-2/400/300.jpg" alt="Independent Film">
-                    <div class="portfolio-overlay">
-                        <h3>Independent Film</h3>
-                        <div class="portfolio-categories">
-                            <span>Documentary</span>
-                        </div>
-                        <p>Dramatic film featured in several regional film festivals</p>
-                        <a href="#" class="btn">View Project</a>
-                    </div>
+
+                    <a href="contact.html" class="btn btn-primary"><i class="fas fa-play-circle"></i> Watch Preview</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Featured Project Section -->
-    <section class="featured-project">
+    <!-- CTA Section -->
+    <section class="cta">
         <div class="container">
-            <div class="section-title">
-                <h2>Featured Project</h2>
-                <p>Our most recent and proud production</p>
-            </div>
-            <div class="featured-content">
-                <div class="featured-image">
-                    <img src="https://picsum.photos/seed/xlnz-featured-project/600/400.jpg" alt="Featured Project">
-                </div>
-                <div class="featured-text">
-                    <h3>Philadelphia Food Scene Documentary</h3>
-                    <p>A comprehensive exploration of Philadelphia's diverse culinary landscape, featuring interviews with renowned chefs, visits to iconic eateries, and a deep dive into the city's food culture. This 45-minute documentary showcases the passion and creativity that makes Philadelphia a food destination.</p>
-                    <p>Our team spent three months capturing the essence of the city's food scene, from bustling Reading Terminal Market to hidden gems in neighborhood corners. The project involved extensive research, multiple location shoots, and careful post-production to bring the story to life.</p>
-                    <div class="project-details">
-                        <div><i class="fas fa-calendar"></i> Completed: March 2023</div>
-                        <div><i class="fas fa-clock"></i> Duration: 45 minutes</div>
-                        <div><i class="fas fa-video"></i> Format: 4K Documentary</div>
-                        <div><i class="fas fa-trophy"></i> Awards: Philadelphia Film Festival Official Selection</div>
-                    </div>
-                    <a href="#" class="btn">Watch Preview</a>
+            <div class="cta-content reveal">
+                <div class="section-label" style="justify-content: center;">Start Your Project</div>
+                <h2>Ready to Create Something <span class="gradient-text">Amazing</span>?</h2>
+                <p>Whether you need a podcast, comedy special, commercial, or documentary, we'll bring your vision to life with professional quality and creative excellence.</p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Get a Quote</a>
+                    <a href="packages.html" class="btn btn-secondary"><i class="fas fa-tag"></i> View Packages</a>
                 </div>
             </div>
         </div>
@@ -694,19 +1399,21 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-about">
-                    <a href="index.html" class="footer-logo"><i class="fas fa-film"></i> XLNZ Productions</a>
-                    <p>Founded in 2023 by Buhzz Taylor and Mike Salvi, XLNZ Productions is Philadelphia's premier video production studio, specializing in podcasts, comedy, films, documentaries, and commercial content.</p>
-                    <div class="social-links">
-                        <a href="https://www.instagram.com/xlnzproductions" title="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.youtube.com/@xlnzproductions" title="YouTube"><i class="fab fa-youtube"></i></a>
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <span class="logo-icon"><i class="fas fa-film"></i></span>
+                        XLNZ
+                    </a>
+                    <p>Philadelphia's premier video production studio. Specializing in podcasts, comedy, films, documentaries, and commercial content.</p>
+                    <div class="footer-social">
+                        <a href="https://www.instagram.com/xlnzproductions" title="Instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/@xlnzproductions" title="YouTube" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
-                <div class="footer-links">
-                    <h4>Quick Links</h4>
+                <div class="footer-column">
+                    <h4>Company</h4>
                     <ul>
-                        <li><a href="index.html">Home</a></li>
                         <li><a href="about.html">About Us</a></li>
                         <li><a href="services.html">Services</a></li>
                         <li><a href="portfolio.html">Portfolio</a></li>
@@ -714,68 +1421,134 @@
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
-                <div class="footer-links">
+                <div class="footer-column">
                     <h4>Services</h4>
                     <ul>
                         <li><a href="services.html#podcast">Podcast Production</a></li>
                         <li><a href="services.html#standup">Stand-Up Specials</a></li>
                         <li><a href="services.html#film">Film Production</a></li>
-                        <li><a href="services.html#commercial">Commercial/Skit</a></li>
-                        <li><a href="services.html#social">Social Media for Brands</a></li>
-                        <li><a href="services.html#testimonial">Testimonials</a></li>
+                        <li><a href="services.html#commercial">Commercials/Skits</a></li>
+                        <li><a href="services.html#social">Social Media</a></li>
                     </ul>
                 </div>
-                <div class="footer-links">
-                    <h4>Contact Info</h4>
+                <div class="footer-column">
+                    <h4>Contact</h4>
                     <ul>
-                        <li><a href="mailto:xlnzproductions@gmail.com">xlnzproductions@gmail.com</a></li>
-                        <li><a href="#">Philadelphia, PA</a></li>
+                        <li><a href="mailto:xlnzproductions@gmail.com"><i class="fas fa-envelope" style="margin-right: 8px;"></i> xlnzproductions@gmail.com</a></li>
+                        <li><a href="tel:2155551234"><i class="fas fa-phone" style="margin-right: 8px;"></i> (215) 555-1234</a></li>
+                        <li><a href="#"><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i> Philadelphia, PA</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2023 XLNZ Productions. All rights reserved.</p>
+                <span>XLNZ Productions</span>
+                <span>Philadelphia, PA</span>
             </div>
         </div>
     </footer>
 
     <script>
         // Mobile menu toggle
-        document.getElementById('mobileMenuToggle').addEventListener('click', function() {
-            document.getElementById('nav').classList.toggle('active');
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const mobileMenuClose = document.getElementById('mobileMenuClose');
+        const nav = document.getElementById('nav');
+
+        mobileMenuToggle.addEventListener('click', () => {
+            nav.classList.add('active');
+            document.body.style.overflow = 'hidden';
         });
-        
+
+        mobileMenuClose.addEventListener('click', () => {
+            nav.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('#nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+
+        // Close mobile menu on outside click
+        document.addEventListener('click', (e) => {
+            if (nav.classList.contains('active') &&
+                !nav.contains(e.target) &&
+                !mobileMenuToggle.contains(e.target)) {
+                nav.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+
+        // Header scroll effect
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
         // Portfolio filter functionality
         const filterButtons = document.querySelectorAll('.filter-btn');
-        const portfolioItems = document.querySelectorAll('.portfolio-item');
-        
+        const portfolioCards = document.querySelectorAll('.portfolio-card');
+
         filterButtons.forEach(button => {
             button.addEventListener('click', () => {
-                // Remove active class from all buttons
+                // Update active button
                 filterButtons.forEach(btn => btn.classList.remove('active'));
-                // Add active class to clicked button
                 button.classList.add('active');
-                
+
                 const filterValue = button.getAttribute('data-filter');
-                
-                portfolioItems.forEach(item => {
-                    if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
-                        item.style.display = 'block';
+
+                portfolioCards.forEach(card => {
+                    const category = card.getAttribute('data-category');
+
+                    if (filterValue === 'all' || category === filterValue) {
+                        card.style.display = '';
+                        card.style.opacity = '0';
+                        card.style.transform = 'translateY(20px)';
+                        setTimeout(() => {
+                            card.style.transition = 'all 0.4s ease';
+                            card.style.opacity = '1';
+                            card.style.transform = 'translateY(0)';
+                        }, 50);
                     } else {
-                        item.style.display = 'none';
+                        card.style.transition = 'all 0.3s ease';
+                        card.style.opacity = '0';
+                        card.style.transform = 'scale(0.95)';
+                        setTimeout(() => {
+                            card.style.display = 'none';
+                        }, 300);
                     }
                 });
             });
         });
-        
+
+        // Scroll reveal animation
+        const revealElements = document.querySelectorAll('.reveal');
+
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        revealElements.forEach(el => revealObserver.observe(el));
+
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
-                
                 const targetId = this.getAttribute('href');
                 if (targetId === '#') return;
-                
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
                     window.scrollTo({
@@ -785,16 +1558,7 @@
                 }
             });
         });
-        
-        // Header scroll effect
-        window.addEventListener('scroll', function() {
-            const header = document.getElementById('header');
-            if (window.scrollY > 100) {
-                header.style.backgroundColor = 'rgba(26, 26, 46, 0.95)';
-            } else {
-                header.style.backgroundColor = 'var(--primary)';
-            }
-        });
     </script>
+
 </body>
 </html>
