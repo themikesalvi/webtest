@@ -3,448 +3,883 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Services - XLNZ Productions</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <meta name="description" content="Professional video production services from XLNZ Productions. Podcast production, stand-up specials, film production, commercials, and social media content in Philadelphia.">
+    <meta name="keywords" content="video production services, podcast production, stand-up comedy filming, commercial production, social media video, Philadelphia video production">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="XLNZ Productions">
+    <link rel="canonical" href="https://www.xlnzproductions.com/services">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Our Services - XLNZ Productions">
+    <meta property="og:description" content="Professional video production services including podcasts, stand-up specials, films, commercials, and social media content.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.xlnzproductions.com/services">
+    <meta property="og:image" content="https://www.xlnzproductions.com/images/og-services.jpg">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Our Services - XLNZ Productions">
+    <meta name="twitter:description" content="Professional video production services including podcasts, stand-up specials, films, commercials, and social media content.">
+
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "VideoProductionCompany",
+        "name": "XLNZ Productions",
+        "url": "https://www.xlnzproductions.com",
+        "priceRange": "$400-$3600",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Philadelphia",
+            "addressRegion": "PA",
+            "addressCountry": "US"
+        }
+    }
+    </script>
+
+    <title>Our Services - XLNZ Productions | Philadelphia Video Production</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <style>
         :root {
-            --primary: #1a1a2e;
-            --secondary: #e94560;
-            --accent: #f47068;
-            --light: #f5f5f5;
-            --dark: #0f0f1e;
-            --gray: #6c6c80;
+            --bg-primary: #0a0a0f;
+            --bg-secondary: #12122a;
+            --bg-card: #1a1a2e;
+            --accent: #e94560;
+            --accent-hover: #ff6b35;
+            --accent-gradient: linear-gradient(135deg, #e94560, #ff6b35);
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0b8;
+            --text-muted: #6c6c80;
+            --border: rgba(255, 255, 255, 0.08);
+            --glow: 0 0 40px rgba(233, 69, 96, 0.15);
+            --success: #10b981;
         }
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: 'Open Sans', sans-serif;
-            color: #333;
-            line-height: 1.6;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
             overflow-x: hidden;
         }
-        
+
         h1, h2, h3, h4, h5, h6 {
             font-family: 'Montserrat', sans-serif;
-            font-weight: 600;
-            margin-bottom: 20px;
+            font-weight: 700;
+            line-height: 1.2;
         }
-        
+
         .container {
             width: 100%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 24px;
         }
-        
-        /* Header Styles */
+
+        /* ===== HEADER ===== */
         header {
-            background-color: var(--primary);
-            color: white;
             position: fixed;
-            width: 100%;
             top: 0;
             left: 0;
+            width: 100%;
             z-index: 1000;
-            transition: all 0.3s ease;
+            padding: 20px 0;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            background: transparent;
         }
-        
+
+        header.scrolled {
+            background: rgba(10, 10, 15, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            padding: 12px 0;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+        }
+
         .header-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 0;
         }
-        
+
         .logo {
-            font-size: 28px;
-            font-weight: 700;
-            color: white;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 26px;
+            font-weight: 800;
+            color: var(--text-primary);
             text-decoration: none;
             display: flex;
             align-items: center;
+            gap: 12px;
+            letter-spacing: -0.5px;
         }
-        
-        .logo i {
-            margin-right: 10px;
-            color: var(--secondary);
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--accent-gradient);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
         }
-        
+
         nav ul {
             display: flex;
             list-style: none;
+            gap: 8px;
         }
-        
-        nav ul li {
-            margin-left: 25px;
-        }
-        
+
         nav ul li a {
-            color: white;
+            color: var(--text-secondary);
             text-decoration: none;
             font-weight: 500;
-            transition: color 0.3s ease;
-            font-size: 16px;
+            font-size: 15px;
+            padding: 8px 16px;
+            border-radius: 6px;
+            transition: all 0.3s ease;
         }
-        
-        nav ul li a:hover {
-            color: var(--secondary);
+
+        nav ul li a:hover,
+        nav ul li a.active {
+            color: var(--text-primary);
+            background: rgba(233, 69, 96, 0.1);
         }
-        
+
+        .nav-cta {
+            background: var(--accent-gradient) !important;
+            color: var(--text-primary) !important;
+            font-weight: 600 !important;
+            padding: 10px 24px !important;
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 8px 25px rgba(233, 69, 96, 0.3);
+        }
+
         .mobile-menu-toggle {
             display: none;
             background: none;
             border: none;
-            color: white;
+            color: var(--text-primary);
             font-size: 24px;
             cursor: pointer;
+            padding: 8px;
         }
-        
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(rgba(26, 26, 46, 0.9), rgba(26, 26, 46, 0.9)), url('https://picsum.photos/seed/xlnz-services/1920/1080.jpg') no-repeat center center/cover;
-            height: 60vh;
+
+        /* ===== PAGE HERO ===== */
+        .page-hero {
+            min-height: 60vh;
             display: flex;
             align-items: center;
-            color: white;
-            text-align: center;
+            position: relative;
+            overflow: hidden;
+            padding: 140px 0 80px;
         }
-        
-        .hero-content {
-            max-width: 800px;
+
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(ellipse at 30% 50%, rgba(233, 69, 96, 0.08) 0%, transparent 60%),
+                        radial-gradient(ellipse at 70% 20%, rgba(255, 107, 53, 0.06) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .page-hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(to top, var(--bg-primary), transparent);
+            pointer-events: none;
+        }
+
+        .hero-grid {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image:
+                linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 60px 60px;
+            mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
+            -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
+        }
+
+        .page-hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 700px;
             margin: 0 auto;
         }
-        
-        .hero h1 {
-            font-size: 48px;
+
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--accent);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+        }
+
+        .section-label::before {
+            content: '';
+            width: 30px;
+            height: 2px;
+            background: var(--accent-gradient);
+        }
+
+        .page-hero h1 {
+            font-size: clamp(36px, 6vw, 64px);
+            font-weight: 900;
             margin-bottom: 20px;
-            line-height: 1.2;
+            letter-spacing: -1px;
         }
-        
-        .hero p {
-            font-size: 20px;
-            margin-bottom: 30px;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
+
+        .page-hero h1 .gradient-text {
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
-        
+
+        .page-hero p {
+            font-size: 18px;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 32px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* ===== BUTTONS ===== */
         .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            background-color: var(--secondary);
-            color: white;
-            text-decoration: none;
-            border-radius: 4px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 16px 36px;
+            border-radius: 8px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
             font-size: 16px;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            border: none;
         }
-        
-        .btn:hover {
-            background-color: var(--accent);
+
+        .btn-primary {
+            background: var(--accent-gradient);
+            color: var(--text-primary);
+            box-shadow: 0 4px 15px rgba(233, 69, 96, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(233, 69, 96, 0.4);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-primary);
+            border: 1px solid var(--border);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.2);
             transform: translateY(-2px);
         }
-        
-        .btn-outline {
-            background-color: transparent;
-            border: 2px solid var(--secondary);
-            margin-left: 15px;
+
+        .btn-sm {
+            padding: 12px 24px;
+            font-size: 14px;
         }
-        
-        .btn-outline:hover {
-            background-color: var(--secondary);
-        }
-        
-        /* Services Section */
-        .services {
+
+        /* ===== SERVICES SECTION ===== */
+        .services-section {
             padding: 100px 0;
-            background-color: var(--light);
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 60px;
             position: relative;
         }
-        
-        .section-title h2 {
-            font-size: 40px;
-            color: var(--primary);
-            margin-bottom: 15px;
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 64px;
         }
-        
-        .section-title p {
+
+        .section-header h2 {
+            font-size: clamp(32px, 4vw, 48px);
+            margin-bottom: 16px;
+        }
+
+        .section-header p {
+            color: var(--text-secondary);
             font-size: 18px;
-            max-width: 700px;
+            max-width: 600px;
             margin: 0 auto;
-            color: var(--gray);
         }
-        
+
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
         }
-        
+
         .service-card {
-            background-color: white;
-            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border);
+            border-radius: 16px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
         }
-        
+
         .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+            border-color: rgba(233, 69, 96, 0.3);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
         }
-        
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 50% 0%, rgba(233, 69, 96, 0.05) 0%, transparent 60%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            pointer-events: none;
+        }
+
+        .service-card:hover::before {
+            opacity: 1;
+        }
+
         .service-image {
             height: 200px;
             overflow: hidden;
+            position: relative;
         }
-        
+
         .service-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.5s ease;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        
+
         .service-card:hover .service-image img {
             transform: scale(1.1);
         }
-        
-        .service-content {
-            padding: 30px;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
+
+        .service-image::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            background: linear-gradient(to top, var(--bg-card), transparent);
+            pointer-events: none;
         }
-        
-        .service-content i {
-            font-size: 48px;
-            color: var(--secondary);
-            margin-bottom: 20px;
-        }
-        
-        .service-content h3 {
-            font-size: 24px;
-            color: var(--primary);
-            margin-bottom: 15px;
-        }
-        
-        .service-content p {
-            color: var(--gray);
-            margin-bottom: 20px;
-            flex-grow: 1;
-        }
-        
-        .service-features {
-            list-style: none;
-            margin-bottom: 20px;
-        }
-        
-        .service-features li {
-            padding: 5px 0;
-            font-size: 14px;
-            color: var(--gray);
-        }
-        
-        .service-features li i {
-            color: var(--secondary);
-            margin-right: 8px;
-        }
-        
-        /* Footer */
-        footer {
-            background-color: var(--dark);
-            color: white;
-            padding: 50px 0 20px;
-        }
-        
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 30px;
-        }
-        
-        .footer-logo {
-            font-size: 28px;
-            font-weight: 700;
-            color: white;
-            text-decoration: none;
+
+        .service-icon-wrapper {
+            width: 64px;
+            height: 64px;
+            background: var(--accent-gradient);
+            border-radius: 16px;
             display: flex;
             align-items: center;
-            margin-bottom: 15px;
+            justify-content: center;
+            margin: -32px 0 20px 0;
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 8px 20px rgba(233, 69, 96, 0.3);
         }
-        
-        .footer-logo i {
-            margin-right: 10px;
-            color: var(--secondary);
-        }
-        
-        .footer-about p {
-            margin-bottom: 20px;
-            color: rgba(255, 255, 255, 0.7);
-        }
-        
-        .footer-links h4 {
-            font-size: 18px;
-            margin-bottom: 20px;
+
+        .service-icon-wrapper i {
+            font-size: 28px;
             color: white;
         }
-        
-        .footer-links ul {
+
+        .service-content {
+            padding: 0 32px 32px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-content h3 {
+            font-size: 22px;
+            margin-bottom: 12px;
+            color: var(--text-primary);
+        }
+
+        .service-content > p {
+            color: var(--text-secondary);
+            font-size: 15px;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .service-features {
+            list-style: none;
+            margin-bottom: 24px;
+        }
+
+        .service-features li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 0;
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+
+        .service-features li i {
+            color: var(--accent);
+            font-size: 12px;
+            flex-shrink: 0;
+        }
+
+        /* ===== PROCESS SECTION ===== */
+        .process-section {
+            padding: 100px 0;
+            background: var(--bg-secondary);
+            position: relative;
+        }
+
+        .process-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(ellipse at 50% 50%, rgba(233, 69, 96, 0.05) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 32px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .process-step {
+            text-align: center;
+            position: relative;
+        }
+
+        .process-step-number {
+            width: 72px;
+            height: 72px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 2px solid var(--border);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 28px;
+            font-weight: 900;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            transition: all 0.3s ease;
+        }
+
+        .process-step:hover .process-step-number {
+            border-color: var(--accent);
+            box-shadow: 0 0 30px rgba(233, 69, 96, 0.2);
+        }
+
+        .process-step h3 {
+            font-size: 18px;
+            margin-bottom: 12px;
+        }
+
+        .process-step p {
+            color: var(--text-secondary);
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* ===== CTA SECTION ===== */
+        .cta {
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(233, 69, 96, 0.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .cta-content {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .cta h2 {
+            font-size: clamp(32px, 5vw, 48px);
+            margin-bottom: 20px;
+        }
+
+        .cta p {
+            font-size: 18px;
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--bg-primary);
+            border-top: 1px solid var(--border);
+            padding: 64px 0 32px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 48px;
+            margin-bottom: 48px;
+        }
+
+        .footer-brand .logo {
+            margin-bottom: 16px;
+        }
+
+        .footer-brand p {
+            color: var(--text-secondary);
+            font-size: 15px;
+            margin-bottom: 24px;
+            line-height: 1.7;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 12px;
+        }
+
+        .footer-social a {
+            width: 44px;
+            height: 44px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            font-size: 18px;
+            transition: all 0.3s ease;
+        }
+
+        .footer-social a:hover {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: var(--text-primary);
+            transform: translateY(-3px);
+        }
+
+        .footer-column h4 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .footer-column ul {
             list-style: none;
         }
-        
-        .footer-links ul li {
-            margin-bottom: 10px;
+
+        .footer-column ul li {
+            margin-bottom: 12px;
         }
-        
-        .footer-links ul li a {
-            color: rgba(255, 255, 255, 0.7);
+
+        .footer-column ul li a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .footer-column ul li a:hover {
+            color: var(--accent);
+            transform: translateX(4px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--border);
+            padding-top: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        .footer-bottom a {
+            color: var(--text-secondary);
             text-decoration: none;
             transition: color 0.3s ease;
         }
-        
-        .footer-links ul li a:hover {
-            color: var(--secondary);
+
+        .footer-bottom a:hover {
+            color: var(--accent);
         }
-        
-        .footer-bottom {
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 20px;
-            text-align: center;
-            color: rgba(255, 255, 255, 0.5);
-            font-size: 14px;
+
+        /* ===== SCROLL ANIMATIONS ===== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        
-        /* Responsive Styles */
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .process-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 992px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
         @media (max-width: 768px) {
             .mobile-menu-toggle {
                 display: block;
             }
-            
+
             nav {
                 position: fixed;
-                top: 70px;
+                top: 0;
                 left: 0;
                 width: 100%;
-                background-color: var(--primary);
-                padding: 20px 0;
-                transform: translateY(-100%);
-                opacity: 0;
-                visibility: hidden;
-                transition: all 0.3s ease;
+                height: 100vh;
+                background: rgba(10, 10, 15, 0.98);
+                backdrop-filter: blur(20px);
+                -webkit-backdrop-filter: blur(20px);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transform: translateX(100%);
+                transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                z-index: 999;
             }
-            
+
             nav.active {
-                transform: translateY(0);
-                opacity: 1;
-                visibility: visible;
+                transform: translateX(0);
             }
-            
+
             nav ul {
                 flex-direction: column;
                 align-items: center;
+                gap: 16px;
             }
-            
-            nav ul li {
-                margin: 10px 0;
+
+            nav ul li a {
+                font-size: 24px;
+                padding: 12px 24px;
             }
-            
-            .hero h1 {
-                font-size: 36px;
+
+            .mobile-menu-close {
+                position: absolute;
+                top: 24px;
+                right: 24px;
+                background: none;
+                border: none;
+                color: var(--text-primary);
+                font-size: 28px;
+                cursor: pointer;
+                z-index: 1001;
             }
-            
-            .hero p {
-                font-size: 18px;
+
+            .services-grid {
+                grid-template-columns: 1fr;
+                max-width: 500px;
+                margin-left: auto;
+                margin-right: auto;
             }
-            
-            .section-title h2 {
-                font-size: 32px;
+
+            .process-grid {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: stretch;
             }
         }
-        
+
         @media (max-width: 576px) {
-            .hero h1 {
-                font-size: 28px;
+            .page-hero h1 {
+                font-size: 32px;
             }
-            
-            .hero p {
-                font-size: 16px;
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: stretch;
             }
-            
-            .btn, .btn-outline {
-                display: block;
-                width: 100%;
-                margin-bottom: 15px;
-                margin-left: 0;
+
+            .btn {
+                justify-content: center;
+            }
+
+            .service-content {
+                padding: 0 24px 24px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 12px;
+                text-align: center;
             }
         }
     </style>
 </head>
 <body>
+
     <!-- Header -->
     <header id="header">
         <div class="container header-content">
-            <a href="index.html" class="logo"><i class="fas fa-film"></i> XLNZ Productions</a>
-            <button class="mobile-menu-toggle" id="mobileMenuToggle">
+            <a href="index.html" class="logo">
+                <span class="logo-icon"><i class="fas fa-film"></i></span>
+                XLNZ
+            </a>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Open menu">
                 <i class="fas fa-bars"></i>
             </button>
             <nav id="nav">
+                <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">
+                    <i class="fas fa-times"></i>
+                </button>
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
-                    <li><a href="services.html">Services</a></li>
+                    <li><a href="services.html" class="active">Services</a></li>
                     <li><a href="portfolio.html">Portfolio</a></li>
                     <li><a href="packages.html">Packages</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="contact.html" class="nav-cta">Get a Quote</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container hero-content">
-            <h1>Our Services</h1>
-            <p>Comprehensive production solutions for all your creative needs</p>
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="hero-grid"></div>
+        <div class="container page-hero-content">
+            <div class="section-label">What We Do</div>
+            <h1>Production <span class="gradient-text">Services</span></h1>
+            <p>From concept to final delivery, we provide professional video production services tailored to your creative vision and budget.</p>
             <div class="hero-buttons">
-                <a href="packages.html" class="btn">View Packages</a>
-                <a href="contact.html" class="btn btn-outline">Get Quote</a>
+                <a href="#services" class="btn btn-primary"><i class="fas fa-arrow-down"></i> Explore Services</a>
+                <a href="contact.html" class="btn btn-secondary"><i class="fas fa-envelope"></i> Get a Quote</a>
             </div>
         </div>
     </section>
 
     <!-- Services Section -->
-    <section class="services" id="services">
+    <section class="services-section" id="services">
         <div class="container">
-            <div class="section-title">
-                <h2>What We Offer</h2>
+            <div class="section-header reveal">
+                <div class="section-label" style="justify-content: center;">Our Services</div>
+                <h2>What We <span class="gradient-text">Offer</span></h2>
                 <p>Professional production services tailored to your specific needs</p>
             </div>
+
             <div class="services-grid">
-                <div class="service-card" id="podcast">
+                <!-- Podcast Production -->
+                <div class="service-card reveal" id="podcast">
                     <div class="service-image">
                         <img src="https://picsum.photos/seed/xlnz-podcast-service/400/200.jpg" alt="Podcast Production">
                     </div>
                     <div class="service-content">
-                        <i class="fas fa-microphone"></i>
+                        <div class="service-icon-wrapper">
+                            <i class="fas fa-podcast"></i>
+                        </div>
                         <h3>Podcast Production</h3>
                         <p>Professional podcast recording, editing, and distribution services to help you share your voice with the world.</p>
                         <ul class="service-features">
@@ -454,18 +889,21 @@
                             <li><i class="fas fa-check"></i> Sound design</li>
                             <li><i class="fas fa-check"></i> Distribution assistance</li>
                         </ul>
-                        <a href="packages.html" class="btn">View Packages</a>
+                        <a href="packages.html" class="btn btn-primary btn-sm"><i class="fas fa-tag"></i> View Packages</a>
                     </div>
                 </div>
-                
-                <div class="service-card" id="standup">
+
+                <!-- Stand-Up Specials -->
+                <div class="service-card reveal" id="standup">
                     <div class="service-image">
                         <img src="https://picsum.photos/seed/xlnz-standup-service/400/200.jpg" alt="Stand-Up Specials">
                     </div>
                     <div class="service-content">
-                        <i class="fas fa-laugh"></i>
+                        <div class="service-icon-wrapper">
+                            <i class="fas fa-microphone-alt"></i>
+                        </div>
                         <h3>Stand-Up Specials</h3>
-                        <p>From comedy skits to stand-up specials, we help comedians capture and deliver their unique brand of humor.</p>
+                        <p>Multi-camera comedy production that captures every punchline and audience reaction with cinematic quality.</p>
                         <ul class="service-features">
                             <li><i class="fas fa-check"></i> Multi-camera setup</li>
                             <li><i class="fas fa-check"></i> Professional audio</li>
@@ -473,16 +911,19 @@
                             <li><i class="fas fa-check"></i> Color correction</li>
                             <li><i class="fas fa-check"></i> Audience capture</li>
                         </ul>
-                        <a href="packages.html" class="btn">View Packages</a>
+                        <a href="packages.html" class="btn btn-primary btn-sm"><i class="fas fa-tag"></i> View Packages</a>
                     </div>
                 </div>
-                
-                <div class="service-card" id="film">
+
+                <!-- Film Production -->
+                <div class="service-card reveal" id="film">
                     <div class="service-image">
                         <img src="https://picsum.photos/seed/xlnz-film-service/400/200.jpg" alt="Film Production">
                     </div>
                     <div class="service-content">
-                        <i class="fas fa-video"></i>
+                        <div class="service-icon-wrapper">
+                            <i class="fas fa-video"></i>
+                        </div>
                         <h3>Film Production</h3>
                         <p>Full-service film production from pre-production planning to post-production and final delivery.</p>
                         <ul class="service-features">
@@ -492,18 +933,21 @@
                             <li><i class="fas fa-check"></i> Post-production</li>
                             <li><i class="fas fa-check"></i> Distribution support</li>
                         </ul>
-                        <a href="packages.html" class="btn">View Packages</a>
+                        <a href="contact.html" class="btn btn-primary btn-sm"><i class="fas fa-envelope"></i> Get Quote</a>
                     </div>
                 </div>
-                
-                <div class="service-card" id="commercial">
+
+                <!-- Commercials/Skits -->
+                <div class="service-card reveal" id="commercial">
                     <div class="service-image">
-                        <img src="https://picsum.photos/seed/xlnz-commercial-service/400/200.jpg" alt="Commercial/Skit">
+                        <img src="https://picsum.photos/seed/xlnz-commercial-service/400/200.jpg" alt="Commercials/Skits">
                     </div>
                     <div class="service-content">
-                        <i class="fas fa-bullhorn"></i>
-                        <h3>Commercial/Skit</h3>
-                        <p>Compelling commercial content that captures attention and drives results for your business.</p>
+                        <div class="service-icon-wrapper">
+                            <i class="fas fa-bullhorn"></i>
+                        </div>
+                        <h3>Commercials/Skits</h3>
+                        <p>Compelling commercial and skit content that captures attention and drives results for your business.</p>
                         <ul class="service-features">
                             <li><i class="fas fa-check"></i> Concept development</li>
                             <li><i class="fas fa-check"></i> Script writing</li>
@@ -511,17 +955,20 @@
                             <li><i class="fas fa-check"></i> Advanced editing</li>
                             <li><i class="fas fa-check"></i> Platform optimization</li>
                         </ul>
-                        <a href="packages.html" class="btn">View Packages</a>
+                        <a href="packages.html" class="btn btn-primary btn-sm"><i class="fas fa-tag"></i> View Packages</a>
                     </div>
                 </div>
-                
-                <div class="service-card" id="social">
+
+                <!-- Social Media -->
+                <div class="service-card reveal" id="social">
                     <div class="service-image">
-                        <img src="https://picsum.photos/seed/xlnz-social-service/400/200.jpg" alt="Social Media for Brands">
+                        <img src="https://picsum.photos/seed/xlnz-social-service/400/200.jpg" alt="Social Media Content">
                     </div>
                     <div class="service-content">
-                        <i class="fas fa-share-alt"></i>
-                        <h3>Social Media for Brands</h3>
+                        <div class="service-icon-wrapper">
+                            <i class="fas fa-hashtag"></i>
+                        </div>
+                        <h3>Social Media Content</h3>
                         <p>Engaging social media content that builds brand awareness and drives engagement across platforms.</p>
                         <ul class="service-features">
                             <li><i class="fas fa-check"></i> B-roll footage</li>
@@ -530,18 +977,21 @@
                             <li><i class="fas fa-check"></i> Social media optimization</li>
                             <li><i class="fas fa-check"></i> Analytics reports</li>
                         </ul>
-                        <a href="packages.html" class="btn">View Packages</a>
+                        <a href="packages.html" class="btn btn-primary btn-sm"><i class="fas fa-tag"></i> View Packages</a>
                     </div>
                 </div>
-                
-                <div class="service-card" id="testimonial">
+
+                <!-- Testimonials -->
+                <div class="service-card reveal" id="testimonial">
                     <div class="service-image">
-                        <img src="https://picsum.photos/seed/xlnz-testimonial-service/400/200.jpg" alt="Testimonials">
+                        <img src="https://picsum.photos/seed/xlnz-testimonial-service/400/200.jpg" alt="Testimonial Videos">
                     </div>
                     <div class="service-content">
-                        <i class="fas fa-users"></i>
+                        <div class="service-icon-wrapper">
+                            <i class="fas fa-users"></i>
+                        </div>
                         <h3>Testimonials</h3>
-                        <p>Professional testimonial videos that showcase your clients' experiences and build trust.</p>
+                        <p>Professional testimonial videos that showcase your clients' experiences and build trust with potential customers.</p>
                         <ul class="service-features">
                             <li><i class="fas fa-check"></i> Client interviews</li>
                             <li><i class="fas fa-check"></i> Professional filming</li>
@@ -549,8 +999,60 @@
                             <li><i class="fas fa-check"></i> Multiple versions</li>
                             <li><i class="fas fa-check"></i> Platform optimization</li>
                         </ul>
-                        <a href="packages.html" class="btn">View Packages</a>
+                        <a href="contact.html" class="btn btn-primary btn-sm"><i class="fas fa-envelope"></i> Get Quote</a>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-label" style="justify-content: center;">How It Works</div>
+                <h2>Our <span class="gradient-text">Process</span></h2>
+                <p>From concept to delivery, we make production simple and stress-free</p>
+            </div>
+
+            <div class="process-grid">
+                <div class="process-step reveal">
+                    <div class="process-step-number">01</div>
+                    <h3>Consultation</h3>
+                    <p>We discuss your vision, goals, and budget to create a tailored production plan.</p>
+                </div>
+
+                <div class="process-step reveal">
+                    <div class="process-step-number">02</div>
+                    <h3>Pre-Production</h3>
+                    <p>Scripting, storyboarding, location scouting, and all the planning needed for a smooth shoot.</p>
+                </div>
+
+                <div class="process-step reveal">
+                    <div class="process-step-number">03</div>
+                    <h3>Production</h3>
+                    <p>Our professional crew captures your content with industry-leading equipment and techniques.</p>
+                </div>
+
+                <div class="process-step reveal">
+                    <div class="process-step-number">04</div>
+                    <h3>Post-Production</h3>
+                    <p>Editing, color grading, sound mixing, and final delivery in your preferred formats.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content reveal">
+                <div class="section-label" style="justify-content: center;">Ready to Start?</div>
+                <h2>Let's Bring Your <span class="gradient-text">Vision to Life</span></h2>
+                <p>Whether you need a podcast, comedy special, commercial, or social media content, we're here to help make it happen.</p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Get a Quote</a>
+                    <a href="packages.html" class="btn btn-secondary"><i class="fas fa-tag"></i> View Packages</a>
                 </div>
             </div>
         </div>
@@ -559,19 +1061,21 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-about">
-                    <a href="index.html" class="footer-logo"><i class="fas fa-film"></i> XLNZ Productions</a>
-                    <p>Founded in 2023 by Buhzz Taylor and Mike Salvi, XLNZ Productions is Philadelphia's premier video production studio, specializing in podcasts, comedy, films, documentaries, and commercial content.</p>
-                    <div class="social-links">
-                        <a href="https://www.instagram.com/xlnzproductions" title="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.youtube.com/@xlnzproductions" title="YouTube"><i class="fab fa-youtube"></i></a>
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <span class="logo-icon"><i class="fas fa-film"></i></span>
+                        XLNZ
+                    </a>
+                    <p>Philadelphia's premier video production studio. Specializing in podcasts, comedy, films, documentaries, and commercial content.</p>
+                    <div class="footer-social">
+                        <a href="https://www.instagram.com/xlnzproductions" title="Instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/@xlnzproductions" title="YouTube" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
-                <div class="footer-links">
-                    <h4>Quick Links</h4>
+                <div class="footer-column">
+                    <h4>Company</h4>
                     <ul>
-                        <li><a href="index.html">Home</a></li>
                         <li><a href="about.html">About Us</a></li>
                         <li><a href="services.html">Services</a></li>
                         <li><a href="portfolio.html">Portfolio</a></li>
@@ -579,45 +1083,98 @@
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
-                <div class="footer-links">
+                <div class="footer-column">
                     <h4>Services</h4>
                     <ul>
-                        <li><a href="#podcast">Podcast Production</a></li>
-                        <li><a href="#standup">Stand-Up Specials</a></li>
-                        <li><a href="#film">Film Production</a></li>
-                        <li><a href="#commercial">Commercial/Skit</a></li>
-                        <li><a href="#social">Social Media for Brands</a></li>
-                        <li><a href="#testimonial">Testimonials</a></li>
+                        <li><a href="services.html#podcast">Podcast Production</a></li>
+                        <li><a href="services.html#standup">Stand-Up Specials</a></li>
+                        <li><a href="services.html#film">Film Production</a></li>
+                        <li><a href="services.html#commercial">Commercials/Skits</a></li>
+                        <li><a href="services.html#social">Social Media</a></li>
                     </ul>
                 </div>
-                <div class="footer-links">
-                    <h4>Contact Info</h4>
+                <div class="footer-column">
+                    <h4>Contact</h4>
                     <ul>
-                        <li><a href="mailto:xlnzproductions@gmail.com">xlnzproductions@gmail.com</a></li>
-                        <li><a href="#">Philadelphia, PA</a></li>
+                        <li><a href="mailto:xlnzproductions@gmail.com"><i class="fas fa-envelope" style="margin-right: 8px;"></i> xlnzproductions@gmail.com</a></li>
+                        <li><a href="tel:2155551234"><i class="fas fa-phone" style="margin-right: 8px;"></i> (215) 555-1234</a></li>
+                        <li><a href="#"><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i> Philadelphia, PA</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2023 XLNZ Productions. All rights reserved.</p>
+                <span>XLNZ Productions</span>
+                <span>Philadelphia, PA</span>
             </div>
         </div>
     </footer>
 
     <script>
         // Mobile menu toggle
-        document.getElementById('mobileMenuToggle').addEventListener('click', function() {
-            document.getElementById('nav').classList.toggle('active');
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const mobileMenuClose = document.getElementById('mobileMenuClose');
+        const nav = document.getElementById('nav');
+
+        mobileMenuToggle.addEventListener('click', () => {
+            nav.classList.add('active');
+            document.body.style.overflow = 'hidden';
         });
-        
+
+        mobileMenuClose.addEventListener('click', () => {
+            nav.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('#nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+
+        // Close mobile menu on outside click
+        document.addEventListener('click', (e) => {
+            if (nav.classList.contains('active') &&
+                !nav.contains(e.target) &&
+                !mobileMenuToggle.contains(e.target)) {
+                nav.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+
+        // Header scroll effect
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Scroll reveal animation
+        const revealElements = document.querySelectorAll('.reveal');
+
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        revealElements.forEach(el => revealObserver.observe(el));
+
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
-                
                 const targetId = this.getAttribute('href');
                 if (targetId === '#') return;
-                
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
                     window.scrollTo({
@@ -627,16 +1184,7 @@
                 }
             });
         });
-        
-        // Header scroll effect
-        window.addEventListener('scroll', function() {
-            const header = document.getElementById('header');
-            if (window.scrollY > 100) {
-                header.style.backgroundColor = 'rgba(26, 26, 46, 0.95)';
-            } else {
-                header.style.backgroundColor = 'var(--primary)';
-            }
-        });
     </script>
+
 </body>
 </html>
