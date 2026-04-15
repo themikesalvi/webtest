@@ -3,676 +3,1244 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - XLNZ Productions</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <meta name="description" content="Contact XLNZ Productions - Philadelphia's premier video production studio. Get a free quote for your podcast, film, commercial, or social media project.">
+    <meta name="keywords" content="contact video production Philadelphia, video production quote, podcast production inquiry, film production consultation">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="XLNZ Productions">
+    <link rel="canonical" href="https://www.xlnzproductions.com/contact">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Contact Us - XLNZ Productions">
+    <meta property="og:description" content="Get in touch with Philadelphia's premier video production studio to discuss your next project.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.xlnzproductions.com/contact">
+    <meta property="og:image" content="https://www.xlnzproductions.com/images/og-image.jpg">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Contact Us - XLNZ Productions">
+    <meta name="twitter:description" content="Get in touch with Philadelphia's premier video production studio to discuss your next project.">
+    <meta name="twitter:image" content="https://www.xlnzproductions.com/images/og-image.jpg">
+
+    <!-- Schema.org ContactPage Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ContactPage",
+        "mainEntity": {
+            "@type": "VideoProductionCompany",
+            "name": "XLNZ Productions",
+            "email": "xlnzproductions@gmail.com",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Philadelphia",
+                "addressRegion": "PA",
+                "addressCountry": "US"
+            }
+        }
+    }
+    </script>
+
+    <title>Contact Us - XLNZ Productions | Philadelphia Video Production</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <style>
         :root {
-            --primary: #1a1a2e;
-            --secondary: #e94560;
-            --accent: #f47068;
-            --light: #f5f5f5;
-            --dark: #0f0f1e;
-            --gray: #6c6c80;
+            --bg-primary: #0a0a0f;
+            --bg-secondary: #12122a;
+            --bg-card: #1a1a2e;
+            --accent: #e94560;
+            --accent-hover: #ff6b35;
+            --accent-gradient: linear-gradient(135deg, #e94560, #ff6b35);
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0b8;
+            --text-muted: #6c6c80;
+            --border: rgba(255, 255, 255, 0.08);
+            --glow: 0 0 40px rgba(233, 69, 96, 0.15);
+            --success: #10b981;
+            --error: #ef4444;
         }
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: 'Open Sans', sans-serif;
-            color: #333;
-            line-height: 1.6;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
             overflow-x: hidden;
         }
-        
+
         h1, h2, h3, h4, h5, h6 {
             font-family: 'Montserrat', sans-serif;
-            font-weight: 600;
-            margin-bottom: 20px;
+            font-weight: 700;
+            line-height: 1.2;
         }
-        
+
         .container {
             width: 100%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 24px;
         }
-        
-        /* Header Styles */
+
+        /* ===== HEADER ===== */
         header {
-            background-color: var(--primary);
-            color: white;
             position: fixed;
-            width: 100%;
             top: 0;
             left: 0;
+            width: 100%;
             z-index: 1000;
-            transition: all 0.3s ease;
+            padding: 20px 0;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            background: transparent;
         }
-        
+
+        header.scrolled {
+            background: rgba(10, 10, 15, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            padding: 12px 0;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+        }
+
         .header-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 0;
         }
-        
+
         .logo {
-            font-size: 28px;
-            font-weight: 700;
-            color: white;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 26px;
+            font-weight: 800;
+            color: var(--text-primary);
             text-decoration: none;
             display: flex;
             align-items: center;
+            gap: 12px;
+            letter-spacing: -0.5px;
         }
-        
-        .logo i {
-            margin-right: 10px;
-            color: var(--secondary);
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--accent-gradient);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
         }
-        
+
         nav ul {
             display: flex;
             list-style: none;
+            gap: 8px;
         }
-        
-        nav ul li {
-            margin-left: 25px;
-        }
-        
+
         nav ul li a {
-            color: white;
+            color: var(--text-secondary);
             text-decoration: none;
             font-weight: 500;
-            transition: color 0.3s ease;
-            font-size: 16px;
+            font-size: 15px;
+            padding: 8px 16px;
+            border-radius: 6px;
+            transition: all 0.3s ease;
         }
-        
-        nav ul li a:hover {
-            color: var(--secondary);
+
+        nav ul li a:hover,
+        nav ul li a.active {
+            color: var(--text-primary);
+            background: rgba(233, 69, 96, 0.1);
         }
-        
+
+        .nav-cta {
+            background: var(--accent-gradient) !important;
+            color: var(--text-primary) !important;
+            font-weight: 600 !important;
+            padding: 10px 24px !important;
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 8px 25px rgba(233, 69, 96, 0.3);
+        }
+
         .mobile-menu-toggle {
             display: none;
             background: none;
             border: none;
-            color: white;
+            color: var(--text-primary);
             font-size: 24px;
             cursor: pointer;
+            padding: 8px;
         }
-        
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(rgba(26, 26, 46, 0.9), rgba(26, 26, 46, 0.9)), url('https://picsum.photos/seed/xlnz-contact/1920/1080.jpg') no-repeat center center/cover;
-            height: 60vh;
+
+        /* ===== PAGE HERO ===== */
+        .page-hero {
+            min-height: 50vh;
             display: flex;
             align-items: center;
-            color: white;
-            text-align: center;
+            position: relative;
+            overflow: hidden;
+            padding: 140px 0 80px;
         }
-        
-        .hero-content {
-            max-width: 800px;
+
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(ellipse at 30% 50%, rgba(233, 69, 96, 0.08) 0%, transparent 60%),
+                        radial-gradient(ellipse at 70% 20%, rgba(255, 107, 53, 0.06) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .page-hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(to top, var(--bg-primary), transparent);
+            pointer-events: none;
+        }
+
+        .hero-grid {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image:
+                linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 60px 60px;
+            mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
+            -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
+        }
+
+        .page-hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 700px;
             margin: 0 auto;
         }
-        
-        .hero h1 {
-            font-size: 48px;
+
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--accent);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+        }
+
+        .section-label::before {
+            content: '';
+            width: 30px;
+            height: 2px;
+            background: var(--accent-gradient);
+        }
+
+        .page-hero h1 {
+            font-size: clamp(36px, 6vw, 64px);
+            font-weight: 900;
             margin-bottom: 20px;
-            line-height: 1.2;
+            letter-spacing: -1px;
         }
-        
-        .hero p {
-            font-size: 20px;
-            margin-bottom: 30px;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
+
+        .page-hero h1 .gradient-text {
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
-        
+
+        .page-hero p {
+            font-size: 18px;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 32px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* ===== BUTTONS ===== */
         .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            background-color: var(--secondary);
-            color: white;
-            text-decoration: none;
-            border-radius: 4px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 16px 36px;
+            border-radius: 8px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
             font-size: 16px;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            border: none;
         }
-        
-        .btn:hover {
-            background-color: var(--accent);
+
+        .btn-primary {
+            background: var(--accent-gradient);
+            color: var(--text-primary);
+            box-shadow: 0 4px 15px rgba(233, 69, 96, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(233, 69, 96, 0.4);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-primary);
+            border: 1px solid var(--border);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.2);
             transform: translateY(-2px);
         }
-        
-        .btn-outline {
-            background-color: transparent;
-            border: 2px solid var(--secondary);
-            margin-left: 15px;
-        }
-        
-        .btn-outline:hover {
-            background-color: var(--secondary);
-        }
-        
-        /* Contact Section */
-        .contact {
+
+        /* ===== CONTACT SECTION ===== */
+        .contact-section {
             padding: 100px 0;
-            background-color: var(--light);
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 60px;
             position: relative;
         }
-        
-        .section-title h2 {
-            font-size: 40px;
-            color: var(--primary);
-            margin-bottom: 15px;
-        }
-        
-        .section-title p {
-            font-size: 18px;
-            max-width: 700px;
-            margin: 0 auto;
-            color: var(--gray);
-        }
-        
-        .contact-container {
+
+        .contact-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            margin-bottom: 60px;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 48px;
+            align-items: start;
         }
-        
-        .contact-form {
-            background-color: white;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+
+        /* ===== FORM ===== */
+        .contact-form-wrapper {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 48px;
+            position: relative;
+            overflow: hidden;
         }
-        
-        .contact-form h3 {
+
+        .contact-form-wrapper::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--accent-gradient);
+        }
+
+        .form-header {
+            margin-bottom: 36px;
+        }
+
+        .form-header h2 {
             font-size: 28px;
-            color: var(--primary);
-            margin-bottom: 30px;
+            margin-bottom: 8px;
         }
-        
+
+        .form-header p {
+            color: var(--text-secondary);
+            font-size: 15px;
+        }
+
         .form-group {
-            margin-bottom: 25px;
+            margin-bottom: 24px;
         }
-        
+
         .form-group label {
             display: block;
             margin-bottom: 8px;
             font-weight: 600;
-            color: var(--primary);
+            font-size: 14px;
+            color: var(--text-secondary);
+            letter-spacing: 0.3px;
         }
-        
-        .form-group input,
-        .form-group textarea,
-        .form-group select {
+
+        .form-group label .required {
+            color: var(--accent);
+        }
+
+        .form-input {
             width: 100%;
-            padding: 12px 15px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-size: 16px;
-            transition: border-color 0.3s ease;
+            padding: 14px 18px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            font-size: 15px;
+            color: var(--text-primary);
+            transition: all 0.3s ease;
         }
-        
-        .form-group input:focus,
-        .form-group textarea:focus,
-        .form-group select:focus {
+
+        .form-input:focus {
             outline: none;
-            border-color: var(--secondary);
+            border-color: var(--accent);
+            background: rgba(233, 69, 96, 0.05);
+            box-shadow: 0 0 0 3px rgba(233, 69, 96, 0.1);
         }
-        
-        .form-group textarea {
+
+        .form-input::placeholder {
+            color: var(--text-muted);
+        }
+
+        .form-input:hover {
+            border-color: rgba(255, 255, 255, 0.15);
+        }
+
+        select.form-input {
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23a0a0b8' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10l-5 5z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 16px center;
+            padding-right: 40px;
+        }
+
+        select.form-input option {
+            background: var(--bg-card);
+            color: var(--text-primary);
+        }
+
+        textarea.form-input {
             resize: vertical;
-            min-height: 120px;
+            min-height: 140px;
         }
-        
+
         .form-row {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 20px;
         }
-        
-        .contact-info {
-            background-color: white;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-            height: fit-content;
+
+        .form-submit {
+            margin-top: 8px;
         }
-        
-        .contact-info h3 {
-            font-size: 28px;
-            color: var(--primary);
-            margin-bottom: 30px;
+
+        .form-submit .btn {
+            width: 100%;
+            padding: 18px;
+            font-size: 16px;
         }
-        
-        .contact-item {
+
+        /* Form Success Message */
+        .form-success {
+            display: none;
+            text-align: center;
+            padding: 48px 24px;
+        }
+
+        .form-success.active {
+            display: block;
+        }
+
+        .form-success-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(16, 185, 129, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+        }
+
+        .form-success-icon i {
+            font-size: 36px;
+            color: var(--success);
+        }
+
+        .form-success h3 {
+            font-size: 24px;
+            margin-bottom: 12px;
+        }
+
+        .form-success p {
+            color: var(--text-secondary);
+            margin-bottom: 24px;
+        }
+
+        /* ===== CONTACT INFO ===== */
+        .contact-info-wrapper {
+            position: sticky;
+            top: 100px;
+        }
+
+        .info-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 36px;
+            margin-bottom: 24px;
+        }
+
+        .info-card h3 {
+            font-size: 22px;
+            margin-bottom: 28px;
+        }
+
+        .info-item {
             display: flex;
             align-items: flex-start;
-            margin-bottom: 30px;
+            gap: 16px;
+            margin-bottom: 24px;
         }
-        
-        .contact-item i {
-            font-size: 24px;
-            color: var(--secondary);
-            margin-right: 15px;
-            margin-top: 3px;
+
+        .info-item:last-child {
+            margin-bottom: 0;
         }
-        
-        .contact-item-content h4 {
+
+        .info-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(233, 69, 96, 0.1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .info-icon i {
             font-size: 18px;
-            color: var(--primary);
-            margin-bottom: 5px;
+            color: var(--accent);
         }
-        
-        .contact-item-content p {
-            color: var(--gray);
+
+        .info-content h4 {
+            font-size: 16px;
+            margin-bottom: 4px;
         }
-        
-        .contact-item-content a {
-            color: var(--gray);
+
+        .info-content p,
+        .info-content a {
+            color: var(--text-secondary);
+            font-size: 15px;
             text-decoration: none;
             transition: color 0.3s ease;
+            line-height: 1.6;
         }
-        
-        .contact-item-content a:hover {
-            color: var(--secondary);
+
+        .info-content a:hover {
+            color: var(--accent);
         }
-        
-        .social-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 30px;
+
+        /* Social Links Card */
+        .social-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 36px;
         }
-        
-        .social-links a {
+
+        .social-card h3 {
+            font-size: 22px;
+            margin-bottom: 20px;
+        }
+
+        .social-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .social-link {
             display: flex;
             align-items: center;
-            justify-content: center;
-            width: 50px;
-            height: 50px;
-            background-color: var(--light);
-            color: var(--secondary);
-            border-radius: 50%;
+            gap: 12px;
+            padding: 14px 16px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
             transition: all 0.3s ease;
-            font-size: 20px;
         }
-        
-        .social-links a:hover {
-            background-color: var(--secondary);
-            color: white;
-            transform: translateY(-3px);
+
+        .social-link:hover {
+            background: rgba(233, 69, 96, 0.1);
+            border-color: rgba(233, 69, 96, 0.3);
+            color: var(--text-primary);
+            transform: translateY(-2px);
         }
-        
-        /* Map Section */
+
+        .social-link i {
+            font-size: 18px;
+            width: 20px;
+            text-align: center;
+        }
+
+        /* ===== MAP SECTION ===== */
         .map-section {
-            margin-bottom: 60px;
+            padding: 0 0 100px;
         }
-        
-        .map-container {
-            height: 400px;
-            border-radius: 12px;
+
+        .map-wrapper {
+            border-radius: 16px;
             overflow: hidden;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid var(--border);
+            position: relative;
         }
-        
+
         .map-placeholder {
             width: 100%;
-            height: 100%;
-            background: url('https://picsum.photos/seed/xlnz-map/1200/400.jpg') no-repeat center center/cover;
+            height: 400px;
+            background: linear-gradient(135deg, var(--bg-secondary), var(--bg-card));
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .map-placeholder::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image:
+                linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        .map-content {
+            position: relative;
+            z-index: 1;
             text-align: center;
-            background-color: var(--primary);
         }
-        
-        .map-placeholder h3 {
-            font-size: 32px;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+
+        .map-icon {
+            width: 64px;
+            height: 64px;
+            background: var(--accent-gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            box-shadow: 0 8px 30px rgba(233, 69, 96, 0.3);
         }
-        
-        /* FAQ Section */
+
+        .map-icon i {
+            font-size: 24px;
+        }
+
+        .map-content h3 {
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+
+        .map-content p {
+            color: var(--text-secondary);
+            margin-bottom: 24px;
+        }
+
+        .map-content .btn {
+            font-size: 14px;
+            padding: 12px 28px;
+        }
+
+        /* ===== FAQ SECTION ===== */
         .faq-section {
-            padding: 60px 0;
-            background-color: white;
+            padding: 100px 0;
+            background: var(--bg-secondary);
+            position: relative;
         }
-        
+
+        .faq-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(ellipse at 50% 0%, rgba(233, 69, 96, 0.05) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 64px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-header h2 {
+            font-size: clamp(32px, 4vw, 48px);
+            margin-bottom: 16px;
+        }
+
+        .section-header p {
+            color: var(--text-secondary);
+            font-size: 18px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
         .faq-container {
             max-width: 800px;
             margin: 0 auto;
+            position: relative;
+            z-index: 1;
         }
-        
+
         .faq-item {
-            margin-bottom: 20px;
-            border: 1px solid #eee;
-            border-radius: 8px;
+            margin-bottom: 16px;
+            border: 1px solid var(--border);
+            border-radius: 12px;
             overflow: hidden;
+            transition: all 0.3s ease;
         }
-        
+
+        .faq-item:hover {
+            border-color: rgba(233, 69, 96, 0.2);
+        }
+
+        .faq-item.active {
+            border-color: rgba(233, 69, 96, 0.3);
+            background: rgba(233, 69, 96, 0.03);
+        }
+
         .faq-question {
-            padding: 20px;
-            background-color: var(--light);
+            padding: 24px;
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            gap: 16px;
             transition: background-color 0.3s ease;
         }
-        
+
         .faq-question:hover {
-            background-color: rgba(233, 69, 96, 0.1);
+            background: rgba(255, 255, 255, 0.02);
         }
-        
+
         .faq-question h3 {
+            font-size: 17px;
+            font-weight: 600;
             margin: 0;
-            font-size: 18px;
-            color: var(--primary);
         }
-        
-        .faq-question i {
-            color: var(--secondary);
-            transition: transform 0.3s ease;
-        }
-        
-        .faq-item.active .faq-question i {
-            transform: rotate(180deg);
-        }
-        
-        .faq-answer {
-            padding: 0 20px;
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease, padding 0.3s ease;
-        }
-        
-        .faq-item.active .faq-answer {
-            padding: 20px;
-            max-height: 500px;
-        }
-        
-        /* Footer */
-        footer {
-            background-color: var(--dark);
-            color: white;
-            padding: 50px 0 20px;
-        }
-        
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 30px;
-        }
-        
-        .footer-logo {
-            font-size: 28px;
-            font-weight: 700;
-            color: white;
-            text-decoration: none;
+
+        .faq-toggle {
+            width: 32px;
+            height: 32px;
+            background: rgba(233, 69, 96, 0.1);
+            border-radius: 8px;
             display: flex;
             align-items: center;
-            margin-bottom: 15px;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: all 0.3s ease;
         }
-        
-        .footer-logo i {
-            margin-right: 10px;
-            color: var(--secondary);
+
+        .faq-toggle i {
+            font-size: 14px;
+            color: var(--accent);
+            transition: transform 0.3s ease;
         }
-        
-        .footer-about p {
-            margin-bottom: 20px;
-            color: rgba(255, 255, 255, 0.7);
+
+        .faq-item.active .faq-toggle {
+            background: var(--accent-gradient);
         }
-        
-        .footer-links h4 {
-            font-size: 18px;
-            margin-bottom: 20px;
+
+        .faq-item.active .faq-toggle i {
             color: white;
+            transform: rotate(180deg);
         }
-        
-        .footer-links ul {
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), padding 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding: 0 24px 24px;
+        }
+
+        .faq-answer p {
+            color: var(--text-secondary);
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        /* ===== CTA SECTION ===== */
+        .cta {
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(233, 69, 96, 0.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .cta-content {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .cta h2 {
+            font-size: clamp(32px, 5vw, 48px);
+            margin-bottom: 20px;
+        }
+
+        .cta p {
+            font-size: 18px;
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--bg-primary);
+            border-top: 1px solid var(--border);
+            padding: 64px 0 32px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 48px;
+            margin-bottom: 48px;
+        }
+
+        .footer-brand .logo {
+            margin-bottom: 16px;
+        }
+
+        .footer-brand p {
+            color: var(--text-secondary);
+            font-size: 15px;
+            margin-bottom: 24px;
+            line-height: 1.7;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 12px;
+        }
+
+        .footer-social a {
+            width: 44px;
+            height: 44px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            font-size: 18px;
+            transition: all 0.3s ease;
+        }
+
+        .footer-social a:hover {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: var(--text-primary);
+            transform: translateY(-3px);
+        }
+
+        .footer-column h4 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--text-primary);
+        }
+
+        .footer-column ul {
             list-style: none;
         }
-        
-        .footer-links ul li {
-            margin-bottom: 10px;
+
+        .footer-column ul li {
+            margin-bottom: 12px;
         }
-        
-        .footer-links ul li a {
-            color: rgba(255, 255, 255, 0.7);
+
+        .footer-column ul li a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .footer-column ul li a:hover {
+            color: var(--accent);
+            transform: translateX(4px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--border);
+            padding-top: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        .footer-bottom a {
+            color: var(--text-secondary);
             text-decoration: none;
             transition: color 0.3s ease;
         }
-        
-        .footer-links ul li a:hover {
-            color: var(--secondary);
+
+        .footer-bottom a:hover {
+            color: var(--accent);
         }
-        
-        .footer-bottom {
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 20px;
-            text-align: center;
-            color: rgba(255, 255, 255, 0.5);
-            font-size: 14px;
+
+        /* ===== SCROLL ANIMATIONS ===== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        
-        /* Responsive Styles */
-        @media (max-width: 992px) {
-            .contact-container {
-                grid-template-columns: 1fr;
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
-            
-            .form-row {
-                grid-template-columns: 1fr;
-            }
         }
-        
+
         @media (max-width: 768px) {
             .mobile-menu-toggle {
                 display: block;
             }
-            
+
             nav {
                 position: fixed;
-                top: 70px;
+                top: 0;
                 left: 0;
                 width: 100%;
-                background-color: var(--primary);
-                padding: 20px 0;
-                transform: translateY(-100%);
-                opacity: 0;
-                visibility: hidden;
-                transition: all 0.3s ease;
+                height: 100vh;
+                background: rgba(10, 10, 15, 0.98);
+                backdrop-filter: blur(20px);
+                -webkit-backdrop-filter: blur(20px);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transform: translateX(100%);
+                transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                z-index: 999;
             }
-            
+
             nav.active {
-                transform: translateY(0);
-                opacity: 1;
-                visibility: visible;
+                transform: translateX(0);
             }
-            
+
             nav ul {
                 flex-direction: column;
                 align-items: center;
+                gap: 16px;
             }
-            
-            nav ul li {
-                margin: 10px 0;
+
+            nav ul li a {
+                font-size: 24px;
+                padding: 12px 24px;
             }
-            
-            .hero h1 {
-                font-size: 36px;
+
+            .mobile-menu-close {
+                position: absolute;
+                top: 24px;
+                right: 24px;
+                background: none;
+                border: none;
+                color: var(--text-primary);
+                font-size: 28px;
+                cursor: pointer;
+                z-index: 1001;
             }
-            
-            .hero p {
-                font-size: 18px;
+
+            .contact-grid {
+                grid-template-columns: 1fr;
             }
-            
-            .section-title h2 {
-                font-size: 32px;
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-form-wrapper {
+                padding: 32px 24px;
+            }
+
+            .info-card {
+                padding: 28px 24px;
+            }
+
+            .social-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 12px;
+                text-align: center;
             }
         }
-        
-        @media (max-width: 576px) {
-            .hero h1 {
-                font-size: 28px;
+
+        @media (max-width: 480px) {
+            .page-hero h1 {
+                font-size: 32px;
             }
-            
-            .hero p {
-                font-size: 16px;
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: stretch;
             }
-            
-            .btn, .btn-outline {
-                display: block;
-                width: 100%;
-                margin-bottom: 15px;
-                margin-left: 0;
+
+            .btn {
+                justify-content: center;
             }
-            
-            .contact-form,
-            .contact-info {
-                padding: 30px 20px;
+
+            .contact-form-wrapper {
+                padding: 24px 20px;
+            }
+
+            .map-placeholder {
+                height: 300px;
             }
         }
     </style>
 </head>
 <body>
+
     <!-- Header -->
     <header id="header">
         <div class="container header-content">
-            <a href="index.html" class="logo"><i class="fas fa-film"></i> XLNZ Productions</a>
-            <button class="mobile-menu-toggle" id="mobileMenuToggle">
+            <a href="index.html" class="logo">
+                <span class="logo-icon"><i class="fas fa-film"></i></span>
+                XLNZ
+            </a>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Open menu">
                 <i class="fas fa-bars"></i>
             </button>
             <nav id="nav">
+                <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">
+                    <i class="fas fa-times"></i>
+                </button>
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="services.html">Services</a></li>
                     <li><a href="portfolio.html">Portfolio</a></li>
                     <li><a href="packages.html">Packages</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="contact.html" class="active nav-cta">Get a Quote</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container hero-content">
-            <h1>Contact XLNZ Productions</h1>
-            <p>Get in touch with Philadelphia's premier video production studio to discuss your next project</p>
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="hero-grid"></div>
+        <div class="container page-hero-content">
+            <div class="section-label">Contact Us</div>
+            <h1>Let's Create Something <span class="gradient-text">Amazing</span></h1>
+            <p>Have a project in mind? We'd love to hear about it. Reach out and let's discuss how we can bring your vision to life.</p>
             <div class="hero-buttons">
-                <a href="#contact-form" class="btn">Send Message</a>
-                <a href="tel:2155551234" class="btn btn-outline">Call Us</a>
+                <a href="#contact-form" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Send a Message</a>
+                <a href="tel:2155551234" class="btn btn-secondary"><i class="fas fa-phone"></i> Call Us Now</a>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section class="contact" id="contact-form">
+    <section class="contact-section" id="contact-form">
         <div class="container">
-            <div class="section-title">
-                <h2>Get In Touch</h2>
-                <p>Fill out the form below or use our contact information to reach out to our team</p>
-            </div>
-            <div class="contact-container">
-                <div class="contact-form">
-                    <h3>Send Us a Message</h3>
-                    <form id="contactForm">
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="firstName">First Name</label>
-                                <input type="text" id="firstName" name="firstName" required>
+            <div class="contact-grid">
+                <!-- Contact Form -->
+                <div class="contact-form-wrapper reveal">
+                    <div id="contactFormContainer">
+                        <div class="form-header">
+                            <h2>Send Us a Message</h2>
+                            <p>Fill out the form below and we'll get back to you within 24-48 hours.</p>
+                        </div>
+                        <form id="contactForm">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="firstName">First Name <span class="required">*</span></label>
+                                    <input type="text" id="firstName" name="firstName" class="form-input" placeholder="John" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="lastName">Last Name <span class="required">*</span></label>
+                                    <input type="text" id="lastName" name="lastName" class="form-input" placeholder="Doe" required>
+                                </div>
                             </div>
                             <div class="form-group">
-                                <label for="lastName">Last Name</label>
-                                <input type="text" id="lastName" name="lastName" required>
+                                <label for="email">Email Address <span class="required">*</span></label>
+                                <input type="email" id="email" name="email" class="form-input" placeholder="john@example.com" required>
                             </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" class="form-input" placeholder="(215) 555-1234">
+                            </div>
+                            <div class="form-group">
+                                <label for="service">Service Interested In <span class="required">*</span></label>
+                                <select id="service" name="service" class="form-input" required>
+                                    <option value="">Select a Service</option>
+                                    <option value="podcast">Podcast Production</option>
+                                    <option value="standup">Stand-Up Specials</option>
+                                    <option value="film">Film Production</option>
+                                    <option value="commercial">Commercial / Skit</option>
+                                    <option value="social">Social Media for Brands</option>
+                                    <option value="testimonial">Testimonials</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="budget">Project Budget Range</label>
+                                <select id="budget" name="budget" class="form-input">
+                                    <option value="">Select Budget Range</option>
+                                    <option value="under-5k">Under $5,000</option>
+                                    <option value="5k-10k">$5,000 - $10,000</option>
+                                    <option value="10k-25k">$10,000 - $25,000</option>
+                                    <option value="25k-50k">$25,000 - $50,000</option>
+                                    <option value="50k-plus">$50,000+</option>
+                                    <option value="unsure">Not Sure Yet</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Project Details <span class="required">*</span></label>
+                                <textarea id="message" name="message" class="form-input" placeholder="Tell us about your project, timeline, and any specific requirements..." required></textarea>
+                            </div>
+                            <div class="form-submit">
+                                <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Send Message</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Success Message -->
+                    <div class="form-success" id="formSuccess">
+                        <div class="form-success-icon">
+                            <i class="fas fa-check"></i>
                         </div>
-                        <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" name="phone">
-                        </div>
-                        <div class="form-group">
-                            <label for="service">Service Interested In</label>
-                            <select id="service" name="service">
-                                <option value="">Select a Service</option>
-                                <option value="podcast">Podcast Production</option>
-                                <option value="standup">Stand-Up Specials</option>
-                                <option value="film">Film Production</option>
-                                <option value="commercial">Commercial/Skit</option>
-                                <option value="social">Social Media for Brands</option>
-                                <option value="testimonial">Testimonials</option>
-                                <option value="other">Other</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Project Details</label>
-                            <textarea id="message" name="message" placeholder="Tell us about your project..." required></textarea>
-                        </div>
-                        <button type="submit" class="btn">Send Message</button>
-                    </form>
+                        <h3>Message Sent Successfully!</h3>
+                        <p>Thank you for reaching out. We'll review your project details and get back to you within 24-48 hours.</p>
+                        <a href="index.html" class="btn btn-secondary"><i class="fas fa-home"></i> Back to Home</a>
+                    </div>
                 </div>
-                
-                <div class="contact-info">
-                    <h3>Contact Information</h3>
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <div class="contact-item-content">
-                            <h4>Email</h4>
-                            <p><a href="mailto:xlnzproductions@gmail.com">xlnzproductions@gmail.com</a></p>
+
+                <!-- Contact Info -->
+                <div class="contact-info-wrapper">
+                    <div class="info-card reveal">
+                        <h3>Contact Information</h3>
+                        <div class="info-item">
+                            <div class="info-icon"><i class="fas fa-envelope"></i></div>
+                            <div class="info-content">
+                                <h4>Email</h4>
+                                <a href="mailto:xlnzproductions@gmail.com">xlnzproductions@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon"><i class="fas fa-phone"></i></div>
+                            <div class="info-content">
+                                <h4>Phone</h4>
+                                <a href="tel:2155551234">(215) 555-1234</a>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div class="info-content">
+                                <h4>Studio Location</h4>
+                                <p>Philadelphia, PA</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon"><i class="fas fa-clock"></i></div>
+                            <div class="info-content">
+                                <h4>Business Hours</h4>
+                                <p>Mon - Fri: 9am - 6pm<br>Sat: 10am - 4pm<br>Sun: By Appointment</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <div class="contact-item-content">
-                            <h4>Phone</h4>
-                            <p><a href="tel:2155551234">(215) 555-1234</a></p>
+
+                    <div class="social-card reveal">
+                        <h3>Follow Us</h3>
+                        <div class="social-grid">
+                            <a href="https://www.instagram.com/xlnzproductions" class="social-link" target="_blank" rel="noopener">
+                                <i class="fab fa-instagram"></i> Instagram
+                            </a>
+                            <a href="https://www.youtube.com/@xlnzproductions" class="social-link" target="_blank" rel="noopener">
+                                <i class="fab fa-youtube"></i> YouTube
+                            </a>
+                            <a href="https://www.facebook.com/xlnzproductions" class="social-link" target="_blank" rel="noopener">
+                                <i class="fab fa-facebook"></i> Facebook
+                            </a>
+                            <a href="https://twitter.com/xlnzproductions" class="social-link" target="_blank" rel="noopener">
+                                <i class="fab fa-twitter"></i> Twitter
+                            </a>
                         </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div class="contact-item-content">
-                            <h4>Studio Location</h4>
-                            <p>1234 Production Lane<br>Philadelphia, PA 19103</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-clock"></i>
-                        <div class="contact-item-content">
-                            <h4>Business Hours</h4>
-                            <p>Monday - Friday: 9am - 6pm<br>Saturday: 10am - 4pm<br>Sunday: By Appointment</p>
-                        </div>
-                    </div>
-                    
-                    <div class="social-links">
-                        <a href="https://www.instagram.com/xlnzproductions" title="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.youtube.com/@xlnzproductions" title="YouTube"><i class="fab fa-youtube"></i></a>
-                        <a href="https://www.facebook.com/xlnzproductions" title="Facebook"><i class="fab fa-facebook"></i></a>
-                        <a href="https://twitter.com/xlnzproductions" title="Twitter"><i class="fab fa-twitter"></i></a>
                     </div>
                 </div>
             </div>
@@ -682,60 +1250,105 @@
     <!-- Map Section -->
     <section class="map-section">
         <div class="container">
-            <div class="map-container">
+            <div class="map-wrapper reveal">
                 <div class="map-placeholder">
-                    <h3>Studio Location</h3>
+                    <div class="map-content">
+                        <div class="map-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3>Our Studio</h3>
+                        <p>Philadelphia, PA</p>
+                        <a href="https://maps.google.com/?q=Philadelphia+PA" target="_blank" rel="noopener" class="btn btn-primary">
+                            <i class="fas fa-directions"></i> Get Directions
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- FAQ Section -->
-    <section class="faq-section">
+    <section class="faq-section" id="faq">
         <div class="container">
-            <div class="section-title">
+            <div class="section-header reveal">
+                <div class="section-label" style="justify-content: center;">FAQ</div>
                 <h2>Frequently Asked Questions</h2>
                 <p>Answers to common questions about working with XLNZ Productions</p>
             </div>
             <div class="faq-container">
-                <div class="faq-item">
+                <div class="faq-item reveal">
                     <div class="faq-question">
                         <h3>How far in advance should I book your services?</h3>
-                        <i class="fas fa-chevron-down"></i>
+                        <div class="faq-toggle"><i class="fas fa-chevron-down"></i></div>
                     </div>
                     <div class="faq-answer">
                         <p>We recommend booking at least 2-3 weeks in advance for smaller projects and 1-2 months for larger productions. However, we understand that sometimes projects come up on short notice, and we'll do our best to accommodate your timeline based on our current schedule.</p>
                     </div>
                 </div>
-                
-                <div class="faq-item">
+
+                <div class="faq-item reveal">
                     <div class="faq-question">
                         <h3>Do you work with clients outside of Philadelphia?</h3>
-                        <i class="fas fa-chevron-down"></i>
+                        <div class="faq-toggle"><i class="fas fa-chevron-down"></i></div>
                     </div>
                     <div class="faq-answer">
                         <p>Yes! While our studio is based in Philadelphia, we work with clients throughout the tri-state area and beyond. For projects outside our immediate area, we may charge additional travel fees, which will be clearly outlined in your project quote.</p>
                     </div>
                 </div>
-                
-                <div class="faq-item">
+
+                <div class="faq-item reveal">
                     <div class="faq-question">
                         <h3>What's included in your standard packages?</h3>
-                        <i class="fas fa-chevron-down"></i>
+                        <div class="faq-toggle"><i class="fas fa-chevron-down"></i></div>
                     </div>
                     <div class="faq-answer">
                         <p>Our packages include professional recording, audio editing & mixing, digital delivery, and strategy consultation. Higher-tier packages include additional services like custom intros/outros, sound design, and color correction. You can view detailed package information on our Packages page.</p>
                     </div>
                 </div>
-                
-                <div class="faq-item">
+
+                <div class="faq-item reveal">
                     <div class="faq-question">
                         <h3>How long does it take to receive the final product?</h3>
-                        <i class="fas fa-chevron-down"></i>
+                        <div class="faq-toggle"><i class="fas fa-chevron-down"></i></div>
                     </div>
                     <div class="faq-answer">
                         <p>Turnaround time varies depending on the scope of your project. Podcast episodes typically take 3-5 business days, while stand-up specials may take 2-3 weeks. We'll provide a detailed timeline during our initial consultation and keep you updated throughout the production process.</p>
                     </div>
+                </div>
+
+                <div class="faq-item reveal">
+                    <div class="faq-question">
+                        <h3>What is your payment structure?</h3>
+                        <div class="faq-toggle"><i class="fas fa-chevron-down"></i></div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We typically require a 50% deposit to secure your booking and begin pre-production, with the remaining balance due upon project completion. For larger projects, we can arrange milestone-based payments. We accept various payment methods including credit cards, bank transfers, and checks.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item reveal">
+                    <div class="faq-question">
+                        <h3>Can I be involved in the editing process?</h3>
+                        <div class="faq-toggle"><i class="fas fa-chevron-down"></i></div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutely! We encourage client collaboration throughout the process. Your package includes a set number of revision rounds, and we provide preview links so you can review and provide feedback. We want to ensure the final product matches your vision perfectly.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content reveal">
+                <div class="section-label" style="justify-content: center;">Ready to Start?</div>
+                <h2>Prefer to Talk <span class="gradient-text">Live</span>?</h2>
+                <p>Sometimes it's easier to explain your vision over the phone. Give us a call and let's discuss your project.</p>
+                <div class="cta-buttons">
+                    <a href="tel:2155551234" class="btn btn-primary"><i class="fas fa-phone"></i> Call (215) 555-1234</a>
+                    <a href="mailto:xlnzproductions@gmail.com" class="btn btn-secondary"><i class="fas fa-envelope"></i> Send an Email</a>
                 </div>
             </div>
         </div>
@@ -744,19 +1357,21 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-about">
-                    <a href="index.html" class="footer-logo"><i class="fas fa-film"></i> XLNZ Productions</a>
-                    <p>Founded in 2023 by Buhzz Taylor and Mike Salvi, XLNZ Productions is Philadelphia's premier video production studio, specializing in podcasts, comedy, films, documentaries, and commercial content.</p>
-                    <div class="social-links">
-                        <a href="https://www.instagram.com/xlnzproductions" title="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.youtube.com/@xlnzproductions" title="YouTube"><i class="fab fa-youtube"></i></a>
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <span class="logo-icon"><i class="fas fa-film"></i></span>
+                        XLNZ
+                    </a>
+                    <p>Philadelphia's premier video production studio. Specializing in podcasts, comedy, films, documentaries, and commercial content.</p>
+                    <div class="footer-social">
+                        <a href="https://www.instagram.com/xlnzproductions" title="Instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/@xlnzproductions" title="YouTube" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
-                <div class="footer-links">
-                    <h4>Quick Links</h4>
+                <div class="footer-column">
+                    <h4>Company</h4>
                     <ul>
-                        <li><a href="index.html">Home</a></li>
                         <li><a href="about.html">About Us</a></li>
                         <li><a href="services.html">Services</a></li>
                         <li><a href="portfolio.html">Portfolio</a></li>
@@ -764,68 +1379,127 @@
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
-                <div class="footer-links">
+                <div class="footer-column">
                     <h4>Services</h4>
                     <ul>
                         <li><a href="services.html#podcast">Podcast Production</a></li>
                         <li><a href="services.html#standup">Stand-Up Specials</a></li>
                         <li><a href="services.html#film">Film Production</a></li>
-                        <li><a href="services.html#commercial">Commercial/Skit</a></li>
-                        <li><a href="services.html#social">Social Media for Brands</a></li>
-                        <li><a href="services.html#testimonial">Testimonials</a></li>
+                        <li><a href="services.html#commercial">Commercial / Skit</a></li>
+                        <li><a href="services.html#social">Social Media</a></li>
                     </ul>
                 </div>
-                <div class="footer-links">
-                    <h4>Contact Info</h4>
+                <div class="footer-column">
+                    <h4>Contact</h4>
                     <ul>
-                        <li><a href="mailto:xlnzproductions@gmail.com">xlnzproductions@gmail.com</a></li>
-                        <li><a href="tel:2155551234">(215) 555-1234</a></li>
-                        <li><a href="#">Philadelphia, PA</a></li>
+                        <li><a href="mailto:xlnzproductions@gmail.com"><i class="fas fa-envelope" style="margin-right: 8px;"></i> xlnzproductions@gmail.com</a></li>
+                        <li><a href="tel:2155551234"><i class="fas fa-phone" style="margin-right: 8px;"></i> (215) 555-1234</a></li>
+                        <li><a href="#"><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i> Philadelphia, PA</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2023 XLNZ Productions. All rights reserved.</p>
+                <span>XLNZ Productions</span>
+                <span>Philadelphia, PA</span>
             </div>
         </div>
     </footer>
 
     <script>
         // Mobile menu toggle
-        document.getElementById('mobileMenuToggle').addEventListener('click', function() {
-            document.getElementById('nav').classList.toggle('active');
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const mobileMenuClose = document.getElementById('mobileMenuClose');
+        const nav = document.getElementById('nav');
+
+        mobileMenuToggle.addEventListener('click', () => {
+            nav.classList.add('active');
+            document.body.style.overflow = 'hidden';
         });
-        
+
+        mobileMenuClose.addEventListener('click', () => {
+            nav.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('#nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+
+        // Close mobile menu on outside click
+        document.addEventListener('click', (e) => {
+            if (nav.classList.contains('active') &&
+                !nav.contains(e.target) &&
+                !mobileMenuToggle.contains(e.target)) {
+                nav.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+
+        // Header scroll effect
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Scroll reveal animation
+        const revealElements = document.querySelectorAll('.reveal');
+
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        revealElements.forEach(el => revealObserver.observe(el));
+
         // Contact form submission
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            
+
             // Get form values
             const firstName = document.getElementById('firstName').value;
             const lastName = document.getElementById('lastName').value;
             const email = document.getElementById('email').value;
             const phone = document.getElementById('phone').value;
             const service = document.getElementById('service').value;
+            const budget = document.getElementById('budget').value;
             const message = document.getElementById('message').value;
-            
+
             // Here you would typically send the form data to a server
-            // For this example, we'll just show a success message
-            alert(`Thank you, ${firstName}! Your message has been sent successfully. We'll get back to you within 24-48 hours.`);
-            
-            // Reset form
-            this.reset();
+            // For now, show the success message
+            document.getElementById('contactFormContainer').style.display = 'none';
+            document.getElementById('formSuccess').classList.add('active');
+
+            // Scroll to success message
+            document.querySelector('.contact-form-wrapper').scrollIntoView({
+                behavior: 'smooth',
+                block: 'center'
+            });
         });
-        
+
         // FAQ accordion functionality
         const faqItems = document.querySelectorAll('.faq-item');
-        
+
         faqItems.forEach(item => {
             const question = item.querySelector('.faq-question');
-            
+
             question.addEventListener('click', function() {
                 // Toggle active class
                 item.classList.toggle('active');
-                
+
                 // Close other items
                 faqItems.forEach(otherItem => {
                     if (otherItem !== item) {
@@ -834,15 +1508,13 @@
                 });
             });
         });
-        
+
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
-                
                 const targetId = this.getAttribute('href');
                 if (targetId === '#') return;
-                
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
                     window.scrollTo({
@@ -852,16 +1524,7 @@
                 }
             });
         });
-        
-        // Header scroll effect
-        window.addEventListener('scroll', function() {
-            const header = document.getElementById('header');
-            if (window.scrollY > 100) {
-                header.style.backgroundColor = 'rgba(26, 26, 46, 0.95)';
-            } else {
-                header.style.backgroundColor = 'var(--primary)';
-            }
-        });
     </script>
+
 </body>
 </html>
