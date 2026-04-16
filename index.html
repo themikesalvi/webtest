@@ -2210,6 +2210,9 @@
         let easterEggActive = false;
 
         xlnzLogo.addEventListener('click', function(e) {
+            // Always prevent navigation so we can count taps
+            e.preventDefault();
+
             if (easterEggActive) return;
 
             logoTapCount++;
@@ -2217,6 +2220,10 @@
             // Reset counter if too slow between taps
             clearTimeout(logoTapTimer);
             logoTapTimer = setTimeout(() => {
+                // If we didn't hit 5 taps, navigate normally
+                if (logoTapCount < 5) {
+                    window.location.href = 'index.html';
+                }
                 logoTapCount = 0;
             }, 800);
 
@@ -2243,13 +2250,13 @@
                 { text: '> INITIATING BREACH PROTOCOL...', delay: 0, class: 'hack-prompt' },
                 { text: '> ACCESSING MAINFRAME...', delay: 600, class: 'hack-prompt' },
                 { text: '> BYPASSING FIREWALL...', delay: 1200, class: 'hack-warning' },
-                { text: '> ██████████████████████ 100%', delay: 1800, class: 'hack-progress' },
+                { text: '> \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588 100%', delay: 1800, class: 'hack-progress' },
                 { text: '> FIREWALL BREACHED', delay: 2400, class: 'hack-success' },
                 { text: '> SCANNING SYSTEM FILES...', delay: 3000, class: 'hack-prompt' },
                 { text: '> LOCATING ARCADE MODULE...', delay: 3600, class: 'hack-prompt' },
                 { text: '> MODULE FOUND: PAC-MAN.EXE', delay: 4200, class: 'hack-info' },
                 { text: '> DECRYPTING...', delay: 4800, class: 'hack-prompt' },
-                { text: '> ██████████████████████ 100%', delay: 5400, class: 'hack-progress' },
+                { text: '> \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588 100%', delay: 5400, class: 'hack-progress' },
                 { text: '> ROOT ACCESS GRANTED', delay: 6000, class: 'hack-success' },
                 { text: '> LAUNCHING ARCADE...', delay: 6600, class: 'hack-prompt' },
                 { text: '> HAVE FUN ;)', delay: 7200, class: 'hack-success' },
@@ -2259,7 +2266,7 @@
                 setTimeout(() => {
                     const div = document.createElement('div');
                     div.className = 'hack-line';
-                    div.innerHTML = `<span class="${line.class}">${line.text}</span>`;
+                    div.innerHTML = '<span class="' + line.class + '">' + line.text + '</span>';
                     hackTerminalBody.appendChild(div);
                     hackTerminalBody.scrollTop = hackTerminalBody.scrollHeight;
                 }, line.delay);
