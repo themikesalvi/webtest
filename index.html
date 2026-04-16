@@ -2346,7 +2346,8 @@
         let animFrame = null;
         let lastTime = 0;
         let moveTimer = 0;
-        let ghostMoveTimer = 0;
+        let pacmanMoveAccum = 0;
+        let ghostMoveAccum = 0;
         let frightenedTimer = 0;
         let totalDots = 0;
         let dotsEaten = 0;
@@ -2396,7 +2397,8 @@
             lives = 3;
             frightenedTimer = 0;
             moveTimer = 0;
-            ghostMoveTimer = 0;
+            pacmanMoveAccum = 0;
+            ghostMoveAccum = 0;
             mouthOpen = true;
             mouthTimer = 0;
 
@@ -2543,12 +2545,12 @@
 
         function moveGhostToward(ghost, targetX, targetY, canPassDoor) {
             const dirs = ['up', 'down', 'left', 'right'];
-            let bestDir = ghost.dir;
+            const opposite = { up: 'down', down: 'up', left: 'right', right: 'left' };
+            let bestDir = null;
             let bestDist = Infinity;
 
             dirs.forEach(d => {
-                // Don't reverse
-                const opposite = { up: 'down', down: 'up', left: 'right', right: 'left' };
+                // Don't reverse unless no other option
                 if (d === opposite[ghost.dir]) return;
 
                 const dir = DIRECTIONS[d];
@@ -2565,7 +2567,22 @@
                 }
             });
 
-            ghost.dir = bestDir;
+            // If no direction found (dead end), allow reversing
+            if (bestDir === null) {
+                const reverseDir = opposite[ghost.dir];
+                const dir = DIRECTIONS[reverseDir];
+                const newX = ghost.x + dir.x;
+                const newY = ghost.y + dir.y;
+                const walkable = canPassDoor ? isWalkable(newX, newY) : isWalkableForGhost(newX, newY);
+                if (walkable) {
+                    bestDir = reverseDir;
+                }
+            }
+
+            // If still no direction, stay current direction
+            if (bestDir !== null) {
+                ghost.dir = bestDir;
+            }
         }
 
         function checkCollisions() {
@@ -2688,7 +2705,7 @@
 
             // Draw ghosts
             ghosts.forEach(ghost => {
-                if (ghost.inHouse && ghost.y === 14) return;
+                if (ghost.inHouse) return;
 
                 const gx = ghost.x * TILE + TILE / 2;
                 const gy = ghost.y * TILE + TILE / 2;
@@ -2764,6 +2781,8 @@
             lastTime = timestamp;
 
             moveTimer += delta;
+            pacmanMoveAccum += delta;
+            ghostMoveAccum += delta;
 
             // Mouth animation
             mouthTimer += delta;
@@ -2773,13 +2792,15 @@
             }
 
             // Move Pac-Man
-            if (moveTimer - Math.floor(moveTimer / 150) * 150 < delta) {
+            if (pacmanMoveAccum >= 150) {
                 movePacman();
+                pacmanMoveAccum -= 150;
             }
 
             // Move ghosts
-            if (moveTimer - Math.floor(moveTimer / 200) * 200 < delta) {
+            if (ghostMoveAccum >= 200) {
                 ghosts.forEach((ghost, i) => moveGhost(ghost, i));
+                ghostMoveAccum -= 200;
             }
 
             // Frightened timer
