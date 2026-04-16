@@ -8,6 +8,14 @@
     <meta name="robots" content="index, follow">
     <meta name="author" content="XLNZ Productions">
     <link rel="canonical" href="https://www.xlnzproductions.com/">
+    <meta name="geo.region" content="US-PA">
+    <meta name="geo.placename" content="Philadelphia">
+
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://picsum.photos">
 
     <!-- Open Graph -->
     <meta property="og:title" content="XLNZ Productions - Philadelphia's Premier Video Production Studio">
@@ -52,7 +60,7 @@
 
     <title>XLNZ Productions - Philadelphia's Premier Video Production Studio</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
@@ -65,7 +73,7 @@
             --accent-gradient: linear-gradient(135deg, #e94560, #ff6b35);
             --text-primary: #ffffff;
             --text-secondary: #a0a0b8;
-            --text-muted: #6c6c80;
+            --text-muted: #8a8a9e;
             --border: rgba(255, 255, 255, 0.08);
             --glow: 0 0 40px rgba(233, 69, 96, 0.15);
         }
@@ -99,6 +107,36 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 24px;
+        }
+
+        /* Skip Link */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--accent);
+            color: white;
+            padding: 8px 16px;
+            z-index: 10000;
+            transition: top 0.3s;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .skip-link:focus {
+            top: 0;
+        }
+
+        /* Scroll Progress */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: var(--accent-gradient);
+            z-index: 10001;
+            width: 0%;
+            transition: width 0.1s;
         }
 
         /* ===== HEADER ===== */
@@ -231,7 +269,6 @@
             pointer-events: none;
         }
 
-        /* Animated grid background */
         .hero-grid {
             position: absolute;
             top: 0;
@@ -290,7 +327,7 @@
             letter-spacing: -1px;
         }
 
-        .hero h1 .gradient-text {
+        .gradient-text {
             background: var(--accent-gradient);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -341,6 +378,10 @@
             box-shadow: 0 8px 30px rgba(233, 69, 96, 0.4);
         }
 
+        .btn-primary:active {
+            transform: translateY(0);
+        }
+
         .btn-secondary {
             background: rgba(255, 255, 255, 0.05);
             color: var(--text-primary);
@@ -353,6 +394,18 @@
             transform: translateY(-2px);
         }
 
+        .btn-secondary:active {
+            transform: translateY(0);
+        }
+
+        /* Focus Styles */
+        a:focus-visible,
+        button:focus-visible,
+        .btn:focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+        }
+
         /* ===== STATS SECTION ===== */
         .stats {
             padding: 80px 0;
@@ -361,8 +414,10 @@
 
         .stats-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(2, 1fr);
             gap: 32px;
+            max-width: 600px;
+            margin: 0 auto;
         }
 
         .stat-item {
@@ -434,7 +489,7 @@
             box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
         }
 
-        .about-content .section-label {
+        .section-label {
             display: inline-flex;
             align-items: center;
             gap: 8px;
@@ -447,7 +502,7 @@
             margin-bottom: 16px;
         }
 
-        .about-content .section-label::before {
+        .section-label::before {
             content: '';
             width: 30px;
             height: 2px;
@@ -485,14 +540,14 @@
             font-size: 14px;
         }
 
-        /* ===== SERVICES SECTION ===== */
-        .services {
+        /* ===== TEAM SECTION ===== */
+        .team {
             padding: 120px 0;
             background: var(--bg-secondary);
             position: relative;
         }
 
-        .services::before {
+        .team::before {
             content: '';
             position: absolute;
             top: 0;
@@ -503,24 +558,100 @@
             pointer-events: none;
         }
 
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .team-card {
+            text-align: center;
+            padding: 40px 32px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .team-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(233, 69, 96, 0.3);
+            box-shadow: var(--glow);
+        }
+
+        .team-card img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+            border: 3px solid rgba(233, 69, 96, 0.3);
+        }
+
+        .team-card h3 {
+            font-size: 22px;
+            margin-bottom: 4px;
+        }
+
+        .team-card .team-role {
+            color: var(--accent);
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+        }
+
+        .team-card p {
+            color: var(--text-secondary);
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        .team-social {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .team-social a {
+            width: 36px;
+            height: 36px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            font-size: 14px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .team-social a:hover {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: var(--text-primary);
+            transform: translateY(-2px);
+        }
+
+        /* ===== SERVICES SECTION ===== */
+        .services {
+            padding: 120px 0;
+            position: relative;
+        }
+
         .section-header {
             text-align: center;
             margin-bottom: 64px;
             position: relative;
             z-index: 1;
-        }
-
-        .section-label {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            color: var(--accent);
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 16px;
         }
 
         .section-header h2 {
@@ -567,7 +698,7 @@
         .service-card:hover {
             transform: translateY(-8px);
             border-color: rgba(233, 69, 96, 0.3);
-            box-shadow: var(--glow);
+            box-shadow: 0 0 30px rgba(233, 69, 96, 0.1), var(--glow);
         }
 
         .service-card:hover::before {
@@ -660,6 +791,7 @@
         /* ===== FEATURED WORK SECTION ===== */
         .featured {
             padding: 120px 0;
+            background: var(--bg-secondary);
             position: relative;
         }
 
@@ -744,6 +876,73 @@
         .featured-item:hover .featured-play {
             opacity: 1;
             transform: translate(-50%, -50%) scale(1);
+        }
+
+        /* ===== TESTIMONIALS SECTION ===== */
+        .testimonials {
+            padding: 120px 0;
+            position: relative;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 32px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(233, 69, 96, 0.2);
+            box-shadow: var(--glow);
+        }
+
+        .testimonial-stars {
+            color: #ffc107;
+            font-size: 14px;
+            margin-bottom: 16px;
+            display: flex;
+            gap: 2px;
+        }
+
+        .testimonial-card blockquote {
+            color: var(--text-secondary);
+            font-size: 15px;
+            line-height: 1.7;
+            margin-bottom: 24px;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .testimonial-author img {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid rgba(233, 69, 96, 0.3);
+        }
+
+        .testimonial-author-info h4 {
+            font-size: 15px;
+            font-weight: 700;
+        }
+
+        .testimonial-author-info p {
+            font-size: 13px;
+            color: var(--text-muted);
         }
 
         /* ===== CTA SECTION ===== */
@@ -893,6 +1092,11 @@
             color: var(--accent);
         }
 
+        .footer-legal {
+            display: flex;
+            gap: 16px;
+        }
+
         /* ===== SCROLL ANIMATIONS ===== */
         .reveal {
             opacity: 0;
@@ -912,6 +1116,10 @@
             }
 
             .featured-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .testimonials-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
 
@@ -976,7 +1184,7 @@
             }
 
             .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: 1fr 1fr;
             }
 
             .services-grid {
@@ -984,6 +1192,14 @@
             }
 
             .featured-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .team-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -1021,9 +1237,20 @@
                 font-size: 36px;
             }
         }
+
+        /* Scroll margin for anchor links */
+        section {
+            scroll-margin-top: 80px;
+        }
     </style>
 </head>
 <body>
+
+    <!-- Skip Link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Scroll Progress -->
+    <div class="scroll-progress" id="scrollProgress"></div>
 
     <!-- Header -->
     <header id="header">
@@ -1032,10 +1259,10 @@
                 <span class="logo-icon"><i class="fas fa-film"></i></span>
                 XLNZ
             </a>
-            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Open menu">
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav">
                 <i class="fas fa-bars"></i>
             </button>
-            <nav id="nav">
+            <nav id="nav" aria-label="Main navigation">
                 <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">
                     <i class="fas fa-times"></i>
                 </button>
@@ -1051,215 +1278,313 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-grid"></div>
-        <div class="container hero-content">
-            <div class="hero-logo">
-                <img src="images/XLNZ Productions Logo Transparent Background .png" alt="XLNZ Productions">
-            </div>
-            <div class="hero-badge">
-                <i class="fas fa-circle"></i> Philadelphia's Premier Production Studio
-            </div>
-            <h1>We Bring Your <span class="gradient-text">Creative Vision</span> to Life</h1>
-            <p>From podcasts to feature films, we craft compelling content that captivates audiences and delivers real results.</p>
-            <div class="hero-buttons">
-                <a href="services.html" class="btn btn-primary"><i class="fas fa-play"></i> View Our Work</a>
-                <a href="contact.html" class="btn btn-secondary"><i class="fas fa-arrow-right"></i> Start a Project</a>
-            </div>
-        </div>
-    </section>
+    <!-- Main Content -->
+    <main id="main-content">
 
-    <!-- Stats Section -->
-    <section class="stats">
-        <div class="container">
-            <div class="stats-grid">
-                <div class="stat-item reveal">
-                    <div class="stat-number">500+</div>
-                    <div class="stat-label">Projects Delivered</div>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-grid"></div>
+            <div class="container hero-content">
+                <div class="hero-logo">
+                    <img src="images/XLNZ Productions Logo Transparent Background .png" alt="XLNZ Productions logo" width="280">
                 </div>
-                <div class="stat-item reveal">
-                    <div class="stat-number">6</div>
-                    <div class="stat-label">Production Services</div>
+                <div class="hero-badge">
+                    <i class="fas fa-circle"></i> Philadelphia's Premier Production Studio
                 </div>
-                <div class="stat-item reveal">
-                    <div class="stat-number">100%</div>
-                    <div class="stat-label">Client Satisfaction</div>
+                <h1>Philadelphia Video Production That Brings Your <span class="gradient-text">Creative Vision</span> to Life</h1>
+                <p>From podcasts to feature films, we craft compelling content that captivates audiences and delivers real results.</p>
+                <div class="hero-buttons">
+                    <a href="services.html" class="btn btn-primary"><i class="fas fa-play"></i> View Our Work</a>
+                    <a href="contact.html" class="btn btn-secondary"><i class="fas fa-arrow-right"></i> Start a Project</a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- About Section -->
-    <section class="about" id="about">
-        <div class="container">
-            <div class="about-grid">
-                <div class="about-image-wrapper reveal">
-                    <img src="https://picsum.photos/seed/xlnz-about/600/500.jpg" alt="XLNZ Productions team at work">
+        <!-- Stats Section -->
+        <section class="stats">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-item reveal">
+                        <div class="stat-number" data-target="500">0</div>
+                        <div class="stat-label">Projects Delivered</div>
+                    </div>
+                    <div class="stat-item reveal">
+                        <div class="stat-number" data-target="6">0</div>
+                        <div class="stat-label">Production Services</div>
+                    </div>
                 </div>
-                <div class="about-content reveal">
-                    <div class="section-label">Our Story</div>
-                    <h2>Built on Passion.<br>Driven by Creativity.</h2>
-                    <p>Founded in 2023 by Buhzz Taylor and Mike Salvi, XLNZ Productions is Philadelphia's premier video production studio. We specialize in podcasts, comedy, films, documentaries, and commercial content.</p>
-                    <p>Our founders bring a unique blend of creativity and technical expertise to every project, ensuring your vision comes to life exactly as you imagined it.</p>
-                    <div class="about-features">
-                        <div class="about-feature">
-                            <i class="fas fa-check"></i> State-of-the-art facility
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about" id="about">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-image-wrapper reveal">
+                        <img src="https://picsum.photos/seed/xlnz-about/600/500.jpg" alt="XLNZ Productions team working on a video shoot in Philadelphia" loading="lazy" width="600" height="500">
+                    </div>
+                    <div class="about-content reveal">
+                        <div class="section-label">Our Story</div>
+                        <h2>Built on Passion.<br>Driven by Creativity.</h2>
+                        <p>Founded in 2023 by Buhzz Taylor and Mike Salvi, XLNZ Productions is Philadelphia's premier video production studio. We specialize in podcasts, comedy, films, documentaries, and commercial content.</p>
+                        <p>Our founders bring a unique blend of creativity and technical expertise to every project, ensuring your vision comes to life exactly as you imagined it.</p>
+                        <div class="about-features">
+                            <div class="about-feature">
+                                <i class="fas fa-check"></i> State-of-the-art facility
+                            </div>
+                            <div class="about-feature">
+                                <i class="fas fa-check"></i> Latest technology
+                            </div>
+                            <div class="about-feature">
+                                <i class="fas fa-check"></i> End-to-end production
+                            </div>
+                            <div class="about-feature">
+                                <i class="fas fa-check"></i> Custom solutions
+                            </div>
                         </div>
-                        <div class="about-feature">
-                            <i class="fas fa-check"></i> Latest technology
+                        <a href="about.html" class="btn btn-primary" style="margin-top: 32px;">Learn More About Us <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section class="team" id="team">
+            <div class="container">
+                <div class="section-header reveal">
+                    <div class="section-label">The Founders</div>
+                    <h2>Meet the Team</h2>
+                    <p>The creative minds behind XLNZ Productions</p>
+                </div>
+                <div class="team-grid">
+                    <div class="team-card reveal">
+                        <img src="https://picsum.photos/seed/buhzz/200/200.jpg" alt="Buhzz Taylor, Co-Founder of XLNZ Productions" loading="lazy" width="120" height="120">
+                        <h3>Buhzz Taylor</h3>
+                        <div class="team-role">Co-Founder</div>
+                        <p>Creative visionary with a passion for storytelling and bringing unique perspectives to every project.</p>
+                        <div class="team-social">
+                            <a href="https://www.instagram.com/xlnzproductions" aria-label="Buhzz Taylor on Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.youtube.com/@xlnzproductions" aria-label="XLNZ Productions on YouTube"><i class="fab fa-youtube"></i></a>
                         </div>
-                        <div class="about-feature">
-                            <i class="fas fa-check"></i> End-to-end production
+                    </div>
+                    <div class="team-card reveal">
+                        <img src="https://picsum.photos/seed/salvi/200/200.jpg" alt="Mike Salvi, Co-Founder of XLNZ Productions" loading="lazy" width="120" height="120">
+                        <h3>Mike Salvi</h3>
+                        <div class="team-role">Co-Founder</div>
+                        <p>Production expert dedicated to delivering high-quality content that exceeds expectations and drives results.</p>
+                        <div class="team-social">
+                            <a href="https://www.instagram.com/xlnzproductions" aria-label="Mike Salvi on Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.youtube.com/@xlnzproductions" aria-label="XLNZ Productions on YouTube"><i class="fab fa-youtube"></i></a>
                         </div>
-                        <div class="about-feature">
-                            <i class="fas fa-check"></i> Custom solutions
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section class="services" id="services">
+            <div class="container">
+                <div class="section-header reveal">
+                    <div class="section-label">What We Do</div>
+                    <h2>Production Services</h2>
+                    <p>Comprehensive solutions for all your creative needs</p>
+                </div>
+                <div class="services-grid">
+                    <div class="service-card reveal">
+                        <div class="service-image">
+                            <img src="https://picsum.photos/seed/xlnz-podcast/600/400.jpg" alt="Professional podcast recording studio with microphones and equipment at XLNZ Productions" loading="lazy" width="600" height="400">
+                        </div>
+                        <div class="service-content">
+                            <div class="service-icon"><i class="fas fa-microphone"></i></div>
+                            <h3>Podcast Production</h3>
+                            <p>Professional recording, editing, and distribution to help you share your voice with the world.</p>
+                            <a href="services.html#podcast" class="service-link" aria-label="Learn more about Podcast Production">Learn More <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
-                    <a href="about.html" class="btn btn-primary" style="margin-top: 32px;">Learn More About Us <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Services Section -->
-    <section class="services" id="services">
-        <div class="container">
-            <div class="section-header reveal">
-                <div class="section-label">What We Do</div>
-                <h2>Production Services</h2>
-                <p>Comprehensive solutions for all your creative needs</p>
-            </div>
-            <div class="services-grid">
-                <div class="service-card reveal">
-                    <div class="service-image">
-                        <img src="https://picsum.photos/seed/xlnz-podcast/600/400.jpg" alt="Podcast Production">
+                    <div class="service-card reveal">
+                        <div class="service-image">
+                            <img src="https://picsum.photos/seed/xlnz-standup/600/400.jpg" alt="Comedy stand-up special being filmed at XLNZ Productions studio" loading="lazy" width="600" height="400">
+                        </div>
+                        <div class="service-content">
+                            <div class="service-icon"><i class="fas fa-laugh"></i></div>
+                            <h3>Stand-Up Specials</h3>
+                            <p>From comedy skits to stand-up specials, we capture and deliver your unique brand of humor.</p>
+                            <a href="services.html#standup" class="service-link" aria-label="Learn more about Stand-Up Specials">Learn More <i class="fas fa-arrow-right"></i></a>
+                        </div>
                     </div>
-                    <div class="service-content">
-                        <div class="service-icon"><i class="fas fa-microphone"></i></div>
-                        <h3>Podcast Production</h3>
-                        <p>Professional recording, editing, and distribution to help you share your voice with the world.</p>
-                        <a href="services.html#podcast" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
 
-                <div class="service-card reveal">
-                    <div class="service-image">
-                        <img src="https://picsum.photos/seed/xlnz-standup/600/400.jpg" alt="Stand-Up Specials">
+                    <div class="service-card reveal">
+                        <div class="service-image">
+                            <img src="https://picsum.photos/seed/xlnz-film/600/400.jpg" alt="Film production crew on set at XLNZ Productions in Philadelphia" loading="lazy" width="600" height="400">
+                        </div>
+                        <div class="service-content">
+                            <div class="service-icon"><i class="fas fa-video"></i></div>
+                            <h3>Film Production</h3>
+                            <p>Full-service production from pre-production planning to post-production and final delivery.</p>
+                            <a href="services.html#film" class="service-link" aria-label="Learn more about Film Production">Learn More <i class="fas fa-arrow-right"></i></a>
+                        </div>
                     </div>
-                    <div class="service-content">
-                        <div class="service-icon"><i class="fas fa-laugh"></i></div>
-                        <h3>Stand-Up Specials</h3>
-                        <p>From comedy skits to stand-up specials, we capture and deliver your unique brand of humor.</p>
-                        <a href="services.html#standup" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
 
-                <div class="service-card reveal">
-                    <div class="service-image">
-                        <img src="https://picsum.photos/seed/xlnz-film/600/400.jpg" alt="Film Production">
+                    <div class="service-card reveal">
+                        <div class="service-image">
+                            <img src="https://picsum.photos/seed/xlnz-commercial/600/400.jpg" alt="Commercial video production for businesses at XLNZ Productions" loading="lazy" width="600" height="400">
+                        </div>
+                        <div class="service-content">
+                            <div class="service-icon"><i class="fas fa-bullhorn"></i></div>
+                            <h3>Commercials / Skits</h3>
+                            <p>Compelling commercial content that captures attention and drives real results for your business.</p>
+                            <a href="services.html#commercial" class="service-link" aria-label="Learn more about Commercials and Skits">Learn More <i class="fas fa-arrow-right"></i></a>
+                        </div>
                     </div>
-                    <div class="service-content">
-                        <div class="service-icon"><i class="fas fa-video"></i></div>
-                        <h3>Film Production</h3>
-                        <p>Full-service production from pre-production planning to post-production and final delivery.</p>
-                        <a href="services.html#film" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
 
-                <div class="service-card reveal">
-                    <div class="service-image">
-                        <img src="https://picsum.photos/seed/xlnz-commercial/600/400.jpg" alt="Commercial Production">
+                    <div class="service-card reveal">
+                        <div class="service-image">
+                            <img src="https://picsum.photos/seed/xlnz-social/600/400.jpg" alt="Social media video content creation for brands at XLNZ Productions" loading="lazy" width="600" height="400">
+                        </div>
+                        <div class="service-content">
+                            <div class="service-icon"><i class="fas fa-share-alt"></i></div>
+                            <h3>Social Media for Brands</h3>
+                            <p>Engaging social content that builds brand awareness and drives engagement across platforms.</p>
+                            <a href="services.html#social" class="service-link" aria-label="Learn more about Social Media for Brands">Learn More <i class="fas fa-arrow-right"></i></a>
+                        </div>
                     </div>
-                    <div class="service-content">
-                        <div class="service-icon"><i class="fas fa-bullhorn"></i></div>
-                        <h3>Commercial / Skit</h3>
-                        <p>Compelling commercial content that captures attention and drives real results for your business.</p>
-                        <a href="services.html#commercial" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
 
-                <div class="service-card reveal">
-                    <div class="service-image">
-                        <img src="https://picsum.photos/seed/xlnz-social/600/400.jpg" alt="Social Media Content">
-                    </div>
-                    <div class="service-content">
-                        <div class="service-icon"><i class="fas fa-share-alt"></i></div>
-                        <h3>Social Media for Brands</h3>
-                        <p>Engaging social content that builds brand awareness and drives engagement across platforms.</p>
-                        <a href="services.html#social" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-
-                <div class="service-card reveal">
-                    <div class="service-image">
-                        <img src="https://picsum.photos/seed/xlnz-testimonial/600/400.jpg" alt="Testimonial Videos">
-                    </div>
-                    <div class="service-content">
-                        <div class="service-icon"><i class="fas fa-users"></i></div>
-                        <h3>Testimonials</h3>
-                        <p>Professional testimonial videos that showcase client experiences and build trust.</p>
-                        <a href="services.html#testimonial" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                    <div class="service-card reveal">
+                        <div class="service-image">
+                            <img src="https://picsum.photos/seed/xlnz-testimonial/600/400.jpg" alt="Client testimonial video being recorded at XLNZ Productions" loading="lazy" width="600" height="400">
+                        </div>
+                        <div class="service-content">
+                            <div class="service-icon"><i class="fas fa-users"></i></div>
+                            <h3>Testimonials</h3>
+                            <p>Professional testimonial videos that showcase client experiences and build trust.</p>
+                            <a href="services.html#testimonial" class="service-link" aria-label="Learn more about Testimonial Videos">Learn More <i class="fas fa-arrow-right"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Featured Work Section -->
-    <section class="featured" id="featured">
-        <div class="container">
-            <div class="section-header reveal">
-                <div class="section-label">Our Work</div>
-                <h2>Featured Projects</h2>
-                <p>A glimpse at what we've been creating</p>
-            </div>
-            <div class="featured-grid">
-                <div class="featured-item reveal">
-                    <img src="https://picsum.photos/seed/xlnz-work1/800/500.jpg" alt="Featured project">
-                    <div class="featured-overlay">
-                        <div class="featured-category">Podcast</div>
-                        <h3>Business Leaders Podcast</h3>
-                    </div>
-                    <div class="featured-play"><i class="fas fa-play"></i></div>
+        <!-- Featured Work Section -->
+        <section class="featured" id="featured">
+            <div class="container">
+                <div class="section-header reveal">
+                    <div class="section-label">Our Work</div>
+                    <h2>Featured Projects</h2>
+                    <p>A glimpse at what we've been creating</p>
                 </div>
-                <div class="featured-item reveal">
-                    <img src="https://picsum.photos/seed/xlnz-work2/800/500.jpg" alt="Featured project">
-                    <div class="featured-overlay">
-                        <div class="featured-category">Comedy Special</div>
-                        <h3>Stand-Up Showcase</h3>
+                <div class="featured-grid">
+                    <div class="featured-item reveal">
+                        <img src="https://picsum.photos/seed/xlnz-work1/800/500.jpg" alt="Business Leaders Podcast episode recording at XLNZ Productions studio" loading="lazy" width="800" height="500">
+                        <div class="featured-overlay">
+                            <div class="featured-category">Podcast</div>
+                            <h3>Business Leaders Podcast</h3>
+                        </div>
+                        <div class="featured-play"><i class="fas fa-play"></i></div>
                     </div>
-                    <div class="featured-play"><i class="fas fa-play"></i></div>
+                    <div class="featured-item reveal">
+                        <img src="https://picsum.photos/seed/xlnz-work2/800/500.jpg" alt="Stand-up comedy showcase filmed by XLNZ Productions" loading="lazy" width="800" height="500">
+                        <div class="featured-overlay">
+                            <div class="featured-category">Comedy Special</div>
+                            <h3>Stand-Up Showcase</h3>
+                        </div>
+                        <div class="featured-play"><i class="fas fa-play"></i></div>
+                    </div>
+                    <div class="featured-item reveal">
+                        <img src="https://picsum.photos/seed/xlnz-work3/800/500.jpg" alt="Urban Eats commercial campaign produced by XLNZ Productions" loading="lazy" width="800" height="500">
+                        <div class="featured-overlay">
+                            <div class="featured-category">Commercial</div>
+                            <h3>Urban Eats Campaign</h3>
+                        </div>
+                        <div class="featured-play"><i class="fas fa-play"></i></div>
+                    </div>
                 </div>
-                <div class="featured-item reveal">
-                    <img src="https://picsum.photos/seed/xlnz-work3/800/500.jpg" alt="Featured project">
-                    <div class="featured-overlay">
-                        <div class="featured-category">Commercial</div>
-                        <h3>Urban Eats Campaign</h3>
-                    </div>
-                    <div class="featured-play"><i class="fas fa-play"></i></div>
+                <div style="text-align: center; margin-top: 48px;" class="reveal">
+                    <a href="portfolio.html" class="btn btn-primary">View Full Portfolio <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
-            <div style="text-align: center; margin-top: 48px;" class="reveal">
-                <a href="portfolio.html" class="btn btn-primary">View Full Portfolio <i class="fas fa-arrow-right"></i></a>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- CTA Section -->
-    <section class="cta" id="cta">
-        <div class="container">
-            <div class="cta-content reveal">
-                <div class="section-label">Let's Create</div>
-                <h2>Ready to Start Your <span class="gradient-text">Next Project</span>?</h2>
-                <p>Let's collaborate to bring your creative vision to life with professional production services tailored to your needs.</p>
-                <div class="cta-buttons">
-                    <a href="contact.html" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Get a Free Quote</a>
-                    <a href="packages.html" class="btn btn-secondary"><i class="fas fa-box"></i> View Packages</a>
+        <!-- Testimonials Section -->
+        <section class="testimonials" id="testimonials">
+            <div class="container">
+                <div class="section-header reveal">
+                    <div class="section-label">Testimonials</div>
+                    <h2>What Our Clients Say</h2>
+                    <p>Hear from the people we've worked with</p>
+                </div>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card reveal">
+                        <div class="testimonial-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <blockquote>"XLNZ Productions transformed our podcast from an idea into a professional show. The quality of their work exceeded our expectations."</blockquote>
+                        <div class="testimonial-author">
+                            <img src="https://picsum.photos/seed/client1/100/100.jpg" alt="Marcus Johnson, Host of Business Leaders Podcast" loading="lazy" width="48" height="48">
+                            <div class="testimonial-author-info">
+                                <h4>Marcus Johnson</h4>
+                                <p>Host, Business Leaders Podcast</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card reveal">
+                        <div class="testimonial-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <blockquote>"They captured my comedy special perfectly. The production value was incredible and the team was great to work with."</blockquote>
+                        <div class="testimonial-author">
+                            <img src="https://picsum.photos/seed/client2/100/100.jpg" alt="Dave Rodriguez, Comedian" loading="lazy" width="48" height="48">
+                            <div class="testimonial-author-info">
+                                <h4>Dave Rodriguez</h4>
+                                <p>Comedian</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card reveal">
+                        <div class="testimonial-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <blockquote>"Our commercial campaign drove real results. XLNZ understood our brand and delivered content that resonated with our audience."</blockquote>
+                        <div class="testimonial-author">
+                            <img src="https://picsum.photos/seed/client3/100/100.jpg" alt="Sarah Chen, Marketing Director at Urban Eats" loading="lazy" width="48" height="48">
+                            <div class="testimonial-author-info">
+                                <h4>Sarah Chen</h4>
+                                <p>Marketing Director, Urban Eats</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta" id="cta">
+            <div class="container">
+                <div class="cta-content reveal">
+                    <div class="section-label">Let's Create</div>
+                    <h2>Ready to Start Your <span class="gradient-text">Next Project</span>?</h2>
+                    <p>Let's collaborate to bring your creative vision to life with professional production services tailored to your needs.</p>
+                    <div class="cta-buttons">
+                        <a href="contact.html" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Get a Free Quote</a>
+                        <a href="packages.html" class="btn btn-secondary"><i class="fas fa-box"></i> View Packages</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
 
     <!-- Footer -->
     <footer>
@@ -1272,8 +1597,8 @@
                     </a>
                     <p>Philadelphia's premier video production studio. Specializing in podcasts, comedy, films, documentaries, and commercial content.</p>
                     <div class="social-links">
-                        <a href="https://www.instagram.com/xlnzproductions" title="Instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.youtube.com/@xlnzproductions" title="YouTube" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.instagram.com/xlnzproductions" title="Instagram" aria-label="XLNZ Productions on Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/@xlnzproductions" title="YouTube" aria-label="XLNZ Productions on YouTube"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
                 <div class="footer-column">
@@ -1292,7 +1617,7 @@
                         <li><a href="services.html#podcast">Podcast Production</a></li>
                         <li><a href="services.html#standup">Stand-Up Specials</a></li>
                         <li><a href="services.html#film">Film Production</a></li>
-                        <li><a href="services.html#commercial">Commercial / Skit</a></li>
+                        <li><a href="services.html#commercial">Commercials / Skits</a></li>
                         <li><a href="services.html#social">Social Media</a></li>
                     </ul>
                 </div>
@@ -1305,13 +1630,19 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <span>XLNZ Productions</span>
-                <span>Philadelphia, PA</span>
+                <span id="copyright"></span>
+                <div class="footer-legal">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
+                </div>
             </div>
         </div>
     </footer>
 
     <script>
+        // Dynamic copyright year
+        document.getElementById('copyright').textContent = '\u00A9 ' + new Date().getFullYear() + ' XLNZ Productions. All rights reserved.';
+
         // Mobile menu toggle
         const mobileMenuToggle = document.getElementById('mobileMenuToggle');
         const mobileMenuClose = document.getElementById('mobileMenuClose');
@@ -1319,11 +1650,13 @@
 
         mobileMenuToggle.addEventListener('click', () => {
             nav.classList.add('active');
+            mobileMenuToggle.setAttribute('aria-expanded', 'true');
             document.body.style.overflow = 'hidden';
         });
 
         mobileMenuClose.addEventListener('click', () => {
             nav.classList.remove('active');
+            mobileMenuToggle.setAttribute('aria-expanded', 'false');
             document.body.style.overflow = '';
         });
 
@@ -1331,6 +1664,7 @@
         document.querySelectorAll('#nav a').forEach(link => {
             link.addEventListener('click', () => {
                 nav.classList.remove('active');
+                mobileMenuToggle.setAttribute('aria-expanded', 'false');
                 document.body.style.overflow = '';
             });
         });
@@ -1341,6 +1675,7 @@
                 !nav.contains(e.target) &&
                 !mobileMenuToggle.contains(e.target)) {
                 nav.classList.remove('active');
+                mobileMenuToggle.setAttribute('aria-expanded', 'false');
                 document.body.style.overflow = '';
             }
         });
@@ -1353,6 +1688,14 @@
             } else {
                 header.classList.remove('scrolled');
             }
+        });
+
+        // Scroll progress bar
+        window.addEventListener('scroll', () => {
+            const scrollTop = document.documentElement.scrollTop;
+            const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollPercent = (scrollTop / scrollHeight) * 100;
+            document.getElementById('scrollProgress').style.width = scrollPercent + '%';
         });
 
         // Scroll reveal animation
@@ -1370,6 +1713,44 @@
         });
 
         revealElements.forEach(el => revealObserver.observe(el));
+
+        // Stats counter animation
+        function animateValue(element, start, end, duration, suffix) {
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                const current = Math.floor(progress * (end - start) + start);
+                element.textContent = current + suffix;
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
+
+        const statNumbers = document.querySelectorAll('.stat-number');
+        let statsAnimated = false;
+
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !statsAnimated) {
+                    statsAnimated = true;
+                    statNumbers.forEach(stat => {
+                        const target = parseInt(stat.getAttribute('data-target'));
+                        const suffix = target === 500 ? '+' : '';
+                        animateValue(stat, 0, target, 2000, suffix);
+                    });
+                }
+            });
+        }, {
+            threshold: 0.5
+        });
+
+        const statsSection = document.querySelector('.stats');
+        if (statsSection) {
+            statsObserver.observe(statsSection);
+        }
 
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
