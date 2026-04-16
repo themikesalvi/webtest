@@ -605,79 +605,6 @@
             text-align: center;
         }
 
-        /* ===== MAP SECTION ===== */
-        .map-section {
-            padding: 0 0 100px;
-        }
-
-        .map-wrapper {
-            border-radius: 16px;
-            overflow: hidden;
-            border: 1px solid var(--border);
-            position: relative;
-        }
-
-        .map-placeholder {
-            width: 100%;
-            height: 400px;
-            background: linear-gradient(135deg, var(--bg-secondary), var(--bg-card));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .map-placeholder::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image:
-                linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-            background-size: 40px 40px;
-        }
-
-        .map-content {
-            position: relative;
-            z-index: 1;
-            text-align: center;
-        }
-
-        .map-icon {
-            width: 64px;
-            height: 64px;
-            background: var(--accent-gradient);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            box-shadow: 0 8px 30px rgba(233, 69, 96, 0.3);
-        }
-
-        .map-icon i {
-            font-size: 24px;
-        }
-
-        .map-content h3 {
-            font-size: 24px;
-            margin-bottom: 8px;
-        }
-
-        .map-content p {
-            color: var(--text-secondary);
-            margin-bottom: 24px;
-        }
-
-        .map-content .btn {
-            font-size: 14px;
-            padding: 12px 28px;
-        }
-
         /* ===== FAQ SECTION ===== */
         .faq-section {
             padding: 100px 0;
@@ -1005,18 +932,6 @@
                 padding: 12px 24px;
             }
 
-            .mobile-menu-close {
-                position: absolute;
-                top: 24px;
-                right: 24px;
-                background: none;
-                border: none;
-                color: var(--text-primary);
-                font-size: 28px;
-                cursor: pointer;
-                z-index: 1001;
-            }
-
             .contact-grid {
                 grid-template-columns: 1fr;
             }
@@ -1066,10 +981,6 @@
             .contact-form-wrapper {
                 padding: 24px 20px;
             }
-
-            .map-placeholder {
-                height: 300px;
-            }
         }
     </style>
 </head>
@@ -1086,9 +997,6 @@
                 <i class="fas fa-bars"></i>
             </button>
             <nav id="nav">
-                <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">
-                    <i class="fas fa-times"></i>
-                </button>
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
@@ -1110,7 +1018,7 @@
             <p>Have a project in mind? We'd love to hear about it. Reach out and let's discuss how we can bring your vision to life.</p>
             <div class="hero-buttons">
                 <a href="#contact-form" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Send a Message</a>
-                <a href="tel:2155551234" class="btn btn-secondary"><i class="fas fa-phone"></i> Call Us Now</a>
+                <a href="mailto:xlnzproductions@gmail.com" class="btn btn-secondary"><i class="fas fa-envelope"></i> Email Us</a>
             </div>
         </div>
     </section>
@@ -1140,10 +1048,6 @@
                             <div class="form-group">
                                 <label for="email">Email Address <span class="required">*</span></label>
                                 <input type="email" id="email" name="email" class="form-input" placeholder="john@example.com" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="phone">Phone Number</label>
-                                <input type="tel" id="phone" name="phone" class="form-input" placeholder="(215) 555-1234">
                             </div>
                             <div class="form-group">
                                 <label for="service">Service Interested In <span class="required">*</span></label>
@@ -1203,13 +1107,6 @@
                             </div>
                         </div>
                         <div class="info-item">
-                            <div class="info-icon"><i class="fas fa-phone"></i></div>
-                            <div class="info-content">
-                                <h4>Phone</h4>
-                                <a href="tel:2155551234">(215) 555-1234</a>
-                            </div>
-                        </div>
-                        <div class="info-item">
                             <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
                             <div class="info-content">
                                 <h4>Studio Location</h4>
@@ -1220,7 +1117,7 @@
                             <div class="info-icon"><i class="fas fa-clock"></i></div>
                             <div class="info-content">
                                 <h4>Business Hours</h4>
-                                <p>Mon - Fri: 9am - 6pm<br>Sat: 10am - 4pm<br>Sun: By Appointment</p>
+                                <p>By Appointment Only</p>
                             </div>
                         </div>
                     </div>
@@ -1234,33 +1131,13 @@
                             <a href="https://www.youtube.com/@xlnzproductions" class="social-link" target="_blank" rel="noopener">
                                 <i class="fab fa-youtube"></i> YouTube
                             </a>
-                            <a href="https://www.facebook.com/xlnzproductions" class="social-link" target="_blank" rel="noopener">
-                                <i class="fab fa-facebook"></i> Facebook
+                            <a href="https://www.tiktok.com/@xlnzproductions" class="social-link" target="_blank" rel="noopener">
+                                <i class="fab fa-tiktok"></i> TikTok
                             </a>
                             <a href="https://twitter.com/xlnzproductions" class="social-link" target="_blank" rel="noopener">
                                 <i class="fab fa-twitter"></i> Twitter
                             </a>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Map Section -->
-    <section class="map-section">
-        <div class="container">
-            <div class="map-wrapper reveal">
-                <div class="map-placeholder">
-                    <div class="map-content">
-                        <div class="map-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <h3>Our Studio</h3>
-                        <p>Philadelphia, PA</p>
-                        <a href="https://maps.google.com/?q=Philadelphia+PA" target="_blank" rel="noopener" class="btn btn-primary">
-                            <i class="fas fa-directions"></i> Get Directions
-                        </a>
                     </div>
                 </div>
             </div>
@@ -1344,11 +1221,11 @@
         <div class="container">
             <div class="cta-content reveal">
                 <div class="section-label" style="justify-content: center;">Ready to Start?</div>
-                <h2>Prefer to Talk <span class="gradient-text">Live</span>?</h2>
-                <p>Sometimes it's easier to explain your vision over the phone. Give us a call and let's discuss your project.</p>
+                <h2>Let's Bring Your <span class="gradient-text">Vision</span> to Life</h2>
+                <p>Whether you have a fully developed concept or just a spark of an idea, we're here to help make it happen. Drop us a message and let's create something amazing together.</p>
                 <div class="cta-buttons">
-                    <a href="tel:2155551234" class="btn btn-primary"><i class="fas fa-phone"></i> Call (215) 555-1234</a>
-                    <a href="mailto:xlnzproductions@gmail.com" class="btn btn-secondary"><i class="fas fa-envelope"></i> Send an Email</a>
+                    <a href="#contact-form" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Send a Message</a>
+                    <a href="mailto:xlnzproductions@gmail.com" class="btn btn-secondary"><i class="fas fa-envelope"></i> Email Us Directly</a>
                 </div>
             </div>
         </div>
@@ -1367,6 +1244,7 @@
                     <div class="footer-social">
                         <a href="https://www.instagram.com/xlnzproductions" title="Instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                         <a href="https://www.youtube.com/@xlnzproductions" title="YouTube" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.tiktok.com/@xlnzproductions" title="TikTok" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
                     </div>
                 </div>
                 <div class="footer-column">
@@ -1393,8 +1271,8 @@
                     <h4>Contact</h4>
                     <ul>
                         <li><a href="mailto:xlnzproductions@gmail.com"><i class="fas fa-envelope" style="margin-right: 8px;"></i> xlnzproductions@gmail.com</a></li>
-                        <li><a href="tel:2155551234"><i class="fas fa-phone" style="margin-right: 8px;"></i> (215) 555-1234</a></li>
                         <li><a href="#"><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i> Philadelphia, PA</a></li>
+                        <li><a href="#"><i class="fas fa-clock" style="margin-right: 8px;"></i> By Appointment Only</a></li>
                     </ul>
                 </div>
             </div>
@@ -1408,17 +1286,11 @@
     <script>
         // Mobile menu toggle
         const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-        const mobileMenuClose = document.getElementById('mobileMenuClose');
         const nav = document.getElementById('nav');
 
         mobileMenuToggle.addEventListener('click', () => {
             nav.classList.add('active');
             document.body.style.overflow = 'hidden';
-        });
-
-        mobileMenuClose.addEventListener('click', () => {
-            nav.classList.remove('active');
-            document.body.style.overflow = '';
         });
 
         // Close mobile menu on link click
@@ -1473,7 +1345,6 @@
             const firstName = document.getElementById('firstName').value;
             const lastName = document.getElementById('lastName').value;
             const email = document.getElementById('email').value;
-            const phone = document.getElementById('phone').value;
             const service = document.getElementById('service').value;
             const budget = document.getElementById('budget').value;
             const message = document.getElementById('message').value;
