@@ -401,7 +401,7 @@
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 24px;
-            margin-bottom: 64px;
+            margin-bottom: 32px;
         }
 
         .package-card {
@@ -531,6 +531,66 @@
         .package-card.selected .package-select-btn {
             background: var(--accent-gradient);
             border-color: transparent;
+        }
+
+        /* Payment Terms */
+        .payment-terms {
+            max-width: 700px;
+            margin: 0 auto 64px;
+            text-align: center;
+        }
+
+        .payment-terms-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+        }
+
+        .payment-step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            position: relative;
+        }
+
+        .payment-step-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(233, 69, 96, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            color: var(--accent);
+            margin-bottom: 4px;
+        }
+
+        .payment-step-label {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 15px;
+            color: var(--text-primary);
+        }
+
+        .payment-step-detail {
+            font-size: 13px;
+            color: var(--text-secondary);
+            text-align: center;
+            line-height: 1.4;
+        }
+
+        .payment-step-divider {
+            color: var(--text-muted);
+            font-size: 20px;
+            display: flex;
+            align-items: center;
         }
 
         /* ===== SUMMARY SECTION ===== */
@@ -903,6 +963,15 @@
                 margin-left: auto;
                 margin-right: auto;
             }
+
+            .payment-terms-card {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .payment-step-divider {
+                transform: rotate(90deg);
+            }
         }
 
         @media (max-width: 768px) {
@@ -1086,26 +1155,8 @@
                         <button class="package-select-btn">Select Package</button>
                     </div>
 
-                    <div class="package-card selected" data-package="podcast-8" data-price="800" data-name="8 Episodes Podcast">
+                    <div class="package-card selected" data-package="podcast-12" data-price="1020" data-name="12 Episodes Podcast">
                         <div class="popular-badge">Most Popular</div>
-                        <h3 class="package-name">8 Episodes</h3>
-                        <p class="package-description">Our most popular podcast package</p>
-                        <div class="package-price-wrapper">
-                            <div class="package-price">$800</div>
-                            <div class="package-price-period">One-time payment</div>
-                        </div>
-                        <ul class="package-features">
-                            <li><i class="fas fa-check"></i> Professional recording</li>
-                            <li><i class="fas fa-check"></i> Audio editing & mixing</li>
-                            <li><i class="fas fa-check"></i> Intro/outro music</li>
-                            <li><i class="fas fa-check"></i> Sound design</li>
-                            <li><i class="fas fa-check"></i> Digital delivery</li>
-                            <li><i class="fas fa-check"></i> Strategy consultation</li>
-                        </ul>
-                        <button class="package-select-btn">Selected</button>
-                    </div>
-
-                    <div class="package-card" data-package="podcast-12" data-price="1020" data-name="12 Episodes Podcast">
                         <h3 class="package-name">12 Episodes</h3>
                         <p class="package-description">Best value for ongoing content</p>
                         <div class="package-price-wrapper">
@@ -1120,7 +1171,48 @@
                             <li><i class="fas fa-check"></i> Digital delivery</li>
                             <li><i class="fas fa-check"></i> Strategy consultation</li>
                         </ul>
+                        <button class="package-select-btn">Selected</button>
+                    </div>
+
+                    <div class="package-card" data-package="podcast-8" data-price="800" data-name="8 Episodes Podcast">
+                        <h3 class="package-name">8 Episodes</h3>
+                        <p class="package-description">Our most popular podcast package</p>
+                        <div class="package-price-wrapper">
+                            <div class="package-price">$800</div>
+                            <div class="package-price-period">One-time payment</div>
+                        </div>
+                        <ul class="package-features">
+                            <li><i class="fas fa-check"></i> Professional recording</li>
+                            <li><i class="fas fa-check"></i> Audio editing & mixing</li>
+                            <li><i class="fas fa-check"></i> Intro/outro music</li>
+                            <li><i class="fas fa-check"></i> Sound design</li>
+                            <li><i class="fas fa-check"></i> Digital delivery</li>
+                            <li><i class="fas fa-check"></i> Strategy consultation</li>
+                        </ul>
                         <button class="package-select-btn">Select Package</button>
+                    </div>
+                </div>
+
+                <!-- Payment Terms -->
+                <div class="payment-terms reveal">
+                    <div class="payment-terms-card">
+                        <div class="payment-step">
+                            <div class="payment-step-icon"><i class="fas fa-calendar-check"></i></div>
+                            <div class="payment-step-label">25% Down</div>
+                            <div class="payment-step-detail">To book your dates</div>
+                        </div>
+                        <div class="payment-step-divider"><i class="fas fa-arrow-right"></i></div>
+                        <div class="payment-step">
+                            <div class="payment-step-icon"><i class="fas fa-play-circle"></i></div>
+                            <div class="payment-step-label">50% Paid</div>
+                            <div class="payment-step-detail">First 2 episodes released</div>
+                        </div>
+                        <div class="payment-step-divider"><i class="fas fa-arrow-right"></i></div>
+                        <div class="payment-step">
+                            <div class="payment-step-icon"><i class="fas fa-check-circle"></i></div>
+                            <div class="payment-step-label">100% Paid</div>
+                            <div class="payment-step-detail">Full season delivered</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1312,15 +1404,15 @@
                     <div class="summary-content">
                         <div class="summary-row">
                             <span class="summary-row-label">Selected Package</span>
-                            <span class="summary-row-value" id="selectedPackage">8 Episodes Podcast</span>
+                            <span class="summary-row-value" id="selectedPackage">12 Episodes Podcast</span>
                         </div>
                         <div class="summary-row">
                             <span class="summary-row-label">Base Price</span>
-                            <span class="summary-row-value" id="basePrice">$800</span>
+                            <span class="summary-row-value" id="basePrice">$1,020</span>
                         </div>
                         <div class="summary-total">
                             <span class="summary-total-label">Total</span>
-                            <span class="summary-total-price" id="totalPrice">$800</span>
+                            <span class="summary-total-price" id="totalPrice">$1,020</span>
                         </div>
                         <div class="summary-actions">
                             <a href="contact.html" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Get Quote</a>
@@ -1367,7 +1459,7 @@
                         <div class="faq-toggle"><i class="fas fa-chevron-down"></i></div>
                     </div>
                     <div class="faq-answer">
-                        <p>We accept various payment methods including credit cards, bank transfers, and PayPal. For larger projects, we offer payment plans with a 50% deposit to begin work and the remaining balance due upon project completion.</p>
+                        <p>We accept various payment methods including credit cards, bank transfers, and PayPal. For podcast packages, we offer a flexible payment plan: 25% down to book your dates, first 2 episodes released when your balance reaches 50%, and the full season delivered upon 100% payment.</p>
                     </div>
                 </div>
 
@@ -1633,6 +1725,5 @@
             });
         });
     </script>
-
 </body>
 </html>
