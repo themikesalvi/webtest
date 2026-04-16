@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Professional video production services from XLNZ Productions. Podcast production, stand-up specials, film production, commercials, and social media content in Philadelphia.">
-    <meta name="keywords" content="video production services, podcast production, stand-up comedy filming, commercial production, social media video, Philadelphia video production">
+    <meta name="description" content="Professional video production services from XLNZ Productions. Podcast production, stand-up specials, film production, commercials, social media content, and documentaries in Philadelphia.">
+    <meta name="keywords" content="video production services, podcast production, stand-up comedy filming, commercial production, social media video, documentary production, Philadelphia video production">
     <meta name="robots" content="index, follow">
     <meta name="author" content="XLNZ Productions">
     <link rel="canonical" href="https://www.xlnzproductions.com/services">
 
     <!-- Open Graph -->
     <meta property="og:title" content="Our Services - XLNZ Productions">
-    <meta property="og:description" content="Professional video production services including podcasts, stand-up specials, films, commercials, and social media content.">
+    <meta property="og:description" content="Professional video production services including podcasts, stand-up specials, films, commercials, social media content, and documentaries.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.xlnzproductions.com/services">
     <meta property="og:image" content="https://www.xlnzproductions.com/images/og-services.jpg">
@@ -20,7 +20,7 @@
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Our Services - XLNZ Productions">
-    <meta name="twitter:description" content="Professional video production services including podcasts, stand-up specials, films, commercials, and social media content.">
+    <meta name="twitter:description" content="Professional video production services including podcasts, stand-up specials, films, commercials, social media content, and documentaries.">
 
     <!-- Schema.org -->
     <script type="application/ld+json">
@@ -479,6 +479,25 @@
             flex-shrink: 0;
         }
 
+        .service-price-range {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(233, 69, 96, 0.1);
+            border: 1px solid rgba(233, 69, 96, 0.2);
+            color: var(--accent);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 13px;
+            padding: 6px 14px;
+            border-radius: 50px;
+            margin-bottom: 20px;
+        }
+
+        .service-price-range i {
+            font-size: 12px;
+        }
+
         /* ===== PROCESS SECTION ===== */
         .process-section {
             padding: 100px 0;
@@ -856,7 +875,7 @@
             <p>From concept to final delivery, we provide professional video production services tailored to your creative vision and budget.</p>
             <div class="hero-buttons">
                 <a href="#services" class="btn btn-primary"><i class="fas fa-arrow-down"></i> Explore Services</a>
-                <a href="contact.html" class="btn btn-secondary"><i class="fas fa-envelope"></i> Get a Quote</a>
+                <a href="packages.html" class="btn btn-secondary"><i class="fas fa-tag"></i> View Packages</a>
             </div>
         </div>
     </section>
@@ -882,6 +901,7 @@
                         </div>
                         <h3>Podcast Production</h3>
                         <p>Professional podcast recording, editing, and distribution services to help you share your voice with the world.</p>
+                        <div class="service-price-range"><i class="fas fa-tag"></i> $480 – $1,020</div>
                         <ul class="service-features">
                             <li><i class="fas fa-check"></i> Professional audio recording</li>
                             <li><i class="fas fa-check"></i> Audio editing & mixing</li>
@@ -904,6 +924,7 @@
                         </div>
                         <h3>Stand-Up Specials</h3>
                         <p>Multi-camera comedy production that captures every punchline and audience reaction with cinematic quality.</p>
+                        <div class="service-price-range"><i class="fas fa-tag"></i> $500 – $1,200</div>
                         <ul class="service-features">
                             <li><i class="fas fa-check"></i> Multi-camera setup</li>
                             <li><i class="fas fa-check"></i> Professional audio</li>
@@ -912,28 +933,6 @@
                             <li><i class="fas fa-check"></i> Audience capture</li>
                         </ul>
                         <a href="packages.html" class="btn btn-primary btn-sm"><i class="fas fa-tag"></i> View Packages</a>
-                    </div>
-                </div>
-
-                <!-- Film Production -->
-                <div class="service-card reveal" id="film">
-                    <div class="service-image">
-                        <img src="https://picsum.photos/seed/xlnz-film-service/400/200.jpg" alt="Film Production">
-                    </div>
-                    <div class="service-content">
-                        <div class="service-icon-wrapper">
-                            <i class="fas fa-video"></i>
-                        </div>
-                        <h3>Film Production</h3>
-                        <p>Full-service film production from pre-production planning to post-production and final delivery.</p>
-                        <ul class="service-features">
-                            <li><i class="fas fa-check"></i> Script development</li>
-                            <li><i class="fas fa-check"></i> Pre-production planning</li>
-                            <li><i class="fas fa-check"></i> Professional filming</li>
-                            <li><i class="fas fa-check"></i> Post-production</li>
-                            <li><i class="fas fa-check"></i> Distribution support</li>
-                        </ul>
-                        <a href="contact.html" class="btn btn-primary btn-sm"><i class="fas fa-envelope"></i> Get Quote</a>
                     </div>
                 </div>
 
@@ -946,8 +945,9 @@
                         <div class="service-icon-wrapper">
                             <i class="fas fa-bullhorn"></i>
                         </div>
-                        <h3>Commercials/Skits</h3>
+                        <h3>Commercials / Skits</h3>
                         <p>Compelling commercial and skit content that captures attention and drives results for your business.</p>
+                        <div class="service-price-range"><i class="fas fa-tag"></i> $750 – $3,600</div>
                         <ul class="service-features">
                             <li><i class="fas fa-check"></i> Concept development</li>
                             <li><i class="fas fa-check"></i> Script writing</li>
@@ -970,34 +970,59 @@
                         </div>
                         <h3>Social Media Content</h3>
                         <p>Engaging social media content that builds brand awareness and drives engagement across platforms.</p>
+                        <div class="service-price-range"><i class="fas fa-tag"></i> $400 – $1,800</div>
                         <ul class="service-features">
-                            <li><i class="fas fa-check"></i> B-roll footage</li>
+                            <li><i class="fas fa-check"></i> Promotional reels</li>
                             <li><i class="fas fa-check"></i> Professional editing</li>
                             <li><i class="fas fa-check"></i> Music licensing</li>
                             <li><i class="fas fa-check"></i> Social media optimization</li>
-                            <li><i class="fas fa-check"></i> Analytics reports</li>
+                            <li><i class="fas fa-check"></i> Strategy consultation</li>
                         </ul>
                         <a href="packages.html" class="btn btn-primary btn-sm"><i class="fas fa-tag"></i> View Packages</a>
                     </div>
                 </div>
 
-                <!-- Testimonials -->
-                <div class="service-card reveal" id="testimonial">
+                <!-- Film Production -->
+                <div class="service-card reveal" id="film">
                     <div class="service-image">
-                        <img src="https://picsum.photos/seed/xlnz-testimonial-service/400/200.jpg" alt="Testimonial Videos">
+                        <img src="https://picsum.photos/seed/xlnz-film-service/400/200.jpg" alt="Film Production">
                     </div>
                     <div class="service-content">
                         <div class="service-icon-wrapper">
-                            <i class="fas fa-users"></i>
+                            <i class="fas fa-video"></i>
                         </div>
-                        <h3>Testimonials</h3>
-                        <p>Professional testimonial videos that showcase your clients' experiences and build trust with potential customers.</p>
+                        <h3>Film Production</h3>
+                        <p>Full-service film production from pre-production planning to post-production and final delivery.</p>
+                        <div class="service-price-range"><i class="fas fa-tag"></i> Custom Quote</div>
                         <ul class="service-features">
-                            <li><i class="fas fa-check"></i> Client interviews</li>
+                            <li><i class="fas fa-check"></i> Script development</li>
+                            <li><i class="fas fa-check"></i> Pre-production planning</li>
                             <li><i class="fas fa-check"></i> Professional filming</li>
-                            <li><i class="fas fa-check"></i> Advanced editing</li>
-                            <li><i class="fas fa-check"></i> Multiple versions</li>
-                            <li><i class="fas fa-check"></i> Platform optimization</li>
+                            <li><i class="fas fa-check"></i> Post-production</li>
+                            <li><i class="fas fa-check"></i> Distribution support</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-primary btn-sm"><i class="fas fa-envelope"></i> Get Quote</a>
+                    </div>
+                </div>
+
+                <!-- Documentaries -->
+                <div class="service-card reveal" id="documentary">
+                    <div class="service-image">
+                        <img src="https://picsum.photos/seed/xlnz-documentary-service/400/200.jpg" alt="Documentary Production">
+                    </div>
+                    <div class="service-content">
+                        <div class="service-icon-wrapper">
+                            <i class="fas fa-film"></i>
+                        </div>
+                        <h3>Documentaries</h3>
+                        <p>Compelling documentary production that tells powerful stories and brings important narratives to life.</p>
+                        <div class="service-price-range"><i class="fas fa-tag"></i> Custom Quote</div>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Story development</li>
+                            <li><i class="fas fa-check"></i> Interview filming</li>
+                            <li><i class="fas fa-check"></i> Cinematic coverage</li>
+                            <li><i class="fas fa-check"></i> Post-production</li>
+                            <li><i class="fas fa-check"></i> Distribution strategy</li>
                         </ul>
                         <a href="contact.html" class="btn btn-primary btn-sm"><i class="fas fa-envelope"></i> Get Quote</a>
                     </div>
@@ -1089,8 +1114,9 @@
                         <li><a href="services.html#podcast">Podcast Production</a></li>
                         <li><a href="services.html#standup">Stand-Up Specials</a></li>
                         <li><a href="services.html#film">Film Production</a></li>
-                        <li><a href="services.html#commercial">Commercials/Skits</a></li>
+                        <li><a href="services.html#commercial">Commercial / Skit</a></li>
                         <li><a href="services.html#social">Social Media</a></li>
+                        <li><a href="services.html#documentary">Documentaries</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
