@@ -184,6 +184,16 @@
             padding: 8px;
         }
 
+        .mobile-menu-close {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 28px;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
         /* ===== PAGE HERO ===== */
         .page-hero {
             min-height: 60vh;
@@ -914,6 +924,13 @@
                 display: block;
             }
 
+            .mobile-menu-close {
+                display: block;
+                position: absolute;
+                top: 24px;
+                right: 24px;
+            }
+
             nav {
                 position: fixed;
                 top: 0;
@@ -944,18 +961,6 @@
             nav ul li a {
                 font-size: 24px;
                 padding: 12px 24px;
-            }
-
-            .mobile-menu-close {
-                position: absolute;
-                top: 24px;
-                right: 24px;
-                background: none;
-                border: none;
-                color: var(--text-primary);
-                font-size: 28px;
-                cursor: pointer;
-                z-index: 1001;
             }
 
             .who-we-are-features {
