@@ -196,6 +196,16 @@
             padding: 8px;
         }
 
+        .mobile-menu-close {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 28px;
+            cursor: pointer;
+            padding: 8px;
+        }
+
         /* ===== PAGE HERO ===== */
         .page-hero {
             min-height: 60vh;
@@ -426,10 +436,12 @@
 
         .stats-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(2, 1fr);
             gap: 32px;
             position: relative;
             z-index: 1;
+            max-width: 700px;
+            margin: 0 auto;
         }
 
         .stat-item {
@@ -934,6 +946,10 @@
                 display: block;
             }
 
+            .mobile-menu-close {
+                display: block;
+            }
+
             nav {
                 position: fixed;
                 top: 0;
@@ -970,11 +986,6 @@
                 position: absolute;
                 top: 24px;
                 right: 24px;
-                background: none;
-                border: none;
-                color: var(--text-primary);
-                font-size: 28px;
-                cursor: pointer;
                 z-index: 1001;
             }
 
@@ -1121,12 +1132,8 @@
         <div class="container">
             <div class="stats-grid">
                 <div class="stat-item reveal">
-                    <div class="stat-number">47+</div>
+                    <div class="stat-number">500+</div>
                     <div class="stat-label">Projects Completed</div>
-                </div>
-                <div class="stat-item reveal">
-                    <div class="stat-number">35+</div>
-                    <div class="stat-label">Happy Clients</div>
                 </div>
                 <div class="stat-item reveal">
                     <div class="stat-number">6</div>
