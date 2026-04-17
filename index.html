@@ -1279,6 +1279,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            font-family: 'Montserrat', sans-serif;
         }
 
         .pacman-overlay.active {
@@ -1293,12 +1294,14 @@
             max-width: 560px;
             padding: 12px 16px;
             color: #fff;
-            font-family: 'Courier New', monospace;
+            font-family: 'Montserrat', sans-serif;
             font-size: 16px;
         }
 
         .pacman-score {
-            color: #fff;
+            color: #e94560;
+            font-weight: 700;
+            font-size: 18px;
         }
 
         .pacman-lives {
@@ -1310,16 +1313,30 @@
         .pacman-life {
             width: 20px;
             height: 20px;
-            background: #ffff00;
+            background: linear-gradient(135deg, #e94560, #ff6b35);
             border-radius: 50%;
-            clip-path: polygon(100% 50%, 50% 50%, 75% 15%, 100% 0%, 100% 100%, 75% 85%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pacman-life::after {
+            content: 'X';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 9px;
+            font-weight: 900;
+            color: #fff;
+            font-family: 'Montserrat', sans-serif;
         }
 
         .pacman-close {
             background: none;
-            border: 2px solid #ff0000;
-            color: #ff0000;
-            font-family: 'Courier New', monospace;
+            border: 2px solid #e94560;
+            color: #e94560;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
             font-size: 14px;
             padding: 4px 12px;
             cursor: pointer;
@@ -1328,20 +1345,21 @@
         }
 
         .pacman-close:hover {
-            background: #ff0000;
+            background: #e94560;
             color: #000;
         }
 
         .pacman-canvas-wrapper {
             position: relative;
-            border: 2px solid #2121de;
-            border-radius: 4px;
+            border: 2px solid rgba(233, 69, 96, 0.4);
+            border-radius: 8px;
             overflow: hidden;
+            box-shadow: 0 0 40px rgba(233, 69, 96, 0.15);
         }
 
         #pacmanCanvas {
             display: block;
-            background: #000;
+            background: #0a0a0f;
         }
 
         .pacman-controls {
@@ -1361,9 +1379,9 @@
         }
 
         .pacman-dpad-btn {
-            background: rgba(33, 33, 222, 0.6);
-            border: 2px solid #2121de;
-            color: #fff;
+            background: rgba(233, 69, 96, 0.15);
+            border: 2px solid rgba(233, 69, 96, 0.4);
+            color: #e94560;
             font-size: 24px;
             cursor: pointer;
             border-radius: 8px;
@@ -1373,10 +1391,13 @@
             user-select: none;
             -webkit-user-select: none;
             touch-action: manipulation;
+            transition: all 0.15s ease;
         }
 
         .pacman-dpad-btn:active {
-            background: #2121de;
+            background: #e94560;
+            color: #fff;
+            transform: scale(0.95);
         }
 
         .pacman-dpad-btn.empty {
@@ -1391,38 +1412,43 @@
             left: 50%;
             transform: translate(-50%, -50%);
             text-align: center;
-            color: #ff0000;
-            font-family: 'Courier New', monospace;
+            font-family: 'Montserrat', sans-serif;
             display: none;
             z-index: 10;
         }
 
         .pacman-game-over h2 {
-            font-size: 32px;
+            font-size: 36px;
             margin-bottom: 8px;
-            text-shadow: 0 0 10px #ff0000;
+            background: linear-gradient(135deg, #e94560, #ff6b35);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .pacman-game-over p {
             color: #fff;
-            font-size: 18px;
+            font-size: 20px;
             margin-bottom: 20px;
+            font-weight: 600;
         }
 
         .pacman-game-over .pacman-restart {
-            background: #2121de;
+            background: linear-gradient(135deg, #e94560, #ff6b35);
             border: none;
             color: #fff;
-            font-family: 'Courier New', monospace;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
             font-size: 16px;
             padding: 12px 32px;
             cursor: pointer;
-            border-radius: 4px;
-            transition: background 0.2s;
+            border-radius: 8px;
+            transition: all 0.2s;
         }
 
         .pacman-game-over .pacman-restart:hover {
-            background: #3b3bff;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(233, 69, 96, 0.4);
         }
 
         .pacman-start-screen {
@@ -1435,35 +1461,47 @@
         }
 
         .pacman-start-screen h2 {
-            color: #ffff00;
-            font-family: 'Courier New', monospace;
-            font-size: 36px;
-            margin-bottom: 8px;
-            text-shadow: 0 0 20px rgba(255, 255, 0, 0.5);
+            font-size: 42px;
+            margin-bottom: 4px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            letter-spacing: -1px;
+        }
+
+        .pacman-start-screen h2 span {
+            background: linear-gradient(135deg, #e94560, #ff6b35);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .pacman-start-screen p {
-            color: #00ff41;
-            font-family: 'Courier New', monospace;
+            color: #a0a0b8;
+            font-family: 'Montserrat', sans-serif;
             font-size: 16px;
             margin-bottom: 24px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
         }
 
         .pacman-start-btn {
-            background: #2121de;
+            background: linear-gradient(135deg, #e94560, #ff6b35);
             border: none;
             color: #fff;
-            font-family: 'Courier New', monospace;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
             font-size: 20px;
             padding: 16px 48px;
             cursor: pointer;
-            border-radius: 4px;
-            transition: background 0.2s;
+            border-radius: 8px;
+            transition: all 0.2s;
             animation: pacmanPulse 1.5s ease-in-out infinite;
         }
 
         .pacman-start-btn:hover {
-            background: #3b3bff;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(233, 69, 96, 0.4);
         }
 
         @keyframes pacmanPulse {
@@ -1473,8 +1511,8 @@
 
         .pacman-mobile-hint {
             display: none;
-            color: #00bfff;
-            font-family: 'Courier New', monospace;
+            color: #a0a0b8;
+            font-family: 'Inter', sans-serif;
             font-size: 13px;
             margin-top: 16px;
             text-align: center;
@@ -1661,8 +1699,8 @@
                 <button class="pacman-restart" id="pacmanRestart">PLAY AGAIN</button>
             </div>
             <div class="pacman-start-screen" id="pacmanStartScreen">
-                <h2>PAC-MAN</h2>
-                <p>XLNZ ARCADE UNLOCKED</p>
+                <h2><span>XLNZ</span> PAC-MAN</h2>
+                <p>ARCADE UNLOCKED</p>
                 <button class="pacman-start-btn" id="pacmanStartBtn">START GAME</button>
                 <div class="pacman-mobile-hint">Use D-Pad or Swipe to move</div>
             </div>
@@ -2254,11 +2292,11 @@
                 { text: '> FIREWALL BREACHED', delay: 2400, class: 'hack-success' },
                 { text: '> SCANNING SYSTEM FILES...', delay: 3000, class: 'hack-prompt' },
                 { text: '> LOCATING ARCADE MODULE...', delay: 3600, class: 'hack-prompt' },
-                { text: '> MODULE FOUND: PAC-MAN.EXE', delay: 4200, class: 'hack-info' },
+                { text: '> MODULE FOUND: XLNZ_PACMAN.EXE', delay: 4200, class: 'hack-info' },
                 { text: '> DECRYPTING...', delay: 4800, class: 'hack-prompt' },
                 { text: '> \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588 100%', delay: 5400, class: 'hack-progress' },
                 { text: '> ROOT ACCESS GRANTED', delay: 6000, class: 'hack-success' },
-                { text: '> LAUNCHING ARCADE...', delay: 6600, class: 'hack-prompt' },
+                { text: '> LAUNCHING XLNZ ARCADE...', delay: 6600, class: 'hack-prompt' },
                 { text: '> HAVE FUN ;)', delay: 7200, class: 'hack-success' },
             ];
 
@@ -2383,7 +2421,7 @@
                 }
             }
 
-            // Init Pac-Man
+            // Init Pac-Man (XLNZ)
             pacman = {
                 x: 14,
                 y: 23,
@@ -2654,7 +2692,7 @@
         }
 
         function draw() {
-            ctx.fillStyle = '#000';
+            ctx.fillStyle = '#0a0a0f';
             ctx.fillRect(0, 0, canvas.width, canvas.height);
 
             // Draw maze
@@ -2665,32 +2703,33 @@
                     const y = r * TILE;
 
                     if (tile === 1) {
-                        // Wall
-                        ctx.fillStyle = '#2121de';
+                        // Wall - XLNZ themed
+                        ctx.fillStyle = '#1a1a2e';
                         ctx.fillRect(x, y, TILE, TILE);
-                        ctx.fillStyle = '#1919a6';
-                        ctx.fillRect(x + 2, y + 2, TILE - 4, TILE - 4);
+                        ctx.strokeStyle = '#2a2a4e';
+                        ctx.lineWidth = 1;
+                        ctx.strokeRect(x + 0.5, y + 0.5, TILE - 1, TILE - 1);
                     } else if (tile === 2) {
                         // Dot
-                        ctx.fillStyle = '#ffb8ae';
+                        ctx.fillStyle = '#6c6c80';
                         ctx.beginPath();
                         ctx.arc(x + TILE / 2, y + TILE / 2, 2, 0, Math.PI * 2);
                         ctx.fill();
                     } else if (tile === 3) {
-                        // Power pellet
-                        ctx.fillStyle = '#ffb8ae';
+                        // Power pellet - XLNZ accent color
+                        ctx.fillStyle = '#e94560';
                         ctx.beginPath();
                         ctx.arc(x + TILE / 2, y + TILE / 2, 6, 0, Math.PI * 2);
                         ctx.fill();
                     } else if (tile === 5) {
-                        // Ghost door
-                        ctx.fillStyle = '#ffb8ff';
+                        // Ghost door - XLNZ accent
+                        ctx.fillStyle = '#e94560';
                         ctx.fillRect(x, y + TILE / 2 - 2, TILE, 4);
                     }
                 }
             }
 
-            // Draw Pac-Man
+            // Draw XLNZ Pac-Man
             const px = pacman.x * TILE + TILE / 2;
             const py = pacman.y * TILE + TILE / 2;
             const mouthAngle = mouthOpen ? 0.25 : 0.05;
@@ -2702,13 +2741,26 @@
             else if (pacman.dir === 'up') startAngle = Math.PI * 1.5 + mouthAngle;
 
             const endAngle = startAngle + (Math.PI * 2 - mouthAngle * 2);
+            const radius = TILE / 2 - 2;
 
-            ctx.fillStyle = '#ffff00';
+            // XLNZ gradient body
+            const gradient = ctx.createLinearGradient(px - radius, py - radius, px + radius, py + radius);
+            gradient.addColorStop(0, '#e94560');
+            gradient.addColorStop(1, '#ff6b35');
+
+            ctx.fillStyle = gradient;
             ctx.beginPath();
             ctx.moveTo(px, py);
-            ctx.arc(px, py, TILE / 2 - 2, startAngle, endAngle);
+            ctx.arc(px, py, radius, startAngle, endAngle);
             ctx.closePath();
             ctx.fill();
+
+            // XLNZ text inside
+            ctx.font = '900 ' + Math.round(TILE * 0.55) + 'px Montserrat';
+            ctx.fillStyle = '#ffffff';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText('XLNZ', px, py + 1);
 
             // Draw ghosts
             ghosts.forEach(ghost => {
@@ -2724,10 +2776,11 @@
                 }
 
                 // Ghost body
-                ctx.fillStyle = ghost.frightened ? '#2121de' : ghost.color;
+                ctx.fillStyle = ghost.frightened ? '#1a1a4e' : ghost.color;
                 ctx.beginPath();
                 ctx.arc(gx, gy - 2, TILE / 2 - 2, Math.PI, 0);
                 ctx.lineTo(gx + TILE / 2 - 2, gy + TILE / 2 - 2);
+                // Wavy bottom
                 ctx.lineTo(gx + TILE / 4 - 2, gy + TILE / 2 - 5);
                 ctx.lineTo(gx, gy + TILE / 2 - 2);
                 ctx.lineTo(gx - TILE / 4 + 2, gy + TILE / 2 - 5);
@@ -2742,8 +2795,8 @@
                     // Frightened face
                     ctx.fillStyle = '#fff';
                     ctx.beginPath();
-                    ctx.arc(gx - 4, gy - 2, 3, 0, Math.PI * 2);
-                    ctx.arc(gx + 4, gy - 2, 3, 0, Math.PI * 2);
+                    ctx.arc(gx - 4, gy - 2, 2.5, 0, Math.PI * 2);
+                    ctx.arc(gx + 4, gy - 2, 2.5, 0, Math.PI * 2);
                     ctx.fill();
 
                     // Wavy mouth
@@ -2755,6 +2808,16 @@
                     ctx.lineTo(gx + 2, gy + 4);
                     ctx.lineTo(gx + 5, gy + 2);
                     ctx.stroke();
+
+                    // Flashing when about to end
+                    if (frightenedTimer < 2000 && frightenedTimer > 0) {
+                        if (Math.floor(frightenedTimer / 200) % 2 === 0) {
+                            ctx.fillStyle = '#fff';
+                            ctx.beginPath();
+                            ctx.arc(gx, gy - 2, TILE / 2 - 4, 0, Math.PI * 2);
+                            ctx.fill();
+                        }
+                    }
                 }
             });
         }
@@ -2774,7 +2837,7 @@
             else if (dir === 'up') pupilOffsetY = -2;
             else if (dir === 'down') pupilOffsetY = 2;
 
-            ctx.fillStyle = '#00f';
+            ctx.fillStyle = '#2121de';
             ctx.beginPath();
             ctx.arc(x - 4 + pupilOffsetX, y - 2 + pupilOffsetY, 2, 0, Math.PI * 2);
             ctx.arc(x + 4 + pupilOffsetX, y - 2 + pupilOffsetY, 2, 0, Math.PI * 2);
