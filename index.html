@@ -18,7 +18,6 @@
             line-height: 1.6;
         }
 
-        /* Navigation */
         nav {
             background: rgba(10, 10, 10, 0.95);
             padding: 1rem 2rem;
@@ -66,7 +65,6 @@
             color: #ff4444;
         }
 
-        /* Hero Section */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -109,7 +107,6 @@
             box-shadow: 0 10px 30px rgba(255, 68, 68, 0.3);
         }
 
-        /* Services Section */
         .services {
             padding: 5rem 2rem;
             background: #0f0f0f;
@@ -154,7 +151,6 @@
             color: #aaaaaa;
         }
 
-        /* About Section */
         .about {
             padding: 5rem 2rem;
             background: #0a0a0a;
@@ -172,7 +168,6 @@
             margin-bottom: 1.5rem;
         }
 
-        /* Footer */
         footer {
             background: #050505;
             padding: 2rem;
@@ -184,7 +179,6 @@
             color: #666666;
         }
 
-        /* Game Overlays */
         .game-overlay {
             display: none;
             position: fixed;
@@ -197,16 +191,6 @@
             justify-content: center;
             align-items: center;
             flex-direction: column;
-        }
-
-        #pacman-canvas {
-            border: 2px solid #2121ff;
-            background: #000;
-        }
-
-        #sickos-canvas {
-            background: #000;
-            cursor: none;
         }
 
         .close-game {
@@ -232,7 +216,16 @@
             background: #ff4444;
         }
 
-        /* Horror Game HUD */
+        #pacman-canvas {
+            border: 2px solid #2121ff;
+            background: #000;
+        }
+
+        #sickos-canvas {
+            background: #000;
+            cursor: none;
+        }
+
         #sickos-hud {
             position: absolute;
             top: 10px;
@@ -240,22 +233,20 @@
             z-index: 10001;
             color: #ff0000;
             font-family: 'Courier New', monospace;
-            font-size: 16px;
+            font-size: 14px;
             text-shadow: 0 0 10px #ff0000;
             pointer-events: none;
-        }
-
-        #sickos-hud .hud-item {
-            margin-bottom: 5px;
+            line-height: 1.8;
         }
 
         #sickos-hud .bar-container {
-            width: 150px;
-            height: 12px;
+            width: 120px;
+            height: 10px;
             background: #330000;
             border: 1px solid #660000;
             display: inline-block;
             vertical-align: middle;
+            margin-left: 5px;
         }
 
         #sickos-hud .bar-fill {
@@ -263,9 +254,9 @@
             transition: width 0.3s;
         }
 
+        #health-bar { background: #ff0000; }
         #flashlight-bar { background: #ffcc00; }
         #stamina-bar { background: #00ff00; }
-        #health-bar { background: #ff0000; }
 
         #sickos-instructions {
             position: absolute;
@@ -275,34 +266,21 @@
             z-index: 10001;
             color: #660000;
             font-family: 'Courier New', monospace;
-            font-size: 12px;
+            font-size: 11px;
             text-align: center;
             pointer-events: none;
         }
 
-        /* Mobile Responsive */
         @media (max-width: 768px) {
-            .nav-links {
-                gap: 1rem;
-            }
-
-            .hero-content h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero-content p {
-                font-size: 1.2rem;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
+            .nav-links { gap: 1rem; }
+            .hero-content h1 { font-size: 2.5rem; }
+            .hero-content p { font-size: 1.2rem; }
+            .section-title { font-size: 2rem; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Navigation -->
     <nav>
         <div id="logo-trigger">
             <img src="images/XLNZ Color White Border Logo.png" alt="XLNZ Productions" id="xlnz-logo">
@@ -315,7 +293,6 @@
         </ul>
     </nav>
 
-    <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
             <h1>XLNZ Productions</h1>
@@ -324,7 +301,6 @@
         </div>
     </section>
 
-    <!-- Services Section -->
     <section class="services">
         <h2 class="section-title">Our Services</h2>
         <div class="services-grid">
@@ -343,7 +319,6 @@
         </div>
     </section>
 
-    <!-- About Section -->
     <section class="about">
         <h2 class="section-title">About XLNZ</h2>
         <div class="about-content">
@@ -353,897 +328,835 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <p>&copy; 2026 XLNZ Productions. All rights reserved.</p>
     </footer>
 
-    <!-- Pac-Man Easter Egg Overlay -->
+    <!-- Pac-Man Overlay -->
     <div id="pacman-overlay" class="game-overlay">
         <button class="close-game" id="close-pacman">&times;</button>
         <canvas id="pacman-canvas" width="560" height="620"></canvas>
     </div>
 
-    <!-- Meet The Sickos Easter Egg Overlay -->
+    <!-- Meet The Sickos Overlay -->
     <div id="sickos-overlay" class="game-overlay">
         <button class="close-game" id="close-sickos">&times;</button>
         <div id="sickos-hud">
-            <div class="hud-item">HEALTH: <div class="bar-container"><div class="bar-fill" id="health-bar" style="width:100%"></div></div></div>
-            <div class="hud-item">FLASHLIGHT: <div class="bar-container"><div class="bar-fill" id="flashlight-bar" style="width:100%"></div></div></div>
-            <div class="hud-item">STAMINA: <div class="bar-container"><div class="bar-fill" id="stamina-bar" style="width:100%"></div></div></div>
-            <div class="hud-item" id="keys-display">KEYS: 0/3</div>
-            <div class="hud-item" id="hiding-status"></div>
+            HEALTH: <div class="bar-container"><div class="bar-fill" id="health-bar" style="width:100%"></div></div><br>
+            FLASHLIGHT: <div class="bar-container"><div class="bar-fill" id="flashlight-bar" style="width:100%"></div></div><br>
+            STAMINA: <div class="bar-container"><div class="bar-fill" id="stamina-bar" style="width:100%"></div></div><br>
+            KEYS: <span id="keys-display">0/3</span><br>
+            <span id="hiding-status"></span>
         </div>
         <canvas id="sickos-canvas" width="800" height="600"></canvas>
         <div id="sickos-instructions">WASD: Move | SHIFT: Sprint | F: Flashlight | E: Hide/Unhide | Collect 3 keys to escape</div>
     </div>
 
     <script>
-        // ============================================
-        // EASTER EGG 1: Pac-Man (5 taps on logo)
-        // ============================================
-        let tapCount = 0;
-        let tapTimer;
-        const logoTrigger = document.getElementById('logo-trigger');
+    // =============================================
+    // EASTER EGG TRIGGERS
+    // =============================================
 
-        logoTrigger.addEventListener('click', function() {
-            tapCount++;
-            clearTimeout(tapTimer);
+    // Pac-Man: 5 taps on logo
+    let tapCount = 0;
+    let tapTimer;
+    document.getElementById('logo-trigger').addEventListener('click', function() {
+        tapCount++;
+        clearTimeout(tapTimer);
+        if (tapCount >= 5) {
+            tapCount = 0;
+            startPacMan();
+        } else {
+            tapTimer = setTimeout(function() { tapCount = 0; }, 1000);
+        }
+    });
 
-            if (tapCount >= 5) {
-                tapCount = 0;
-                startPacMan();
-            } else {
-                tapTimer = setTimeout(() => { tapCount = 0; }, 1000);
-            }
-        });
-
-        // ============================================
-        // EASTER EGG 2: Meet The Sickos (Konami Code)
-        // ============================================
-        const konamiCode = ['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight','ArrowLeft','ArrowRight','b','a'];
-        let konamiIndex = 0;
-
-        document.addEventListener('keydown', function(e) {
-            if (e.key === konamiCode[konamiIndex]) {
-                konamiIndex++;
-                if (konamiIndex === konamiCode.length) {
-                    konamiIndex = 0;
-                    startSickos();
-                }
-            } else {
+    // Meet The Sickos: Konami Code
+    const konamiCode = ['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight','ArrowLeft','ArrowRight','b','a'];
+    let konamiIndex = 0;
+    document.addEventListener('keydown', function(e) {
+        if (e.key === konamiCode[konamiIndex]) {
+            konamiIndex++;
+            if (konamiIndex === konamiCode.length) {
                 konamiIndex = 0;
+                startSickos();
             }
-        });
+        } else {
+            konamiIndex = 0;
+        }
+    });
 
-        // ============================================
-        // CLOSE BUTTONS
-        // ============================================
-        document.getElementById('close-pacman').addEventListener('click', function() {
-            document.getElementById('pacman-overlay').style.display = 'none';
-            if (pacmanAnimId) cancelAnimationFrame(pacmanAnimId);
-        });
+    // Close buttons
+    document.getElementById('close-pacman').addEventListener('click', function() {
+        document.getElementById('pacman-overlay').style.display = 'none';
+        if (pacmanAnimId) cancelAnimationFrame(pacmanAnimId);
+    });
+    document.getElementById('close-sickos').addEventListener('click', function() {
+        document.getElementById('sickos-overlay').style.display = 'none';
+        if (sickosAnimId) cancelAnimationFrame(sickosAnimId);
+        sickosRunning = false;
+    });
 
-        document.getElementById('close-sickos').addEventListener('click', function() {
-            document.getElementById('sickos-overlay').style.display = 'none';
-            if (sickosAnimId) cancelAnimationFrame(sickosAnimId);
-        });
+    // =============================================
+    // PAC-MAN GAME
+    // =============================================
+    let pacmanAnimId;
 
-        // ============================================
-        // PAC-MAN GAME
-        // ============================================
-        let pacmanAnimId;
+    function startPacMan() {
+        var overlay = document.getElementById('pacman-overlay');
+        overlay.style.display = 'flex';
 
-        function startPacMan() {
-            const overlay = document.getElementById('pacman-overlay');
-            overlay.style.display = 'flex';
+        var canvas = document.getElementById('pacman-canvas');
+        var ctx = canvas.getContext('2d');
 
-            const canvas = document.getElementById('pacman-canvas');
-            const ctx = canvas.getContext('2d');
+        var maze = [
+            [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+            [1,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1],
+            [1,0,1,1,1,1,0,1,1,1,1,1,0,1,1,0,1,1,1,1,1,0,1,1,1,1,0,1],
+            [1,0,1,1,1,1,0,1,1,1,1,1,0,1,1,0,1,1,1,1,1,0,1,1,1,1,0,1],
+            [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+            [1,0,1,1,1,1,0,1,1,0,1,1,1,1,1,1,1,1,0,1,1,0,1,1,1,1,0,1],
+            [1,0,0,0,0,0,0,1,1,0,0,0,0,1,1,0,0,0,0,1,1,0,0,0,0,0,0,1],
+            [1,1,1,1,1,1,0,1,1,1,1,1,0,1,1,0,1,1,1,1,0,1,1,1,1,1,1,1],
+            [1,1,1,1,1,1,0,1,1,1,1,1,0,1,1,0,1,1,1,1,0,1,1,1,1,1,1,1],
+            [1,1,1,1,1,1,0,1,1,0,0,0,0,0,0,0,0,0,0,1,1,0,1,1,1,1,1,1],
+            [1,1,1,1,1,1,0,1,1,0,1,1,1,2,2,1,1,1,0,1,1,0,1,1,1,1,1,1],
+            [0,0,0,0,0,0,0,0,0,0,1,2,2,2,2,2,2,1,0,0,0,0,0,0,0,0,0,0],
+            [1,1,1,1,1,1,0,1,1,0,1,1,1,1,1,1,1,1,0,1,1,0,1,1,1,1,1,1],
+            [1,1,1,1,1,1,0,1,1,0,0,0,0,0,0,0,0,0,0,1,1,0,1,1,1,1,1,1],
+            [1,1,1,1,1,1,0,1,1,0,1,1,1,1,1,1,1,1,0,1,1,0,1,1,1,1,1,1],
+            [1,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1],
+            [1,0,1,1,1,1,0,1,1,1,1,1,0,1,1,0,1,1,1,1,1,0,1,1,1,1,0,1],
+            [1,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,1],
+            [1,1,1,0,1,1,0,1,1,0,1,1,1,1,1,1,1,1,0,1,1,0,1,1,0,1,1,1],
+            [1,0,0,0,0,0,0,1,1,0,0,0,0,1,1,0,0,0,0,1,1,0,0,0,0,0,0,1],
+            [1,0,1,1,1,1,1,1,1,1,1,1,0,1,1,0,1,1,1,1,1,1,1,1,1,1,0,1],
+            [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+            [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
+        ];
 
-            const maze = [
-                [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
-                [1,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1],
-                [1,0,1,1,1,1,0,1,1,1,1,1,0,1,1,0,1,1,1,1,1,0,1,1,1,1,0,1],
-                [1,0,1,1,1,1,0,1,1,1,1,1,0,1,1,0,1,1,1,1,1,0,1,1,1,1,0,1],
-                [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
-                [1,0,1,1,1,1,0,1,1,0,1,1,1,1,1,1,1,1,0,1,1,0,1,1,1,1,0,1],
-                [1,0,0,0,0,0,0,1,1,0,0,0,0,1,1,0,0,0,0,1,1,0,0,0,0,0,0,1],
-                [1,1,1,1,1,1,0,1,1,1,1,1,0,1,1,0,1,1,1,1,0,1,1,1,1,1,1,1],
-                [1,1,1,1,1,1,0,1,1,1,1,1,0,1,1,0,1,1,1,1,0,1,1,1,1,1,1,1],
-                [1,1,1,1,1,1,0,1,1,0,0,0,0,0,0,0,0,0,0,1,1,0,1,1,1,1,1,1],
-                [1,1,1,1,1,1,0,1,1,0,1,1,1,2,2,1,1,1,0,1,1,0,1,1,1,1,1,1],
-                [0,0,0,0,0,0,0,0,0,0,1,2,2,2,2,2,2,1,0,0,0,0,0,0,0,0,0,0],
-                [1,1,1,1,1,1,0,1,1,0,1,1,1,1,1,1,1,1,0,1,1,0,1,1,1,1,1,1],
-                [1,1,1,1,1,1,0,1,1,0,0,0,0,0,0,0,0,0,0,1,1,0,1,1,1,1,1,1],
-                [1,1,1,1,1,1,0,1,1,0,1,1,1,1,1,1,1,1,0,1,1,0,1,1,1,1,1,1],
-                [1,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1],
-                [1,0,1,1,1,1,0,1,1,1,1,1,0,1,1,0,1,1,1,1,1,0,1,1,1,1,0,1],
-                [1,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,1],
-                [1,1,1,0,1,1,0,1,1,0,1,1,1,1,1,1,1,1,0,1,1,0,1,1,0,1,1,1],
-                [1,0,0,0,0,0,0,1,1,0,0,0,0,1,1,0,0,0,0,1,1,0,0,0,0,0,0,1],
-                [1,0,1,1,1,1,1,1,1,1,1,1,0,1,1,0,1,1,1,1,1,1,1,1,1,1,0,1],
-                [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
-                [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
-            ];
+        var tileSize = 20;
+        var score = 0;
+        var lives = 3;
+        var gameRunning = true;
 
-            const tileSize = 20;
-            let score = 0;
-            let lives = 3;
-            let gameRunning = true;
+        var pacman = { x: 14, y: 17, dir: 'left', nextDir: 'left', mouthOpen: true, mouthTimer: 0 };
 
-            let pacman = { x: 14, y: 17, dir: 'left', nextDir: 'left', mouthOpen: true, mouthTimer: 0 };
+        var ghostColors = ['#ff0000', '#ffb8ff', '#00ffff', '#ffb852'];
+        var ghostStarts = [
+            {x:13,y:11}, {x:14,y:11}, {x:15,y:11}, {x:12,y:11}
+        ];
+        var ghosts = [];
+        for (var i = 0; i < ghostStarts.length; i++) {
+            ghosts.push({ x: ghostStarts[i].x, y: ghostStarts[i].y, dir: 'up', color: ghostColors[i], scared: false, eaten: false });
+        }
 
-            const ghostColors = ['#ff0000', '#ffb8ff', '#00ffff', '#ffb852'];
-            const ghostStarts = [
-                {x: 13, y: 11}, {x: 14, y: 11}, {x: 15, y: 11}, {x: 12, y: 11}
-            ];
-            let ghosts = ghostStarts.map((pos, i) => ({
-                x: pos.x, y: pos.y, dir: 'up', color: ghostColors[i], scared: false, eaten: false
-            }));
-
-            let dots = [];
-            for (let y = 0; y < maze.length; y++) {
-                dots[y] = [];
-                for (let x = 0; x < maze[y].length; x++) {
-                    if (maze[y][x] === 0) dots[y][x] = 1;
-                }
+        var dots = [];
+        for (var y = 0; y < maze.length; y++) {
+            dots[y] = [];
+            for (var x = 0; x < maze[y].length; x++) {
+                if (maze[y][x] === 0) dots[y][x] = 1;
             }
-            dots[1][1] = 2; dots[1][26] = 2; dots[21][1] = 2; dots[21][26] = 2;
+        }
+        dots[1][1] = 2; dots[1][26] = 2; dots[21][1] = 2; dots[21][26] = 2;
 
-            document.addEventListener('keydown', function pacKeyHandler(e) {
-                if (!gameRunning) return;
-                switch(e.key) {
-                    case 'ArrowLeft': pacman.nextDir = 'left'; e.preventDefault(); break;
-                    case 'ArrowRight': pacman.nextDir = 'right'; e.preventDefault(); break;
-                    case 'ArrowUp': pacman.nextDir = 'up'; e.preventDefault(); break;
-                    case 'ArrowDown': pacman.nextDir = 'down'; e.preventDefault(); break;
-                }
-            });
-
-            function canMove(x, y) {
-                if (y < 0 || y >= maze.length) return false;
-                if (x < 0 || x >= maze[0].length) return false;
-                return maze[y][x] !== 1;
+        function pacKeyHandler(e) {
+            if (!gameRunning) return;
+            switch(e.key) {
+                case 'ArrowLeft': pacman.nextDir = 'left'; e.preventDefault(); break;
+                case 'ArrowRight': pacman.nextDir = 'right'; e.preventDefault(); break;
+                case 'ArrowUp': pacman.nextDir = 'up'; e.preventDefault(); break;
+                case 'ArrowDown': pacman.nextDir = 'down'; e.preventDefault(); break;
             }
+        }
+        document.addEventListener('keydown', pacKeyHandler);
 
-            function movePacman() {
-                let nx = pacman.x, ny = pacman.y;
-                switch(pacman.nextDir) {
-                    case 'left': nx--; break; case 'right': nx++; break;
-                    case 'up': ny--; break; case 'down': ny++; break;
-                }
-                if (canMove(nx, ny)) pacman.dir = pacman.nextDir;
+        function canMovePac(x, y) {
+            if (y < 0 || y >= maze.length) return false;
+            if (x < 0 || x >= maze[0].length) return false;
+            return maze[y][x] !== 1;
+        }
 
-                nx = pacman.x; ny = pacman.y;
-                switch(pacman.dir) {
-                    case 'left': nx--; break; case 'right': nx++; break;
-                    case 'up': ny--; break; case 'down': ny++; break;
-                }
-                if (nx < 0) nx = maze[0].length - 1;
-                if (nx >= maze[0].length) nx = 0;
-                if (canMove(nx, ny)) { pacman.x = nx; pacman.y = ny; }
-
-                if (dots[pacman.y] && dots[pacman.y][pacman.x]) {
-                    if (dots[pacman.y][pacman.x] === 2) {
-                        score += 50;
-                        ghosts.forEach(g => g.scared = true);
-                        setTimeout(() => ghosts.forEach(g => g.scared = false), 6000);
-                    } else { score += 10; }
-                    dots[pacman.y][pacman.x] = 0;
-                }
-                pacman.mouthTimer++;
-                if (pacman.mouthTimer % 5 === 0) pacman.mouthOpen = !pacman.mouthOpen;
+        function pacLoop() {
+            if (!gameRunning) {
+                ctx.fillStyle = 'rgba(0,0,0,0.7)';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                ctx.fillStyle = '#ff4444';
+                ctx.font = '48px Arial';
+                ctx.textAlign = 'center';
+                ctx.fillText('GAME OVER', canvas.width/2, canvas.height/2);
+                ctx.font = '24px Arial';
+                ctx.fillStyle = '#ffffff';
+                ctx.fillText('Final Score: ' + score, canvas.width/2, canvas.height/2 + 40);
+                document.removeEventListener('keydown', pacKeyHandler);
+                return;
             }
 
-            function moveGhost(ghost) {
-                if (ghost.eaten) return;
-                const dirs = ['left', 'right', 'up', 'down'];
-                const opposite = {left: 'right', right: 'left', up: 'down', down: 'up'};
-                let possible = dirs.filter(d => {
-                    if (d === opposite[ghost.dir]) return false;
-                    let nx = ghost.x, ny = ghost.y;
-                    switch(d) { case 'left': nx--; break; case 'right': nx++; break; case 'up': ny--; break; case 'down': ny++; break; }
-                    return canMove(nx, ny);
-                });
+            var dotsLeft = 0;
+            for (var y = 0; y < dots.length; y++) {
+                for (var x = 0; x < dots[y].length; x++) {
+                    if (dots[y][x] > 0) dotsLeft++;
+                }
+            }
+            if (dotsLeft === 0) {
+                ctx.fillStyle = 'rgba(0,0,0,0.7)';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                ctx.fillStyle = '#ffff00';
+                ctx.font = '48px Arial';
+                ctx.textAlign = 'center';
+                ctx.fillText('YOU WIN!', canvas.width/2, canvas.height/2);
+                ctx.font = '24px Arial';
+                ctx.fillStyle = '#ffffff';
+                ctx.fillText('Score: ' + score, canvas.width/2, canvas.height/2 + 40);
+                document.removeEventListener('keydown', pacKeyHandler);
+                return;
+            }
+
+            // Move Pac-Man
+            var nx = pacman.x, ny = pacman.y;
+            switch(pacman.nextDir) {
+                case 'left': nx--; break; case 'right': nx++; break; case 'up': ny--; break; case 'down': ny++; break;
+            }
+            if (canMovePac(nx, ny)) pacman.dir = pacman.nextDir;
+
+            nx = pacman.x; ny = pacman.y;
+            switch(pacman.dir) {
+                case 'left': nx--; break; case 'right': nx++; break; case 'up': ny--; break; case 'down': ny++; break;
+            }
+            if (nx < 0) nx = maze[0].length - 1;
+            if (nx >= maze[0].length) nx = 0;
+            if (canMovePac(nx, ny)) { pacman.x = nx; pacman.y = ny; }
+
+            if (dots[pacman.y] && dots[pacman.y][pacman.x]) {
+                if (dots[pacman.y][pacman.x] === 2) {
+                    score += 50;
+                    for (var i = 0; i < ghosts.length; i++) ghosts[i].scared = true;
+                    setTimeout(function() { for (var i = 0; i < ghosts.length; i++) ghosts[i].scared = false; }, 6000);
+                } else { score += 10; }
+                dots[pacman.y][pacman.x] = 0;
+            }
+
+            pacman.mouthTimer++;
+            if (pacman.mouthTimer % 5 === 0) pacman.mouthOpen = !pacman.mouthOpen;
+
+            // Move Ghosts
+            var opposite = {left:'right', right:'left', up:'down', down:'up'};
+            var dirs = ['left','right','up','down'];
+            for (var gi = 0; gi < ghosts.length; gi++) {
+                var ghost = ghosts[gi];
+                if (ghost.eaten) continue;
+
+                var possible = [];
+                for (var di = 0; di < dirs.length; di++) {
+                    var d = dirs[di];
+                    if (d === opposite[ghost.dir]) continue;
+                    var gnx = ghost.x, gny = ghost.y;
+                    switch(d) { case 'left': gnx--; break; case 'right': gnx++; break; case 'up': gny--; break; case 'down': gny++; break; }
+                    if (canMovePac(gnx, gny)) possible.push(d);
+                }
                 if (possible.length === 0) possible = [opposite[ghost.dir]];
 
                 if (ghost.scared) {
                     ghost.dir = possible[Math.floor(Math.random() * possible.length)];
                 } else {
-                    let bestDir = possible[0], bestDist = Infinity;
-                    possible.forEach(d => {
-                        let nx = ghost.x, ny = ghost.y;
-                        switch(d) { case 'left': nx--; break; case 'right': nx++; break; case 'up': ny--; break; case 'down': ny++; break; }
-                        let dist = Math.abs(nx - pacman.x) + Math.abs(ny - pacman.y);
-                        if (dist < bestDist) { bestDist = dist; bestDir = d; }
-                    });
+                    var bestDir = possible[0], bestDist = Infinity;
+                    for (var pi = 0; pi < possible.length; pi++) {
+                        var pd = possible[pi];
+                        var px = ghost.x, py = ghost.y;
+                        switch(pd) { case 'left': px--; break; case 'right': px++; break; case 'up': py--; break; case 'down': py++; break; }
+                        var dist = Math.abs(px - pacman.x) + Math.abs(py - pacman.y);
+                        if (dist < bestDist) { bestDist = dist; bestDir = pd; }
+                    }
                     ghost.dir = bestDir;
                 }
 
-                let nx = ghost.x, ny = ghost.y;
-                switch(ghost.dir) { case 'left': nx--; break; case 'right': nx++; break; case 'up': ny--; break; case 'down': ny++; break; }
-                if (nx < 0) nx = maze[0].length - 1;
-                if (nx >= maze[0].length) nx = 0;
-                if (canMove(nx, ny)) { ghost.x = nx; ghost.y = ny; }
-            }
+                gnx = ghost.x; gny = ghost.y;
+                switch(ghost.dir) { case 'left': gnx--; break; case 'right': gnx++; break; case 'up': gny--; break; case 'down': gny++; break; }
+                if (gnx < 0) gnx = maze[0].length - 1;
+                if (gnx >= maze[0].length) gnx = 0;
+                if (canMovePac(gnx, gny)) { ghost.x = gnx; ghost.y = gny; }
 
-            function checkCollisions() {
-                ghosts.forEach(ghost => {
-                    if (ghost.x === pacman.x && ghost.y === pacman.y) {
-                        if (ghost.scared) { ghost.eaten = true; score += 200; }
-                        else { lives--; if (lives <= 0) gameRunning = false; else { pacman.x = 14; pacman.y = 17; pacman.dir = 'left'; } }
-                    }
-                });
-            }
-
-            function drawMaze() {
-                for (let y = 0; y < maze.length; y++) {
-                    for (let x = 0; x < maze[y].length; x++) {
-                        if (maze[y][x] === 1) { ctx.fillStyle = '#2121ff'; ctx.fillRect(x * tileSize, y * tileSize, tileSize, tileSize); }
-                    }
+                // Collision
+                if (ghost.x === pacman.x && ghost.y === pacman.y) {
+                    if (ghost.scared) { ghost.eaten = true; score += 200; }
+                    else { lives--; if (lives <= 0) gameRunning = false; else { pacman.x = 14; pacman.y = 17; pacman.dir = 'left'; } }
                 }
             }
 
-            function drawDots() {
-                for (let y = 0; y < dots.length; y++) {
-                    for (let x = 0; x < dots[y].length; x++) {
-                        if (dots[y][x] === 1) { ctx.fillStyle = '#ffb8ae'; ctx.beginPath(); ctx.arc(x * tileSize + tileSize/2, y * tileSize + tileSize/2, 2, 0, Math.PI * 2); ctx.fill(); }
-                        else if (dots[y][x] === 2) { ctx.fillStyle = '#ffb8ae'; ctx.beginPath(); ctx.arc(x * tileSize + tileSize/2, y * tileSize + tileSize/2, 6, 0, Math.PI * 2); ctx.fill(); }
+            // Draw
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = '#000000';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            // Maze
+            for (var y = 0; y < maze.length; y++) {
+                for (var x = 0; x < maze[y].length; x++) {
+                    if (maze[y][x] === 1) {
+                        ctx.fillStyle = '#2121ff';
+                        ctx.fillRect(x * tileSize, y * tileSize, tileSize, tileSize);
                     }
                 }
             }
 
-            function drawPacman() {
-                const cx = pacman.x * tileSize + tileSize/2, cy = pacman.y * tileSize + tileSize/2, radius = tileSize/2 - 2;
-                ctx.fillStyle = '#ffff00'; ctx.beginPath();
-                let startAngle, endAngle; const mouth = pacman.mouthOpen ? 0.3 : 0.05;
-                switch(pacman.dir) {
-                    case 'right': startAngle = mouth; endAngle = 2 * Math.PI - mouth; break;
-                    case 'left': startAngle = Math.PI + mouth; endAngle = Math.PI - mouth; break;
-                    case 'up': startAngle = 1.5 * Math.PI + mouth; endAngle = 1.5 * Math.PI - mouth; break;
-                    case 'down': startAngle = 0.5 * Math.PI + mouth; endAngle = 0.5 * Math.PI - mouth; break;
-                }
-                ctx.arc(cx, cy, radius, startAngle, endAngle); ctx.lineTo(cx, cy); ctx.closePath(); ctx.fill();
-            }
-
-            function drawGhosts() {
-                ghosts.forEach(ghost => {
-                    if (ghost.eaten) return;
-                    const cx = ghost.x * tileSize + tileSize/2, cy = ghost.y * tileSize + tileSize/2;
-                    ctx.fillStyle = ghost.scared ? '#2121ff' : ghost.color; ctx.beginPath();
-                    ctx.arc(cx, cy - 4, tileSize/2 - 2, Math.PI, 0);
-                    ctx.lineTo(cx + tileSize/2 - 2, cy + tileSize/2 - 2);
-                    for (let i = 0; i < 3; i++) {
-                        ctx.quadraticCurveTo(cx + tileSize/2 - 2 - (tileSize/3) * (i + 0.5), cy + tileSize/2 + 2, cx + tileSize/2 - 2 - (tileSize/3) * (i + 1), cy + tileSize/2 - 2);
+            // Dots
+            for (var y = 0; y < dots.length; y++) {
+                for (var x = 0; x < dots[y].length; x++) {
+                    if (dots[y][x] === 1) {
+                        ctx.fillStyle = '#ffb8ae';
+                        ctx.beginPath();
+                        ctx.arc(x * tileSize + tileSize/2, y * tileSize + tileSize/2, 2, 0, Math.PI * 2);
+                        ctx.fill();
+                    } else if (dots[y][x] === 2) {
+                        ctx.fillStyle = '#ffb8ae';
+                        ctx.beginPath();
+                        ctx.arc(x * tileSize + tileSize/2, y * tileSize + tileSize/2, 6, 0, Math.PI * 2);
+                        ctx.fill();
                     }
-                    ctx.closePath(); ctx.fill();
-                    ctx.fillStyle = 'white'; ctx.beginPath(); ctx.arc(cx - 4, cy - 5, 3, 0, Math.PI * 2); ctx.arc(cx + 4, cy - 5, 3, 0, Math.PI * 2); ctx.fill();
-                    ctx.fillStyle = '#2121ff'; ctx.beginPath(); ctx.arc(cx - 4, cy - 5, 1.5, 0, Math.PI * 2); ctx.arc(cx + 4, cy - 5, 1.5, 0, Math.PI * 2); ctx.fill();
-                });
-            }
-
-            function drawHUD() {
-                ctx.fillStyle = '#ffffff'; ctx.font = '16px Arial';
-                ctx.fillText('Score: ' + score, 10, maze.length * tileSize + 25);
-                ctx.fillText('Lives: ' + lives, 200, maze.length * tileSize + 25);
-            }
-
-            function gameLoop() {
-                if (!gameRunning) {
-                    ctx.fillStyle = 'rgba(0,0,0,0.7)'; ctx.fillRect(0, 0, canvas.width, canvas.height);
-                    ctx.fillStyle = '#ff4444'; ctx.font = '48px Arial'; ctx.textAlign = 'center';
-                    ctx.fillText('GAME OVER', canvas.width/2, canvas.height/2);
-                    ctx.font = '24px Arial'; ctx.fillStyle = '#ffffff';
-                    ctx.fillText('Final Score: ' + score, canvas.width/2, canvas.height/2 + 40);
-                    return;
                 }
-                let dotsLeft = 0;
-                for (let y = 0; y < dots.length; y++) for (let x = 0; x < dots[y].length; x++) if (dots[y][x] > 0) dotsLeft++;
-                if (dotsLeft === 0) {
-                    ctx.fillStyle = 'rgba(0,0,0,0.7)'; ctx.fillRect(0, 0, canvas.width, canvas.height);
-                    ctx.fillStyle = '#ffff00'; ctx.font = '48px Arial'; ctx.textAlign = 'center';
-                    ctx.fillText('YOU WIN!', canvas.width/2, canvas.height/2);
-                    ctx.font = '24px Arial'; ctx.fillStyle = '#ffffff';
-                    ctx.fillText('Score: ' + score, canvas.width/2, canvas.height/2 + 40);
-                    return;
-                }
-
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
-                ctx.fillStyle = '#000000'; ctx.fillRect(0, 0, canvas.width, canvas.height);
-                movePacman(); ghosts.forEach(moveGhost); checkCollisions();
-                drawMaze(); drawDots(); drawPacman(); drawGhosts(); drawHUD();
-                pacmanAnimId = requestAnimationFrame(gameLoop);
             }
-            gameLoop();
+
+            // Pac-Man
+            var cx = pacman.x * tileSize + tileSize/2;
+            var cy = pacman.y * tileSize + tileSize/2;
+            var radius = tileSize/2 - 2;
+            ctx.fillStyle = '#ffff00';
+            ctx.beginPath();
+            var mouth = pacman.mouthOpen ? 0.3 : 0.05;
+            var startAngle, endAngle;
+            switch(pacman.dir) {
+                case 'right': startAngle = mouth; endAngle = 2 * Math.PI - mouth; break;
+                case 'left': startAngle = Math.PI + mouth; endAngle = Math.PI - mouth; break;
+                case 'up': startAngle = 1.5 * Math.PI + mouth; endAngle = 1.5 * Math.PI - mouth; break;
+                case 'down': startAngle = 0.5 * Math.PI + mouth; endAngle = 0.5 * Math.PI - mouth; break;
+            }
+            ctx.arc(cx, cy, radius, startAngle, endAngle);
+            ctx.lineTo(cx, cy);
+            ctx.closePath();
+            ctx.fill();
+
+            // Ghosts
+            for (var gi = 0; gi < ghosts.length; gi++) {
+                var ghost = ghosts[gi];
+                if (ghost.eaten) continue;
+                var gx = ghost.x * tileSize + tileSize/2;
+                var gy = ghost.y * tileSize + tileSize/2;
+                ctx.fillStyle = ghost.scared ? '#2121ff' : ghost.color;
+                ctx.beginPath();
+                ctx.arc(gx, gy - 4, tileSize/2 - 2, Math.PI, 0);
+                ctx.lineTo(gx + tileSize/2 - 2, gy + tileSize/2 - 2);
+                for (var wi = 0; wi < 3; wi++) {
+                    ctx.quadraticCurveTo(gx + tileSize/2 - 2 - (tileSize/3) * (wi + 0.5), gy + tileSize/2 + 2, gx + tileSize/2 - 2 - (tileSize/3) * (wi + 1), gy + tileSize/2 - 2);
+                }
+                ctx.closePath();
+                ctx.fill();
+                ctx.fillStyle = 'white';
+                ctx.beginPath();
+                ctx.arc(gx - 4, gy - 5, 3, 0, Math.PI * 2);
+                ctx.arc(gx + 4, gy - 5, 3, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.fillStyle = '#2121ff';
+                ctx.beginPath();
+                ctx.arc(gx - 4, gy - 5, 1.5, 0, Math.PI * 2);
+                ctx.arc(gx + 4, gy - 5, 1.5, 0, Math.PI * 2);
+                ctx.fill();
+            }
+
+            // HUD
+            ctx.fillStyle = '#ffffff';
+            ctx.font = '16px Arial';
+            ctx.textAlign = 'left';
+            ctx.fillText('Score: ' + score, 10, maze.length * tileSize + 25);
+            ctx.fillText('Lives: ' + lives, 200, maze.length * tileSize + 25);
+
+            pacmanAnimId = requestAnimationFrame(pacLoop);
         }
 
-        // ============================================
-        // MEET THE SICKOS - HORROR GAME
-        // ============================================
-        let sickosAnimId;
+        pacLoop();
+    }
 
-        function startSickos() {
-            const overlay = document.getElementById('sickos-overlay');
-            overlay.style.display = 'flex';
+    // =============================================
+    // MEET THE SICKOS - HORROR GAME
+    // =============================================
+    var sickosAnimId;
+    var sickosRunning = false;
 
-            const canvas = document.getElementById('sickos-canvas');
-            const ctx = canvas.getContext('2d');
-            const W = canvas.width, H = canvas.height;
+    function startSickos() {
+        var overlay = document.getElementById('sickos-overlay');
+        overlay.style.display = 'flex';
 
-            // House map (1=wall, 0=floor, 2=hiding spot, 3=key, 4=exit door)
-            const MAP_ROWS = 25;
-            const MAP_COLS = 30;
-            const TILE = 32;
+        var canvas = document.getElementById('sickos-canvas');
+        var ctx = canvas.getContext('2d');
+        var W = canvas.width;
+        var H = canvas.height;
 
-            const houseMap = [
-                [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
-                [1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1],
-                [1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,2,0,0,1,0,0,0,0,0,0,0,0,0,0,1],
-                [1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1],
-                [1,0,0,2,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1],
-                [1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1],
-                [1,1,1,0,1,1,1,1,1,0,1,1,1,1,1,0,1,1,1,1,1,0,1,1,1,1,0,1,1,1],
-                [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
-                [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
-                [1,0,0,0,1,1,1,0,1,1,1,1,0,0,1,1,1,1,0,1,1,1,1,0,1,1,1,0,0,1],
-                [1,0,0,0,1,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,1,0,0,0,1,0,0,1],
-                [1,0,0,0,1,0,0,3,0,0,0,1,0,0,1,0,0,0,0,0,0,0,1,0,0,0,1,0,0,1],
-                [1,0,0,0,1,0,0,0,0,0,0,1,0,0,1,0,0,0,2,0,0,0,1,0,0,0,1,0,0,1],
-                [1,0,0,0,1,1,0,1,1,0,1,1,0,0,1,1,0,1,1,0,1,1,1,0,1,1,1,0,0,1],
-                [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
-                [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
-                [1,0,0,1,1,1,1,0,1,1,1,1,0,0,1,1,1,1,0,1,1,1,1,0,1,1,0,0,0,1],
-                [1,0,0,1,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,1,0,0,1,0,0,0,1],
-                [1,0,0,1,0,0,0,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,1],
-                [1,0,0,1,0,0,2,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,1,0,0,1,0,0,0,1],
-                [1,0,0,1,1,1,1,0,1,1,1,1,0,0,1,1,0,1,1,0,1,1,1,0,1,1,0,0,0,1],
-                [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
-                [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,0,0,0,0,0,0,1],
-                [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,1],
-                [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
-            ];
+        var TILE = 32;
+        var MAP_COLS = 30;
+        var MAP_ROWS = 25;
 
-            // Game state
-            let player = {
-                x: 1.5 * TILE, y: 1.5 * TILE,
-                speed: 2.5, sprintSpeed: 4.5,
-                health: 100, stamina: 100, flashlight: 100,
-                keys: 0, hiding: false, flashlightOn: true,
-                dir: 0 // angle in radians
-            };
+        // 1=wall, 0=floor, 2=hiding, 3=key, 4=exit
+        var houseMap = [
+            [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+            [1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1],
+            [1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,2,0,0,1,0,0,0,0,0,0,0,0,0,0,1],
+            [1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1],
+            [1,0,0,2,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1],
+            [1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1],
+            [1,1,1,0,1,1,1,1,1,0,1,1,1,1,1,0,1,1,1,1,1,0,1,1,1,1,0,1,1,1],
+            [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+            [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+            [1,0,0,0,1,1,1,0,1,1,1,1,0,0,1,1,1,1,0,1,1,1,1,0,1,1,1,0,0,1],
+            [1,0,0,0,1,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,1,0,0,0,1,0,0,1],
+            [1,0,0,0,1,0,0,3,0,0,0,1,0,0,1,0,0,0,0,0,0,0,1,0,0,0,1,0,0,1],
+            [1,0,0,0,1,0,0,0,0,0,0,1,0,0,1,0,0,0,2,0,0,0,1,0,0,0,1,0,0,1],
+            [1,0,0,0,1,1,0,1,1,0,1,1,0,0,1,1,0,1,1,0,1,1,1,0,1,1,1,0,0,1],
+            [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+            [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+            [1,0,0,1,1,1,1,0,1,1,1,1,0,0,1,1,1,1,0,1,1,1,1,0,1,1,0,0,0,1],
+            [1,0,0,1,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,1,0,0,1,0,0,0,1],
+            [1,0,0,1,0,0,0,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,1],
+            [1,0,0,1,0,0,2,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,1,0,0,1,0,0,0,1],
+            [1,0,0,1,1,1,1,0,1,1,1,1,0,0,1,1,0,1,1,0,1,1,1,0,1,1,0,0,0,1],
+            [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+            [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,0,0,0,0,0,0,1],
+            [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,1],
+            [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
+        ];
 
-            let sickos = [
-                { x: 15 * TILE, y: 12 * TILE, speed: 1.8, type: 'husband', alertLevel: 0, lastKnownPlayerX: -1, lastKnownPlayerY: -1, patrolTarget: null, stuck: 0 },
-                { x: 20 * TILE, y: 18 * TILE, speed: 1.5, type: 'wife', alertLevel: 0, lastKnownPlayerX: -1, lastKnownPlayerY: -1, patrolTarget: null, stuck: 0 }
-            ];
+        var player = {
+            x: 1.5 * TILE, y: 1.5 * TILE,
+            speed: 2.5, sprintSpeed: 4.5,
+            health: 100, stamina: 100, flashlight: 100,
+            keys: 0, hiding: false, flashlightOn: true,
+            dir: 0
+        };
 
-            let gameState = 'playing'; // playing, dead, escaped
-            let keysCollected = [];
-            let jumpScareTimer = 0;
-            let jumpScareType = '';
-            let screenShake = 0;
-            let heartbeat = 0;
-            let damageFlash = 0;
-            let gameTime = 0;
+        var sickos = [
+            { x: 15*TILE, y: 12*TILE, speed: 1.8, type: 'husband', alertLevel: 0, lastX: -1, lastY: -1, patrolX: 0, patrolY: 0, hasPatrol: false, stuckCount: 0, dir: 0 },
+            { x: 20*TILE, y: 18*TILE, speed: 1.5, type: 'wife', alertLevel: 0, lastX: -1, lastY: -1, patrolX: 0, patrolY: 0, hasPatrol: false, stuckCount: 0, dir: 0 }
+        ];
 
-            // Input
-            const keys = {};
-            document.addEventListener('keydown', sickosKeyDown);
-            document.addEventListener('keyup', sickosKeyUp);
+        var gameState = 'intro';
+        var introTimer = 180;
+        var damageFlash = 0;
+        var screenShake = 0;
+        var heartbeat = 0;
 
-            function sickosKeyDown(e) {
-                keys[e.key.toLowerCase()] = true;
-                if (e.key.toLowerCase() === 'f') player.flashlightOn = !player.flashlightOn;
-                if (e.key.toLowerCase() === 'e') toggleHiding();
+        var sickosKeys = {};
+        function sickosKeyDown(e) {
+            sickosKeys[e.key.toLowerCase()] = true;
+            if (e.key.toLowerCase() === 'f' && gameState === 'playing') player.flashlightOn = !player.flashlightOn;
+            if (e.key.toLowerCase() === 'e' && gameState === 'playing') toggleHide();
+            if (e.key.toLowerCase() === 'r' && (gameState === 'dead' || gameState === 'escaped')) {
+                document.removeEventListener('keydown', sickosKeyDown);
+                document.removeEventListener('keyup', sickosKeyUp);
+                cancelAnimationFrame(sickosAnimId);
+                sickosRunning = false;
+                startSickos();
+                return;
+            }
+            e.preventDefault();
+        }
+        function sickosKeyUp(e) {
+            sickosKeys[e.key.toLowerCase()] = false;
+        }
+        document.addEventListener('keydown', sickosKeyDown);
+        document.addEventListener('keyup', sickosKeyUp);
+        sickosRunning = true;
+
+        function toggleHide() {
+            var tileX = Math.floor(player.x / TILE);
+            var tileY = Math.floor(player.y / TILE);
+            if (player.hiding) {
+                player.hiding = false;
+            } else if (tileY >= 0 && tileY < MAP_ROWS && tileX >= 0 && tileX < MAP_COLS && houseMap[tileY][tileX] === 2) {
+                player.hiding = true;
+            }
+        }
+
+        function isWall(x, y) {
+            var tileX = Math.floor(x / TILE);
+            var tileY = Math.floor(y / TILE);
+            if (tileX < 0 || tileX >= MAP_COLS || tileY < 0 || tileY >= MAP_ROWS) return true;
+            return houseMap[tileY][tileX] === 1;
+        }
+
+        function canMove(x, y, r) {
+            return !isWall(x-r,y-r) && !isWall(x+r,y-r) && !isWall(x-r,y+r) && !isWall(x+r,y+r);
+        }
+
+        function dist(x1,y1,x2,y2) {
+            return Math.sqrt((x2-x1)*(x2-x1)+(y2-y1)*(y2-y1));
+        }
+
+        function updatePlayer() {
+            if (player.hiding) {
+                player.stamina = Math.min(100, player.stamina + 0.5);
+                return;
             }
 
-            function sickosKeyUp(e) {
-                keys[e.key.toLowerCase()] = false;
+            var dx = 0, dy = 0;
+            if (sickosKeys['w'] || sickosKeys['arrowup']) dy = -1;
+            if (sickosKeys['s'] || sickosKeys['arrowdown']) dy = 1;
+            if (sickosKeys['a'] || sickosKeys['arrowleft']) dx = -1;
+            if (sickosKeys['d'] || sickosKeys['arrowright']) dx = 1;
+
+            var speed = player.speed;
+            if (sickosKeys['shift'] && player.stamina > 0 && (dx !== 0 || dy !== 0)) {
+                speed = player.sprintSpeed;
+                player.stamina = Math.max(0, player.stamina - 0.4);
+            } else {
+                player.stamina = Math.min(100, player.stamina + 0.15);
             }
 
-            function toggleHiding() {
-                const tileX = Math.floor(player.x / TILE);
-                const tileY = Math.floor(player.y / TILE);
-                if (houseMap[tileY] && houseMap[tileY][tileX] === 2) {
-                    player.hiding = !player.hiding;
-                } else if (player.hiding) {
-                    player.hiding = false;
-                }
+            if (dx !== 0 && dy !== 0) { dx *= 0.707; dy *= 0.707; }
+            if (dx !== 0 || dy !== 0) player.dir = Math.atan2(dy, dx);
+
+            var newX = player.x + dx * speed;
+            var newY = player.y + dy * speed;
+            if (canMove(newX, player.y, 8)) player.x = newX;
+            if (canMove(player.x, newY, 8)) player.y = newY;
+
+            if (player.flashlightOn) {
+                player.flashlight = Math.max(0, player.flashlight - 0.03);
+            } else {
+                player.flashlight = Math.min(100, player.flashlight + 0.05);
             }
 
-            function isWall(x, y) {
-                const tileX = Math.floor(x / TILE);
-                const tileY = Math.floor(y / TILE);
-                if (tileX < 0 || tileX >= MAP_COLS || tileY < 0 || tileY >= MAP_ROWS) return true;
-                return houseMap[tileY][tileX] === 1;
-            }
-
-            function canMoveTo(x, y, radius) {
-                return !isWall(x - radius, y - radius) && !isWall(x + radius, y - radius) &&
-                       !isWall(x - radius, y + radius) && !isWall(x + radius, y + radius);
-            }
-
-            function distBetween(x1, y1, x2, y2) {
-                return Math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2);
-            }
-
-            function updatePlayer() {
-                if (player.hiding) {
-                    // Recover stamina while hiding
-                    player.stamina = Math.min(100, player.stamina + 0.5);
-                    return;
-                }
-
-                let dx = 0, dy = 0;
-                if (keys['w'] || keys['arrowup']) dy -= 1;
-                if (keys['s'] || keys['arrowdown']) dy += 1;
-                if (keys['a'] || keys['arrowleft']) dx -= 1;
-                if (keys['d'] || keys['arrowright']) dx += 1;
-
-                // Sprinting
-                let speed = player.speed;
-                if ((keys['shift']) && player.stamina > 0 && (dx !== 0 || dy !== 0)) {
-                    speed = player.sprintSpeed;
-                    player.stamina = Math.max(0, player.stamina - 0.4);
-                } else {
-                    player.stamina = Math.min(100, player.stamina + 0.15);
-                }
-
-                // Normalize diagonal movement
-                if (dx !== 0 && dy !== 0) {
-                    dx *= 0.707;
-                    dy *= 0.707;
-                }
-
-                // Update direction
-                if (dx !== 0 || dy !== 0) {
-                    player.dir = Math.atan2(dy, dx);
-                }
-
-                // Move with collision
-                const newX = player.x + dx * speed;
-                const newY = player.y + dy * speed;
-                const radius = 8;
-
-                if (canMoveTo(newX, player.y, radius)) player.x = newX;
-                if (canMoveTo(player.x, newY, radius)) player.y = newY;
-
-                // Flashlight battery
-                if (player.flashlightOn) {
-                    player.flashlight = Math.max(0, player.flashlight - 0.03);
-                } else {
-                    player.flashlight = Math.min(100, player.flashlight + 0.05);
-                }
-
-                // Collect keys
-                const tileX = Math.floor(player.x / TILE);
-                const tileY = Math.floor(player.y / TILE);
-                if (houseMap[tileY] && houseMap[tileY][tileX] === 3) {
+            var tileX = Math.floor(player.x / TILE);
+            var tileY = Math.floor(player.y / TILE);
+            if (tileY >= 0 && tileY < MAP_ROWS && tileX >= 0 && tileX < MAP_COLS) {
+                if (houseMap[tileY][tileX] === 3) {
                     player.keys++;
                     houseMap[tileY][tileX] = 0;
-                    keysCollected.push({ x: tileX, y: tileY });
                 }
-
-                // Check exit
-                if (houseMap[tileY] && houseMap[tileY][tileX] === 4 && player.keys >= 3) {
+                if (houseMap[tileY][tileX] === 4 && player.keys >= 3) {
                     gameState = 'escaped';
                 }
             }
+        }
 
-            function updateSickos() {
-                sickos.forEach(sicko => {
-                    const distToPlayer = distBetween(sicko.x, sicko.y, player.x, player.y);
+        function updateSickos() {
+            for (var i = 0; i < sickos.length; i++) {
+                var s = sickos[i];
+                var d = dist(s.x, s.y, player.x, player.y);
 
-                    // Detection
-                    let canSeePlayer = false;
-                    if (!player.hiding && distToPlayer < 250) {
-                        // Check line of sight (simplified)
-                        const angleToPlayer = Math.atan2(player.y - sicko.y, player.x - sicko.x);
-                        let angleDiff = angleToPlayer - sicko.dir;
-                        while (angleDiff > Math.PI) angleDiff -= 2 * Math.PI;
-                        while (angleDiff < -Math.PI) angleDiff += 2 * Math.PI;
+                var canSee = false;
+                var canHear = false;
 
-                        if (Math.abs(angleDiff) < Math.PI / 3) { // 120 degree FOV
-                            canSeePlayer = true;
-                            // Check for walls in the way
-                            const steps = Math.floor(distToPlayer / 10);
-                            for (let i = 0; i < steps; i++) {
-                                const checkX = sicko.x + Math.cos(angleToPlayer) * (i * 10);
-                                const checkY = sicko.y + Math.sin(angleToPlayer) * (i * 10);
-                                if (isWall(checkX, checkY)) {
-                                    canSeePlayer = false;
-                                    break;
-                                }
-                            }
+                if (!player.hiding && d < 250) {
+                    var angleToP = Math.atan2(player.y - s.y, player.x - s.x);
+                    var angleDiff = angleToP - s.dir;
+                    while (angleDiff > Math.PI) angleDiff -= 2*Math.PI;
+                    while (angleDiff < -Math.PI) angleDiff += 2*Math.PI;
+
+                    if (Math.abs(angleDiff) < Math.PI/3) {
+                        canSee = true;
+                        var steps = Math.floor(d / 10);
+                        for (var j = 0; j < steps; j++) {
+                            var cx = s.x + Math.cos(angleToP) * (j * 10);
+                            var cy = s.y + Math.sin(angleToP) * (j * 10);
+                            if (isWall(cx, cy)) { canSee = false; break; }
                         }
                     }
+                }
 
-                    // Hearing (if player is running nearby)
-                    let canHearPlayer = false;
-                    if (!player.hiding && (keys['shift']) && distToPlayer < 200) {
-                        canHearPlayer = true;
+                if (!player.hiding && sickosKeys['shift'] && d < 200) canHear = true;
+
+                if (canSee || canHear) {
+                    s.alertLevel = Math.min(100, s.alertLevel + 3);
+                    s.lastX = player.x;
+                    s.lastY = player.y;
+                } else {
+                    s.alertLevel = Math.max(0, s.alertLevel - 0.3);
+                }
+
+                var targetX, targetY;
+                var curSpeed = s.speed;
+
+                if (s.alertLevel > 70) {
+                    targetX = player.x; targetY = player.y;
+                    curSpeed = s.speed * 1.3;
+                } else if (s.alertLevel > 30) {
+                    targetX = s.lastX; targetY = s.lastY;
+                } else {
+                    if (!s.hasPatrol || dist(s.x, s.y, s.patrolX, s.patrolY) < 20) {
+                        s.patrolX = (Math.floor(Math.random() * (MAP_COLS-2)) + 1) * TILE + TILE/2;
+                        s.patrolY = (Math.floor(Math.random() * (MAP_ROWS-2)) + 1) * TILE + TILE/2;
+                        s.hasPatrol = true;
                     }
+                    targetX = s.patrolX; targetY = s.patrolY;
+                }
 
-                    // Update alert level
-                    if (canSeePlayer || canHearPlayer) {
-                        sicko.alertLevel = Math.min(100, sicko.alertLevel + 3);
-                        sicko.lastKnownPlayerX = player.x;
-                        sicko.lastKnownPlayerY = player.y;
-                    } else {
-                        sicko.alertLevel = Math.max(0, sicko.alertLevel - 0.3);
-                    }
+                var angle = Math.atan2(targetY - s.y, targetX - s.x);
+                s.dir = angle;
+                var moveX = Math.cos(angle) * curSpeed;
+                var moveY = Math.sin(angle) * curSpeed;
 
-                    // Movement AI
-                    let targetX, targetY;
-                    let currentSpeed = sicko.speed;
+                var newSX = s.x + moveX;
+                var newSY = s.y + moveY;
+                if (canMove(newSX, s.y, 10)) { s.x = newSX; s.stuckCount = 0; } else { s.stuckCount++; }
+                if (canMove(s.x, newSY, 10)) { s.y = newSY; } else { s.stuckCount++; }
 
-                    if (sicko.alertLevel > 70) {
-                        // Chase mode - go directly to player
-                        targetX = player.x;
-                        targetY = player.y;
-                        currentSpeed = sicko.speed * 1.3;
-                    } else if (sicko.alertLevel > 30) {
-                        // Investigate - go to last known position
-                        targetX = sicko.lastKnownPlayerX;
-                        targetY = sicko.lastKnownPlayerY;
-                    } else {
-                        // Patrol mode
-                        if (!sicko.patrolTarget || distBetween(sicko.x, sicko.y, sicko.patrolTarget.x, sicko.patrolTarget.y) < 20) {
-                            sicko.patrolTarget = {
-                                x: (Math.floor(Math.random() * (MAP_COLS - 2)) + 1) * TILE + TILE/2,
-                                y: (Math.floor(Math.random() * (MAP_ROWS - 2)) + 1) * TILE + TILE/2
-                            };
-                        }
-                        targetX = sicko.patrolTarget.x;
-                        targetY = sicko.patrolTarget.y;
-                    }
+                if (s.stuckCount > 60) { s.hasPatrol = false; s.stuckCount = 0; }
 
-                    // Move toward target
-                    const angle = Math.atan2(targetY - sicko.y, targetX - sicko.x);
-                    sicko.dir = angle;
-                    const moveX = Math.cos(angle) * currentSpeed;
-                    const moveY = Math.sin(angle) * currentSpeed;
+                if (!player.hiding && d < 30) {
+                    player.health -= 0.5;
+                    damageFlash = 10;
+                    screenShake = 5;
+                    if (player.health <= 0) gameState = 'dead';
+                }
+            }
+        }
 
-                    const newSX = sicko.x + moveX;
-                    const newSY = sicko.y + moveY;
-                    const sickoRadius = 10;
+        function drawSickosGame() {
+            ctx.save();
 
-                    if (canMoveTo(newSX, sicko.y, sickoRadius)) {
-                        sicko.x = newSX;
-                        sicko.stuck = 0;
-                    } else {
-                        sicko.stuck++;
-                    }
-                    if (canMoveTo(sicko.x, newSY, sickoRadius)) {
-                        sicko.y = newSY;
-                    } else {
-                        sicko.stuck++;
-                    }
-
-                    // If stuck, pick new patrol target
-                    if (sicko.stuck > 60) {
-                        sicko.patrolTarget = null;
-                        sicko.stuck = 0;
-                    }
-
-                    // Attack player
-                    if (!player.hiding && distToPlayer < 30) {
-                        player.health -= 0.5;
-                        damageFlash = 10;
-                        screenShake = 5;
-                        if (player.health <= 0) {
-                            gameState = 'dead';
-                        }
-                    }
-                });
+            if (screenShake > 0) {
+                ctx.translate(Math.random()*screenShake - screenShake/2, Math.random()*screenShake - screenShake/2);
+                screenShake *= 0.9;
+                if (screenShake < 0.5) screenShake = 0;
             }
 
-            function drawGame() {
-                ctx.save();
+            var camX = player.x - W/2;
+            var camY = player.y - H/2;
+            ctx.translate(-camX, -camY);
 
-                // Screen shake
-                if (screenShake > 0) {
-                    ctx.translate(Math.random() * screenShake - screenShake/2, Math.random() * screenShake - screenShake/2);
-                    screenShake *= 0.9;
-                    if (screenShake < 0.5) screenShake = 0;
-                }
+            // Draw map
+            for (var y = 0; y < MAP_ROWS; y++) {
+                for (var x = 0; x < MAP_COLS; x++) {
+                    var sx = x * TILE, sy = y * TILE;
+                    if (sx + TILE < camX - 50 || sx > camX + W + 50 || sy + TILE < camY - 50 || sy > camY + H + 50) continue;
 
-                // Camera offset
-                const camX = player.x - W/2;
-                const camY = player.y - H/2;
-
-                ctx.translate(-camX, -camY);
-
-                // Draw floor and walls
-                for (let y = 0; y < MAP_ROWS; y++) {
-                    for (let x = 0; x < MAP_COLS; x++) {
-                        const screenX = x * TILE;
-                        const screenY = y * TILE;
-
-                        // Only draw visible tiles
-                        if (screenX + TILE < camX - 50 || screenX > camX + W + 50 ||
-                            screenY + TILE < camY - 50 || screenY > camY + H + 50) continue;
-
-                        if (houseMap[y][x] === 1) {
-                            // Wall
-                            ctx.fillStyle = '#1a1a2e';
-                            ctx.fillRect(screenX, screenY, TILE, TILE);
-                            ctx.strokeStyle = '#16213e';
-                            ctx.strokeRect(screenX, screenY, TILE, TILE);
-                        } else if (houseMap[y][x] === 2) {
-                            // Hiding spot (wardrobe/closet)
-                            ctx.fillStyle = '#2d1b00';
-                            ctx.fillRect(screenX, screenY, TILE, TILE);
-                            ctx.fillStyle = '#4a3000';
-                            ctx.fillRect(screenX + 4, screenY + 2, TILE - 8, TILE - 4);
-                            ctx.fillStyle = '#ffd700';
-                            ctx.font = '10px Arial';
-                            ctx.textAlign = 'center';
-                            ctx.fillText('[E]', screenX + TILE/2, screenY + TILE/2 + 3);
-                        } else if (houseMap[y][x] === 3) {
-                            // Key
-                            ctx.fillStyle = '#0d0d0d';
-                            ctx.fillRect(screenX, screenY, TILE, TILE);
-                            ctx.fillStyle = '#ffd700';
-                            ctx.font = '16px Arial';
-                            ctx.textAlign = 'center';
-                            ctx.fillText('🔑', screenX + TILE/2, screenY + TILE/2 + 5);
-                        } else if (houseMap[y][x] === 4) {
-                            // Exit door
-                            ctx.fillStyle = '#0d0d0d';
-                            ctx.fillRect(screenX, screenY, TILE, TILE);
-                            ctx.fillStyle = player.keys >= 3 ? '#00ff00' : '#ff0000';
-                            ctx.fillRect(screenX + 4, screenY + 2, TILE - 8, TILE - 4);
-                            ctx.fillStyle = '#ffffff';
-                            ctx.font = '8px Arial';
-                            ctx.textAlign = 'center';
-                            ctx.fillText(player.keys >= 3 ? 'EXIT' : '🔒', screenX + TILE/2, screenY + TILE/2 + 3);
-                        } else {
-                            // Floor
-                            ctx.fillStyle = '#0d0d0d';
-                            ctx.fillRect(screenX, screenY, TILE, TILE);
-                            // Floor texture
-                            ctx.fillStyle = '#111111';
-                            if ((x + y) % 2 === 0) ctx.fillRect(screenX, screenY, TILE, TILE);
-                        }
+                    if (houseMap[y][x] === 1) {
+                        ctx.fillStyle = '#1a1a2e';
+                        ctx.fillRect(sx, sy, TILE, TILE);
+                        ctx.strokeStyle = '#16213e';
+                        ctx.strokeRect(sx, sy, TILE, TILE);
+                    } else if (houseMap[y][x] === 2) {
+                        ctx.fillStyle = '#0d0d0d';
+                        ctx.fillRect(sx, sy, TILE, TILE);
+                        ctx.fillStyle = '#2d1b00';
+                        ctx.fillRect(sx+4, sy+2, TILE-8, TILE-4);
+                        ctx.fillStyle = '#ffd700';
+                        ctx.font = '10px Arial';
+                        ctx.textAlign = 'center';
+                        ctx.fillText('[E]', sx+TILE/2, sy+TILE/2+3);
+                    } else if (houseMap[y][x] === 3) {
+                        ctx.fillStyle = '#0d0d0d';
+                        ctx.fillRect(sx, sy, TILE, TILE);
+                        ctx.fillStyle = '#ffd700';
+                        ctx.font = '18px Arial';
+                        ctx.textAlign = 'center';
+                        ctx.fillText('\u{1F511}', sx+TILE/2, sy+TILE/2+6);
+                    } else if (houseMap[y][x] === 4) {
+                        ctx.fillStyle = '#0d0d0d';
+                        ctx.fillRect(sx, sy, TILE, TILE);
+                        ctx.fillStyle = player.keys >= 3 ? '#00ff00' : '#ff0000';
+                        ctx.fillRect(sx+4, sy+2, TILE-8, TILE-4);
+                        ctx.fillStyle = '#ffffff';
+                        ctx.font = '8px Arial';
+                        ctx.textAlign = 'center';
+                        ctx.fillText(player.keys >= 3 ? 'EXIT' : 'LOCKED', sx+TILE/2, sy+TILE/2+3);
+                    } else {
+                        ctx.fillStyle = (x+y)%2===0 ? '#0d0d0d' : '#111111';
+                        ctx.fillRect(sx, sy, TILE, TILE);
                     }
                 }
+            }
 
-                // Draw flashlight / visibility
-                ctx.globalCompositeOperation = 'destination-in';
+            // Flashlight / visibility
+            ctx.globalCompositeOperation = 'destination-in';
+            var grad = ctx.createRadialGradient(player.x, player.y, 0, player.x, player.y, player.flashlightOn ? 200+player.flashlight : 80);
+            if (player.flashlightOn) {
+                grad.addColorStop(0, 'rgba(255,255,255,1)');
+                grad.addColorStop(0.7, 'rgba(255,255,255,0.6)');
+                grad.addColorStop(1, 'rgba(255,255,255,0)');
+            } else {
+                grad.addColorStop(0, 'rgba(255,255,255,0.5)');
+                grad.addColorStop(1, 'rgba(255,255,255,0)');
+            }
+            ctx.fillStyle = grad;
+            ctx.fillRect(player.x-400, player.y-400, 800, 800);
+            ctx.globalCompositeOperation = 'source-over';
 
-                const gradient = ctx.createRadialGradient(
-                    player.x, player.y, 0,
-                    player.x, player.y, player.flashlightOn ? 200 + player.flashlight : 80
-                );
+            // Player
+            if (!player.hiding) {
+                ctx.fillStyle = '#4488ff';
+                ctx.beginPath();
+                ctx.arc(player.x, player.y, 10, 0, Math.PI*2);
+                ctx.fill();
+                ctx.strokeStyle = '#66aaff';
+                ctx.lineWidth = 2;
+                ctx.beginPath();
+                ctx.moveTo(player.x, player.y);
+                ctx.lineTo(player.x + Math.cos(player.dir)*15, player.y + Math.sin(player.dir)*15);
+                ctx.stroke();
+            }
 
-                if (player.flashlightOn) {
-                    gradient.addColorStop(0, 'rgba(255,255,255,1)');
-                    gradient.addColorStop(0.7, 'rgba(255,255,255,0.6)');
-                    gradient.addColorStop(1, 'rgba(255,255,255,0)');
-                } else {
-                    gradient.addColorStop(0, 'rgba(255,255,255,0.5)');
-                    gradient.addColorStop(1, 'rgba(255,255,255,0)');
-                }
-
-                ctx.fillStyle = gradient;
-                ctx.fillRect(player.x - 400, player.y - 400, 800, 800);
-
-                ctx.globalCompositeOperation = 'source-over';
-
-                // Draw player
-                if (!player.hiding) {
-                    ctx.fillStyle = '#4488ff';
+            // Sickos
+            for (var i = 0; i < sickos.length; i++) {
+                var s = sickos[i];
+                var sd = dist(s.x, s.y, player.x, player.y);
+                if (sd < 250 || s.alertLevel > 50) {
+                    ctx.fillStyle = s.type === 'husband' ? '#8b0000' : '#4a0080';
                     ctx.beginPath();
-                    ctx.arc(player.x, player.y, 10, 0, Math.PI * 2);
+                    ctx.arc(s.x, s.y, 12, 0, Math.PI*2);
                     ctx.fill();
 
-                    // Direction indicator
-                    ctx.strokeStyle = '#66aaff';
+                    // Mask
+                    ctx.fillStyle = '#ffffff';
+                    ctx.beginPath();
+                    ctx.arc(s.x, s.y-2, 8, 0, Math.PI*2);
+                    ctx.fill();
+
+                    // Eyes
+                    ctx.fillStyle = '#000000';
+                    ctx.beginPath();
+                    ctx.arc(s.x-3, s.y-3, 2, 0, Math.PI*2);
+                    ctx.arc(s.x+3, s.y-3, 2, 0, Math.PI*2);
+                    ctx.fill();
+
+                    // Smile
+                    ctx.strokeStyle = '#000000';
+                    ctx.lineWidth = 1.5;
+                    ctx.beginPath();
+                    ctx.arc(s.x, s.y+1, 4, 0, Math.PI);
+                    ctx.stroke();
+
+                    // Alert
+                    if (s.alertLevel > 30) {
+                        ctx.fillStyle = s.alertLevel > 70 ? '#ff0000' : '#ffaa00';
+                        ctx.font = '14px Arial';
+                        ctx.textAlign = 'center';
+                        ctx.fillText(s.alertLevel > 70 ? '!' : '?', s.x, s.y-20);
+                    }
+
+                    // Weapon
+                    ctx.strokeStyle = '#888888';
                     ctx.lineWidth = 2;
                     ctx.beginPath();
-                    ctx.moveTo(player.x, player.y);
-                    ctx.lineTo(player.x + Math.cos(player.dir) * 15, player.y + Math.sin(player.dir) * 15);
+                    ctx.moveTo(s.x, s.y+5);
+                    ctx.lineTo(s.x + Math.cos(s.dir)*20, s.y+5 + Math.sin(s.dir)*20);
                     ctx.stroke();
                 }
-
-                // Draw Sickos
-                sickos.forEach(sicko => {
-                    // Only draw if visible to player
-                    const distToPlayer = distBetween(sicko.x, sicko.y, player.x, player.y);
-                    if (distToPlayer < 250 || sicko.alertLevel > 50) {
-                        // Body
-                        ctx.fillStyle = sicko.type === 'husband' ? '#8b0000' : '#4a0080';
-                        ctx.beginPath();
-                        ctx.arc(sicko.x, sicko.y, 12, 0, Math.PI * 2);
-                        ctx.fill();
-
-                        // Mask
-                        ctx.fillStyle = '#ffffff';
-                        ctx.beginPath();
-                        ctx.arc(sicko.x, sicko.y - 2, 8, 0, Math.PI * 2);
-                        ctx.fill();
-
-                        // Mask eyes (creepy)
-                        ctx.fillStyle = '#000000';
-                        ctx.beginPath();
-                        ctx.arc(sicko.x - 3, sicko.y - 3, 2, 0, Math.PI * 2);
-                        ctx.arc(sicko.x + 3, sicko.y - 3, 2, 0, Math.PI * 2);
-                        ctx.fill();
-
-                        // Mask mouth (creepy smile)
-                        ctx.strokeStyle = '#000000';
-                        ctx.lineWidth = 1.5;
-                        ctx.beginPath();
-                        ctx.arc(sicko.x, sicko.y + 1, 4, 0, Math.PI);
-                        ctx.stroke();
-
-                        // Alert indicator
-                        if (sicko.alertLevel > 30) {
-                            ctx.fillStyle = sicko.alertLevel > 70 ? '#ff0000' : '#ffaa00';
-                            ctx.font = '12px Arial';
-                            ctx.textAlign = 'center';
-                            ctx.fillText(sicko.alertLevel > 70 ? '!' : '?', sicko.x, sicko.y - 20);
-                        }
-
-                        // Weapon
-                        ctx.strokeStyle = '#888888';
-                        ctx.lineWidth = 2;
-                        ctx.beginPath();
-                        ctx.moveTo(sicko.x, sicko.y + 5);
-                        ctx.lineTo(sicko.x + Math.cos(sicko.dir) * 20, sicko.y + 5 + Math.sin(sicko.dir) * 20);
-                        ctx.stroke();
-                    }
-                });
-
-                // Blood splatters on walls (atmosphere)
-                ctx.globalAlpha = 0.3;
-                ctx.fillStyle = '#8b0000';
-                const bloodSpots = [[5,7],[12,3],[18,11],[22,19],[8,15],[25,8]];
-                bloodSpots.forEach(([bx, by]) => {
-                    ctx.beginPath();
-                    ctx.arc(bx * TILE + TILE/2, by * TILE + TILE/2, 5, 0, Math.PI * 2);
-                    ctx.fill();
-                });
-                ctx.globalAlpha = 1;
-
-                ctx.restore();
-
-                // Vignette effect
-                const vignette = ctx.createRadialGradient(W/2, H/2, W * 0.3, W/2, H/2, W * 0.7);
-                vignette.addColorStop(0, 'rgba(0,0,0,0)');
-                vignette.addColorStop(1, 'rgba(0,0,0,0.8)');
-                ctx.fillStyle = vignette;
-                ctx.fillRect(0, 0, W, H);
-
-                // Damage flash
-                if (damageFlash > 0) {
-                    ctx.fillStyle = `rgba(255, 0, 0, ${damageFlash / 20})`;
-                    ctx.fillRect(0, 0, W, H);
-                    damageFlash--;
-                }
-
-                // Heartbeat effect when sickos are close
-                let closestDist = Infinity;
-                sickos.forEach(s => {
-                    const d = distBetween(s.x, s.y, player.x, player.y);
-                    if (d < closestDist) closestDist = d;
-                });
-
-                if (closestDist < 150 && !player.hiding) {
-                    heartbeat += 0.15;
-                    const pulseIntensity = Math.max(0, (150 - closestDist) / 150) * 0.3;
-                    const pulse = Math.sin(heartbeat * 4) * pulseIntensity;
-                    ctx.fillStyle = `rgba(255, 0, 0, ${Math.abs(pulse)})`;
-                    ctx.fillRect(0, 0, W, H);
-                }
-
-                // Hiding overlay
-                if (player.hiding) {
-                    ctx.fillStyle = 'rgba(0, 0, 0, 0.7)';
-                    ctx.fillRect(0, 0, W, H);
-                    ctx.fillStyle = '#888888';
-                    ctx.font = '24px Courier New';
-                    ctx.textAlign = 'center';
-                    ctx.fillText('HIDING...', W/2, H/2);
-                    ctx.font = '14px Courier New';
-                    ctx.fillText('Press E to come out', W/2, H/2 + 30);
-                }
-
-                // HUD
-                document.getElementById('health-bar').style.width = player.health + '%';
-                document.getElementById('flashlight-bar').style.width = player.flashlight + '%';
-                document.getElementById('stamina-bar').style.width = player.stamina + '%';
-                document.getElementById('keys-display').textContent = 'KEYS: ' + player.keys + '/3';
-                document.getElementById('hiding-status').textContent = player.hiding ? '[HIDING]' : '';
             }
 
-            function drawDeathScreen() {
-                ctx.fillStyle = 'rgba(0, 0, 0, 0.85)';
-                ctx.fillRect(0, 0, W, H);
+            // Blood atmosphere
+            ctx.globalAlpha = 0.3;
+            ctx.fillStyle = '#8b0000';
+            var bloodSpots = [[5,7],[12,3],[18,11],[22,19],[8,15],[25,8]];
+            for (var b = 0; b < bloodSpots.length; b++) {
+                ctx.beginPath();
+                ctx.arc(bloodSpots[b][0]*TILE+TILE/2, bloodSpots[b][1]*TILE+TILE/2, 5, 0, Math.PI*2);
+                ctx.fill();
+            }
+            ctx.globalAlpha = 1;
 
+            ctx.restore();
+
+            // Vignette
+            var vig = ctx.createRadialGradient(W/2, H/2, W*0.3, W/2, H/2, W*0.7);
+            vig.addColorStop(0, 'rgba(0,0,0,0)');
+            vig.addColorStop(1, 'rgba(0,0,0,0.8)');
+            ctx.fillStyle = vig;
+            ctx.fillRect(0, 0, W, H);
+
+            // Damage flash
+            if (damageFlash > 0) {
+                ctx.fillStyle = 'rgba(255,0,0,' + (damageFlash/20) + ')';
+                ctx.fillRect(0, 0, W, H);
+                damageFlash--;
+            }
+
+            // Heartbeat
+            var closestDist = Infinity;
+            for (var i = 0; i < sickos.length; i++) {
+                var d = dist(sickos[i].x, sickos[i].y, player.x, player.y);
+                if (d < closestDist) closestDist = d;
+            }
+            if (closestDist < 150 && !player.hiding) {
+                heartbeat += 0.15;
+                var pulseInt = Math.max(0, (150-closestDist)/150) * 0.3;
+                var pulse = Math.sin(heartbeat*4) * pulseInt;
+                ctx.fillStyle = 'rgba(255,0,0,' + Math.abs(pulse) + ')';
+                ctx.fillRect(0, 0, W, H);
+            }
+
+            // Hiding overlay
+            if (player.hiding) {
+                ctx.fillStyle = 'rgba(0,0,0,0.7)';
+                ctx.fillRect(0, 0, W, H);
+                ctx.fillStyle = '#888888';
+                ctx.font = '24px Courier New';
+                ctx.textAlign = 'center';
+                ctx.fillText('HIDING...', W/2, H/2);
+                ctx.font = '14px Courier New';
+                ctx.fillText('Press E to come out', W/2, H/2+30);
+            }
+
+            // Update HUD
+            document.getElementById('health-bar').style.width = player.health + '%';
+            document.getElementById('flashlight-bar').style.width = player.flashlight + '%';
+            document.getElementById('stamina-bar').style.width = player.stamina + '%';
+            document.getElementById('keys-display').textContent = player.keys + '/3';
+            document.getElementById('hiding-status').textContent = player.hiding ? '[HIDING]' : '';
+        }
+
+        function sickosLoop() {
+            if (!sickosRunning) return;
+
+            if (gameState === 'intro') {
+                introTimer--;
+                ctx.fillStyle = '#000000';
+                ctx.fillRect(0, 0, W, H);
+                ctx.fillStyle = '#ff0000';
+                ctx.font = '36px Courier New';
+                ctx.textAlign = 'center';
+                ctx.fillText('MEET THE SICKOS', W/2, H/2-30);
+                ctx.fillStyle = '#880000';
+                ctx.font = '16px Courier New';
+                ctx.fillText('You broke into the wrong house...', W/2, H/2+10);
+                ctx.fillStyle = '#666666';
+                ctx.fillText('Find 3 keys. Escape. Don\'t get caught.', W/2, H/2+40);
+                ctx.fillText('Starting in ' + Math.ceil(introTimer/60) + '...', W/2, H/2+70);
+                if (introTimer <= 0) gameState = 'playing';
+            } else if (gameState === 'playing') {
+                updatePlayer();
+                updateSickos();
+                drawSickosGame();
+            } else if (gameState === 'dead') {
+                ctx.fillStyle = 'rgba(0,0,0,0.85)';
+                ctx.fillRect(0, 0, W, H);
                 ctx.fillStyle = '#ff0000';
                 ctx.font = '60px Courier New';
                 ctx.textAlign = 'center';
-                ctx.fillText('YOU DIED', W/2, H/2 - 40);
-
+                ctx.fillText('YOU DIED', W/2, H/2-40);
                 ctx.fillStyle = '#880000';
                 ctx.font = '20px Courier New';
-                ctx.fillText('The Sickos got you...', W/2, H/2 + 10);
-
+                ctx.fillText('The Sickos got you...', W/2, H/2+10);
                 ctx.fillStyle = '#ffffff';
                 ctx.font = '16px Courier New';
-                ctx.fillText('Press R to try again', W/2, H/2 + 50);
-
-                if (keys['r']) {
-                    // Reset game
-                    document.removeEventListener('keydown', sickosKeyDown);
-                    document.removeEventListener('keyup', sickosKeyUp);
-                    cancelAnimationFrame(sickosAnimId);
-                    startSickos();
-                }
-            }
-
-            function drawEscapeScreen() {
-                ctx.fillStyle = 'rgba(0, 0, 0, 0.85)';
+                ctx.fillText('Press R to try again', W/2, H/2+50);
+            } else if (gameState === 'escaped') {
+                ctx.fillStyle = 'rgba(0,0,0,0.85)';
                 ctx.fillRect(0, 0, W, H);
-
                 ctx.fillStyle = '#00ff00';
                 ctx.font = '48px Courier New';
                 ctx.textAlign = 'center';
-                ctx.fillText('YOU ESCAPED!', W/2, H/2 - 40);
-
+                ctx.fillText('YOU ESCAPED!', W/2, H/2-40);
                 ctx.fillStyle = '#00cc00';
                 ctx.font = '20px Courier New';
-                ctx.fillText('You made it out alive!', W/2, H/2 + 10);
-
+                ctx.fillText('You made it out alive!', W/2, H/2+10);
                 ctx.fillStyle = '#ffffff';
                 ctx.font = '16px Courier New';
-                ctx.fillText('Press R to play again', W/2, H/2 + 50);
-
-                if (keys['r']) {
-                    document.removeEventListener('keydown', sickosKeyDown);
-                    document.removeEventListener('keyup', sickosKeyUp);
-                    cancelAnimationFrame(sickosAnimId);
-                    startSickos();
-                }
+                ctx.fillText('Press R to play again', W/2, H/2+50);
             }
 
-            function gameLoop() {
-                gameTime++;
-
-                if (gameState === 'playing') {
-                    updatePlayer();
-                    updateSickos();
-                    drawGame();
-                } else if (gameState === 'dead') {
-                    drawDeathScreen();
-                } else if (gameState === 'escaped') {
-                    drawEscapeScreen();
-                }
-
-                sickosAnimId = requestAnimationFrame(gameLoop);
-            }
-
-            // Start with a creepy intro
-            ctx.fillStyle = '#000000';
-            ctx.fillRect(0, 0, W, H);
-            ctx.fillStyle = '#ff0000';
-            ctx.font = '36px Courier New';
-            ctx.textAlign = 'center';
-            ctx.fillText('MEET THE SICKOS', W/2, H/2 - 30);
-            ctx.fillStyle = '#880000';
-            ctx.font = '16px Courier New';
-            ctx.fillText('You broke into the wrong house...', W/2, H/2 + 10);
-            ctx.fillStyle = '#666666';
-            ctx.fillText('Find 3 keys. Escape. Don\'t get caught.', W/2, H/2 + 40);
-            ctx.fillText('Starting in 3 seconds...', W/2, H/2 + 70);
-
-            setTimeout(() => {
-                gameLoop();
-            }, 3000);
+            sickosAnimId = requestAnimationFrame(sickosLoop);
         }
+
+        sickosLoop();
+    }
     </script>
 
 </body>
