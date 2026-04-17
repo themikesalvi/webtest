@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="XLNZ Productions portfolio showcasing our best video production work including podcasts, stand-up specials, commercials, documentaries, and more in Philadelphia.">
-    <meta name="keywords" content="video production portfolio, Philadelphia video production, podcast production, commercial video, documentary production">
+    <meta name="description" content="XLNZ Productions portfolio showcasing our best video production work including podcasts, stand-up specials, commercials, documentaries, films, and more in Philadelphia.">
+    <meta name="keywords" content="video production portfolio, Philadelphia video production, podcast production, commercial video, documentary production, film production, No Egos World Media">
     <meta name="robots" content="index, follow">
     <meta name="author" content="XLNZ Productions">
     <link rel="canonical" href="https://www.xlnzproductions.com/portfolio">
 
     <!-- Open Graph -->
     <meta property="og:title" content="Portfolio - XLNZ Productions">
-    <meta property="og:description" content="Explore our portfolio of professional video productions including podcasts, stand-up specials, commercials, and documentaries.">
+    <meta property="og:description" content="Explore our portfolio of professional video productions including podcasts, stand-up specials, commercials, documentaries, and films.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.xlnzproductions.com/portfolio">
     <meta property="og:image" content="https://www.xlnzproductions.com/images/og-portfolio.jpg">
@@ -20,7 +20,7 @@
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Portfolio - XLNZ Productions">
-    <meta name="twitter:description" content="Explore our portfolio of professional video productions including podcasts, stand-up specials, commercials, and documentaries.">
+    <meta name="twitter:description" content="Explore our portfolio of professional video productions including podcasts, stand-up specials, commercials, documentaries, and films.">
 
     <!-- Schema.org -->
     <script type="application/ld+json">
@@ -620,10 +620,259 @@
             color: var(--accent);
         }
 
+        .portfolio-card-tubi {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 12px;
+            background: rgba(233, 69, 96, 0.15);
+            border-radius: 100px;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--accent);
+            margin-top: 12px;
+        }
+
+        .portfolio-card-tubi i {
+            font-size: 10px;
+        }
+
+        /* ===== COLLABORATION SECTION ===== */
+        .collaboration-section {
+            padding: 100px 0;
+            background: var(--bg-secondary);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .collaboration-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(ellipse at 30% 50%, rgba(233, 69, 96, 0.06) 0%, transparent 60%),
+                        radial-gradient(ellipse at 70% 80%, rgba(255, 107, 53, 0.04) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .collaboration-header {
+            text-align: center;
+            margin-bottom: 64px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .collaboration-header h2 {
+            font-size: clamp(32px, 4vw, 48px);
+            margin-bottom: 16px;
+        }
+
+        .collaboration-header p {
+            color: var(--text-secondary);
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        .collaboration-info {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 24px;
+            margin-top: 32px;
+            flex-wrap: wrap;
+        }
+
+        .collaboration-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 24px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        .collaboration-badge i {
+            color: var(--accent);
+            font-size: 16px;
+        }
+
+        .collaboration-badge strong {
+            color: var(--text-primary);
+        }
+
+        .collaboration-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .collaboration-card {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .collaboration-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(233, 69, 96, 0.3);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .collaboration-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 50% 0%, rgba(233, 69, 96, 0.05) 0%, transparent 60%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .collaboration-card:hover::before {
+            opacity: 1;
+        }
+
+        .collaboration-card-video {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+        }
+
+        .collaboration-card-video iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .collaboration-card-badge {
+            position: absolute;
+            top: 16px;
+            left: 16px;
+            padding: 6px 14px;
+            background: rgba(10, 10, 15, 0.85);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 100px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent);
+            z-index: 2;
+        }
+
+        .collaboration-card-status {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            padding: 6px 14px;
+            background: rgba(16, 185, 129, 0.9);
+            border-radius: 100px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #fff;
+            z-index: 2;
+        }
+
+        .collaboration-card-status.premiere {
+            background: rgba(233, 69, 96, 0.9);
+        }
+
+        .collaboration-card-body {
+            padding: 24px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .collaboration-card-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--text-primary);
+        }
+
+        .collaboration-card-credit {
+            font-size: 13px;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .collaboration-card-desc {
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+
+        .collaboration-card-meta {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding-top: 16px;
+            border-top: 1px solid var(--border);
+        }
+
+        .collaboration-card-meta span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        .collaboration-card-meta i {
+            font-size: 12px;
+            color: var(--accent);
+        }
+
+        .collaboration-card-tubi {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 12px;
+            background: rgba(233, 69, 96, 0.15);
+            border-radius: 100px;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--accent);
+            margin-top: 12px;
+        }
+
+        .collaboration-card-tubi i {
+            font-size: 10px;
+        }
+
         /* ===== INSTAGRAM REEL EMBED ===== */
         .instagram-section {
             padding: 100px 0;
-            background: var(--bg-secondary);
+            background: var(--bg-primary);
             position: relative;
         }
 
@@ -875,7 +1124,7 @@
 
         .footer-bottom a {
             color: var(--text-secondary);
-            text-decoration: none;
+            textDecoration: none;
             transition: color 0.3s ease;
         }
 
@@ -907,6 +1156,12 @@
             .instagram-grid {
                 grid-template-columns: 1fr;
                 gap: 40px;
+            }
+            .collaboration-grid {
+                grid-template-columns: 1fr;
+                max-width: 700px;
+                margin-left: auto;
+                margin-right: auto;
             }
         }
 
@@ -975,6 +1230,10 @@
                 flex-direction: column;
                 align-items: stretch;
             }
+
+            .collaboration-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         @media (max-width: 576px) {
@@ -1014,6 +1273,10 @@
             .instagram-embed-container {
                 min-height: 400px;
             }
+
+            .collaboration-info {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
@@ -1051,7 +1314,7 @@
         <div class="container page-hero-content">
             <div class="section-label">Our Work</div>
             <h1>Project <span class="gradient-text">Portfolio</span></h1>
-            <p>From podcasts to comedy skits, explore the stories we've helped bring to life across Philadelphia and beyond.</p>
+            <p>From podcasts to feature films, explore the stories we've helped bring to life across Philadelphia and beyond.</p>
             <div class="hero-buttons">
                 <a href="#who-we-are" class="btn btn-primary"><i class="fas fa-play-circle"></i> Watch Our Story</a>
                 <a href="#portfolio" class="btn btn-secondary"><i class="fas fa-th-large"></i> View Projects</a>
@@ -1107,6 +1370,7 @@
                 <button class="filter-btn active" data-filter="all">All Projects</button>
                 <button class="filter-btn" data-filter="podcast">Podcasts</button>
                 <button class="filter-btn" data-filter="comedy">Comedy</button>
+                <button class="filter-btn" data-filter="film">Films</button>
             </div>
 
             <!-- Portfolio Grid -->
@@ -1176,6 +1440,95 @@
                         <div class="portfolio-card-meta">
                             <span><i class="fas fa-microphone"></i> Podcast Series</span>
                             <span><i class="fas fa-video"></i> Full Production</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- No Egos World Media Collaboration Section -->
+    <section class="collaboration-section" id="no-egos">
+        <div class="container">
+            <div class="collaboration-header reveal">
+                <div class="section-label" style="justify-content: center;">In Association With</div>
+                <h2>No Egos World Media <span class="gradient-text">Collaboration</span></h2>
+                <p>XLNZ Productions partners with Raheem Roher and No Egos World Media to bring powerful stories to the screen. Based in Philadelphia, Raheem is a writer and director creating films that resonate with authentic voices and raw storytelling.</p>
+                <div class="collaboration-info">
+                    <div class="collaboration-badge">
+                        <i class="fas fa-user"></i> <strong>Raheem Roher</strong> — Writer/Director
+                    </div>
+                    <div class="collaboration-badge">
+                        <i class="fas fa-building"></i> <strong>No Egos World Media</strong> — Production Company
+                    </div>
+                    <div class="collaboration-badge">
+                        <i class="fas fa-map-marker-alt"></i> <strong>Philadelphia, PA</strong>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collaboration-grid">
+
+                <!-- The Rush -->
+                <div class="collaboration-card reveal">
+                    <div class="collaboration-card-video">
+                        <iframe src="https://www.youtube.com/embed/eGK84ZpOhys" title="The Rush - Official Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+                        <span class="collaboration-card-badge">Film</span>
+                        <span class="collaboration-card-status">Streaming Now</span>
+                    </div>
+                    <div class="collaboration-card-body">
+                        <div class="collaboration-card-credit">Written & Directed by Raheem Roher</div>
+                        <h3 class="collaboration-card-title">The Rush</h3>
+                        <p class="collaboration-card-desc">A gripping film that showcases Raheem Roher's signature storytelling style — raw, authentic, and unflinching in its portrayal of real-life struggles and triumphs.</p>
+                        <div class="collaboration-card-meta">
+                            <span><i class="fas fa-film"></i> Feature Film</span>
+                            <span><i class="fas fa-handshake"></i> In Association</span>
+                        </div>
+                        <div class="collaboration-card-tubi">
+                            <i class="fas fa-tv"></i> Available on Tubi
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mistransaction -->
+                <div class="collaboration-card reveal">
+                    <div class="collaboration-card-video">
+                        <iframe src="https://www.youtube.com/embed/8nXm23rNbqA" title="Mistransaction - Official Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+                        <span class="collaboration-card-badge">Film</span>
+                        <span class="collaboration-card-status premiere">Premieres May 16</span>
+                    </div>
+                    <div class="collaboration-card-body">
+                        <div class="collaboration-card-credit">Written & Directed by Raheem Roher</div>
+                        <h3 class="collaboration-card-title">Mistransaction</h3>
+                        <p class="collaboration-card-desc">The latest from Raheem Roher and No Egos World Media. A tense thriller exploring the consequences of choices made in desperation, premiering on Tubi May 16, 2024.</p>
+                        <div class="collaboration-card-meta">
+                            <span><i class="fas fa-film"></i> Feature Film</span>
+                            <span><i class="fas fa-handshake"></i> In Association</span>
+                        </div>
+                        <div class="collaboration-card-tubi">
+                            <i class="fas fa-tv"></i> Coming to Tubi May 16, 2024
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Unglorified -->
+                <div class="collaboration-card reveal">
+                    <div class="collaboration-card-video">
+                        <iframe src="https://www.youtube.com/embed/jvANB8i9rbM" title="Unglorified - Official Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+                        <span class="collaboration-card-badge">Film</span>
+                        <span class="collaboration-card-status">Streaming Now</span>
+                    </div>
+                    <div class="collaboration-card-body">
+                        <div class="collaboration-card-credit">Written & Directed by Raheem Roher</div>
+                        <h3 class="collaboration-card-title">Unglorified</h3>
+                        <p class="collaboration-card-desc">A powerful narrative that pulls no punches. Raheem Roher delivers another unapologetic look at life through the lens of characters who refuse to be defined by their circumstances.</p>
+                        <div class="collaboration-card-meta">
+                            <span><i class="fas fa-film"></i> Feature Film</span>
+                            <span><i class="fas fa-handshake"></i> In Association</span>
+                        </div>
+                        <div class="collaboration-card-tubi">
+                            <i class="fas fa-tv"></i> Available on Tubi
                         </div>
                     </div>
                 </div>
