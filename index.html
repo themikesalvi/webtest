@@ -3,2994 +3,1247 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="XLNZ Productions - Philadelphia's premier video production studio. Specializing in podcasts, comedy, films, documentaries, and commercial content that captivates audiences and delivers results.">
-    <meta name="keywords" content="video production Philadelphia, podcast production, comedy specials, film production, commercial video, documentary, social media content">
-    <meta name="robots" content="index, follow">
-    <meta name="author" content="XLNZ Productions">
-    <link rel="canonical" href="https://www.xlnzproductions.com/">
-    <meta name="geo.region" content="US-PA">
-    <meta name="geo.placename" content="Philadelphia">
-
-    <!-- Preconnect -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-    <link rel="preconnect" href="https://picsum.photos">
-
-    <!-- Open Graph -->
-    <meta property="og:title" content="XLNZ Productions - Philadelphia's Premier Video Production Studio">
-    <meta property="og:description" content="Podcasts, comedy, films, documentaries, and commercial content that captivates audiences and delivers results.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.xlnzproductions.com/">
-    <meta property="og:image" content="https://www.xlnzproductions.com/images/og-image.jpg">
-    <meta property="og:locale" content="en_US">
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="XLNZ Productions - Philadelphia's Premier Video Production Studio">
-    <meta name="twitter:description" content="Podcasts, comedy, films, documentaries, and commercial content that captivates audiences and delivers results.">
-    <meta name="twitter:image" content="https://www.xlnzproductions.com/images/og-image.jpg">
-
-    <!-- Schema.org LocalBusiness Markup -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "VideoProductionCompany",
-        "name": "XLNZ Productions",
-        "description": "Philadelphia's premier video production studio specializing in podcasts, comedy, films, documentaries, and commercial content.",
-        "url": "https://www.xlnzproductions.com",
-        "email": "xlnzproductions@gmail.com",
-        "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Philadelphia",
-            "addressRegion": "PA",
-            "addressCountry": "US"
-        },
-        "foundingDate": "2023",
-        "founders": [
-            {"@type": "Person", "name": "Buhzz Taylor"},
-            {"@type": "Person", "name": "Mike Salvi"}
-        ],
-        "sameAs": [
-            "https://www.instagram.com/xlnzproductions",
-            "https://www.youtube.com/@xlnzproductions"
-        ]
-    }
-    </script>
-
-    <title>XLNZ Productions - Philadelphia's Premier Video Production Studio</title>
-
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
+    <title>XLNZ Productions</title>
     <style>
-        :root {
-            --bg-primary: #0a0a0f;
-            --bg-secondary: #12122a;
-            --bg-card: #1a1a2e;
-            --accent: #e94560;
-            --accent-hover: #ff6b35;
-            --accent-gradient: linear-gradient(135deg, #e94560, #ff6b35);
-            --text-primary: #ffffff;
-            --text-secondary: #a0a0b8;
-            --text-muted: #8a8a9e;
-            --border: rgba(255, 255, 255, 0.08);
-            --glow: 0 0 40px rgba(233, 69, 96, 0.15);
-        }
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
-
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg-primary);
-            color: var(--text-primary);
-            line-height: 1.7;
-            overflow-x: hidden;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0a0a0a;
+            color: #ffffff;
+            line-height: 1.6;
         }
 
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            line-height: 1.2;
-        }
-
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-
-        /* Skip Link */
-        .skip-link {
-            position: absolute;
-            top: -40px;
-            left: 0;
-            background: var(--accent);
-            color: white;
-            padding: 8px 16px;
-            z-index: 10000;
-            transition: top 0.3s;
-            font-weight: 600;
-            text-decoration: none;
-        }
-
-        .skip-link:focus {
-            top: 0;
-        }
-
-        /* Scroll Progress */
-        .scroll-progress {
+        /* Navigation */
+        nav {
+            background: rgba(10, 10, 10, 0.95);
+            padding: 1rem 2rem;
             position: fixed;
             top: 0;
-            left: 0;
-            height: 3px;
-            background: var(--accent-gradient);
-            z-index: 10001;
-            width: 0%;
-            transition: width 0.1s;
-        }
-
-        /* ===== HEADER ===== */
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
             width: 100%;
             z-index: 1000;
-            padding: 20px 0;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            background: transparent;
-        }
-
-        header.scrolled {
-            background: rgba(10, 10, 15, 0.95);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            padding: 12px 0;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
-        }
-
-        .header-content {
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        .logo {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 26px;
-            font-weight: 800;
-            color: var(--text-primary);
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            letter-spacing: -0.5px;
+        #logo-trigger {
             cursor: pointer;
-            user-select: none;
-            -webkit-user-select: none;
-            -webkit-tap-highlight-color: transparent;
-        }
-
-        .logo-icon {
-            width: 40px;
-            height: 40px;
-            background: var(--accent-gradient);
-            border-radius: 8px;
             display: flex;
             align-items: center;
-            justify-content: center;
-            font-size: 18px;
         }
 
-        nav ul {
+        #xlnz-logo {
+            height: 50px;
+            width: auto;
+            transition: transform 0.2s;
+        }
+
+        #logo-trigger:active #xlnz-logo {
+            transform: scale(0.95);
+        }
+
+        .nav-links {
             display: flex;
             list-style: none;
-            gap: 8px;
+            gap: 2rem;
         }
 
-        nav ul li a {
-            color: var(--text-secondary);
+        .nav-links a {
+            color: #ffffff;
             text-decoration: none;
             font-weight: 500;
-            font-size: 15px;
-            padding: 8px 16px;
-            border-radius: 6px;
-            transition: all 0.3s ease;
+            transition: color 0.3s;
         }
 
-        nav ul li a:hover,
-        nav ul li a.active {
-            color: var(--text-primary);
-            background: rgba(233, 69, 96, 0.1);
+        .nav-links a:hover {
+            color: #ff4444;
         }
 
-        .nav-cta {
-            background: var(--accent-gradient) !important;
-            color: var(--text-primary) !important;
-            font-weight: 600 !important;
-            padding: 10px 24px !important;
-        }
-
-        .nav-cta:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 8px 25px rgba(233, 69, 96, 0.3);
-        }
-
-        .mobile-menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            color: var(--text-primary);
-            font-size: 24px;
-            cursor: pointer;
-            padding: 8px;
-        }
-
-        .mobile-menu-close {
-            display: none;
-        }
-
-        /* ===== HERO ===== */
+        /* Hero Section */
         .hero {
             min-height: 100vh;
             display: flex;
             align-items: center;
-            position: relative;
-            overflow: hidden;
-            padding: 120px 0 80px;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(ellipse at 20% 50%, rgba(233, 69, 96, 0.08) 0%, transparent 60%),
-                        radial-gradient(ellipse at 80% 20%, rgba(255, 107, 53, 0.06) 0%, transparent 50%);
-            pointer-events: none;
-        }
-
-        .hero::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 200px;
-            background: linear-gradient(to top, var(--bg-primary), transparent);
-            pointer-events: none;
-        }
-
-        .hero-grid {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image:
-                linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-            background-size: 60px 60px;
-            mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
-            -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 800px;
-            margin: 0 auto;
+            justify-content: center;
             text-align: center;
+            padding: 2rem;
+            background: radial-gradient(circle at center, #1a1a1a 0%, #0a0a0a 100%);
         }
 
-        .hero-logo {
-            margin-bottom: 40px;
+        .hero-content h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #ff4444, #ff8800);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
-        .hero-logo img {
-            max-width: 280px;
-            height: auto;
-            filter: drop-shadow(0 10px 40px rgba(233, 69, 96, 0.2));
+        .hero-content p {
+            font-size: 1.5rem;
+            color: #cccccc;
+            margin-bottom: 2rem;
         }
 
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(233, 69, 96, 0.1);
-            border: 1px solid rgba(233, 69, 96, 0.2);
-            padding: 8px 20px;
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: linear-gradient(135deg, #ff4444, #ff8800);
+            color: white;
+            text-decoration: none;
             border-radius: 50px;
-            font-size: 14px;
-            font-weight: 600;
-            color: var(--accent);
-            margin-bottom: 24px;
-            letter-spacing: 0.5px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: transform 0.3s, box-shadow 0.3s;
         }
 
-        .hero-badge i {
-            font-size: 12px;
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(255, 68, 68, 0.3);
         }
 
-        .hero h1 {
-            font-size: clamp(40px, 7vw, 72px);
-            font-weight: 900;
-            margin-bottom: 24px;
-            letter-spacing: -1px;
-        }
-
-        .gradient-text {
-            background: var(--accent-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .hero p {
-            font-size: clamp(18px, 2.5vw, 22px);
-            color: var(--text-secondary);
-            margin-bottom: 40px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-            line-height: 1.6;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 16px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            padding: 16px 36px;
-            border-radius: 8px;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            font-size: 16px;
-            text-decoration: none;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            cursor: pointer;
-            border: none;
-        }
-
-        .btn-primary {
-            background: var(--accent-gradient);
-            color: var(--text-primary);
-            box-shadow: 0 4px 15px rgba(233, 69, 96, 0.3);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 30px rgba(233, 69, 96, 0.4);
-        }
-
-        .btn-primary:active {
-            transform: translateY(0);
-        }
-
-        .btn-secondary {
-            background: rgba(255, 255, 255, 0.05);
-            color: var(--text-primary);
-            border: 1px solid var(--border);
-        }
-
-        .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: rgba(255, 255, 255, 0.2);
-            transform: translateY(-2px);
-        }
-
-        .btn-secondary:active {
-            transform: translateY(0);
-        }
-
-        /* Focus Styles */
-        a:focus-visible,
-        button:focus-visible,
-        .btn:focus-visible {
-            outline: 2px solid var(--accent);
-            outline-offset: 2px;
-        }
-
-        /* ===== STATS SECTION ===== */
-        .stats {
-            padding: 80px 0;
-            position: relative;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 32px;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .stat-item {
-            text-align: center;
-            padding: 32px 16px;
-            border-radius: 12px;
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid var(--border);
-            transition: all 0.3s ease;
-        }
-
-        .stat-item:hover {
-            background: rgba(233, 69, 96, 0.05);
-            border-color: rgba(233, 69, 96, 0.2);
-            transform: translateY(-4px);
-        }
-
-        .stat-number {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 48px;
-            font-weight: 900;
-            background: var(--accent-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 8px;
-        }
-
-        .stat-label {
-            font-size: 15px;
-            color: var(--text-secondary);
-            font-weight: 500;
-        }
-
-        /* ===== ABOUT SECTION ===== */
-        .about {
-            padding: 120px 0;
-            position: relative;
-        }
-
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
-            align-items: center;
-        }
-
-        .about-image-wrapper {
-            position: relative;
-        }
-
-        .about-image-wrapper::before {
-            content: '';
-            position: absolute;
-            top: -20px;
-            left: -20px;
-            right: 20px;
-            bottom: 20px;
-            border: 2px solid rgba(233, 69, 96, 0.2);
-            border-radius: 12px;
-            z-index: 0;
-        }
-
-        .about-image-wrapper img {
-            width: 100%;
-            border-radius: 12px;
-            position: relative;
-            z-index: 1;
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
-        }
-
-        .section-label {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            color: var(--accent);
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 16px;
-        }
-
-        .section-label::before {
-            content: '';
-            width: 30px;
-            height: 2px;
-            background: var(--accent-gradient);
-        }
-
-        .about-content h2 {
-            font-size: clamp(32px, 4vw, 48px);
-            margin-bottom: 24px;
-        }
-
-        .about-content p {
-            color: var(--text-secondary);
-            margin-bottom: 20px;
-            font-size: 17px;
-        }
-
-        .about-features {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 16px;
-            margin-top: 32px;
-        }
-
-        .about-feature {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            color: var(--text-secondary);
-            font-size: 15px;
-        }
-
-        .about-feature i {
-            color: var(--accent);
-            font-size: 14px;
-        }
-
-        /* ===== TEAM SECTION ===== */
-        .team {
-            padding: 120px 0;
-            background: var(--bg-secondary);
-            position: relative;
-        }
-
-        .team::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(ellipse at 50% 0%, rgba(233, 69, 96, 0.05) 0%, transparent 60%);
-            pointer-events: none;
-        }
-
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 40px;
-            max-width: 800px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 1;
-        }
-
-        .team-card {
-            text-align: center;
-            padding: 40px 32px;
-            border-radius: 12px;
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid var(--border);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .team-card:hover {
-            transform: translateY(-8px);
-            border-color: rgba(233, 69, 96, 0.3);
-            box-shadow: var(--glow);
-        }
-
-        .team-card img {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 20px;
-            border: 3px solid rgba(233, 69, 96, 0.3);
-        }
-
-        .team-card h3 {
-            font-size: 22px;
-            margin-bottom: 4px;
-        }
-
-        .team-card .team-role {
-            color: var(--accent);
-            font-size: 14px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 16px;
-        }
-
-        .team-card p {
-            color: var(--text-secondary);
-            font-size: 15px;
-            line-height: 1.6;
-        }
-
-        .team-social {
-            display: flex;
-            justify-content: center;
-            gap: 12px;
-            margin-top: 20px;
-        }
-
-        .team-social a {
-            width: 36px;
-            height: 36px;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-secondary);
-            font-size: 14px;
-            transition: all 0.3s ease;
-            text-decoration: none;
-        }
-
-        .team-social a:hover {
-            background: var(--accent);
-            border-color: var(--accent);
-            color: var(--text-primary);
-            transform: translateY(-2px);
-        }
-
-        /* ===== SERVICES SECTION ===== */
+        /* Services Section */
         .services {
-            padding: 120px 0;
-            position: relative;
+            padding: 5rem 2rem;
+            background: #0f0f0f;
         }
 
-        .section-header {
+        .section-title {
             text-align: center;
-            margin-bottom: 64px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .section-header h2 {
-            font-size: clamp(32px, 4vw, 48px);
-            margin-bottom: 16px;
-        }
-
-        .section-header p {
-            color: var(--text-secondary);
-            font-size: 18px;
-            max-width: 600px;
-            margin: 0 auto;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #ff4444;
         }
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .service-card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            overflow: hidden;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-        }
-
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background: var(--accent-gradient);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .service-card:hover {
-            transform: translateY(-8px);
-            border-color: rgba(233, 69, 96, 0.3);
-            box-shadow: 0 0 30px rgba(233, 69, 96, 0.1), var(--glow);
-        }
-
-        .service-card:hover::before {
-            opacity: 1;
-        }
-
-        .service-image {
-            height: 200px;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .service-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .service-card:hover .service-image img {
-            transform: scale(1.08);
-        }
-
-        .service-image::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 60%;
-            background: linear-gradient(to top, var(--bg-card), transparent);
-        }
-
-        .service-content {
-            padding: 28px;
-        }
-
-        .service-icon {
-            width: 48px;
-            height: 48px;
-            background: rgba(233, 69, 96, 0.1);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 16px;
-        }
-
-        .service-icon i {
-            font-size: 20px;
-            color: var(--accent);
-        }
-
-        .service-content h3 {
-            font-size: 22px;
-            margin-bottom: 12px;
-        }
-
-        .service-content p {
-            color: var(--text-secondary);
-            font-size: 15px;
-            margin-bottom: 20px;
-            line-height: 1.6;
-        }
-
-        .service-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            color: var(--accent);
-            font-weight: 600;
-            font-size: 14px;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .service-link:hover {
-            gap: 12px;
-        }
-
-        .service-link i {
-            font-size: 12px;
-            transition: transform 0.3s ease;
-        }
-
-        .service-link:hover i {
-            transform: translateX(4px);
-        }
-
-        /* ===== FEATURED WORK SECTION ===== */
-        .featured {
-            padding: 120px 0;
-            background: var(--bg-secondary);
-            position: relative;
-        }
-
-        .featured-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-        }
-
-        .featured-item {
-            position: relative;
-            border-radius: 12px;
-            overflow: hidden;
-            aspect-ratio: 16/10;
-            cursor: pointer;
-        }
-
-        .featured-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .featured-item:hover img {
-            transform: scale(1.1);
-        }
-
-        .featured-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to top, rgba(10, 10, 15, 0.9) 0%, transparent 60%);
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            padding: 24px;
-            transition: all 0.3s ease;
-        }
-
-        .featured-item:hover .featured-overlay {
-            background: linear-gradient(to top, rgba(10, 10, 15, 0.95) 0%, rgba(233, 69, 96, 0.1) 100%);
-        }
-
-        .featured-category {
-            font-size: 12px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: var(--accent);
-            margin-bottom: 8px;
-        }
-
-        .featured-overlay h3 {
-            font-size: 20px;
-            margin-bottom: 4px;
-        }
-
-        .featured-play {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) scale(0.8);
-            width: 60px;
-            height: 60px;
-            background: var(--accent-gradient);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: all 0.3s ease;
-        }
-
-        .featured-play i {
-            font-size: 20px;
-            margin-left: 3px;
-        }
-
-        .featured-item:hover .featured-play {
-            opacity: 1;
-            transform: translate(-50%, -50%) scale(1);
-        }
-
-        /* ===== TESTIMONIALS SECTION ===== */
-        .testimonials {
-            padding: 120px 0;
-            position: relative;
-        }
-
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-        }
-
-        .testimonial-card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 32px;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-        }
-
-        .testimonial-card:hover {
-            transform: translateY(-4px);
-            border-color: rgba(233, 69, 96, 0.2);
-            box-shadow: var(--glow);
-        }
-
-        .testimonial-stars {
-            color: #ffc107;
-            font-size: 14px;
-            margin-bottom: 16px;
-            display: flex;
-            gap: 2px;
-        }
-
-        .testimonial-card blockquote {
-            color: var(--text-secondary);
-            font-size: 15px;
-            line-height: 1.7;
-            margin-bottom: 24px;
-            font-style: italic;
-        }
-
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .testimonial-author img {
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 2px solid rgba(233, 69, 96, 0.3);
-        }
-
-        .testimonial-author-info h4 {
-            font-size: 15px;
-            font-weight: 700;
-        }
-
-        .testimonial-author-info p {
-            font-size: 13px;
-            color: var(--text-muted);
-        }
-
-        /* ===== CTA SECTION ===== */
-        .cta {
-            padding: 120px 0;
-            background: var(--bg-secondary);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(233, 69, 96, 0.08) 0%, transparent 70%);
-            pointer-events: none;
-        }
-
-        .cta-content {
-            text-align: center;
-            position: relative;
-            z-index: 1;
-            max-width: 700px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
             margin: 0 auto;
         }
 
-        .cta h2 {
-            font-size: clamp(32px, 5vw, 56px);
-            margin-bottom: 20px;
+        .service-card {
+            background: #1a1a1a;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: transform 0.3s, border-color 0.3s;
         }
 
-        .cta p {
-            font-size: 18px;
-            color: var(--text-secondary);
-            margin-bottom: 40px;
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255, 68, 68, 0.3);
         }
 
-        .cta-buttons {
-            display: flex;
-            gap: 16px;
-            justify-content: center;
-            flex-wrap: wrap;
+        .service-card h3 {
+            color: #ff4444;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
         }
 
-        /* ===== FOOTER ===== */
+        .service-card p {
+            color: #aaaaaa;
+        }
+
+        /* About Section */
+        .about {
+            padding: 5rem 2rem;
+            background: #0a0a0a;
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about-content p {
+            color: #cccccc;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Footer */
         footer {
-            background: var(--bg-primary);
-            border-top: 1px solid var(--border);
-            padding: 64px 0 32px;
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 48px;
-            margin-bottom: 48px;
-        }
-
-        .footer-brand .logo {
-            margin-bottom: 16px;
-        }
-
-        .footer-brand p {
-            color: var(--text-secondary);
-            font-size: 15px;
-            margin-bottom: 24px;
-            line-height: 1.7;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 12px;
-        }
-
-        .social-links a {
-            width: 44px;
-            height: 44px;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-secondary);
-            font-size: 18px;
-            transition: all 0.3s ease;
-        }
-
-        .social-links a:hover {
-            background: var(--accent);
-            border-color: var(--accent);
-            color: var(--text-primary);
-            transform: translateY(-3px);
-        }
-
-        .footer-column h4 {
-            font-size: 16px;
-            font-weight: 700;
-            margin-bottom: 20px;
-            color: var(--text-primary);
-        }
-
-        .footer-column ul {
-            list-style: none;
-        }
-
-        .footer-column ul li {
-            margin-bottom: 12px;
-        }
-
-        .footer-column ul li a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-size: 15px;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .footer-column ul li a:hover {
-            color: var(--accent);
-            transform: translateX(4px);
-        }
-
-        .footer-bottom {
-            border-top: 1px solid var(--border);
-            padding-top: 24px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            color: var(--text-muted);
-            font-size: 14px;
-        }
-
-        .footer-bottom a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .footer-bottom a:hover {
-            color: var(--accent);
-        }
-
-        .footer-legal {
-            display: flex;
-            gap: 16px;
-        }
-
-        /* ===== SCROLL ANIMATIONS ===== */
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* ===== HACKER EASTER EGG ===== */
-        .hack-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 99999;
-            display: none;
-            pointer-events: none;
-        }
-
-        .hack-overlay.active {
-            display: block;
-            pointer-events: all;
-        }
-
-        .hack-glitch {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: #000;
-            z-index: 1;
-        }
-
-        .hack-terminal {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 2;
-            width: 90%;
-            max-width: 600px;
-            background: #0a0a0a;
-            border: 1px solid #00ff41;
-            border-radius: 8px;
-            padding: 24px;
-            font-family: 'Courier New', monospace;
-            box-shadow: 0 0 30px rgba(0, 255, 65, 0.3), inset 0 0 30px rgba(0, 255, 65, 0.05);
-        }
-
-        .hack-terminal-header {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            margin-bottom: 16px;
-            padding-bottom: 12px;
-            border-bottom: 1px solid rgba(0, 255, 65, 0.2);
-        }
-
-        .hack-terminal-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-        }
-
-        .hack-terminal-dot:nth-child(1) { background: #ff5f56; }
-        .hack-terminal-dot:nth-child(2) { background: #ffbd2e; }
-        .hack-terminal-dot:nth-child(3) { background: #27c93f; }
-
-        .hack-terminal-title {
-            color: #00ff41;
-            font-size: 14px;
-            margin-left: 8px;
-            flex: 1;
+            background: #050505;
+            padding: 2rem;
             text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .hack-terminal-body {
-            color: #00ff41;
-            font-size: 14px;
-            line-height: 1.8;
-            min-height: 200px;
-            max-height: 400px;
-            overflow-y: auto;
+        footer p {
+            color: #666666;
         }
 
-        .hack-terminal-body::-webkit-scrollbar {
-            width: 6px;
-        }
-
-        .hack-terminal-body::-webkit-scrollbar-track {
-            background: #0a0a0a;
-        }
-
-        .hack-terminal-body::-webkit-scrollbar-thumb {
-            background: #00ff41;
-            border-radius: 3px;
-        }
-
-        .hack-line {
-            opacity: 0;
-            animation: hackFadeIn 0.1s forwards;
-        }
-
-        .hack-line .hack-prompt {
-            color: #00ff41;
-        }
-
-        .hack-line .hack-success {
-            color: #27c93f;
-        }
-
-        .hack-line .hack-warning {
-            color: #ffbd2e;
-        }
-
-        .hack-line .hack-error {
-            color: #ff5f56;
-        }
-
-        .hack-line .hack-info {
-            color: #00bfff;
-        }
-
-        .hack-progress {
-            display: inline-block;
-            color: #00ff41;
-        }
-
-        @keyframes hackFadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        @keyframes glitchEffect {
-            0% { transform: translate(0); }
-            20% { transform: translate(-2px, 2px); }
-            40% { transform: translate(-2px, -2px); }
-            60% { transform: translate(2px, 2px); }
-            80% { transform: translate(2px, -2px); }
-            100% { transform: translate(0); }
-        }
-
-        @keyframes scanline {
-            0% { transform: translateY(-100%); }
-            100% { transform: translateY(100vh); }
-        }
-
-        .hack-scanline {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: rgba(0, 255, 65, 0.1);
-            z-index: 3;
-            animation: scanline 2s linear infinite;
-            pointer-events: none;
-        }
-
-        /* ===== PAC-MAN GAME ===== */
-        .pacman-overlay {
+        /* Game Overlays */
+        .game-overlay {
+            display: none;
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            z-index: 100000;
-            background: #000;
-            display: none;
+            background: rgba(0, 0, 0, 0.98);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
             flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            font-family: 'Montserrat', sans-serif;
         }
 
-        .pacman-overlay.active {
-            display: flex;
+        #pacman-canvas {
+            border: 2px solid #2121ff;
+            background: #000;
         }
 
-        .pacman-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-            max-width: 560px;
-            padding: 12px 16px;
-            color: #fff;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 16px;
+        #sickos-canvas {
+            background: #000;
+            cursor: none;
         }
 
-        .pacman-score {
-            color: #e94560;
-            font-weight: 700;
-            font-size: 18px;
-        }
-
-        .pacman-lives {
-            display: flex;
-            gap: 6px;
-            align-items: center;
-        }
-
-        .pacman-life {
-            width: 20px;
-            height: 20px;
-            background: linear-gradient(135deg, #e94560, #ff6b35);
-            border-radius: 50%;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .pacman-life::after {
-            content: 'X';
+        .close-game {
             position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 9px;
-            font-weight: 900;
-            color: #fff;
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        .pacman-close {
+            top: 20px;
+            right: 30px;
+            color: #ffffff;
+            font-size: 2rem;
+            cursor: pointer;
+            z-index: 10000;
             background: none;
-            border: 2px solid #e94560;
-            color: #e94560;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            font-size: 14px;
-            padding: 4px 12px;
-            cursor: pointer;
-            border-radius: 4px;
-            transition: all 0.2s;
-        }
-
-        .pacman-close:hover {
-            background: #e94560;
-            color: #000;
-        }
-
-        .pacman-canvas-wrapper {
-            position: relative;
-            border: 2px solid rgba(233, 69, 96, 0.4);
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 0 40px rgba(233, 69, 96, 0.15);
-        }
-
-        #pacmanCanvas {
-            display: block;
-            background: #0a0a0f;
-        }
-
-        .pacman-controls {
-            display: none;
-            width: 100%;
-            max-width: 560px;
-            padding: 16px;
-            justify-content: center;
-            gap: 8px;
-        }
-
-        .pacman-dpad {
-            display: grid;
-            grid-template-columns: repeat(3, 56px);
-            grid-template-rows: repeat(3, 56px);
-            gap: 4px;
-        }
-
-        .pacman-dpad-btn {
-            background: rgba(233, 69, 96, 0.15);
-            border: 2px solid rgba(233, 69, 96, 0.4);
-            color: #e94560;
-            font-size: 24px;
-            cursor: pointer;
-            border-radius: 8px;
+            border: 2px solid #ff4444;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
             display: flex;
             align-items: center;
             justify-content: center;
-            user-select: none;
-            -webkit-user-select: none;
-            touch-action: manipulation;
-            transition: all 0.15s ease;
+            transition: background 0.3s;
         }
 
-        .pacman-dpad-btn:active {
-            background: #e94560;
-            color: #fff;
-            transform: scale(0.95);
+        .close-game:hover {
+            background: #ff4444;
         }
 
-        .pacman-dpad-btn.empty {
-            background: transparent;
-            border: none;
-            cursor: default;
-        }
-
-        .pacman-game-over {
+        /* Horror Game HUD */
+        #sickos-hud {
             position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-            font-family: 'Montserrat', sans-serif;
-            display: none;
-            z-index: 10;
-        }
-
-        .pacman-game-over h2 {
-            font-size: 36px;
-            margin-bottom: 8px;
-            background: linear-gradient(135deg, #e94560, #ff6b35);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .pacman-game-over p {
-            color: #fff;
-            font-size: 20px;
-            margin-bottom: 20px;
-            font-weight: 600;
-        }
-
-        .pacman-game-over .pacman-restart {
-            background: linear-gradient(135deg, #e94560, #ff6b35);
-            border: none;
-            color: #fff;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
+            top: 10px;
+            left: 10px;
+            z-index: 10001;
+            color: #ff0000;
+            font-family: 'Courier New', monospace;
             font-size: 16px;
-            padding: 12px 32px;
-            cursor: pointer;
-            border-radius: 8px;
-            transition: all 0.2s;
+            text-shadow: 0 0 10px #ff0000;
+            pointer-events: none;
         }
 
-        .pacman-game-over .pacman-restart:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(233, 69, 96, 0.4);
+        #sickos-hud .hud-item {
+            margin-bottom: 5px;
         }
 
-        .pacman-start-screen {
+        #sickos-hud .bar-container {
+            width: 150px;
+            height: 12px;
+            background: #330000;
+            border: 1px solid #660000;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        #sickos-hud .bar-fill {
+            height: 100%;
+            transition: width 0.3s;
+        }
+
+        #flashlight-bar { background: #ffcc00; }
+        #stamina-bar { background: #00ff00; }
+        #health-bar { background: #ff0000; }
+
+        #sickos-instructions {
             position: absolute;
-            top: 50%;
+            bottom: 10px;
             left: 50%;
-            transform: translate(-50%, -50%);
+            transform: translateX(-50%);
+            z-index: 10001;
+            color: #660000;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
             text-align: center;
-            z-index: 10;
+            pointer-events: none;
         }
 
-        .pacman-start-screen h2 {
-            font-size: 42px;
-            margin-bottom: 4px;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 900;
-            letter-spacing: -1px;
-        }
-
-        .pacman-start-screen h2 span {
-            background: linear-gradient(135deg, #e94560, #ff6b35);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .pacman-start-screen p {
-            color: #a0a0b8;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 16px;
-            margin-bottom: 24px;
-            font-weight: 600;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-
-        .pacman-start-btn {
-            background: linear-gradient(135deg, #e94560, #ff6b35);
-            border: none;
-            color: #fff;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            font-size: 20px;
-            padding: 16px 48px;
-            cursor: pointer;
-            border-radius: 8px;
-            transition: all 0.2s;
-            animation: pacmanPulse 1.5s ease-in-out infinite;
-        }
-
-        .pacman-start-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(233, 69, 96, 0.4);
-        }
-
-        @keyframes pacmanPulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-        }
-
-        .pacman-mobile-hint {
-            display: none;
-            color: #a0a0b8;
-            font-family: 'Inter', sans-serif;
-            font-size: 13px;
-            margin-top: 16px;
-            text-align: center;
-        }
-
-        /* ===== RESPONSIVE ===== */
-        @media (max-width: 1024px) {
-            .services-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .featured-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .testimonials-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .footer-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
+        /* Mobile Responsive */
         @media (max-width: 768px) {
-            .mobile-menu-toggle {
-                display: block;
+            .nav-links {
+                gap: 1rem;
             }
 
-            .mobile-menu-close {
-                display: block;
-                position: absolute;
-                top: 24px;
-                right: 24px;
-                background: none;
-                border: none;
-                color: var(--text-primary);
-                font-size: 28px;
-                cursor: pointer;
-                z-index: 1001;
+            .hero-content h1 {
+                font-size: 2.5rem;
             }
 
-            nav {
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100vh;
-                background: rgba(10, 10, 15, 0.98);
-                backdrop-filter: blur(20px);
-                -webkit-backdrop-filter: blur(20px);
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                transform: translateX(100%);
-                transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-                z-index: 999;
+            .hero-content p {
+                font-size: 1.2rem;
             }
 
-            nav.active {
-                transform: translateX(0);
+            .section-title {
+                font-size: 2rem;
             }
-
-            nav ul {
-                flex-direction: column;
-                align-items: center;
-                gap: 16px;
-            }
-
-            nav ul li a {
-                font-size: 24px;
-                padding: 12px 24px;
-            }
-
-            .about-grid {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-
-            .stats-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .featured-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .testimonials-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .team-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-grid {
-                grid-template-columns: 1fr;
-                gap: 32px;
-            }
-
-            .footer-bottom {
-                flex-direction: column;
-                gap: 12px;
-                text-align: center;
-            }
-
-            .pacman-controls {
-                display: flex;
-            }
-
-            .pacman-mobile-hint {
-                display: block;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero h1 {
-                font-size: 32px;
-            }
-
-            .hero-buttons {
-                flex-direction: column;
-                align-items: stretch;
-            }
-
-            .btn {
-                justify-content: center;
-            }
-
-            .about-features {
-                grid-template-columns: 1fr;
-            }
-
-            .stat-number {
-                font-size: 36px;
-            }
-        }
-
-        /* Scroll margin for anchor links */
-        section {
-            scroll-margin-top: 80px;
         }
     </style>
 </head>
 <body>
 
-    <!-- Skip Link -->
-    <a href="#main-content" class="skip-link">Skip to main content</a>
-
-    <!-- Scroll Progress -->
-    <div class="scroll-progress" id="scrollProgress"></div>
-
-    <!-- Hacker Easter Egg Overlay -->
-    <div class="hack-overlay" id="hackOverlay">
-        <div class="hack-glitch" id="hackGlitch"></div>
-        <div class="hack-scanline"></div>
-        <div class="hack-terminal">
-            <div class="hack-terminal-header">
-                <div class="hack-terminal-dot"></div>
-                <div class="hack-terminal-dot"></div>
-                <div class="hack-terminal-dot"></div>
-                <span class="hack-terminal-title">XLNZ TERMINAL v1.0</span>
-            </div>
-            <div class="hack-terminal-body" id="hackTerminalBody"></div>
+    <!-- Navigation -->
+    <nav>
+        <div id="logo-trigger">
+            <img src="images/XLNZ Color White Border Logo.png" alt="XLNZ Productions" id="xlnz-logo">
         </div>
-    </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="packages.html">Packages</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
 
-    <!-- Pac-Man Game Overlay -->
-    <div class="pacman-overlay" id="pacmanOverlay">
-        <div class="pacman-header">
-            <div class="pacman-score">SCORE: <span id="pacmanScore">0</span></div>
-            <div class="pacman-lives" id="pacmanLives"></div>
-            <button class="pacman-close" id="pacmanClose">ESC [X]</button>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>XLNZ Productions</h1>
+            <p>Bringing your vision to life through creative media production</p>
+            <a href="packages.html" class="cta-button">View Our Packages</a>
         </div>
-        <div class="pacman-canvas-wrapper">
-            <canvas id="pacmanCanvas"></canvas>
-            <div class="pacman-game-over" id="pacmanGameOver">
-                <h2>GAME OVER</h2>
-                <p>Score: <span id="pacmanFinalScore">0</span></p>
-                <button class="pacman-restart" id="pacmanRestart">PLAY AGAIN</button>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+        <h2 class="section-title">Our Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Video Production</h3>
+                <p>Professional video production services from concept to final edit. We handle it all.</p>
             </div>
-            <div class="pacman-start-screen" id="pacmanStartScreen">
-                <h2><span>XLNZ</span> PAC-MAN</h2>
-                <p>ARCADE UNLOCKED</p>
-                <button class="pacman-start-btn" id="pacmanStartBtn">START GAME</button>
-                <div class="pacman-mobile-hint">Use D-Pad or Swipe to move</div>
+            <div class="service-card">
+                <h3>Photography</h3>
+                <p>Capturing moments that matter. Studio and on-location photography tailored to your needs.</p>
+            </div>
+            <div class="service-card">
+                <h3>Graphic Design</h3>
+                <p>Eye-catching designs that make your brand stand out from the competition.</p>
             </div>
         </div>
-        <div class="pacman-controls" id="pacmanControls">
-            <div class="pacman-dpad">
-                <div class="pacman-dpad-btn empty"></div>
-                <div class="pacman-dpad-btn" data-dir="up"><i class="fas fa-chevron-up"></i></div>
-                <div class="pacman-dpad-btn empty"></div>
-                <div class="pacman-dpad-btn" data-dir="left"><i class="fas fa-chevron-left"></i></div>
-                <div class="pacman-dpad-btn empty"></div>
-                <div class="pacman-dpad-btn" data-dir="right"><i class="fas fa-chevron-right"></i></div>
-                <div class="pacman-dpad-btn empty"></div>
-                <div class="pacman-dpad-btn" data-dir="down"><i class="fas fa-chevron-down"></i></div>
-                <div class="pacman-dpad-btn empty"></div>
-            </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <h2 class="section-title">About XLNZ</h2>
+        <div class="about-content">
+            <p>XLNZ Productions is a creative media company dedicated to delivering high-quality content that exceeds expectations.</p>
+            <p>With a passion for storytelling and an eye for detail, we bring professional-grade production values to every project we touch.</p>
+            <a href="contact.html" class="cta-button">Get In Touch</a>
         </div>
-    </div>
-
-    <!-- Header -->
-    <header id="header">
-        <div class="container header-content">
-            <a href="index.html" class="logo" id="xlnzLogo">
-                <span class="logo-icon"><i class="fas fa-film"></i></span>
-                XLNZ
-            </a>
-            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav">
-                <i class="fas fa-bars"></i>
-            </button>
-            <nav id="nav" aria-label="Main navigation">
-                <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">
-                    <i class="fas fa-times"></i>
-                </button>
-                <ul>
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="portfolio.html">Portfolio</a></li>
-                    <li><a href="packages.html">Packages</a></li>
-                    <li><a href="contact.html" class="nav-cta">Get a Quote</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <!-- Main Content -->
-    <main id="main-content">
-
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="hero-grid"></div>
-            <div class="container hero-content">
-                <div class="hero-logo">
-                    <img src="images/XLNZ Productions Logo Transparent Background .png" alt="XLNZ Productions logo" width="280">
-                </div>
-                <div class="hero-badge">
-                    <i class="fas fa-circle"></i> Philadelphia's Premier Production Studio
-                </div>
-                <h1>Bring Your <span class="gradient-text">Creative Vision</span> to Life</h1>
-                <p>From podcasts to feature films, we craft compelling content that captivates audiences and delivers real results.</p>
-                <div class="hero-buttons">
-                    <a href="services.html" class="btn btn-primary"><i class="fas fa-play"></i> View Our Work</a>
-                    <a href="contact.html" class="btn btn-secondary"><i class="fas fa-arrow-right"></i> Start a Project</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Stats Section -->
-        <section class="stats">
-            <div class="container">
-                <div class="stats-grid">
-                    <div class="stat-item reveal">
-                        <div class="stat-number" data-target="500">0</div>
-                        <div class="stat-label">Projects Delivered</div>
-                    </div>
-                    <div class="stat-item reveal">
-                        <div class="stat-number" data-target="6">0</div>
-                        <div class="stat-label">Production Services</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- About Section -->
-        <section class="about" id="about">
-            <div class="container">
-                <div class="about-grid">
-                    <div class="about-image-wrapper reveal">
-                        <img src="https://picsum.photos/seed/xlnz-about/600/500.jpg" alt="XLNZ Productions team working on a video shoot in Philadelphia" loading="lazy" width="600" height="500">
-                    </div>
-                    <div class="about-content reveal">
-                        <div class="section-label">Our Story</div>
-                        <h2>Built on Passion.<br>Driven by Creativity.</h2>
-                        <p>Founded in 2023 by Buhzz Taylor and Mike Salvi, XLNZ Productions is Philadelphia's premier video production studio. We specialize in podcasts, comedy, films, documentaries, and commercial content.</p>
-                        <p>Our founders bring a unique blend of creativity and technical expertise to every project, ensuring your vision comes to life exactly as you imagined it.</p>
-                        <div class="about-features">
-                            <div class="about-feature">
-                                <i class="fas fa-check"></i> State-of-the-art facility
-                            </div>
-                            <div class="about-feature">
-                                <i class="fas fa-check"></i> Latest technology
-                            </div>
-                            <div class="about-feature">
-                                <i class="fas fa-check"></i> End-to-end production
-                            </div>
-                            <div class="about-feature">
-                                <i class="fas fa-check"></i> Custom solutions
-                            </div>
-                        </div>
-                        <a href="about.html" class="btn btn-primary" style="margin-top: 32px;">Learn More About Us <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Team Section -->
-        <section class="team" id="team">
-            <div class="container">
-                <div class="section-header reveal">
-                    <div class="section-label">The Founders</div>
-                    <h2>Meet the Team</h2>
-                    <p>The creative minds behind XLNZ Productions</p>
-                </div>
-                <div class="team-grid">
-                    <div class="team-card reveal">
-                        <img src="https://picsum.photos/seed/buhzz/200/200.jpg" alt="Buhzz Taylor, Co-Founder of XLNZ Productions" loading="lazy" width="120" height="120">
-                        <h3>Buhzz Taylor</h3>
-                        <div class="team-role">Co-Founder</div>
-                        <p>Creative visionary with a passion for storytelling and bringing unique perspectives to every project.</p>
-                        <div class="team-social">
-                            <a href="https://www.instagram.com/xlnzproductions" aria-label="Buhzz Taylor on Instagram"><i class="fab fa-instagram"></i></a>
-                            <a href="https://www.youtube.com/@xlnzproductions" aria-label="XLNZ Productions on YouTube"><i class="fab fa-youtube"></i></a>
-                        </div>
-                    </div>
-                    <div class="team-card reveal">
-                        <img src="https://picsum.photos/seed/salvi/200/200.jpg" alt="Mike Salvi, Co-Founder of XLNZ Productions" loading="lazy" width="120" height="120">
-                        <h3>Mike Salvi</h3>
-                        <div class="team-role">Co-Founder</div>
-                        <p>Production expert dedicated to delivering high-quality content that exceeds expectations and drives results.</p>
-                        <div class="team-social">
-                            <a href="https://www.instagram.com/xlnzproductions" aria-label="Mike Salvi on Instagram"><i class="fab fa-instagram"></i></a>
-                            <a href="https://www.youtube.com/@xlnzproductions" aria-label="XLNZ Productions on YouTube"><i class="fab fa-youtube"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Services Section -->
-        <section class="services" id="services">
-            <div class="container">
-                <div class="section-header reveal">
-                    <div class="section-label">What We Do</div>
-                    <h2>Production Services</h2>
-                    <p>Comprehensive solutions for all your creative needs</p>
-                </div>
-                <div class="services-grid">
-                    <div class="service-card reveal">
-                        <div class="service-image">
-                            <img src="https://picsum.photos/seed/xlnz-podcast/600/400.jpg" alt="Professional podcast recording studio with microphones and equipment at XLNZ Productions" loading="lazy" width="600" height="400">
-                        </div>
-                        <div class="service-content">
-                            <div class="service-icon"><i class="fas fa-microphone"></i></div>
-                            <h3>Podcast Production</h3>
-                            <p>Professional recording, editing, and distribution to help you share your voice with the world.</p>
-                            <a href="services.html#podcast" class="service-link" aria-label="Learn more about Podcast Production">Learn More <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-
-                    <div class="service-card reveal">
-                        <div class="service-image">
-                            <img src="https://picsum.photos/seed/xlnz-standup/600/400.jpg" alt="Comedy stand-up special being filmed at XLNZ Productions studio" loading="lazy" width="600" height="400">
-                        </div>
-                        <div class="service-content">
-                            <div class="service-icon"><i class="fas fa-laugh"></i></div>
-                            <h3>Stand-Up Specials</h3>
-                            <p>From comedy skits to stand-up specials, we capture and deliver your unique brand of humor.</p>
-                            <a href="services.html#standup" class="service-link" aria-label="Learn more about Stand-Up Specials">Learn More <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-
-                    <div class="service-card reveal">
-                        <div class="service-image">
-                            <img src="https://picsum.photos/seed/xlnz-film/600/400.jpg" alt="Film production crew on set at XLNZ Productions in Philadelphia" loading="lazy" width="600" height="400">
-                        </div>
-                        <div class="service-content">
-                            <div class="service-icon"><i class="fas fa-video"></i></div>
-                            <h3>Film Production</h3>
-                            <p>Full-service production from pre-production planning to post-production and final delivery.</p>
-                            <a href="services.html#film" class="service-link" aria-label="Learn more about Film Production">Learn More <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-
-                    <div class="service-card reveal">
-                        <div class="service-image">
-                            <img src="https://picsum.photos/seed/xlnz-commercial/600/400.jpg" alt="Commercial video production for businesses at XLNZ Productions" loading="lazy" width="600" height="400">
-                        </div>
-                        <div class="service-content">
-                            <div class="service-icon"><i class="fas fa-bullhorn"></i></div>
-                            <h3>Commercials / Skits</h3>
-                            <p>Compelling commercial content that captures attention and drives real results for your business.</p>
-                            <a href="services.html#commercial" class="service-link" aria-label="Learn more about Commercials and Skits">Learn More <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-
-                    <div class="service-card reveal">
-                        <div class="service-image">
-                            <img src="https://picsum.photos/seed/xlnz-social/600/400.jpg" alt="Social media video content creation for brands at XLNZ Productions" loading="lazy" width="600" height="400">
-                        </div>
-                        <div class="service-content">
-                            <div class="service-icon"><i class="fas fa-share-alt"></i></div>
-                            <h3>Social Media for Brands</h3>
-                            <p>Engaging social content that builds brand awareness and drives engagement across platforms.</p>
-                            <a href="services.html#social" class="service-link" aria-label="Learn more about Social Media for Brands">Learn More <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-
-                    <div class="service-card reveal">
-                        <div class="service-image">
-                            <img src="https://picsum.photos/seed/xlnz-testimonial/600/400.jpg" alt="Client testimonial video being recorded at XLNZ Productions" loading="lazy" width="600" height="400">
-                        </div>
-                        <div class="service-content">
-                            <div class="service-icon"><i class="fas fa-users"></i></div>
-                            <h3>Testimonials</h3>
-                            <p>Professional testimonial videos that showcase client experiences and build trust.</p>
-                            <a href="services.html#testimonial" class="service-link" aria-label="Learn more about Testimonial Videos">Learn More <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Featured Work Section -->
-        <section class="featured" id="featured">
-            <div class="container">
-                <div class="section-header reveal">
-                    <div class="section-label">Our Work</div>
-                    <h2>Featured Projects</h2>
-                    <p>A glimpse at what we've been creating</p>
-                </div>
-                <div class="featured-grid">
-                    <div class="featured-item reveal">
-                        <img src="https://picsum.photos/seed/xlnz-work1/800/500.jpg" alt="Business Leaders Podcast episode recording at XLNZ Productions studio" loading="lazy" width="800" height="500">
-                        <div class="featured-overlay">
-                            <div class="featured-category">Podcast</div>
-                            <h3>Business Leaders Podcast</h3>
-                        </div>
-                        <div class="featured-play"><i class="fas fa-play"></i></div>
-                    </div>
-                    <div class="featured-item reveal">
-                        <img src="https://picsum.photos/seed/xlnz-work2/800/500.jpg" alt="Stand-up comedy showcase filmed by XLNZ Productions" loading="lazy" width="800" height="500">
-                        <div class="featured-overlay">
-                            <div class="featured-category">Comedy Special</div>
-                            <h3>Stand-Up Showcase</h3>
-                        </div>
-                        <div class="featured-play"><i class="fas fa-play"></i></div>
-                    </div>
-                    <div class="featured-item reveal">
-                        <img src="https://picsum.photos/seed/xlnz-work3/800/500.jpg" alt="Urban Eats commercial campaign produced by XLNZ Productions" loading="lazy" width="800" height="500">
-                        <div class="featured-overlay">
-                            <div class="featured-category">Commercial</div>
-                            <h3>Urban Eats Campaign</h3>
-                        </div>
-                        <div class="featured-play"><i class="fas fa-play"></i></div>
-                    </div>
-                </div>
-                <div style="text-align: center; margin-top: 48px;" class="reveal">
-                    <a href="portfolio.html" class="btn btn-primary">View Full Portfolio <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Testimonials Section -->
-        <section class="testimonials" id="testimonials">
-            <div class="container">
-                <div class="section-header reveal">
-                    <div class="section-label">Testimonials</div>
-                    <h2>What Our Clients Say</h2>
-                    <p>Hear from the people we've worked with</p>
-                </div>
-                <div class="testimonials-grid">
-                    <div class="testimonial-card reveal">
-                        <div class="testimonial-stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <blockquote>"XLNZ Productions transformed our podcast from an idea into a professional show. The quality of their work exceeded our expectations."</blockquote>
-                        <div class="testimonial-author">
-                            <img src="https://picsum.photos/seed/client1/100/100.jpg" alt="Marcus Johnson, Host of Business Leaders Podcast" loading="lazy" width="48" height="48">
-                            <div class="testimonial-author-info">
-                                <h4>Marcus Johnson</h4>
-                                <p>Host, Business Leaders Podcast</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-card reveal">
-                        <div class="testimonial-stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <blockquote>"They captured my comedy special perfectly. The production value was incredible and the team was great to work with."</blockquote>
-                        <div class="testimonial-author">
-                            <img src="https://picsum.photos/seed/client2/100/100.jpg" alt="Dave Rodriguez, Comedian" loading="lazy" width="48" height="48">
-                            <div class="testimonial-author-info">
-                                <h4>Dave Rodriguez</h4>
-                                <p>Comedian</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-card reveal">
-                        <div class="testimonial-stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <blockquote>"Our commercial campaign drove real results. XLNZ understood our brand and delivered content that resonated with our audience."</blockquote>
-                        <div class="testimonial-author">
-                            <img src="https://picsum.photos/seed/client3/100/100.jpg" alt="Sarah Chen, Marketing Director at Urban Eats" loading="lazy" width="48" height="48">
-                            <div class="testimonial-author-info">
-                                <h4>Sarah Chen</h4>
-                                <p>Marketing Director, Urban Eats</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- CTA Section -->
-        <section class="cta" id="cta">
-            <div class="container">
-                <div class="cta-content reveal">
-                    <div class="section-label">Let's Create</div>
-                    <h2>Ready to Start Your <span class="gradient-text">Next Project</span>?</h2>
-                    <p>Let's collaborate to bring your creative vision to life with professional production services tailored to your needs.</p>
-                    <div class="cta-buttons">
-                        <a href="contact.html" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Get a Free Quote</a>
-                        <a href="packages.html" class="btn btn-secondary"><i class="fas fa-box"></i> View Packages</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-    </main>
+    </section>
 
     <!-- Footer -->
     <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <a href="index.html" class="logo">
-                        <span class="logo-icon"><i class="fas fa-film"></i></span>
-                        XLNZ
-                    </a>
-                    <p>Philadelphia's premier video production studio. Specializing in podcasts, comedy, films, documentaries, and commercial content.</p>
-                    <div class="social-links">
-                        <a href="https://www.instagram.com/xlnzproductions" title="Instagram" aria-label="XLNZ Productions on Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.youtube.com/@xlnzproductions" title="YouTube" aria-label="XLNZ Productions on YouTube"><i class="fab fa-youtube"></i></a>
-                    </div>
-                </div>
-                <div class="footer-column">
-                    <h4>Company</h4>
-                    <ul>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="portfolio.html">Portfolio</a></li>
-                        <li><a href="packages.html">Packages</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h4>Services</h4>
-                    <ul>
-                        <li><a href="services.html#podcast">Podcast Production</a></li>
-                        <li><a href="services.html#standup">Stand-Up Specials</a></li>
-                        <li><a href="services.html#film">Film Production</a></li>
-                        <li><a href="services.html#commercial">Commercials / Skits</a></li>
-                        <li><a href="services.html#social">Social Media</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h4>Contact</h4>
-                    <ul>
-                        <li><a href="mailto:xlnzproductions@gmail.com"><i class="fas fa-envelope" style="margin-right: 8px;"></i> xlnzproductions@gmail.com</a></li>
-                        <li><a href="#"><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i> Philadelphia, PA</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <span id="copyright"></span>
-                <div class="footer-legal">
-                    <a href="privacy.html">Privacy Policy</a>
-                    <a href="terms.html">Terms of Service</a>
-                </div>
-            </div>
-        </div>
+        <p>&copy; 2026 XLNZ Productions. All rights reserved.</p>
     </footer>
 
+    <!-- Pac-Man Easter Egg Overlay -->
+    <div id="pacman-overlay" class="game-overlay">
+        <button class="close-game" id="close-pacman">&times;</button>
+        <canvas id="pacman-canvas" width="560" height="620"></canvas>
+    </div>
+
+    <!-- Meet The Sickos Easter Egg Overlay -->
+    <div id="sickos-overlay" class="game-overlay">
+        <button class="close-game" id="close-sickos">&times;</button>
+        <div id="sickos-hud">
+            <div class="hud-item">HEALTH: <div class="bar-container"><div class="bar-fill" id="health-bar" style="width:100%"></div></div></div>
+            <div class="hud-item">FLASHLIGHT: <div class="bar-container"><div class="bar-fill" id="flashlight-bar" style="width:100%"></div></div></div>
+            <div class="hud-item">STAMINA: <div class="bar-container"><div class="bar-fill" id="stamina-bar" style="width:100%"></div></div></div>
+            <div class="hud-item" id="keys-display">KEYS: 0/3</div>
+            <div class="hud-item" id="hiding-status"></div>
+        </div>
+        <canvas id="sickos-canvas" width="800" height="600"></canvas>
+        <div id="sickos-instructions">WASD: Move | SHIFT: Sprint | F: Flashlight | E: Hide/Unhide | Collect 3 keys to escape</div>
+    </div>
+
     <script>
-        // Dynamic copyright year
-        document.getElementById('copyright').textContent = '\u00A9 ' + new Date().getFullYear() + ' XLNZ Productions. All rights reserved.';
+        // ============================================
+        // EASTER EGG 1: Pac-Man (5 taps on logo)
+        // ============================================
+        let tapCount = 0;
+        let tapTimer;
+        const logoTrigger = document.getElementById('logo-trigger');
 
-        // Mobile menu toggle
-        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-        const mobileMenuClose = document.getElementById('mobileMenuClose');
-        const nav = document.getElementById('nav');
+        logoTrigger.addEventListener('click', function() {
+            tapCount++;
+            clearTimeout(tapTimer);
 
-        mobileMenuToggle.addEventListener('click', () => {
-            nav.classList.add('active');
-            mobileMenuToggle.setAttribute('aria-expanded', 'true');
-            document.body.style.overflow = 'hidden';
-        });
-
-        mobileMenuClose.addEventListener('click', () => {
-            nav.classList.remove('active');
-            mobileMenuToggle.setAttribute('aria-expanded', 'false');
-            document.body.style.overflow = '';
-        });
-
-        // Close mobile menu on link click
-        document.querySelectorAll('#nav a').forEach(link => {
-            link.addEventListener('click', () => {
-                nav.classList.remove('active');
-                mobileMenuToggle.setAttribute('aria-expanded', 'false');
-                document.body.style.overflow = '';
-            });
-        });
-
-        // Close mobile menu on outside click
-        document.addEventListener('click', (e) => {
-            if (nav.classList.contains('active') &&
-                !nav.contains(e.target) &&
-                !mobileMenuToggle.contains(e.target)) {
-                nav.classList.remove('active');
-                mobileMenuToggle.setAttribute('aria-expanded', 'false');
-                document.body.style.overflow = '';
-            }
-        });
-
-        // Header scroll effect
-        const header = document.getElementById('header');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
+            if (tapCount >= 5) {
+                tapCount = 0;
+                startPacMan();
             } else {
-                header.classList.remove('scrolled');
+                tapTimer = setTimeout(() => { tapCount = 0; }, 1000);
             }
         });
 
-        // Scroll progress bar
-        window.addEventListener('scroll', () => {
-            const scrollTop = document.documentElement.scrollTop;
-            const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
-            const scrollPercent = (scrollTop / scrollHeight) * 100;
-            document.getElementById('scrollProgress').style.width = scrollPercent + '%';
-        });
+        // ============================================
+        // EASTER EGG 2: Meet The Sickos (Konami Code)
+        // ============================================
+        const konamiCode = ['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight','ArrowLeft','ArrowRight','b','a'];
+        let konamiIndex = 0;
 
-        // Scroll reveal animation
-        const revealElements = document.querySelectorAll('.reveal');
-
-        const revealObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
+        document.addEventListener('keydown', function(e) {
+            if (e.key === konamiCode[konamiIndex]) {
+                konamiIndex++;
+                if (konamiIndex === konamiCode.length) {
+                    konamiIndex = 0;
+                    startSickos();
                 }
-            });
-        }, {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        });
-
-        revealElements.forEach(el => revealObserver.observe(el));
-
-        // Stats counter animation
-        function animateValue(element, start, end, duration, suffix) {
-            let startTimestamp = null;
-            const step = (timestamp) => {
-                if (!startTimestamp) startTimestamp = timestamp;
-                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-                const current = Math.floor(progress * (end - start) + start);
-                element.textContent = current + suffix;
-                if (progress < 1) {
-                    window.requestAnimationFrame(step);
-                }
-            };
-            window.requestAnimationFrame(step);
-        }
-
-        const statNumbers = document.querySelectorAll('.stat-number');
-        let statsAnimated = false;
-
-        const statsObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting && !statsAnimated) {
-                    statsAnimated = true;
-                    statNumbers.forEach(stat => {
-                        const target = parseInt(stat.getAttribute('data-target'));
-                        const suffix = target === 500 ? '+' : '';
-                        animateValue(stat, 0, target, 2000, suffix);
-                    });
-                }
-            });
-        }, {
-            threshold: 0.5
-        });
-
-        const statsSection = document.querySelector('.stats');
-        if (statsSection) {
-            statsObserver.observe(statsSection);
-        }
-
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-
-        // ===== EASTER EGG: TAP LOGO 5 TIMES =====
-        const xlnzLogo = document.getElementById('xlnzLogo');
-        const hackOverlay = document.getElementById('hackOverlay');
-        const hackGlitch = document.getElementById('hackGlitch');
-        const hackTerminalBody = document.getElementById('hackTerminalBody');
-        const pacmanOverlay = document.getElementById('pacmanOverlay');
-
-        let logoTapCount = 0;
-        let logoTapTimer = null;
-        let easterEggActive = false;
-
-        xlnzLogo.addEventListener('click', function(e) {
-            // Always prevent navigation so we can count taps
-            e.preventDefault();
-
-            if (easterEggActive) return;
-
-            logoTapCount++;
-
-            // Reset counter if too slow between taps
-            clearTimeout(logoTapTimer);
-            logoTapTimer = setTimeout(() => {
-                // If we didn't hit 5 taps, navigate normally
-                if (logoTapCount < 5) {
-                    window.location.href = 'index.html';
-                }
-                logoTapCount = 0;
-            }, 800);
-
-            // Trigger hack sequence on 5 taps
-            if (logoTapCount >= 5) {
-                logoTapCount = 0;
-                clearTimeout(logoTapTimer);
-                easterEggActive = true;
-                startHackSequence();
+            } else {
+                konamiIndex = 0;
             }
         });
 
-        function startHackSequence() {
-            // Show overlay
-            hackOverlay.classList.add('active');
-            document.body.style.overflow = 'hidden';
+        // ============================================
+        // CLOSE BUTTONS
+        // ============================================
+        document.getElementById('close-pacman').addEventListener('click', function() {
+            document.getElementById('pacman-overlay').style.display = 'none';
+            if (pacmanAnimId) cancelAnimationFrame(pacmanAnimId);
+        });
 
-            // Glitch effect
-            hackGlitch.style.animation = 'glitchEffect 0.1s infinite';
+        document.getElementById('close-sickos').addEventListener('click', function() {
+            document.getElementById('sickos-overlay').style.display = 'none';
+            if (sickosAnimId) cancelAnimationFrame(sickosAnimId);
+        });
 
-            // Terminal typing sequence
-            hackTerminalBody.innerHTML = '';
-            const lines = [
-                { text: '> INITIATING BREACH PROTOCOL...', delay: 0, class: 'hack-prompt' },
-                { text: '> ACCESSING MAINFRAME...', delay: 600, class: 'hack-prompt' },
-                { text: '> BYPASSING FIREWALL...', delay: 1200, class: 'hack-warning' },
-                { text: '> \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588 100%', delay: 1800, class: 'hack-progress' },
-                { text: '> FIREWALL BREACHED', delay: 2400, class: 'hack-success' },
-                { text: '> SCANNING SYSTEM FILES...', delay: 3000, class: 'hack-prompt' },
-                { text: '> LOCATING ARCADE MODULE...', delay: 3600, class: 'hack-prompt' },
-                { text: '> MODULE FOUND: XLNZ_PACMAN.EXE', delay: 4200, class: 'hack-info' },
-                { text: '> DECRYPTING...', delay: 4800, class: 'hack-prompt' },
-                { text: '> \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588 100%', delay: 5400, class: 'hack-progress' },
-                { text: '> ROOT ACCESS GRANTED', delay: 6000, class: 'hack-success' },
-                { text: '> LAUNCHING XLNZ ARCADE...', delay: 6600, class: 'hack-prompt' },
-                { text: '> HAVE FUN ;)', delay: 7200, class: 'hack-success' },
+        // ============================================
+        // PAC-MAN GAME
+        // ============================================
+        let pacmanAnimId;
+
+        function startPacMan() {
+            const overlay = document.getElementById('pacman-overlay');
+            overlay.style.display = 'flex';
+
+            const canvas = document.getElementById('pacman-canvas');
+            const ctx = canvas.getContext('2d');
+
+            const maze = [
+                [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+                [1,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1],
+                [1,0,1,1,1,1,0,1,1,1,1,1,0,1,1,0,1,1,1,1,1,0,1,1,1,1,0,1],
+                [1,0,1,1,1,1,0,1,1,1,1,1,0,1,1,0,1,1,1,1,1,0,1,1,1,1,0,1],
+                [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+                [1,0,1,1,1,1,0,1,1,0,1,1,1,1,1,1,1,1,0,1,1,0,1,1,1,1,0,1],
+                [1,0,0,0,0,0,0,1,1,0,0,0,0,1,1,0,0,0,0,1,1,0,0,0,0,0,0,1],
+                [1,1,1,1,1,1,0,1,1,1,1,1,0,1,1,0,1,1,1,1,0,1,1,1,1,1,1,1],
+                [1,1,1,1,1,1,0,1,1,1,1,1,0,1,1,0,1,1,1,1,0,1,1,1,1,1,1,1],
+                [1,1,1,1,1,1,0,1,1,0,0,0,0,0,0,0,0,0,0,1,1,0,1,1,1,1,1,1],
+                [1,1,1,1,1,1,0,1,1,0,1,1,1,2,2,1,1,1,0,1,1,0,1,1,1,1,1,1],
+                [0,0,0,0,0,0,0,0,0,0,1,2,2,2,2,2,2,1,0,0,0,0,0,0,0,0,0,0],
+                [1,1,1,1,1,1,0,1,1,0,1,1,1,1,1,1,1,1,0,1,1,0,1,1,1,1,1,1],
+                [1,1,1,1,1,1,0,1,1,0,0,0,0,0,0,0,0,0,0,1,1,0,1,1,1,1,1,1],
+                [1,1,1,1,1,1,0,1,1,0,1,1,1,1,1,1,1,1,0,1,1,0,1,1,1,1,1,1],
+                [1,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1],
+                [1,0,1,1,1,1,0,1,1,1,1,1,0,1,1,0,1,1,1,1,1,0,1,1,1,1,0,1],
+                [1,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,1],
+                [1,1,1,0,1,1,0,1,1,0,1,1,1,1,1,1,1,1,0,1,1,0,1,1,0,1,1,1],
+                [1,0,0,0,0,0,0,1,1,0,0,0,0,1,1,0,0,0,0,1,1,0,0,0,0,0,0,1],
+                [1,0,1,1,1,1,1,1,1,1,1,1,0,1,1,0,1,1,1,1,1,1,1,1,1,1,0,1],
+                [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+                [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
             ];
 
-            lines.forEach(line => {
-                setTimeout(() => {
-                    const div = document.createElement('div');
-                    div.className = 'hack-line';
-                    div.innerHTML = '<span class="' + line.class + '">' + line.text + '</span>';
-                    hackTerminalBody.appendChild(div);
-                    hackTerminalBody.scrollTop = hackTerminalBody.scrollHeight;
-                }, line.delay);
-            });
+            const tileSize = 20;
+            let score = 0;
+            let lives = 3;
+            let gameRunning = true;
 
-            // After sequence, launch Pac-Man
-            setTimeout(() => {
-                hackOverlay.classList.remove('active');
-                hackGlitch.style.animation = '';
-                hackTerminalBody.innerHTML = '';
-                launchPacMan();
-            }, 8000);
-        }
+            let pacman = { x: 14, y: 17, dir: 'left', nextDir: 'left', mouthOpen: true, mouthTimer: 0 };
 
-        // ===== PAC-MAN GAME =====
-        const canvas = document.getElementById('pacmanCanvas');
-        const ctx = canvas.getContext('2d');
-
-        // Game configuration
-        const TILE = 20;
-        const COLS = 28;
-        const ROWS = 31;
-        canvas.width = COLS * TILE;
-        canvas.height = ROWS * TILE;
-
-        // Scale canvas for mobile
-        function resizePacManCanvas() {
-            const maxWidth = Math.min(window.innerWidth - 32, 560);
-            const scale = maxWidth / canvas.width;
-            if (scale < 1) {
-                canvas.style.width = maxWidth + 'px';
-                canvas.style.height = (canvas.height * scale) + 'px';
-            } else {
-                canvas.style.width = '';
-                canvas.style.height = '';
-            }
-        }
-        resizePacManCanvas();
-        window.addEventListener('resize', resizePacManCanvas);
-
-        // Maze layout (0=empty, 1=wall, 2=dot, 3=power pellet, 4=ghost house, 5=ghost door)
-        const mazeTemplate = [
-            [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
-            [1,2,2,2,2,2,2,2,2,2,2,2,2,1,1,2,2,2,2,2,2,2,2,2,2,2,2,1],
-            [1,2,1,1,1,1,2,1,1,1,1,1,2,1,1,2,1,1,1,1,1,2,1,1,1,1,2,1],
-            [1,3,1,1,1,1,2,1,1,1,1,1,2,1,1,2,1,1,1,1,1,2,1,1,1,1,3,1],
-            [1,2,1,1,1,1,2,1,1,1,1,1,2,1,1,2,1,1,1,1,1,2,1,1,1,1,2,1],
-            [1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1],
-            [1,2,1,1,1,1,2,1,1,2,1,1,1,1,1,1,1,1,2,1,1,2,1,1,1,1,2,1],
-            [1,2,1,1,1,1,2,1,1,2,1,1,1,1,1,1,1,1,2,1,1,2,1,1,1,1,2,1],
-            [1,2,2,2,2,2,2,1,1,2,2,2,2,1,1,2,2,2,2,1,1,2,2,2,2,2,2,1],
-            [1,1,1,1,1,1,2,1,1,1,1,1,0,1,1,0,1,1,1,1,1,2,1,1,1,1,1,1],
-            [0,0,0,0,0,1,2,1,1,1,1,1,0,1,1,0,1,1,1,1,1,2,1,0,0,0,0,0],
-            [0,0,0,0,0,1,2,1,1,0,0,0,0,0,0,0,0,0,0,1,1,2,1,0,0,0,0,0],
-            [0,0,0,0,0,1,2,1,1,0,1,1,1,5,5,1,1,1,0,1,1,2,1,0,0,0,0,0],
-            [1,1,1,1,1,1,2,1,1,0,1,4,4,4,4,4,4,1,0,1,1,2,1,1,1,1,1,1],
-            [0,0,0,0,0,0,2,0,0,0,1,4,4,4,4,4,4,1,0,0,0,2,0,0,0,0,0,0],
-            [1,1,1,1,1,1,2,1,1,0,1,4,4,4,4,4,4,1,0,1,1,2,1,1,1,1,1,1],
-            [0,0,0,0,0,1,2,1,1,0,1,1,1,1,1,1,1,1,0,1,1,2,1,0,0,0,0,0],
-            [0,0,0,0,0,1,2,1,1,0,0,0,0,0,0,0,0,0,0,1,1,2,1,0,0,0,0,0],
-            [0,0,0,0,0,1,2,1,1,0,1,1,1,1,1,1,1,1,0,1,1,2,1,0,0,0,0,0],
-            [1,1,1,1,1,1,2,1,1,0,1,1,1,1,1,1,1,1,0,1,1,2,1,1,1,1,1,1],
-            [1,2,2,2,2,2,2,2,2,2,2,2,2,1,1,2,2,2,2,2,2,2,2,2,2,2,2,1],
-            [1,2,1,1,1,1,2,1,1,1,1,1,2,1,1,2,1,1,1,1,1,2,1,1,1,1,2,1],
-            [1,2,1,1,1,1,2,1,1,1,1,1,2,1,1,2,1,1,1,1,1,2,1,1,1,1,2,1],
-            [1,3,2,2,1,1,2,2,2,2,2,2,2,0,0,2,2,2,2,2,2,2,1,1,2,2,3,1],
-            [1,1,1,2,1,1,2,1,1,2,1,1,1,1,1,1,1,1,2,1,1,2,1,1,2,1,1,1],
-            [1,1,1,2,1,1,2,1,1,2,1,1,1,1,1,1,1,1,2,1,1,2,1,1,2,1,1,1],
-            [1,2,2,2,2,2,2,1,1,2,2,2,2,1,1,2,2,2,2,1,1,2,2,2,2,2,2,1],
-            [1,2,1,1,1,1,1,1,1,1,1,1,2,1,1,2,1,1,1,1,1,1,1,1,1,1,2,1],
-            [1,2,1,1,1,1,1,1,1,1,1,1,2,1,1,2,1,1,1,1,1,1,1,1,1,1,2,1],
-            [1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1],
-            [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
-        ];
-
-        // Game state
-        let maze = [];
-        let pacman = {};
-        let ghosts = [];
-        let score = 0;
-        let lives = 3;
-        let gameRunning = false;
-        let gamePaused = false;
-        let animFrame = null;
-        let lastTime = 0;
-        let moveTimer = 0;
-        let pacmanMoveAccum = 0;
-        let ghostMoveAccum = 0;
-        let frightenedTimer = 0;
-        let totalDots = 0;
-        let dotsEaten = 0;
-        let mouthOpen = true;
-        let mouthTimer = 0;
-
-        const DIRECTIONS = {
-            up: { x: 0, y: -1 },
-            down: { x: 0, y: 1 },
-            left: { x: -1, y: 0 },
-            right: { x: 1, y: 0 }
-        };
-
-        const GHOST_COLORS = ['#ff0000', '#ffb8ff', '#00ffff', '#ffb851'];
-
-        function initGame() {
-            // Deep copy maze
-            maze = mazeTemplate.map(row => [...row]);
-            totalDots = 0;
-            dotsEaten = 0;
-
-            // Count dots
-            for (let r = 0; r < ROWS; r++) {
-                for (let c = 0; c < COLS; c++) {
-                    if (maze[r][c] === 2 || maze[r][c] === 3) totalDots++;
-                }
-            }
-
-            // Init Pac-Man (XLNZ)
-            pacman = {
-                x: 14,
-                y: 23,
-                dir: 'left',
-                nextDir: 'left',
-                moving: true
-            };
-
-            // Init ghosts
-            ghosts = [
-                { x: 14, y: 11, dir: 'up', color: GHOST_COLORS[0], frightened: false, eaten: false, inHouse: true, releaseTime: 0 },
-                { x: 12, y: 14, dir: 'up', color: GHOST_COLORS[1], frightened: false, eaten: false, inHouse: true, releaseTime: 3000 },
-                { x: 14, y: 14, dir: 'up', color: GHOST_COLORS[2], frightened: false, eaten: false, inHouse: true, releaseTime: 6000 },
-                { x: 16, y: 14, dir: 'up', color: GHOST_COLORS[3], frightened: false, eaten: false, inHouse: true, releaseTime: 9000 },
+            const ghostColors = ['#ff0000', '#ffb8ff', '#00ffff', '#ffb852'];
+            const ghostStarts = [
+                {x: 13, y: 11}, {x: 14, y: 11}, {x: 15, y: 11}, {x: 12, y: 11}
             ];
+            let ghosts = ghostStarts.map((pos, i) => ({
+                x: pos.x, y: pos.y, dir: 'up', color: ghostColors[i], scared: false, eaten: false
+            }));
 
-            score = 0;
-            lives = 3;
-            frightenedTimer = 0;
-            moveTimer = 0;
-            pacmanMoveAccum = 0;
-            ghostMoveAccum = 0;
-            mouthOpen = true;
-            mouthTimer = 0;
-
-            updateScoreDisplay();
-            updateLivesDisplay();
-        }
-
-        function updateScoreDisplay() {
-            document.getElementById('pacmanScore').textContent = score;
-        }
-
-        function updateLivesDisplay() {
-            const livesEl = document.getElementById('pacmanLives');
-            livesEl.innerHTML = '';
-            for (let i = 0; i < lives; i++) {
-                const div = document.createElement('div');
-                div.className = 'pacman-life';
-                livesEl.appendChild(div);
-            }
-        }
-
-        function isWalkable(x, y) {
-            if (x < 0 || x >= COLS || y < 0 || y >= ROWS) {
-                // Tunnel wrap
-                if (y === 14 && (x < 0 || x >= COLS)) return true;
-                return false;
-            }
-            const tile = maze[y][x];
-            return tile !== 1;
-        }
-
-        function isWalkableForGhost(x, y) {
-            if (x < 0 || x >= COLS || y < 0 || y >= ROWS) {
-                if (y === 14 && (x < 0 || x >= COLS)) return true;
-                return false;
-            }
-            const tile = maze[y][x];
-            return tile !== 1 && tile !== 5;
-        }
-
-        function movePacman() {
-            // Try next direction first
-            const nextDir = DIRECTIONS[pacman.nextDir];
-            const nextX = pacman.x + nextDir.x;
-            const nextY = pacman.y + nextDir.y;
-
-            if (isWalkable(nextX, nextY)) {
-                pacman.dir = pacman.nextDir;
-            }
-
-            // Move in current direction
-            const dir = DIRECTIONS[pacman.dir];
-            const newX = pacman.x + dir.x;
-            const newY = pacman.y + dir.y;
-
-            if (isWalkable(newX, newY)) {
-                pacman.x = newX;
-                pacman.y = newY;
-
-                // Tunnel wrap
-                if (pacman.x < 0) pacman.x = COLS - 1;
-                if (pacman.x >= COLS) pacman.x = 0;
-
-                // Eat dot
-                if (maze[pacman.y] && maze[pacman.y][pacman.x] === 2) {
-                    maze[pacman.y][pacman.x] = 0;
-                    score += 10;
-                    dotsEaten++;
-                    updateScoreDisplay();
-                }
-
-                // Eat power pellet
-                if (maze[pacman.y] && maze[pacman.y][pacman.x] === 3) {
-                    maze[pacman.y][pacman.x] = 0;
-                    score += 50;
-                    dotsEaten++;
-                    updateScoreDisplay();
-                    frightenedTimer = 6000;
-                    ghosts.forEach(g => {
-                        if (!g.eaten) g.frightened = true;
-                    });
-                }
-
-                // Check win
-                if (dotsEaten >= totalDots) {
-                    gameWin();
+            let dots = [];
+            for (let y = 0; y < maze.length; y++) {
+                dots[y] = [];
+                for (let x = 0; x < maze[y].length; x++) {
+                    if (maze[y][x] === 0) dots[y][x] = 1;
                 }
             }
-        }
+            dots[1][1] = 2; dots[1][26] = 2; dots[21][1] = 2; dots[21][26] = 2;
 
-        function moveGhost(ghost, index) {
-            // Release from house
-            if (ghost.inHouse) {
-                if (moveTimer >= ghost.releaseTime) {
-                    ghost.inHouse = false;
-                    ghost.x = 14;
-                    ghost.y = 11;
-                }
-                return;
-            }
-
-            if (ghost.eaten) {
-                // Move back to house
-                const targetX = 14;
-                const targetY = 14;
-                if (ghost.x === targetX && ghost.y === targetY) {
-                    ghost.eaten = false;
-                    ghost.frightened = false;
-                    ghost.inHouse = true;
-                    ghost.releaseTime = moveTimer + 2000;
-                    return;
-                }
-                moveGhostToward(ghost, targetX, targetY, true);
-                return;
-            }
-
-            if (ghost.frightened) {
-                // Random movement when frightened
-                const dirs = ['up', 'down', 'left', 'right'];
-                const validDirs = dirs.filter(d => {
-                    const dir = DIRECTIONS[d];
-                    return isWalkableForGhost(ghost.x + dir.x, ghost.y + dir.y);
-                });
-                if (validDirs.length > 0) {
-                    ghost.dir = validDirs[Math.floor(Math.random() * validDirs.length)];
-                }
-            } else {
-                // Chase Pac-Man
-                moveGhostToward(ghost, pacman.x, pacman.y, false);
-            }
-
-            const dir = DIRECTIONS[ghost.dir];
-            const newX = ghost.x + dir.x;
-            const newY = ghost.y + dir.y;
-
-            if (isWalkableForGhost(newX, newY)) {
-                ghost.x = newX;
-                ghost.y = newY;
-                // Tunnel wrap
-                if (ghost.x < 0) ghost.x = COLS - 1;
-                if (ghost.x >= COLS) ghost.x = 0;
-            }
-        }
-
-        function moveGhostToward(ghost, targetX, targetY, canPassDoor) {
-            const dirs = ['up', 'down', 'left', 'right'];
-            const opposite = { up: 'down', down: 'up', left: 'right', right: 'left' };
-            let bestDir = null;
-            let bestDist = Infinity;
-
-            dirs.forEach(d => {
-                // Don't reverse unless no other option
-                if (d === opposite[ghost.dir]) return;
-
-                const dir = DIRECTIONS[d];
-                const newX = ghost.x + dir.x;
-                const newY = ghost.y + dir.y;
-
-                const walkable = canPassDoor ? isWalkable(newX, newY) : isWalkableForGhost(newX, newY);
-                if (walkable) {
-                    const dist = Math.abs(newX - targetX) + Math.abs(newY - targetY);
-                    if (dist < bestDist) {
-                        bestDist = dist;
-                        bestDir = d;
-                    }
+            document.addEventListener('keydown', function pacKeyHandler(e) {
+                if (!gameRunning) return;
+                switch(e.key) {
+                    case 'ArrowLeft': pacman.nextDir = 'left'; e.preventDefault(); break;
+                    case 'ArrowRight': pacman.nextDir = 'right'; e.preventDefault(); break;
+                    case 'ArrowUp': pacman.nextDir = 'up'; e.preventDefault(); break;
+                    case 'ArrowDown': pacman.nextDir = 'down'; e.preventDefault(); break;
                 }
             });
 
-            // If no direction found (dead end), allow reversing
-            if (bestDir === null) {
-                const reverseDir = opposite[ghost.dir];
-                const dir = DIRECTIONS[reverseDir];
-                const newX = ghost.x + dir.x;
-                const newY = ghost.y + dir.y;
-                const walkable = canPassDoor ? isWalkable(newX, newY) : isWalkableForGhost(newX, newY);
-                if (walkable) {
-                    bestDir = reverseDir;
-                }
+            function canMove(x, y) {
+                if (y < 0 || y >= maze.length) return false;
+                if (x < 0 || x >= maze[0].length) return false;
+                return maze[y][x] !== 1;
             }
 
-            // If still no direction, stay current direction
-            if (bestDir !== null) {
-                ghost.dir = bestDir;
-            }
-        }
-
-        function checkCollisions() {
-            ghosts.forEach(ghost => {
-                if (ghost.inHouse || ghost.eaten) return;
-
-                if (ghost.x === pacman.x && ghost.y === pacman.y) {
-                    if (ghost.frightened) {
-                        // Eat ghost
-                        ghost.eaten = true;
-                        ghost.frightened = false;
-                        score += 200;
-                        updateScoreDisplay();
-                    } else {
-                        // Pac-Man dies
-                        pacmanDeath();
-                    }
+            function movePacman() {
+                let nx = pacman.x, ny = pacman.y;
+                switch(pacman.nextDir) {
+                    case 'left': nx--; break; case 'right': nx++; break;
+                    case 'up': ny--; break; case 'down': ny++; break;
                 }
-            });
-        }
+                if (canMove(nx, ny)) pacman.dir = pacman.nextDir;
 
-        function pacmanDeath() {
-            lives--;
-            updateLivesDisplay();
+                nx = pacman.x; ny = pacman.y;
+                switch(pacman.dir) {
+                    case 'left': nx--; break; case 'right': nx++; break;
+                    case 'up': ny--; break; case 'down': ny++; break;
+                }
+                if (nx < 0) nx = maze[0].length - 1;
+                if (nx >= maze[0].length) nx = 0;
+                if (canMove(nx, ny)) { pacman.x = nx; pacman.y = ny; }
 
-            if (lives <= 0) {
-                gameOver();
-            } else {
-                // Reset positions
-                pacman.x = 14;
-                pacman.y = 23;
-                pacman.dir = 'left';
-                pacman.nextDir = 'left';
+                if (dots[pacman.y] && dots[pacman.y][pacman.x]) {
+                    if (dots[pacman.y][pacman.x] === 2) {
+                        score += 50;
+                        ghosts.forEach(g => g.scared = true);
+                        setTimeout(() => ghosts.forEach(g => g.scared = false), 6000);
+                    } else { score += 10; }
+                    dots[pacman.y][pacman.x] = 0;
+                }
+                pacman.mouthTimer++;
+                if (pacman.mouthTimer % 5 === 0) pacman.mouthOpen = !pacman.mouthOpen;
+            }
 
-                ghosts.forEach((ghost, i) => {
-                    ghost.x = 14 + (i - 2);
-                    ghost.y = 14;
-                    ghost.dir = 'up';
-                    ghost.frightened = false;
-                    ghost.eaten = false;
-                    ghost.inHouse = true;
-                    ghost.releaseTime = moveTimer + i * 3000;
+            function moveGhost(ghost) {
+                if (ghost.eaten) return;
+                const dirs = ['left', 'right', 'up', 'down'];
+                const opposite = {left: 'right', right: 'left', up: 'down', down: 'up'};
+                let possible = dirs.filter(d => {
+                    if (d === opposite[ghost.dir]) return false;
+                    let nx = ghost.x, ny = ghost.y;
+                    switch(d) { case 'left': nx--; break; case 'right': nx++; break; case 'up': ny--; break; case 'down': ny++; break; }
+                    return canMove(nx, ny);
                 });
+                if (possible.length === 0) possible = [opposite[ghost.dir]];
 
-                frightenedTimer = 0;
-            }
-        }
-
-        function gameOver() {
-            gameRunning = false;
-            document.getElementById('pacmanFinalScore').textContent = score;
-            document.getElementById('pacmanGameOver').style.display = 'block';
-        }
-
-        function gameWin() {
-            gameRunning = false;
-            const gameOverEl = document.getElementById('pacmanGameOver');
-            gameOverEl.querySelector('h2').textContent = 'YOU WIN!';
-            gameOverEl.querySelector('p').textContent = 'Score: ' + score;
-            document.getElementById('pacmanFinalScore').textContent = score;
-            gameOverEl.style.display = 'block';
-        }
-
-        function draw() {
-            ctx.fillStyle = '#0a0a0f';
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-            // Draw maze
-            for (let r = 0; r < ROWS; r++) {
-                for (let c = 0; c < COLS; c++) {
-                    const tile = maze[r][c];
-                    const x = c * TILE;
-                    const y = r * TILE;
-
-                    if (tile === 1) {
-                        // Wall - XLNZ themed
-                        ctx.fillStyle = '#1a1a2e';
-                        ctx.fillRect(x, y, TILE, TILE);
-                        ctx.strokeStyle = '#2a2a4e';
-                        ctx.lineWidth = 1;
-                        ctx.strokeRect(x + 0.5, y + 0.5, TILE - 1, TILE - 1);
-                    } else if (tile === 2) {
-                        // Dot
-                        ctx.fillStyle = '#6c6c80';
-                        ctx.beginPath();
-                        ctx.arc(x + TILE / 2, y + TILE / 2, 2, 0, Math.PI * 2);
-                        ctx.fill();
-                    } else if (tile === 3) {
-                        // Power pellet - XLNZ accent color
-                        ctx.fillStyle = '#e94560';
-                        ctx.beginPath();
-                        ctx.arc(x + TILE / 2, y + TILE / 2, 6, 0, Math.PI * 2);
-                        ctx.fill();
-                    } else if (tile === 5) {
-                        // Ghost door - XLNZ accent
-                        ctx.fillStyle = '#e94560';
-                        ctx.fillRect(x, y + TILE / 2 - 2, TILE, 4);
-                    }
-                }
-            }
-
-            // Draw XLNZ Pac-Man
-            const px = pacman.x * TILE + TILE / 2;
-            const py = pacman.y * TILE + TILE / 2;
-            const mouthAngle = mouthOpen ? 0.25 : 0.05;
-            let startAngle = mouthAngle;
-
-            if (pacman.dir === 'right') startAngle = mouthAngle;
-            else if (pacman.dir === 'down') startAngle = Math.PI / 2 + mouthAngle;
-            else if (pacman.dir === 'left') startAngle = Math.PI + mouthAngle;
-            else if (pacman.dir === 'up') startAngle = Math.PI * 1.5 + mouthAngle;
-
-            const endAngle = startAngle + (Math.PI * 2 - mouthAngle * 2);
-            const radius = TILE / 2 - 2;
-
-            // XLNZ gradient body
-            const gradient = ctx.createLinearGradient(px - radius, py - radius, px + radius, py + radius);
-            gradient.addColorStop(0, '#e94560');
-            gradient.addColorStop(1, '#ff6b35');
-
-            ctx.fillStyle = gradient;
-            ctx.beginPath();
-            ctx.moveTo(px, py);
-            ctx.arc(px, py, radius, startAngle, endAngle);
-            ctx.closePath();
-            ctx.fill();
-
-            // XLNZ text inside
-            ctx.font = '900 ' + Math.round(TILE * 0.55) + 'px Montserrat';
-            ctx.fillStyle = '#ffffff';
-            ctx.textAlign = 'center';
-            ctx.textBaseline = 'middle';
-            ctx.fillText('XLNZ', px, py + 1);
-
-            // Draw ghosts
-            ghosts.forEach(ghost => {
-                if (ghost.inHouse) return;
-
-                const gx = ghost.x * TILE + TILE / 2;
-                const gy = ghost.y * TILE + TILE / 2;
-
-                if (ghost.eaten) {
-                    // Just eyes
-                    drawGhostEyes(gx, gy, ghost.dir);
-                    return;
-                }
-
-                // Ghost body
-                ctx.fillStyle = ghost.frightened ? '#1a1a4e' : ghost.color;
-                ctx.beginPath();
-                ctx.arc(gx, gy - 2, TILE / 2 - 2, Math.PI, 0);
-                ctx.lineTo(gx + TILE / 2 - 2, gy + TILE / 2 - 2);
-                // Wavy bottom
-                ctx.lineTo(gx + TILE / 4 - 2, gy + TILE / 2 - 5);
-                ctx.lineTo(gx, gy + TILE / 2 - 2);
-                ctx.lineTo(gx - TILE / 4 + 2, gy + TILE / 2 - 5);
-                ctx.lineTo(gx - TILE / 2 + 2, gy + TILE / 2 - 2);
-                ctx.closePath();
-                ctx.fill();
-
-                // Eyes
-                if (!ghost.frightened) {
-                    drawGhostEyes(gx, gy, ghost.dir);
+                if (ghost.scared) {
+                    ghost.dir = possible[Math.floor(Math.random() * possible.length)];
                 } else {
-                    // Frightened face
-                    ctx.fillStyle = '#fff';
-                    ctx.beginPath();
-                    ctx.arc(gx - 4, gy - 2, 2.5, 0, Math.PI * 2);
-                    ctx.arc(gx + 4, gy - 2, 2.5, 0, Math.PI * 2);
-                    ctx.fill();
+                    let bestDir = possible[0], bestDist = Infinity;
+                    possible.forEach(d => {
+                        let nx = ghost.x, ny = ghost.y;
+                        switch(d) { case 'left': nx--; break; case 'right': nx++; break; case 'up': ny--; break; case 'down': ny++; break; }
+                        let dist = Math.abs(nx - pacman.x) + Math.abs(ny - pacman.y);
+                        if (dist < bestDist) { bestDist = dist; bestDir = d; }
+                    });
+                    ghost.dir = bestDir;
+                }
 
-                    // Wavy mouth
-                    ctx.strokeStyle = '#fff';
-                    ctx.lineWidth = 1;
-                    ctx.beginPath();
-                    ctx.moveTo(gx - 5, gy + 4);
-                    ctx.lineTo(gx - 2, gy + 2);
-                    ctx.lineTo(gx + 2, gy + 4);
-                    ctx.lineTo(gx + 5, gy + 2);
-                    ctx.stroke();
+                let nx = ghost.x, ny = ghost.y;
+                switch(ghost.dir) { case 'left': nx--; break; case 'right': nx++; break; case 'up': ny--; break; case 'down': ny++; break; }
+                if (nx < 0) nx = maze[0].length - 1;
+                if (nx >= maze[0].length) nx = 0;
+                if (canMove(nx, ny)) { ghost.x = nx; ghost.y = ny; }
+            }
 
-                    // Flashing when about to end
-                    if (frightenedTimer < 2000 && frightenedTimer > 0) {
-                        if (Math.floor(frightenedTimer / 200) % 2 === 0) {
-                            ctx.fillStyle = '#fff';
-                            ctx.beginPath();
-                            ctx.arc(gx, gy - 2, TILE / 2 - 4, 0, Math.PI * 2);
-                            ctx.fill();
+            function checkCollisions() {
+                ghosts.forEach(ghost => {
+                    if (ghost.x === pacman.x && ghost.y === pacman.y) {
+                        if (ghost.scared) { ghost.eaten = true; score += 200; }
+                        else { lives--; if (lives <= 0) gameRunning = false; else { pacman.x = 14; pacman.y = 17; pacman.dir = 'left'; } }
+                    }
+                });
+            }
+
+            function drawMaze() {
+                for (let y = 0; y < maze.length; y++) {
+                    for (let x = 0; x < maze[y].length; x++) {
+                        if (maze[y][x] === 1) { ctx.fillStyle = '#2121ff'; ctx.fillRect(x * tileSize, y * tileSize, tileSize, tileSize); }
+                    }
+                }
+            }
+
+            function drawDots() {
+                for (let y = 0; y < dots.length; y++) {
+                    for (let x = 0; x < dots[y].length; x++) {
+                        if (dots[y][x] === 1) { ctx.fillStyle = '#ffb8ae'; ctx.beginPath(); ctx.arc(x * tileSize + tileSize/2, y * tileSize + tileSize/2, 2, 0, Math.PI * 2); ctx.fill(); }
+                        else if (dots[y][x] === 2) { ctx.fillStyle = '#ffb8ae'; ctx.beginPath(); ctx.arc(x * tileSize + tileSize/2, y * tileSize + tileSize/2, 6, 0, Math.PI * 2); ctx.fill(); }
+                    }
+                }
+            }
+
+            function drawPacman() {
+                const cx = pacman.x * tileSize + tileSize/2, cy = pacman.y * tileSize + tileSize/2, radius = tileSize/2 - 2;
+                ctx.fillStyle = '#ffff00'; ctx.beginPath();
+                let startAngle, endAngle; const mouth = pacman.mouthOpen ? 0.3 : 0.05;
+                switch(pacman.dir) {
+                    case 'right': startAngle = mouth; endAngle = 2 * Math.PI - mouth; break;
+                    case 'left': startAngle = Math.PI + mouth; endAngle = Math.PI - mouth; break;
+                    case 'up': startAngle = 1.5 * Math.PI + mouth; endAngle = 1.5 * Math.PI - mouth; break;
+                    case 'down': startAngle = 0.5 * Math.PI + mouth; endAngle = 0.5 * Math.PI - mouth; break;
+                }
+                ctx.arc(cx, cy, radius, startAngle, endAngle); ctx.lineTo(cx, cy); ctx.closePath(); ctx.fill();
+            }
+
+            function drawGhosts() {
+                ghosts.forEach(ghost => {
+                    if (ghost.eaten) return;
+                    const cx = ghost.x * tileSize + tileSize/2, cy = ghost.y * tileSize + tileSize/2;
+                    ctx.fillStyle = ghost.scared ? '#2121ff' : ghost.color; ctx.beginPath();
+                    ctx.arc(cx, cy - 4, tileSize/2 - 2, Math.PI, 0);
+                    ctx.lineTo(cx + tileSize/2 - 2, cy + tileSize/2 - 2);
+                    for (let i = 0; i < 3; i++) {
+                        ctx.quadraticCurveTo(cx + tileSize/2 - 2 - (tileSize/3) * (i + 0.5), cy + tileSize/2 + 2, cx + tileSize/2 - 2 - (tileSize/3) * (i + 1), cy + tileSize/2 - 2);
+                    }
+                    ctx.closePath(); ctx.fill();
+                    ctx.fillStyle = 'white'; ctx.beginPath(); ctx.arc(cx - 4, cy - 5, 3, 0, Math.PI * 2); ctx.arc(cx + 4, cy - 5, 3, 0, Math.PI * 2); ctx.fill();
+                    ctx.fillStyle = '#2121ff'; ctx.beginPath(); ctx.arc(cx - 4, cy - 5, 1.5, 0, Math.PI * 2); ctx.arc(cx + 4, cy - 5, 1.5, 0, Math.PI * 2); ctx.fill();
+                });
+            }
+
+            function drawHUD() {
+                ctx.fillStyle = '#ffffff'; ctx.font = '16px Arial';
+                ctx.fillText('Score: ' + score, 10, maze.length * tileSize + 25);
+                ctx.fillText('Lives: ' + lives, 200, maze.length * tileSize + 25);
+            }
+
+            function gameLoop() {
+                if (!gameRunning) {
+                    ctx.fillStyle = 'rgba(0,0,0,0.7)'; ctx.fillRect(0, 0, canvas.width, canvas.height);
+                    ctx.fillStyle = '#ff4444'; ctx.font = '48px Arial'; ctx.textAlign = 'center';
+                    ctx.fillText('GAME OVER', canvas.width/2, canvas.height/2);
+                    ctx.font = '24px Arial'; ctx.fillStyle = '#ffffff';
+                    ctx.fillText('Final Score: ' + score, canvas.width/2, canvas.height/2 + 40);
+                    return;
+                }
+                let dotsLeft = 0;
+                for (let y = 0; y < dots.length; y++) for (let x = 0; x < dots[y].length; x++) if (dots[y][x] > 0) dotsLeft++;
+                if (dotsLeft === 0) {
+                    ctx.fillStyle = 'rgba(0,0,0,0.7)'; ctx.fillRect(0, 0, canvas.width, canvas.height);
+                    ctx.fillStyle = '#ffff00'; ctx.font = '48px Arial'; ctx.textAlign = 'center';
+                    ctx.fillText('YOU WIN!', canvas.width/2, canvas.height/2);
+                    ctx.font = '24px Arial'; ctx.fillStyle = '#ffffff';
+                    ctx.fillText('Score: ' + score, canvas.width/2, canvas.height/2 + 40);
+                    return;
+                }
+
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                ctx.fillStyle = '#000000'; ctx.fillRect(0, 0, canvas.width, canvas.height);
+                movePacman(); ghosts.forEach(moveGhost); checkCollisions();
+                drawMaze(); drawDots(); drawPacman(); drawGhosts(); drawHUD();
+                pacmanAnimId = requestAnimationFrame(gameLoop);
+            }
+            gameLoop();
+        }
+
+        // ============================================
+        // MEET THE SICKOS - HORROR GAME
+        // ============================================
+        let sickosAnimId;
+
+        function startSickos() {
+            const overlay = document.getElementById('sickos-overlay');
+            overlay.style.display = 'flex';
+
+            const canvas = document.getElementById('sickos-canvas');
+            const ctx = canvas.getContext('2d');
+            const W = canvas.width, H = canvas.height;
+
+            // House map (1=wall, 0=floor, 2=hiding spot, 3=key, 4=exit door)
+            const MAP_ROWS = 25;
+            const MAP_COLS = 30;
+            const TILE = 32;
+
+            const houseMap = [
+                [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+                [1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1],
+                [1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,2,0,0,1,0,0,0,0,0,0,0,0,0,0,1],
+                [1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1],
+                [1,0,0,2,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1],
+                [1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1],
+                [1,1,1,0,1,1,1,1,1,0,1,1,1,1,1,0,1,1,1,1,1,0,1,1,1,1,0,1,1,1],
+                [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+                [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+                [1,0,0,0,1,1,1,0,1,1,1,1,0,0,1,1,1,1,0,1,1,1,1,0,1,1,1,0,0,1],
+                [1,0,0,0,1,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,1,0,0,0,1,0,0,1],
+                [1,0,0,0,1,0,0,3,0,0,0,1,0,0,1,0,0,0,0,0,0,0,1,0,0,0,1,0,0,1],
+                [1,0,0,0,1,0,0,0,0,0,0,1,0,0,1,0,0,0,2,0,0,0,1,0,0,0,1,0,0,1],
+                [1,0,0,0,1,1,0,1,1,0,1,1,0,0,1,1,0,1,1,0,1,1,1,0,1,1,1,0,0,1],
+                [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+                [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+                [1,0,0,1,1,1,1,0,1,1,1,1,0,0,1,1,1,1,0,1,1,1,1,0,1,1,0,0,0,1],
+                [1,0,0,1,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,1,0,0,1,0,0,0,1],
+                [1,0,0,1,0,0,0,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,1],
+                [1,0,0,1,0,0,2,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,1,0,0,1,0,0,0,1],
+                [1,0,0,1,1,1,1,0,1,1,1,1,0,0,1,1,0,1,1,0,1,1,1,0,1,1,0,0,0,1],
+                [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+                [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,0,0,0,0,0,0,1],
+                [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,1],
+                [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
+            ];
+
+            // Game state
+            let player = {
+                x: 1.5 * TILE, y: 1.5 * TILE,
+                speed: 2.5, sprintSpeed: 4.5,
+                health: 100, stamina: 100, flashlight: 100,
+                keys: 0, hiding: false, flashlightOn: true,
+                dir: 0 // angle in radians
+            };
+
+            let sickos = [
+                { x: 15 * TILE, y: 12 * TILE, speed: 1.8, type: 'husband', alertLevel: 0, lastKnownPlayerX: -1, lastKnownPlayerY: -1, patrolTarget: null, stuck: 0 },
+                { x: 20 * TILE, y: 18 * TILE, speed: 1.5, type: 'wife', alertLevel: 0, lastKnownPlayerX: -1, lastKnownPlayerY: -1, patrolTarget: null, stuck: 0 }
+            ];
+
+            let gameState = 'playing'; // playing, dead, escaped
+            let keysCollected = [];
+            let jumpScareTimer = 0;
+            let jumpScareType = '';
+            let screenShake = 0;
+            let heartbeat = 0;
+            let damageFlash = 0;
+            let gameTime = 0;
+
+            // Input
+            const keys = {};
+            document.addEventListener('keydown', sickosKeyDown);
+            document.addEventListener('keyup', sickosKeyUp);
+
+            function sickosKeyDown(e) {
+                keys[e.key.toLowerCase()] = true;
+                if (e.key.toLowerCase() === 'f') player.flashlightOn = !player.flashlightOn;
+                if (e.key.toLowerCase() === 'e') toggleHiding();
+            }
+
+            function sickosKeyUp(e) {
+                keys[e.key.toLowerCase()] = false;
+            }
+
+            function toggleHiding() {
+                const tileX = Math.floor(player.x / TILE);
+                const tileY = Math.floor(player.y / TILE);
+                if (houseMap[tileY] && houseMap[tileY][tileX] === 2) {
+                    player.hiding = !player.hiding;
+                } else if (player.hiding) {
+                    player.hiding = false;
+                }
+            }
+
+            function isWall(x, y) {
+                const tileX = Math.floor(x / TILE);
+                const tileY = Math.floor(y / TILE);
+                if (tileX < 0 || tileX >= MAP_COLS || tileY < 0 || tileY >= MAP_ROWS) return true;
+                return houseMap[tileY][tileX] === 1;
+            }
+
+            function canMoveTo(x, y, radius) {
+                return !isWall(x - radius, y - radius) && !isWall(x + radius, y - radius) &&
+                       !isWall(x - radius, y + radius) && !isWall(x + radius, y + radius);
+            }
+
+            function distBetween(x1, y1, x2, y2) {
+                return Math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2);
+            }
+
+            function updatePlayer() {
+                if (player.hiding) {
+                    // Recover stamina while hiding
+                    player.stamina = Math.min(100, player.stamina + 0.5);
+                    return;
+                }
+
+                let dx = 0, dy = 0;
+                if (keys['w'] || keys['arrowup']) dy -= 1;
+                if (keys['s'] || keys['arrowdown']) dy += 1;
+                if (keys['a'] || keys['arrowleft']) dx -= 1;
+                if (keys['d'] || keys['arrowright']) dx += 1;
+
+                // Sprinting
+                let speed = player.speed;
+                if ((keys['shift']) && player.stamina > 0 && (dx !== 0 || dy !== 0)) {
+                    speed = player.sprintSpeed;
+                    player.stamina = Math.max(0, player.stamina - 0.4);
+                } else {
+                    player.stamina = Math.min(100, player.stamina + 0.15);
+                }
+
+                // Normalize diagonal movement
+                if (dx !== 0 && dy !== 0) {
+                    dx *= 0.707;
+                    dy *= 0.707;
+                }
+
+                // Update direction
+                if (dx !== 0 || dy !== 0) {
+                    player.dir = Math.atan2(dy, dx);
+                }
+
+                // Move with collision
+                const newX = player.x + dx * speed;
+                const newY = player.y + dy * speed;
+                const radius = 8;
+
+                if (canMoveTo(newX, player.y, radius)) player.x = newX;
+                if (canMoveTo(player.x, newY, radius)) player.y = newY;
+
+                // Flashlight battery
+                if (player.flashlightOn) {
+                    player.flashlight = Math.max(0, player.flashlight - 0.03);
+                } else {
+                    player.flashlight = Math.min(100, player.flashlight + 0.05);
+                }
+
+                // Collect keys
+                const tileX = Math.floor(player.x / TILE);
+                const tileY = Math.floor(player.y / TILE);
+                if (houseMap[tileY] && houseMap[tileY][tileX] === 3) {
+                    player.keys++;
+                    houseMap[tileY][tileX] = 0;
+                    keysCollected.push({ x: tileX, y: tileY });
+                }
+
+                // Check exit
+                if (houseMap[tileY] && houseMap[tileY][tileX] === 4 && player.keys >= 3) {
+                    gameState = 'escaped';
+                }
+            }
+
+            function updateSickos() {
+                sickos.forEach(sicko => {
+                    const distToPlayer = distBetween(sicko.x, sicko.y, player.x, player.y);
+
+                    // Detection
+                    let canSeePlayer = false;
+                    if (!player.hiding && distToPlayer < 250) {
+                        // Check line of sight (simplified)
+                        const angleToPlayer = Math.atan2(player.y - sicko.y, player.x - sicko.x);
+                        let angleDiff = angleToPlayer - sicko.dir;
+                        while (angleDiff > Math.PI) angleDiff -= 2 * Math.PI;
+                        while (angleDiff < -Math.PI) angleDiff += 2 * Math.PI;
+
+                        if (Math.abs(angleDiff) < Math.PI / 3) { // 120 degree FOV
+                            canSeePlayer = true;
+                            // Check for walls in the way
+                            const steps = Math.floor(distToPlayer / 10);
+                            for (let i = 0; i < steps; i++) {
+                                const checkX = sicko.x + Math.cos(angleToPlayer) * (i * 10);
+                                const checkY = sicko.y + Math.sin(angleToPlayer) * (i * 10);
+                                if (isWall(checkX, checkY)) {
+                                    canSeePlayer = false;
+                                    break;
+                                }
+                            }
+                        }
+                    }
+
+                    // Hearing (if player is running nearby)
+                    let canHearPlayer = false;
+                    if (!player.hiding && (keys['shift']) && distToPlayer < 200) {
+                        canHearPlayer = true;
+                    }
+
+                    // Update alert level
+                    if (canSeePlayer || canHearPlayer) {
+                        sicko.alertLevel = Math.min(100, sicko.alertLevel + 3);
+                        sicko.lastKnownPlayerX = player.x;
+                        sicko.lastKnownPlayerY = player.y;
+                    } else {
+                        sicko.alertLevel = Math.max(0, sicko.alertLevel - 0.3);
+                    }
+
+                    // Movement AI
+                    let targetX, targetY;
+                    let currentSpeed = sicko.speed;
+
+                    if (sicko.alertLevel > 70) {
+                        // Chase mode - go directly to player
+                        targetX = player.x;
+                        targetY = player.y;
+                        currentSpeed = sicko.speed * 1.3;
+                    } else if (sicko.alertLevel > 30) {
+                        // Investigate - go to last known position
+                        targetX = sicko.lastKnownPlayerX;
+                        targetY = sicko.lastKnownPlayerY;
+                    } else {
+                        // Patrol mode
+                        if (!sicko.patrolTarget || distBetween(sicko.x, sicko.y, sicko.patrolTarget.x, sicko.patrolTarget.y) < 20) {
+                            sicko.patrolTarget = {
+                                x: (Math.floor(Math.random() * (MAP_COLS - 2)) + 1) * TILE + TILE/2,
+                                y: (Math.floor(Math.random() * (MAP_ROWS - 2)) + 1) * TILE + TILE/2
+                            };
+                        }
+                        targetX = sicko.patrolTarget.x;
+                        targetY = sicko.patrolTarget.y;
+                    }
+
+                    // Move toward target
+                    const angle = Math.atan2(targetY - sicko.y, targetX - sicko.x);
+                    sicko.dir = angle;
+                    const moveX = Math.cos(angle) * currentSpeed;
+                    const moveY = Math.sin(angle) * currentSpeed;
+
+                    const newSX = sicko.x + moveX;
+                    const newSY = sicko.y + moveY;
+                    const sickoRadius = 10;
+
+                    if (canMoveTo(newSX, sicko.y, sickoRadius)) {
+                        sicko.x = newSX;
+                        sicko.stuck = 0;
+                    } else {
+                        sicko.stuck++;
+                    }
+                    if (canMoveTo(sicko.x, newSY, sickoRadius)) {
+                        sicko.y = newSY;
+                    } else {
+                        sicko.stuck++;
+                    }
+
+                    // If stuck, pick new patrol target
+                    if (sicko.stuck > 60) {
+                        sicko.patrolTarget = null;
+                        sicko.stuck = 0;
+                    }
+
+                    // Attack player
+                    if (!player.hiding && distToPlayer < 30) {
+                        player.health -= 0.5;
+                        damageFlash = 10;
+                        screenShake = 5;
+                        if (player.health <= 0) {
+                            gameState = 'dead';
+                        }
+                    }
+                });
+            }
+
+            function drawGame() {
+                ctx.save();
+
+                // Screen shake
+                if (screenShake > 0) {
+                    ctx.translate(Math.random() * screenShake - screenShake/2, Math.random() * screenShake - screenShake/2);
+                    screenShake *= 0.9;
+                    if (screenShake < 0.5) screenShake = 0;
+                }
+
+                // Camera offset
+                const camX = player.x - W/2;
+                const camY = player.y - H/2;
+
+                ctx.translate(-camX, -camY);
+
+                // Draw floor and walls
+                for (let y = 0; y < MAP_ROWS; y++) {
+                    for (let x = 0; x < MAP_COLS; x++) {
+                        const screenX = x * TILE;
+                        const screenY = y * TILE;
+
+                        // Only draw visible tiles
+                        if (screenX + TILE < camX - 50 || screenX > camX + W + 50 ||
+                            screenY + TILE < camY - 50 || screenY > camY + H + 50) continue;
+
+                        if (houseMap[y][x] === 1) {
+                            // Wall
+                            ctx.fillStyle = '#1a1a2e';
+                            ctx.fillRect(screenX, screenY, TILE, TILE);
+                            ctx.strokeStyle = '#16213e';
+                            ctx.strokeRect(screenX, screenY, TILE, TILE);
+                        } else if (houseMap[y][x] === 2) {
+                            // Hiding spot (wardrobe/closet)
+                            ctx.fillStyle = '#2d1b00';
+                            ctx.fillRect(screenX, screenY, TILE, TILE);
+                            ctx.fillStyle = '#4a3000';
+                            ctx.fillRect(screenX + 4, screenY + 2, TILE - 8, TILE - 4);
+                            ctx.fillStyle = '#ffd700';
+                            ctx.font = '10px Arial';
+                            ctx.textAlign = 'center';
+                            ctx.fillText('[E]', screenX + TILE/2, screenY + TILE/2 + 3);
+                        } else if (houseMap[y][x] === 3) {
+                            // Key
+                            ctx.fillStyle = '#0d0d0d';
+                            ctx.fillRect(screenX, screenY, TILE, TILE);
+                            ctx.fillStyle = '#ffd700';
+                            ctx.font = '16px Arial';
+                            ctx.textAlign = 'center';
+                            ctx.fillText('🔑', screenX + TILE/2, screenY + TILE/2 + 5);
+                        } else if (houseMap[y][x] === 4) {
+                            // Exit door
+                            ctx.fillStyle = '#0d0d0d';
+                            ctx.fillRect(screenX, screenY, TILE, TILE);
+                            ctx.fillStyle = player.keys >= 3 ? '#00ff00' : '#ff0000';
+                            ctx.fillRect(screenX + 4, screenY + 2, TILE - 8, TILE - 4);
+                            ctx.fillStyle = '#ffffff';
+                            ctx.font = '8px Arial';
+                            ctx.textAlign = 'center';
+                            ctx.fillText(player.keys >= 3 ? 'EXIT' : '🔒', screenX + TILE/2, screenY + TILE/2 + 3);
+                        } else {
+                            // Floor
+                            ctx.fillStyle = '#0d0d0d';
+                            ctx.fillRect(screenX, screenY, TILE, TILE);
+                            // Floor texture
+                            ctx.fillStyle = '#111111';
+                            if ((x + y) % 2 === 0) ctx.fillRect(screenX, screenY, TILE, TILE);
                         }
                     }
                 }
-            });
-        }
 
-        function drawGhostEyes(x, y, dir) {
-            // White of eyes
-            ctx.fillStyle = '#fff';
-            ctx.beginPath();
-            ctx.ellipse(x - 4, y - 2, 4, 5, 0, 0, Math.PI * 2);
-            ctx.ellipse(x + 4, y - 2, 4, 5, 0, 0, Math.PI * 2);
-            ctx.fill();
+                // Draw flashlight / visibility
+                ctx.globalCompositeOperation = 'destination-in';
 
-            // Pupils
-            let pupilOffsetX = 0, pupilOffsetY = 0;
-            if (dir === 'left') pupilOffsetX = -2;
-            else if (dir === 'right') pupilOffsetX = 2;
-            else if (dir === 'up') pupilOffsetY = -2;
-            else if (dir === 'down') pupilOffsetY = 2;
+                const gradient = ctx.createRadialGradient(
+                    player.x, player.y, 0,
+                    player.x, player.y, player.flashlightOn ? 200 + player.flashlight : 80
+                );
 
-            ctx.fillStyle = '#2121de';
-            ctx.beginPath();
-            ctx.arc(x - 4 + pupilOffsetX, y - 2 + pupilOffsetY, 2, 0, Math.PI * 2);
-            ctx.arc(x + 4 + pupilOffsetX, y - 2 + pupilOffsetY, 2, 0, Math.PI * 2);
-            ctx.fill();
-        }
+                if (player.flashlightOn) {
+                    gradient.addColorStop(0, 'rgba(255,255,255,1)');
+                    gradient.addColorStop(0.7, 'rgba(255,255,255,0.6)');
+                    gradient.addColorStop(1, 'rgba(255,255,255,0)');
+                } else {
+                    gradient.addColorStop(0, 'rgba(255,255,255,0.5)');
+                    gradient.addColorStop(1, 'rgba(255,255,255,0)');
+                }
 
-        function gameLoop(timestamp) {
-            if (!gameRunning) return;
+                ctx.fillStyle = gradient;
+                ctx.fillRect(player.x - 400, player.y - 400, 800, 800);
 
-            const delta = timestamp - lastTime;
-            lastTime = timestamp;
+                ctx.globalCompositeOperation = 'source-over';
 
-            moveTimer += delta;
-            pacmanMoveAccum += delta;
-            ghostMoveAccum += delta;
+                // Draw player
+                if (!player.hiding) {
+                    ctx.fillStyle = '#4488ff';
+                    ctx.beginPath();
+                    ctx.arc(player.x, player.y, 10, 0, Math.PI * 2);
+                    ctx.fill();
 
-            // Mouth animation
-            mouthTimer += delta;
-            if (mouthTimer > 150) {
-                mouthOpen = !mouthOpen;
-                mouthTimer = 0;
+                    // Direction indicator
+                    ctx.strokeStyle = '#66aaff';
+                    ctx.lineWidth = 2;
+                    ctx.beginPath();
+                    ctx.moveTo(player.x, player.y);
+                    ctx.lineTo(player.x + Math.cos(player.dir) * 15, player.y + Math.sin(player.dir) * 15);
+                    ctx.stroke();
+                }
+
+                // Draw Sickos
+                sickos.forEach(sicko => {
+                    // Only draw if visible to player
+                    const distToPlayer = distBetween(sicko.x, sicko.y, player.x, player.y);
+                    if (distToPlayer < 250 || sicko.alertLevel > 50) {
+                        // Body
+                        ctx.fillStyle = sicko.type === 'husband' ? '#8b0000' : '#4a0080';
+                        ctx.beginPath();
+                        ctx.arc(sicko.x, sicko.y, 12, 0, Math.PI * 2);
+                        ctx.fill();
+
+                        // Mask
+                        ctx.fillStyle = '#ffffff';
+                        ctx.beginPath();
+                        ctx.arc(sicko.x, sicko.y - 2, 8, 0, Math.PI * 2);
+                        ctx.fill();
+
+                        // Mask eyes (creepy)
+                        ctx.fillStyle = '#000000';
+                        ctx.beginPath();
+                        ctx.arc(sicko.x - 3, sicko.y - 3, 2, 0, Math.PI * 2);
+                        ctx.arc(sicko.x + 3, sicko.y - 3, 2, 0, Math.PI * 2);
+                        ctx.fill();
+
+                        // Mask mouth (creepy smile)
+                        ctx.strokeStyle = '#000000';
+                        ctx.lineWidth = 1.5;
+                        ctx.beginPath();
+                        ctx.arc(sicko.x, sicko.y + 1, 4, 0, Math.PI);
+                        ctx.stroke();
+
+                        // Alert indicator
+                        if (sicko.alertLevel > 30) {
+                            ctx.fillStyle = sicko.alertLevel > 70 ? '#ff0000' : '#ffaa00';
+                            ctx.font = '12px Arial';
+                            ctx.textAlign = 'center';
+                            ctx.fillText(sicko.alertLevel > 70 ? '!' : '?', sicko.x, sicko.y - 20);
+                        }
+
+                        // Weapon
+                        ctx.strokeStyle = '#888888';
+                        ctx.lineWidth = 2;
+                        ctx.beginPath();
+                        ctx.moveTo(sicko.x, sicko.y + 5);
+                        ctx.lineTo(sicko.x + Math.cos(sicko.dir) * 20, sicko.y + 5 + Math.sin(sicko.dir) * 20);
+                        ctx.stroke();
+                    }
+                });
+
+                // Blood splatters on walls (atmosphere)
+                ctx.globalAlpha = 0.3;
+                ctx.fillStyle = '#8b0000';
+                const bloodSpots = [[5,7],[12,3],[18,11],[22,19],[8,15],[25,8]];
+                bloodSpots.forEach(([bx, by]) => {
+                    ctx.beginPath();
+                    ctx.arc(bx * TILE + TILE/2, by * TILE + TILE/2, 5, 0, Math.PI * 2);
+                    ctx.fill();
+                });
+                ctx.globalAlpha = 1;
+
+                ctx.restore();
+
+                // Vignette effect
+                const vignette = ctx.createRadialGradient(W/2, H/2, W * 0.3, W/2, H/2, W * 0.7);
+                vignette.addColorStop(0, 'rgba(0,0,0,0)');
+                vignette.addColorStop(1, 'rgba(0,0,0,0.8)');
+                ctx.fillStyle = vignette;
+                ctx.fillRect(0, 0, W, H);
+
+                // Damage flash
+                if (damageFlash > 0) {
+                    ctx.fillStyle = `rgba(255, 0, 0, ${damageFlash / 20})`;
+                    ctx.fillRect(0, 0, W, H);
+                    damageFlash--;
+                }
+
+                // Heartbeat effect when sickos are close
+                let closestDist = Infinity;
+                sickos.forEach(s => {
+                    const d = distBetween(s.x, s.y, player.x, player.y);
+                    if (d < closestDist) closestDist = d;
+                });
+
+                if (closestDist < 150 && !player.hiding) {
+                    heartbeat += 0.15;
+                    const pulseIntensity = Math.max(0, (150 - closestDist) / 150) * 0.3;
+                    const pulse = Math.sin(heartbeat * 4) * pulseIntensity;
+                    ctx.fillStyle = `rgba(255, 0, 0, ${Math.abs(pulse)})`;
+                    ctx.fillRect(0, 0, W, H);
+                }
+
+                // Hiding overlay
+                if (player.hiding) {
+                    ctx.fillStyle = 'rgba(0, 0, 0, 0.7)';
+                    ctx.fillRect(0, 0, W, H);
+                    ctx.fillStyle = '#888888';
+                    ctx.font = '24px Courier New';
+                    ctx.textAlign = 'center';
+                    ctx.fillText('HIDING...', W/2, H/2);
+                    ctx.font = '14px Courier New';
+                    ctx.fillText('Press E to come out', W/2, H/2 + 30);
+                }
+
+                // HUD
+                document.getElementById('health-bar').style.width = player.health + '%';
+                document.getElementById('flashlight-bar').style.width = player.flashlight + '%';
+                document.getElementById('stamina-bar').style.width = player.stamina + '%';
+                document.getElementById('keys-display').textContent = 'KEYS: ' + player.keys + '/3';
+                document.getElementById('hiding-status').textContent = player.hiding ? '[HIDING]' : '';
             }
 
-            // Move Pac-Man
-            if (pacmanMoveAccum >= 150) {
-                movePacman();
-                pacmanMoveAccum -= 150;
-            }
+            function drawDeathScreen() {
+                ctx.fillStyle = 'rgba(0, 0, 0, 0.85)';
+                ctx.fillRect(0, 0, W, H);
 
-            // Move ghosts
-            if (ghostMoveAccum >= 200) {
-                ghosts.forEach((ghost, i) => moveGhost(ghost, i));
-                ghostMoveAccum -= 200;
-            }
+                ctx.fillStyle = '#ff0000';
+                ctx.font = '60px Courier New';
+                ctx.textAlign = 'center';
+                ctx.fillText('YOU DIED', W/2, H/2 - 40);
 
-            // Frightened timer
-            if (frightenedTimer > 0) {
-                frightenedTimer -= delta;
-                if (frightenedTimer <= 0) {
-                    ghosts.forEach(g => g.frightened = false);
+                ctx.fillStyle = '#880000';
+                ctx.font = '20px Courier New';
+                ctx.fillText('The Sickos got you...', W/2, H/2 + 10);
+
+                ctx.fillStyle = '#ffffff';
+                ctx.font = '16px Courier New';
+                ctx.fillText('Press R to try again', W/2, H/2 + 50);
+
+                if (keys['r']) {
+                    // Reset game
+                    document.removeEventListener('keydown', sickosKeyDown);
+                    document.removeEventListener('keyup', sickosKeyUp);
+                    cancelAnimationFrame(sickosAnimId);
+                    startSickos();
                 }
             }
 
-            checkCollisions();
-            draw();
+            function drawEscapeScreen() {
+                ctx.fillStyle = 'rgba(0, 0, 0, 0.85)';
+                ctx.fillRect(0, 0, W, H);
 
-            animFrame = requestAnimationFrame(gameLoop);
-        }
+                ctx.fillStyle = '#00ff00';
+                ctx.font = '48px Courier New';
+                ctx.textAlign = 'center';
+                ctx.fillText('YOU ESCAPED!', W/2, H/2 - 40);
 
-        function startGame() {
-            initGame();
-            document.getElementById('pacmanStartScreen').style.display = 'none';
-            document.getElementById('pacmanGameOver').style.display = 'none';
-            gameRunning = true;
-            lastTime = performance.now();
-            animFrame = requestAnimationFrame(gameLoop);
-        }
+                ctx.fillStyle = '#00cc00';
+                ctx.font = '20px Courier New';
+                ctx.fillText('You made it out alive!', W/2, H/2 + 10);
 
-        function launchPacMan() {
-            pacmanOverlay.classList.add('active');
-            document.body.style.overflow = 'hidden';
-            resizePacManCanvas();
-            initGame();
-            draw();
-        }
+                ctx.fillStyle = '#ffffff';
+                ctx.font = '16px Courier New';
+                ctx.fillText('Press R to play again', W/2, H/2 + 50);
 
-        function closePacMan() {
-            pacmanOverlay.classList.remove('active');
-            gameRunning = false;
-            if (animFrame) cancelAnimationFrame(animFrame);
-            easterEggActive = false;
-            document.body.style.overflow = '';
-        }
-
-        // Event listeners
-        document.getElementById('pacmanStartBtn').addEventListener('click', startGame);
-        document.getElementById('pacmanClose').addEventListener('click', closePacMan);
-        document.getElementById('pacmanRestart').addEventListener('click', () => {
-            document.getElementById('pacmanGameOver').style.display = 'none';
-            document.getElementById('pacmanGameOver').querySelector('h2').textContent = 'GAME OVER';
-            startGame();
-        });
-
-        // Keyboard controls
-        document.addEventListener('keydown', (e) => {
-            if (!pacmanOverlay.classList.contains('active')) return;
-
-            switch (e.key) {
-                case 'ArrowUp':
-                case 'w':
-                case 'W':
-                    e.preventDefault();
-                    pacman.nextDir = 'up';
-                    break;
-                case 'ArrowDown':
-                case 's':
-                case 'S':
-                    e.preventDefault();
-                    pacman.nextDir = 'down';
-                    break;
-                case 'ArrowLeft':
-                case 'a':
-                case 'A':
-                    e.preventDefault();
-                    pacman.nextDir = 'left';
-                    break;
-                case 'ArrowRight':
-                case 'd':
-                case 'D':
-                    e.preventDefault();
-                    pacman.nextDir = 'right';
-                    break;
-                case 'Escape':
-                    closePacMan();
-                    break;
+                if (keys['r']) {
+                    document.removeEventListener('keydown', sickosKeyDown);
+                    document.removeEventListener('keyup', sickosKeyUp);
+                    cancelAnimationFrame(sickosAnimId);
+                    startSickos();
+                }
             }
-        });
 
-        // Mobile D-pad controls
-        document.querySelectorAll('.pacman-dpad-btn[data-dir]').forEach(btn => {
-            btn.addEventListener('touchstart', (e) => {
-                e.preventDefault();
-                pacman.nextDir = btn.dataset.dir;
-            });
-            btn.addEventListener('mousedown', (e) => {
-                e.preventDefault();
-                pacman.nextDir = btn.dataset.dir;
-            });
-        });
+            function gameLoop() {
+                gameTime++;
 
-        // Touch/swipe controls
-        let touchStartX = 0;
-        let touchStartY = 0;
+                if (gameState === 'playing') {
+                    updatePlayer();
+                    updateSickos();
+                    drawGame();
+                } else if (gameState === 'dead') {
+                    drawDeathScreen();
+                } else if (gameState === 'escaped') {
+                    drawEscapeScreen();
+                }
 
-        canvas.addEventListener('touchstart', (e) => {
-            touchStartX = e.touches[0].clientX;
-            touchStartY = e.touches[0].clientY;
-        }, { passive: true });
-
-        canvas.addEventListener('touchend', (e) => {
-            const touchEndX = e.changedTouches[0].clientX;
-            const touchEndY = e.changedTouches[0].clientY;
-            const dx = touchEndX - touchStartX;
-            const dy = touchEndY - touchStartY;
-
-            if (Math.abs(dx) > Math.abs(dy)) {
-                if (dx > 20) pacman.nextDir = 'right';
-                else if (dx < -20) pacman.nextDir = 'left';
-            } else {
-                if (dy > 20) pacman.nextDir = 'down';
-                else if (dy < -20) pacman.nextDir = 'up';
+                sickosAnimId = requestAnimationFrame(gameLoop);
             }
-        }, { passive: true });
+
+            // Start with a creepy intro
+            ctx.fillStyle = '#000000';
+            ctx.fillRect(0, 0, W, H);
+            ctx.fillStyle = '#ff0000';
+            ctx.font = '36px Courier New';
+            ctx.textAlign = 'center';
+            ctx.fillText('MEET THE SICKOS', W/2, H/2 - 30);
+            ctx.fillStyle = '#880000';
+            ctx.font = '16px Courier New';
+            ctx.fillText('You broke into the wrong house...', W/2, H/2 + 10);
+            ctx.fillStyle = '#666666';
+            ctx.fillText('Find 3 keys. Escape. Don\'t get caught.', W/2, H/2 + 40);
+            ctx.fillText('Starting in 3 seconds...', W/2, H/2 + 70);
+
+            setTimeout(() => {
+                gameLoop();
+            }, 3000);
+        }
     </script>
 
 </body>
