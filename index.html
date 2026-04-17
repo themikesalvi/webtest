@@ -184,12 +184,16 @@
         .logo-icon {
             width: 40px;
             height: 40px;
-            background: var(--accent-gradient);
-            border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 18px;
+            overflow: hidden;
+        }
+
+        .logo-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
         }
 
         nav ul {
@@ -882,73 +886,6 @@
             transform: translate(-50%, -50%) scale(1);
         }
 
-        /* ===== TESTIMONIALS SECTION ===== */
-        .testimonials {
-            padding: 120px 0;
-            position: relative;
-        }
-
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-        }
-
-        .testimonial-card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 32px;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-        }
-
-        .testimonial-card:hover {
-            transform: translateY(-4px);
-            border-color: rgba(233, 69, 96, 0.2);
-            box-shadow: var(--glow);
-        }
-
-        .testimonial-stars {
-            color: #ffc107;
-            font-size: 14px;
-            margin-bottom: 16px;
-            display: flex;
-            gap: 2px;
-        }
-
-        .testimonial-card blockquote {
-            color: var(--text-secondary);
-            font-size: 15px;
-            line-height: 1.7;
-            margin-bottom: 24px;
-            font-style: italic;
-        }
-
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .testimonial-author img {
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 2px solid rgba(233, 69, 96, 0.3);
-        }
-
-        .testimonial-author-info h4 {
-            font-size: 15px;
-            font-weight: 700;
-        }
-
-        .testimonial-author-info p {
-            font-size: 13px;
-            color: var(--text-muted);
-        }
-
         /* ===== CTA SECTION ===== */
         .cta {
             padding: 120px 0;
@@ -1230,7 +1167,7 @@
             color: #00bfff;
         }
 
-        .hack-progress {
+        .hack-line .hack-progress {
             display: inline-block;
             color: #00ff41;
         }
@@ -1967,10 +1904,6 @@
                 grid-template-columns: repeat(2, 1fr);
             }
 
-            .testimonials-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
             .footer-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
@@ -2040,10 +1973,6 @@
             }
 
             .featured-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .testimonials-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -2226,7 +2155,7 @@
     <header id="header">
         <div class="container header-content">
             <a href="index.html" class="logo" id="xlnzLogo">
-                <span class="logo-icon"><i class="fas fa-film"></i></span>
+                <span class="logo-icon"><img src="images/XLNZ Color White Border Logo.png" alt="XLNZ"></span>
                 XLNZ
             </a>
             <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav">
@@ -2296,8 +2225,8 @@
                     <div class="about-content reveal">
                         <div class="section-label">Our Story</div>
                         <h2>Built on Passion.<br>Driven by Creativity.</h2>
-                        <p>Founded in 2023 by Buhzz Taylor and Mike Salvi, XLNZ Productions is Philadelphia's premier video production studio. We specialize in podcasts, comedy, films, documentaries, and commercial content.</p>
-                        <p>Our founders bring a unique blend of creativity and technical expertise to every project, ensuring your vision comes to life exactly as you imagined it.</p>
+                        <p>Founded in 2023 by comedians Buhzz Taylor and Mike Salvi, XLNZ Productions is Philadelphia's premier video production studio. We specialize in podcasts, comedy, films, documentaries, and commercial content.</p>
+                        <p>Our founders bring a unique blend of comedic talent and technical expertise to every project, ensuring your vision comes to life exactly as you imagined it.</p>
                         <div class="about-features">
                             <div class="about-feature">
                                 <i class="fas fa-check"></i> State-of-the-art facility
@@ -2328,20 +2257,20 @@
                 </div>
                 <div class="team-grid">
                     <div class="team-card reveal">
-                        <img src="images/Buhzz.jpg" alt="Buhzz Taylor, Co-Founder of XLNZ Productions" loading="lazy" width="120" height="120">
+                        <img src="images/Buhzz.jpg" alt="Buhzz Taylor, Comedian and Co-Founder of XLNZ Productions" loading="lazy" width="120" height="120">
                         <h3>Buhzz Taylor</h3>
                         <div class="team-role">Co-Founder</div>
-                        <p>Creative visionary with a passion for storytelling and bringing unique perspectives to every project.</p>
+                        <p>Comedian and creative visionary with a passion for storytelling and bringing unique perspectives to every project.</p>
                         <div class="team-social">
                             <a href="https://www.instagram.com/xlnzproductions" aria-label="Buhzz Taylor on Instagram"><i class="fab fa-instagram"></i></a>
                             <a href="https://www.youtube.com/@xlnzproductions" aria-label="XLNZ Productions on YouTube"><i class="fab fa-youtube"></i></a>
                         </div>
                     </div>
                     <div class="team-card reveal">
-                        <img src="images/Mike.jpg" alt="Mike Salvi, Co-Founder of XLNZ Productions" loading="lazy" width="120" height="120">
+                        <img src="images/Mike.jpg" alt="Mike Salvi, Comedian and Co-Founder of XLNZ Productions" loading="lazy" width="120" height="120">
                         <h3>Mike Salvi</h3>
                         <div class="team-role">Co-Founder</div>
-                        <p>Production expert dedicated to delivering high-quality content that exceeds expectations and drives results.</p>
+                        <p>Comedian and production expert dedicated to delivering high-quality content that exceeds expectations and drives results.</p>
                         <div class="team-social">
                             <a href="https://www.instagram.com/xlnzproductions" aria-label="Mike Salvi on Instagram"><i class="fab fa-instagram"></i></a>
                             <a href="https://www.youtube.com/@xlnzproductions" aria-label="XLNZ Productions on YouTube"><i class="fab fa-youtube"></i></a>
@@ -2475,70 +2404,6 @@
             </div>
         </section>
 
-        <!-- Testimonials Section -->
-        <section class="testimonials" id="testimonials">
-            <div class="container">
-                <div class="section-header reveal">
-                    <div class="section-label">Testimonials</div>
-                    <h2>What Our Clients Say</h2>
-                    <p>Hear from the people we've worked with</p>
-                </div>
-                <div class="testimonials-grid">
-                    <div class="testimonial-card reveal">
-                        <div class="testimonial-stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <blockquote>"XLNZ Productions transformed our podcast from an idea into a professional show. The quality of their work exceeded our expectations."</blockquote>
-                        <div class="testimonial-author">
-                            <img src="https://picsum.photos/seed/client1/100/100.jpg" alt="Marcus Johnson, Host of Business Leaders Podcast" loading="lazy" width="48" height="48">
-                            <div class="testimonial-author-info">
-                                <h4>Marcus Johnson</h4>
-                                <p>Host, Business Leaders Podcast</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-card reveal">
-                        <div class="testimonial-stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <blockquote>"They captured my comedy special perfectly. The production value was incredible and the team was great to work with."</blockquote>
-                        <div class="testimonial-author">
-                            <img src="https://picsum.photos/seed/client2/100/100.jpg" alt="Dave Rodriguez, Comedian" loading="lazy" width="48" height="48">
-                            <div class="testimonial-author-info">
-                                <h4>Dave Rodriguez</h4>
-                                <p>Comedian</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-card reveal">
-                        <div class="testimonial-stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <blockquote>"Our commercial campaign drove real results. XLNZ understood our brand and delivered content that resonated with our audience."</blockquote>
-                        <div class="testimonial-author">
-                            <img src="https://picsum.photos/seed/client3/100/100.jpg" alt="Sarah Chen, Marketing Director at Urban Eats" loading="lazy" width="48" height="48">
-                            <div class="testimonial-author-info">
-                                <h4>Sarah Chen</h4>
-                                <p>Marketing Director, Urban Eats</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <!-- CTA Section -->
         <section class="cta" id="cta">
             <div class="container">
@@ -2562,7 +2427,7 @@
             <div class="footer-grid">
                 <div class="footer-brand">
                     <a href="index.html" class="logo">
-                        <span class="logo-icon"><i class="fas fa-film"></i></span>
+                        <span class="logo-icon"><img src="images/XLNZ Color White Border Logo.png" alt="XLNZ"></span>
                         XLNZ
                     </a>
                     <p>Philadelphia's premier video production studio. Specializing in podcasts, comedy, films, documentaries, and commercial content.</p>
@@ -3361,14 +3226,14 @@
         const sickosCombo = document.getElementById('sickosCombo');
 
         const SICKOS = [
-            { name: 'Crazy Carl', emoji: '🤪', color: '#e94560', points: 100, speed: 3000 },
-            { name: 'Wild Wendy', emoji: '🤯', color: '#ff6b35', points: 150, speed: 2500 },
-            { name: 'Psycho Phil', emoji: '😈', color: '#9b59b6', points: 200, speed: 2000 },
-            { name: 'Manic Mary', emoji: '🥴', color: '#e67e22', points: 250, speed: 1800 },
-            { name: 'Deranged Dave', emoji: '👹', color: '#c0392b', points: 300, speed: 1500 },
-            { name: 'Unhinged Uma', emoji: '👽', color: '#8e44ad', points: 350, speed: 1300 },
-            { name: 'Bonkers Bob', emoji: '🤡', color: '#2ecc71', points: 400, speed: 1100 },
-            { name: 'Loony Luna', emoji: '💀', color: '#f1c40f', points: 500, speed: 900 },
+            { name: 'Crazy Carl', emoji: '\u{1F92A}', color: '#e94560', points: 100, speed: 3000 },
+            { name: 'Wild Wendy', emoji: '\u{1F92F}', color: '#ff6b35', points: 150, speed: 2500 },
+            { name: 'Psycho Phil', emoji: '\u{1F608}', color: '#9b59b6', points: 200, speed: 2000 },
+            { name: 'Manic Mary', emoji: '\u{1F974}', color: '#e67e22', points: 250, speed: 1800 },
+            { name: 'Deranged Dave', emoji: '\u{1F479}', color: '#c0392b', points: 300, speed: 1500 },
+            { name: 'Unhinged Uma', emoji: '\u{1F47D}', color: '#8e44ad', points: 350, speed: 1300 },
+            { name: 'Bonkers Bob', emoji: '\u{1F921}', color: '#2ecc71', points: 400, speed: 1100 },
+            { name: 'Loony Luna', emoji: '\u{1F480}', color: '#f1c40f', points: 500, speed: 900 },
         ];
 
         let sickosState = {
@@ -3442,7 +3307,7 @@
             if (!sickosState.gameRunning) return;
 
             // Pick a random sicko that's not currently active
-            const availableSickos = SICKOS.filter(s => 
+            const availableSickos = SICKOS.filter(s =>
                 !sickosState.activeSickos.find(a => a.name === s.name)
             );
 
