@@ -150,12 +150,16 @@
         .logo-icon {
             width: 40px;
             height: 40px;
-            background: var(--accent-gradient);
-            border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 18px;
+            flex-shrink: 0;
+        }
+
+        .logo-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
         }
 
         nav ul {
@@ -573,7 +577,6 @@
             padding-bottom: 56.25%;
             height: 0;
             overflow: hidden;
-            cursor: pointer;
         }
 
         .portfolio-card-video iframe {
@@ -583,68 +586,6 @@
             width: 100%;
             height: 100%;
             border: 0;
-        }
-
-        /* Click-to-play thumbnail overlay */
-        .video-thumbnail {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 3;
-            transition: opacity 0.3s ease;
-        }
-
-        .video-thumbnail::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(10, 10, 15, 0.4);
-            transition: background 0.3s ease;
-        }
-
-        .video-thumbnail:hover::after {
-            background: rgba(10, 10, 15, 0.2);
-        }
-
-        .video-play-btn {
-            position: relative;
-            z-index: 4;
-            width: 72px;
-            height: 72px;
-            background: var(--accent-gradient);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 8px 32px rgba(233, 69, 96, 0.4);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .video-thumbnail:hover .video-play-btn {
-            transform: scale(1.1);
-            box-shadow: 0 12px 40px rgba(233, 69, 96, 0.5);
-        }
-
-        .video-play-btn i {
-            color: var(--text-primary);
-            font-size: 28px;
-            margin-left: 4px;
-        }
-
-        .video-thumbnail.hidden {
-            opacity: 0;
-            pointer-events: none;
         }
 
         .portfolio-card-badge {
@@ -940,7 +881,6 @@
             padding-bottom: 56.25%;
             height: 0;
             overflow: hidden;
-            cursor: pointer;
         }
 
         .collaboration-card-video iframe {
@@ -1510,6 +1450,15 @@
             .countdown-text {
                 font-size: 8px;
             }
+
+            .logo-icon {
+                width: 36px;
+                height: 36px;
+            }
+
+            .logo {
+                font-size: 22px;
+            }
         }
     </style>
 </head>
@@ -1522,7 +1471,7 @@
     <header id="header">
         <div class="container header-content">
             <a href="index.html" class="logo" aria-label="XLNZ Productions Home">
-                <span class="logo-icon"><i class="fas fa-film" aria-hidden="true"></i></span>
+                <span class="logo-icon"><img src="images/XLNZ Color White Border Logo.png" alt="XLNZ Productions Logo" width="40" height="40"></span>
                 XLNZ
             </a>
             <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Open navigation menu" aria-expanded="false">
@@ -1563,10 +1512,8 @@
         <div class="container">
             <div class="who-we-are-grid">
                 <div class="video-embed-container reveal">
-                    <div class="video-responsive" data-video-id="ajysZ7bypAg" data-video-type="youtube">
-                        <div class="video-thumbnail" style="background-image: url('https://img.youtube.com/vi/ajysZ7bypAg/maxresdefault.jpg');" role="button" tabindex="0" aria-label="Play XLNZ Productions - Who We Are video">
-                            <div class="video-play-btn"><i class="fas fa-play" aria-hidden="true"></i></div>
-                        </div>
+                    <div class="video-responsive">
+                        <iframe src="https://www.youtube.com/embed/ajysZ7bypAg" title="XLNZ Productions - Who We Are" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
                     </div>
                 </div>
                 <div class="who-we-are-content reveal">
@@ -1616,11 +1563,9 @@
 
                 <!-- Comedy Skit with Dom Dukes -->
                 <div class="portfolio-card reveal" data-category="comedy">
-                    <div class="portfolio-card-video" data-video-id="XnWgIaiz-_g" data-video-type="youtube">
-                        <div class="video-thumbnail" style="background-image: url('https://img.youtube.com/vi/XnWgIaiz-_g/maxresdefault.jpg');" role="button" tabindex="0" aria-label="Play Comedy Skit with Dom Dukes video">
-                            <div class="video-play-btn"><i class="fas fa-play" aria-hidden="true"></i></div>
-                        </div>
+                    <div class="portfolio-card-video">
                         <span class="portfolio-card-badge">Comedy</span>
+                        <iframe src="https://www.youtube.com/embed/XnWgIaiz-_g" title="Comedy Skit with Dom Dukes" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
                     </div>
                     <div class="portfolio-card-body">
                         <div class="portfolio-card-client">Featuring Dom Dukes</div>
@@ -1638,11 +1583,9 @@
 
                 <!-- Dom Dukes & Friends Podcast -->
                 <div class="portfolio-card reveal" data-category="podcast">
-                    <div class="portfolio-card-video" data-video-id="Il7gtF8vkuI" data-video-type="youtube">
-                        <div class="video-thumbnail" style="background-image: url('https://img.youtube.com/vi/Il7gtF8vkuI/maxresdefault.jpg');" role="button" tabindex="0" aria-label="Play Dom Dukes & Friends Podcast video">
-                            <div class="video-play-btn"><i class="fas fa-play" aria-hidden="true"></i></div>
-                        </div>
+                    <div class="portfolio-card-video">
                         <span class="portfolio-card-badge">Podcast</span>
+                        <iframe src="https://www.youtube.com/embed/Il7gtF8vkuI" title="Dom Dukes & Friends Podcast" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
                     </div>
                     <div class="portfolio-card-body">
                         <div class="portfolio-card-client">Dom Dukes & Friends</div>
@@ -1660,11 +1603,9 @@
 
                 <!-- Bridgin The Gap Podcast -->
                 <div class="portfolio-card reveal" data-category="podcast">
-                    <div class="portfolio-card-video" data-video-id="kFac72672gM" data-video-type="youtube">
-                        <div class="video-thumbnail" style="background-image: url('https://img.youtube.com/vi/kFac72672gM/maxresdefault.jpg');" role="button" tabindex="0" aria-label="Play Bridgin The Gap Podcast video">
-                            <div class="video-play-btn"><i class="fas fa-play" aria-hidden="true"></i></div>
-                        </div>
+                    <div class="portfolio-card-video">
                         <span class="portfolio-card-badge">Podcast</span>
+                        <iframe src="https://www.youtube.com/embed/kFac72672gM" title="Bridgin The Gap Podcast" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
                     </div>
                     <div class="portfolio-card-body">
                         <div class="portfolio-card-client">Bridgin The Gap</div>
@@ -1682,11 +1623,9 @@
 
                 <!-- Common Ground Podcast -->
                 <div class="portfolio-card reveal" data-category="podcast">
-                    <div class="portfolio-card-video" data-video-id="6pBv8YsoLXs" data-video-type="youtube">
-                        <div class="video-thumbnail" style="background-image: url('https://img.youtube.com/vi/6pBv8YsoLXs/maxresdefault.jpg');" role="button" tabindex="0" aria-label="Play Common Ground Podcast video">
-                            <div class="video-play-btn"><i class="fas fa-play" aria-hidden="true"></i></div>
-                        </div>
+                    <div class="portfolio-card-video">
                         <span class="portfolio-card-badge">Podcast</span>
+                        <iframe src="https://www.youtube.com/embed/6pBv8YsoLXs" title="Common Ground Podcast" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
                     </div>
                     <div class="portfolio-card-body">
                         <div class="portfolio-card-client">Common Ground Podcast</div>
@@ -1730,12 +1669,10 @@
 
                 <!-- The Rush -->
                 <div class="collaboration-card reveal">
-                    <div class="collaboration-card-video" data-video-id="eGK84ZpOhys" data-video-type="youtube">
-                        <div class="video-thumbnail" style="background-image: url('https://img.youtube.com/vi/eGK84ZpOhys/maxresdefault.jpg');" role="button" tabindex="0" aria-label="Play The Rush - Official Trailer video">
-                            <div class="video-play-btn"><i class="fas fa-play" aria-hidden="true"></i></div>
-                        </div>
+                    <div class="collaboration-card-video">
                         <span class="collaboration-card-badge">Film</span>
                         <span class="collaboration-card-status">Streaming Now</span>
+                        <iframe src="https://www.youtube.com/embed/eGK84ZpOhys" title="The Rush - Official Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
                     </div>
                     <div class="collaboration-card-body">
                         <div class="collaboration-card-credit">Written & Directed by Raheem Roher</div>
@@ -1756,12 +1693,10 @@
 
                 <!-- Mistransaction -->
                 <div class="collaboration-card reveal">
-                    <div class="collaboration-card-video" data-video-id="8nXm23rNbqA" data-video-type="youtube">
-                        <div class="video-thumbnail" style="background-image: url('https://img.youtube.com/vi/8nXm23rNbqA/maxresdefault.jpg');" role="button" tabindex="0" aria-label="Play Mistransaction - Official Trailer video">
-                            <div class="video-play-btn"><i class="fas fa-play" aria-hidden="true"></i></div>
-                        </div>
+                    <div class="collaboration-card-video">
                         <span class="collaboration-card-badge">Film</span>
                         <span class="collaboration-card-status premiere">Premieres May 16, 2026</span>
+                        <iframe src="https://www.youtube.com/embed/8nXm23rNbqA" title="Mistransaction - Official Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
                     </div>
                     <div class="collaboration-card-body">
                         <div class="collaboration-card-credit">Written & Directed by Raheem Roher</div>
@@ -1801,12 +1736,10 @@
 
                 <!-- Unglorified -->
                 <div class="collaboration-card reveal">
-                    <div class="collaboration-card-video" data-video-id="jvANB8i9rbM" data-video-type="youtube">
-                        <div class="video-thumbnail" style="background-image: url('https://img.youtube.com/vi/jvANB8i9rbM/maxresdefault.jpg');" role="button" tabindex="0" aria-label="Play Unglorified - Official Trailer video">
-                            <div class="video-play-btn"><i class="fas fa-play" aria-hidden="true"></i></div>
-                        </div>
+                    <div class="collaboration-card-video">
                         <span class="collaboration-card-badge">Film</span>
                         <span class="collaboration-card-status">Streaming Now</span>
+                        <iframe src="https://www.youtube.com/embed/jvANB8i9rbM" title="Unglorified - Official Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
                     </div>
                     <div class="collaboration-card-body">
                         <div class="collaboration-card-credit">Written & Directed by Raheem Roher</div>
@@ -1908,7 +1841,7 @@
             <div class="footer-grid">
                 <div class="footer-brand">
                     <a href="index.html" class="logo" aria-label="XLNZ Productions Home">
-                        <span class="logo-icon"><i class="fas fa-film" aria-hidden="true"></i></span>
+                        <span class="logo-icon"><img src="images/XLNZ Color White Border Logo.png" alt="XLNZ Productions Logo" width="40" height="40"></span>
                         XLNZ
                     </a>
                     <p>Philadelphia's premier video production studio. Specializing in podcasts, comedy, films, documentaries, and commercial content.</p>
@@ -2005,47 +1938,6 @@
                 header.classList.remove('scrolled');
             }
         });
-
-        // Click-to-play YouTube videos
-        function initVideoThumbnails() {
-            const videoThumbnails = document.querySelectorAll('.video-thumbnail');
-            
-            videoThumbnails.forEach(thumbnail => {
-                const videoContainer = thumbnail.parentElement;
-                const videoId = videoContainer.getAttribute('data-video-id');
-                const videoType = videoContainer.getAttribute('data-video-type');
-                
-                if (!videoId) return;
-
-                const playVideo = () => {
-                    if (videoType === 'youtube') {
-                        const iframe = document.createElement('iframe');
-                        iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
-                        iframe.title = videoContainer.closest('.portfolio-card, .collaboration-card, .video-embed-container')?.querySelector('.portfolio-card-title, .collaboration-card-title, h2')?.textContent || 'Video';
-                        iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
-                        iframe.allowFullscreen = true;
-                        iframe.style.cssText = 'position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;';
-                        videoContainer.appendChild(iframe);
-                    }
-                    thumbnail.classList.add('hidden');
-                    // Remove thumbnail after transition
-                    setTimeout(() => {
-                        thumbnail.remove();
-                    }, 300);
-                };
-
-                thumbnail.addEventListener('click', playVideo);
-                thumbnail.addEventListener('keydown', (e) => {
-                    if (e.key === 'Enter' || e.key === ' ') {
-                        e.preventDefault();
-                        playVideo();
-                    }
-                });
-            });
-        }
-
-        // Initialize video thumbnails
-        initVideoThumbnails();
 
         // Portfolio filter functionality
         const filterButtons = document.querySelectorAll('.filter-btn');
