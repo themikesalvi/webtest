@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Meet the team behind XLNZ Productions - Philadelphia's premier video production studio founded by Buhzz Taylor and Mike Salvi. Learn our story, mission, and values.">
-    <meta name="keywords" content="about XLNZ Productions, Philadelphia video production team, Buhzz Taylor, Mike Salvi, video production studio">
+    <meta name="description" content="Meet the team behind XLNZ Productions — Philadelphia's full-service video production company. We think like marketers, shoot like filmmakers, and deliver content that builds brands.">
+    <meta name="keywords" content="about XLNZ Productions, Philadelphia video production company, Buhzz Taylor, Mike Salvi, corporate video production Philadelphia, brand video strategy">
     <meta name="robots" content="index, follow">
     <meta name="author" content="XLNZ Productions">
     <link rel="canonical" href="https://www.xlnzproductions.com/about">
 
     <!-- Open Graph -->
-    <meta property="og:title" content="About XLNZ Productions - Philadelphia Video Production Studio">
-    <meta property="og:description" content="Meet the team behind XLNZ Productions - Philadelphia's premier video production studio founded by Buhzz Taylor and Mike Salvi.">
+    <meta property="og:title" content="About XLNZ Productions — Built Different. Built for Results.">
+    <meta property="og:description" content="Philadelphia's full-service video production company. We think like marketers, shoot like filmmakers, and deliver content that turns your brand's story into results.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.xlnzproductions.com/about">
     <meta property="og:image" content="https://www.xlnzproductions.com/images/og-about.jpg">
@@ -19,8 +19,8 @@
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="About XLNZ Productions - Philadelphia Video Production Studio">
-    <meta name="twitter:description" content="Meet the team behind XLNZ Productions - Philadelphia's premier video production studio.">
+    <meta name="twitter:title" content="About XLNZ Productions — Built Different. Built for Results.">
+    <meta name="twitter:description" content="Philadelphia's full-service video production company. We think like marketers, shoot like filmmakers, and deliver content that converts.">
 
     <!-- Schema.org -->
     <script type="application/ld+json">
@@ -29,7 +29,7 @@
         "@type": "VideoProductionCompany",
         "name": "XLNZ Productions",
         "url": "https://www.xlnzproductions.com",
-        "priceRange": "$400-$3600",
+        "email": "xlnzproductions@gmail.com",
         "address": {
             "@type": "PostalAddress",
             "addressLocality": "Philadelphia",
@@ -45,14 +45,19 @@
             {
                 "@type": "Person",
                 "name": "Mike Salvi",
-                "jobTitle": "Co-Founder & Production Manager"
+                "jobTitle": "Co-Founder & Production Director"
             }
         ],
-        "foundingDate": "2023"
+        "foundingDate": "2023",
+        "sameAs": [
+            "https://www.instagram.com/xlnzproductions",
+            "https://www.youtube.com/@xlnzproductions",
+            "https://www.linkedin.com/company/xlnzproductions"
+        ]
     }
     </script>
 
-    <title>About XLNZ Productions | Philadelphia Video Production Studio</title>
+    <title>About XLNZ Productions | Built Different. Built for Results.</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -72,15 +77,8 @@
             --glow: 0 0 40px rgba(233, 69, 96, 0.15);
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
 
         body {
             font-family: 'Inter', sans-serif;
@@ -105,16 +103,11 @@
 
         /* ===== HEADER ===== */
         header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-            padding: 20px 0;
+            position: fixed; top: 0; left: 0; width: 100%;
+            z-index: 1000; padding: 20px 0;
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             background: transparent;
         }
-
         header.scrolled {
             background: rgba(10, 10, 15, 0.95);
             backdrop-filter: blur(20px);
@@ -122,948 +115,414 @@
             padding: 12px 0;
             box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
         }
-
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+        .header-content { display: flex; justify-content: space-between; align-items: center; }
 
         .logo {
             font-family: 'Montserrat', sans-serif;
-            font-size: 26px;
-            font-weight: 800;
-            color: var(--text-primary);
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 12px;
+            font-size: 26px; font-weight: 800;
+            color: var(--text-primary); text-decoration: none;
+            display: flex; align-items: center; gap: 12px;
             letter-spacing: -0.5px;
         }
-
         .logo-icon {
-            width: 40px;
-            height: 40px;
-            background: var(--accent-gradient);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 18px;
+            width: 40px; height: 40px;
+            display: flex; align-items: center;
+            justify-content: center; overflow: hidden;
         }
+        .logo-icon img { width: 100%; height: 100%; object-fit: contain; }
 
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 8px;
-        }
-
+        nav ul { display: flex; list-style: none; gap: 8px; }
         nav ul li a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 15px;
-            padding: 8px 16px;
-            border-radius: 6px;
+            color: var(--text-secondary); text-decoration: none;
+            font-weight: 500; font-size: 15px;
+            padding: 8px 16px; border-radius: 6px;
             transition: all 0.3s ease;
         }
-
-        nav ul li a:hover,
-        nav ul li a.active {
+        nav ul li a:hover, nav ul li a.active {
             color: var(--text-primary);
             background: rgba(233, 69, 96, 0.1);
         }
-
         .nav-cta {
             background: var(--accent-gradient) !important;
             color: var(--text-primary) !important;
             font-weight: 600 !important;
             padding: 10px 24px !important;
         }
-
-        .nav-cta:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 8px 25px rgba(233, 69, 96, 0.3);
-        }
+        .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 8px 25px rgba(233, 69, 96, 0.3); }
 
         .mobile-menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            color: var(--text-primary);
-            font-size: 24px;
-            cursor: pointer;
-            padding: 8px;
+            display: none; background: none; border: none;
+            color: var(--text-primary); font-size: 24px;
+            cursor: pointer; padding: 8px;
         }
-
         .mobile-menu-close {
-            display: none;
-            background: none;
-            border: none;
-            color: var(--text-primary);
-            font-size: 28px;
-            cursor: pointer;
-            padding: 8px;
+            display: none; background: none; border: none;
+            color: var(--text-primary); font-size: 28px;
+            cursor: pointer; padding: 8px;
         }
 
         /* ===== PAGE HERO ===== */
         .page-hero {
-            min-height: 60vh;
-            display: flex;
-            align-items: center;
-            position: relative;
-            overflow: hidden;
-            padding: 140px 0 80px;
+            min-height: 60vh; display: flex; align-items: center;
+            position: relative; overflow: hidden; padding: 140px 0 80px;
         }
-
         .page-hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            content: ''; position: absolute; top: 0; left: 0;
+            width: 100%; height: 100%;
             background: radial-gradient(ellipse at 30% 50%, rgba(233, 69, 96, 0.08) 0%, transparent 60%),
                         radial-gradient(ellipse at 70% 20%, rgba(255, 107, 53, 0.06) 0%, transparent 50%);
             pointer-events: none;
         }
-
         .page-hero::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 200px;
+            content: ''; position: absolute; bottom: 0; left: 0;
+            width: 100%; height: 200px;
             background: linear-gradient(to top, var(--bg-primary), transparent);
             pointer-events: none;
         }
-
         .hero-grid {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
             background-image:
-                linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+                linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
             background-size: 60px 60px;
             mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
             -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
         }
-
         .page-hero-content {
-            position: relative;
-            z-index: 2;
-            text-align: center;
-            max-width: 700px;
-            margin: 0 auto;
+            position: relative; z-index: 2;
+            text-align: center; max-width: 700px; margin: 0 auto;
         }
-
         .section-label {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
+            display: inline-flex; align-items: center; gap: 8px;
             color: var(--accent);
             font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
+            font-weight: 700; font-size: 14px;
+            text-transform: uppercase; letter-spacing: 2px;
             margin-bottom: 16px;
         }
-
         .section-label::before {
-            content: '';
-            width: 30px;
-            height: 2px;
+            content: ''; width: 30px; height: 2px;
             background: var(--accent-gradient);
         }
-
         .page-hero h1 {
             font-size: clamp(36px, 6vw, 64px);
-            font-weight: 900;
-            margin-bottom: 20px;
-            letter-spacing: -1px;
+            font-weight: 900; margin-bottom: 20px; letter-spacing: -1px;
         }
-
-        .page-hero h1 .gradient-text {
+        .gradient-text {
             background: var(--accent-gradient);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-
         .page-hero p {
-            font-size: 18px;
-            color: var(--text-secondary);
-            max-width: 600px;
-            margin: 0 auto 32px;
+            font-size: 18px; color: var(--text-secondary);
+            max-width: 600px; margin: 0 auto 32px;
         }
-
-        .hero-buttons {
-            display: flex;
-            gap: 16px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
+        .hero-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
 
         /* ===== BUTTONS ===== */
         .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            padding: 16px 36px;
-            border-radius: 8px;
+            display: inline-flex; align-items: center;
+            justify-content: center; gap: 10px;
+            padding: 16px 36px; border-radius: 8px;
             font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            font-size: 16px;
+            font-weight: 700; font-size: 16px;
             text-decoration: none;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            cursor: pointer;
-            border: none;
+            cursor: pointer; border: none;
         }
-
         .btn-primary {
-            background: var(--accent-gradient);
-            color: var(--text-primary);
+            background: var(--accent-gradient); color: var(--text-primary);
             box-shadow: 0 4px 15px rgba(233, 69, 96, 0.3);
         }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 30px rgba(233, 69, 96, 0.4);
-        }
-
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(233, 69, 96, 0.4); }
         .btn-secondary {
-            background: rgba(255, 255, 255, 0.05);
-            color: var(--text-primary);
+            background: rgba(255,255,255,0.05); color: var(--text-primary);
             border: 1px solid var(--border);
         }
-
-        .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: rgba(255, 255, 255, 0.2);
-            transform: translateY(-2px);
-        }
+        .btn-secondary:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2); transform: translateY(-2px); }
 
         /* ===== STORY SECTION ===== */
-        .story-section {
-            padding: 100px 0;
-            position: relative;
-        }
-
+        .story-section { padding: 100px 0; position: relative; }
         .story-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 64px;
-            align-items: center;
+            display: grid; grid-template-columns: 1fr 1fr;
+            gap: 64px; align-items: center;
         }
-
-        .story-grid.reversed {
-            direction: rtl;
-        }
-
-        .story-grid.reversed > * {
-            direction: ltr;
-        }
+        .story-grid.reversed { direction: rtl; }
+        .story-grid.reversed > * { direction: ltr; }
 
         .story-image-wrapper {
-            position: relative;
-            border-radius: 16px;
-            overflow: hidden;
+            position: relative; border-radius: 16px; overflow: hidden;
         }
-
         .story-image-wrapper img {
-            width: 100%;
-            display: block;
-            border-radius: 16px;
+            width: 100%; display: block; border-radius: 16px;
             transition: transform 0.6s ease;
         }
-
-        .story-image-wrapper:hover img {
-            transform: scale(1.03);
-        }
-
+        .story-image-wrapper:hover img { transform: scale(1.03); }
         .story-image-accent {
-            position: absolute;
-            top: -20px;
-            right: -20px;
-            width: 120px;
-            height: 120px;
+            position: absolute; top: -20px; right: -20px;
+            width: 120px; height: 120px;
             background: var(--accent-gradient);
-            border-radius: 16px;
-            opacity: 0.1;
-            z-index: -1;
+            border-radius: 16px; opacity: 0.1; z-index: -1;
         }
-
-        .story-content h2 {
-            font-size: clamp(28px, 4vw, 40px);
-            margin-bottom: 24px;
-        }
-
+        .story-content h2 { font-size: clamp(28px, 4vw, 40px); margin-bottom: 24px; }
         .story-content p {
-            color: var(--text-secondary);
-            font-size: 16px;
-            line-height: 1.8;
-            margin-bottom: 16px;
+            color: var(--text-secondary); font-size: 16px;
+            line-height: 1.8; margin-bottom: 16px;
         }
+        .story-content p:last-of-type { margin-bottom: 0; }
 
-        .story-content p:last-of-type {
-            margin-bottom: 0;
+        /* ===== DIFFERENTIATORS ===== */
+        .differentiators {
+            display: grid; grid-template-columns: 1fr 1fr;
+            gap: 16px; margin-top: 32px;
         }
+        .diff-item {
+            display: flex; align-items: flex-start; gap: 12px;
+        }
+        .diff-icon {
+            width: 36px; height: 36px; min-width: 36px;
+            background: rgba(233, 69, 96, 0.1);
+            border-radius: 8px; display: flex;
+            align-items: center; justify-content: center;
+        }
+        .diff-icon i { color: var(--accent); font-size: 14px; }
+        .diff-text { font-size: 14px; color: var(--text-secondary); font-weight: 500; padding-top: 8px; }
 
         /* ===== STATS BAR ===== */
         .stats-bar {
-            padding: 80px 0;
-            background: var(--bg-secondary);
-            position: relative;
-            overflow: hidden;
+            padding: 80px 0; background: var(--bg-secondary);
+            position: relative; overflow: hidden;
         }
-
         .stats-bar::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            content: ''; position: absolute; top: 0; left: 0;
+            width: 100%; height: 100%;
             background: radial-gradient(ellipse at 50% 50%, rgba(233, 69, 96, 0.05) 0%, transparent 60%);
             pointer-events: none;
         }
-
         .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 32px;
-            position: relative;
-            z-index: 1;
-            max-width: 700px;
-            margin: 0 auto;
+            display: grid; grid-template-columns: repeat(4, 1fr);
+            gap: 32px; position: relative; z-index: 1;
         }
-
-        .stat-item {
-            text-align: center;
-            padding: 24px;
-        }
-
+        .stat-item { text-align: center; padding: 24px; }
         .stat-number {
             font-family: 'Montserrat', sans-serif;
-            font-size: 48px;
-            font-weight: 900;
+            font-size: 48px; font-weight: 900;
             background: var(--accent-gradient);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 8px;
+            background-clip: text; margin-bottom: 8px;
         }
-
-        .stat-label {
-            color: var(--text-secondary);
-            font-size: 15px;
-            font-weight: 500;
-        }
+        .stat-label { color: var(--text-secondary); font-size: 15px; font-weight: 500; }
 
         /* ===== VALUES SECTION ===== */
-        .values-section {
-            padding: 100px 0;
-        }
+        .values-section { padding: 100px 0; }
+        .section-header { text-align: center; margin-bottom: 64px; }
+        .section-header h2 { font-size: clamp(32px, 4vw, 48px); margin-bottom: 16px; }
+        .section-header p { color: var(--text-secondary); font-size: 18px; max-width: 600px; margin: 0 auto; }
+        .section-header .section-label { justify-content: center; }
 
-        .section-header {
-            text-align: center;
-            margin-bottom: 64px;
-        }
-
-        .section-header h2 {
-            font-size: clamp(32px, 4vw, 48px);
-            margin-bottom: 16px;
-        }
-
-        .section-header p {
-            color: var(--text-secondary);
-            font-size: 18px;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .values-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-        }
-
+        .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
         .value-card {
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid var(--border);
-            border-radius: 16px;
+            background: rgba(255,255,255,0.02);
+            border: 1px solid var(--border); border-radius: 16px;
             padding: 40px 32px;
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            overflow: hidden;
+            position: relative; overflow: hidden;
         }
-
         .value-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 3px;
+            content: ''; position: absolute; top: 0; left: 0;
+            width: 100%; height: 3px;
             background: var(--accent-gradient);
-            transform: scaleX(0);
-            transform-origin: left;
+            transform: scaleX(0); transform-origin: left;
             transition: transform 0.4s ease;
         }
-
-        .value-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .value-card:hover {
-            transform: translateY(-8px);
-            border-color: rgba(233, 69, 96, 0.2);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-        }
-
+        .value-card:hover::before { transform: scaleX(1); }
+        .value-card:hover { transform: translateY(-8px); border-color: rgba(233,69,96,0.2); box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
         .value-icon {
-            width: 56px;
-            height: 56px;
-            background: rgba(233, 69, 96, 0.1);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 24px;
-            font-size: 24px;
-            color: var(--accent);
+            width: 56px; height: 56px;
+            background: rgba(233,69,96,0.1); border-radius: 12px;
+            display: flex; align-items: center; justify-content: center;
+            margin-bottom: 24px; font-size: 24px; color: var(--accent);
         }
-
-        .value-card h3 {
-            font-size: 20px;
-            margin-bottom: 12px;
-        }
-
-        .value-card p {
-            color: var(--text-secondary);
-            font-size: 15px;
-            line-height: 1.7;
-        }
+        .value-card h3 { font-size: 20px; margin-bottom: 12px; }
+        .value-card p { color: var(--text-secondary); font-size: 15px; line-height: 1.7; }
 
         /* ===== TEAM SECTION ===== */
         .team-section {
-            padding: 100px 0;
-            background: var(--bg-secondary);
-            position: relative;
+            padding: 100px 0; background: var(--bg-secondary); position: relative;
         }
-
         .team-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(ellipse at 50% 30%, rgba(233, 69, 96, 0.05) 0%, transparent 60%);
+            content: ''; position: absolute; top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: radial-gradient(ellipse at 50% 30%, rgba(233,69,96,0.05) 0%, transparent 60%);
             pointer-events: none;
         }
-
         .team-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 40px;
-            max-width: 900px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 1;
+            display: grid; grid-template-columns: repeat(2, 1fr);
+            gap: 40px; max-width: 900px; margin: 0 auto;
+            position: relative; z-index: 1;
         }
-
         .team-card {
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid var(--border);
-            border-radius: 16px;
+            background: rgba(255,255,255,0.02);
+            border: 1px solid var(--border); border-radius: 16px;
             overflow: hidden;
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
-
-        .team-card:hover {
-            transform: translateY(-8px);
-            border-color: rgba(233, 69, 96, 0.3);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-        }
-
-        .team-card-image {
-            height: 320px;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .team-card-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.6s ease;
-        }
-
-        .team-card:hover .team-card-image img {
-            transform: scale(1.05);
-        }
-
+        .team-card:hover { transform: translateY(-8px); border-color: rgba(233,69,96,0.3); box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
+        .team-card-image { height: 320px; overflow: hidden; position: relative; }
+        .team-card-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+        .team-card:hover .team-card-image img { transform: scale(1.05); }
         .team-card-image::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 100px;
+            content: ''; position: absolute; bottom: 0; left: 0;
+            width: 100%; height: 100px;
             background: linear-gradient(to top, var(--bg-card), transparent);
         }
-
-        .team-card-body {
-            padding: 28px;
-        }
-
-        .team-card-name {
-            font-size: 24px;
-            font-weight: 800;
-            margin-bottom: 4px;
-        }
-
+        .team-card-body { padding: 28px; }
+        .team-card-name { font-size: 24px; font-weight: 800; margin-bottom: 4px; }
         .team-card-role {
-            color: var(--accent);
-            font-family: 'Montserrat', sans-serif;
-            font-size: 13px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 16px;
+            color: var(--accent); font-family: 'Montserrat', sans-serif;
+            font-size: 13px; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px;
         }
-
-        .team-card-desc {
-            color: var(--text-secondary);
-            font-size: 15px;
-            line-height: 1.7;
-            margin-bottom: 20px;
-        }
-
-        .team-social {
-            display: flex;
-            gap: 10px;
-        }
-
+        .team-card-desc { color: var(--text-secondary); font-size: 15px; line-height: 1.7; margin-bottom: 20px; }
+        .team-social { display: flex; gap: 10px; }
         .team-social a {
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-secondary);
-            font-size: 16px;
-            transition: all 0.3s ease;
+            width: 40px; height: 40px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid var(--border); border-radius: 8px;
+            display: flex; align-items: center; justify-content: center;
+            color: var(--text-secondary); font-size: 16px;
+            transition: all 0.3s ease; text-decoration: none;
         }
-
-        .team-social a:hover {
-            background: var(--accent);
-            border-color: var(--accent);
-            color: white;
-            transform: translateY(-3px);
-        }
+        .team-social a:hover { background: var(--accent); border-color: var(--accent); color: white; transform: translateY(-3px); }
 
         /* ===== TIMELINE SECTION ===== */
-        .timeline-section {
-            padding: 100px 0;
-        }
-
-        .timeline-container {
-            position: relative;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
+        .timeline-section { padding: 100px 0; }
+        .timeline-container { position: relative; max-width: 800px; margin: 0 auto; }
         .timeline-line {
-            position: absolute;
-            left: 50%;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: var(--border);
+            position: absolute; left: 50%; top: 0; bottom: 0;
+            width: 2px; background: var(--border);
             transform: translateX(-50%);
         }
-
         .timeline-item {
-            display: flex;
-            justify-content: flex-end;
-            padding-right: 50px;
-            position: relative;
-            margin-bottom: 48px;
-            width: 50%;
+            display: flex; justify-content: flex-end;
+            padding-right: 50px; position: relative;
+            margin-bottom: 48px; width: 50%;
         }
-
         .timeline-item:nth-child(even) {
             justify-content: flex-start;
-            padding-right: 0;
-            padding-left: 50px;
+            padding-right: 0; padding-left: 50px;
             margin-left: 50%;
         }
-
         .timeline-dot {
-            position: absolute;
-            width: 16px;
-            height: 16px;
-            background: var(--accent);
-            border-radius: 50%;
-            top: 8px;
-            right: -8px;
-            box-shadow: 0 0 20px rgba(233, 69, 96, 0.4);
-            z-index: 2;
+            position: absolute; width: 16px; height: 16px;
+            background: var(--accent); border-radius: 50%;
+            top: 8px; right: -8px;
+            box-shadow: 0 0 20px rgba(233,69,96,0.4); z-index: 2;
         }
-
-        .timeline-item:nth-child(even) .timeline-dot {
-            left: -8px;
-            right: auto;
-        }
-
+        .timeline-item:nth-child(even) .timeline-dot { left: -8px; right: auto; }
         .timeline-content {
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 24px;
-            transition: all 0.3s ease;
+            background: rgba(255,255,255,0.02);
+            border: 1px solid var(--border); border-radius: 12px;
+            padding: 24px; transition: all 0.3s ease;
         }
-
-        .timeline-content:hover {
-            border-color: rgba(233, 69, 96, 0.3);
-            transform: translateY(-4px);
-        }
-
+        .timeline-content:hover { border-color: rgba(233,69,96,0.3); transform: translateY(-4px); }
         .timeline-year {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 13px;
-            font-weight: 700;
-            color: var(--accent);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 8px;
+            font-family: 'Montserrat', sans-serif; font-size: 13px;
+            font-weight: 700; color: var(--accent);
+            text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;
         }
+        .timeline-content h3 { font-size: 20px; margin-bottom: 8px; }
+        .timeline-content p { color: var(--text-secondary); font-size: 14px; line-height: 1.6; }
 
-        .timeline-content h3 {
-            font-size: 20px;
-            margin-bottom: 8px;
-        }
-
-        .timeline-content p {
-            color: var(--text-secondary);
-            font-size: 14px;
-            line-height: 1.6;
-        }
-
-        /* ===== CTA SECTION ===== */
-        .cta {
-            padding: 100px 0;
-            position: relative;
-            overflow: hidden;
-        }
-
+        /* ===== CTA ===== */
+        .cta { padding: 100px 0; position: relative; overflow: hidden; }
         .cta::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
+            content: ''; position: absolute; top: 50%; left: 50%;
             transform: translate(-50%, -50%);
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(233, 69, 96, 0.08) 0%, transparent 70%);
+            width: 600px; height: 600px;
+            background: radial-gradient(circle, rgba(233,69,96,0.08) 0%, transparent 70%);
             pointer-events: none;
         }
-
-        .cta-content {
-            text-align: center;
-            position: relative;
-            z-index: 1;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .cta h2 {
-            font-size: clamp(32px, 5vw, 48px);
-            margin-bottom: 20px;
-        }
-
-        .cta p {
-            font-size: 18px;
-            color: var(--text-secondary);
-            margin-bottom: 40px;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 16px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
+        .cta-content { text-align: center; position: relative; z-index: 1; max-width: 700px; margin: 0 auto; }
+        .cta h2 { font-size: clamp(32px, 5vw, 48px); margin-bottom: 20px; }
+        .cta p { font-size: 18px; color: var(--text-secondary); margin-bottom: 40px; }
+        .cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
 
         /* ===== FOOTER ===== */
-        footer {
-            background: var(--bg-primary);
-            border-top: 1px solid var(--border);
-            padding: 64px 0 32px;
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 48px;
-            margin-bottom: 48px;
-        }
-
-        .footer-brand .logo {
-            margin-bottom: 16px;
-        }
-
-        .footer-brand p {
-            color: var(--text-secondary);
-            font-size: 15px;
-            margin-bottom: 24px;
-            line-height: 1.7;
-        }
-
-        .footer-social {
-            display: flex;
-            gap: 12px;
-        }
-
+        footer { background: var(--bg-primary); border-top: 1px solid var(--border); padding: 64px 0 32px; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
+        .footer-brand .logo { margin-bottom: 16px; }
+        .footer-brand p { color: var(--text-secondary); font-size: 15px; margin-bottom: 24px; line-height: 1.7; }
+        .footer-social { display: flex; gap: 12px; }
         .footer-social a {
-            width: 44px;
-            height: 44px;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-secondary);
-            font-size: 18px;
-            transition: all 0.3s ease;
+            width: 44px; height: 44px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid var(--border); border-radius: 8px;
+            display: flex; align-items: center; justify-content: center;
+            color: var(--text-secondary); font-size: 18px;
+            transition: all 0.3s ease; text-decoration: none;
         }
-
-        .footer-social a:hover {
-            background: var(--accent);
-            border-color: var(--accent);
-            color: var(--text-primary);
-            transform: translateY(-3px);
-        }
-
-        .footer-column h4 {
-            font-size: 16px;
-            font-weight: 700;
-            margin-bottom: 20px;
-        }
-
-        .footer-column ul {
-            list-style: none;
-        }
-
-        .footer-column ul li {
-            margin-bottom: 12px;
-        }
-
+        .footer-social a:hover { background: var(--accent); border-color: var(--accent); color: var(--text-primary); transform: translateY(-3px); }
+        .footer-column h4 { font-size: 16px; font-weight: 700; margin-bottom: 20px; }
+        .footer-column ul { list-style: none; }
+        .footer-column ul li { margin-bottom: 12px; }
         .footer-column ul li a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-size: 15px;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
+            color: var(--text-secondary); text-decoration: none;
+            font-size: 15px; transition: all 0.3s ease;
+            display: inline-flex; align-items: center; gap: 6px;
         }
-
-        .footer-column ul li a:hover {
-            color: var(--accent);
-            transform: translateX(4px);
-        }
-
+        .footer-column ul li a:hover { color: var(--accent); transform: translateX(4px); }
         .footer-bottom {
-            border-top: 1px solid var(--border);
-            padding-top: 24px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            color: var(--text-muted);
-            font-size: 14px;
+            border-top: 1px solid var(--border); padding-top: 24px;
+            display: flex; justify-content: space-between; align-items: center;
+            color: var(--text-muted); font-size: 14px;
         }
+        .footer-bottom a { color: var(--text-secondary); text-decoration: none; transition: color 0.3s ease; }
+        .footer-bottom a:hover { color: var(--accent); }
+        .footer-legal { display: flex; gap: 16px; }
 
-        .footer-bottom a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .footer-bottom a:hover {
-            color: var(--accent);
-        }
-
-        /* ===== SCROLL ANIMATIONS ===== */
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        /* ===== ANIMATIONS ===== */
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
 
         /* ===== RESPONSIVE ===== */
         @media (max-width: 1024px) {
-            .footer-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .values-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
+            .footer-grid { grid-template-columns: repeat(2, 1fr); }
+            .values-grid { grid-template-columns: repeat(2, 1fr); }
+            .stats-grid { grid-template-columns: repeat(2, 1fr); }
         }
-
         @media (max-width: 992px) {
-            .story-grid {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-            .story-grid.reversed {
-                direction: ltr;
-            }
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
+            .story-grid { grid-template-columns: 1fr; gap: 40px; }
+            .story-grid.reversed { direction: ltr; }
         }
-
         @media (max-width: 768px) {
-            .mobile-menu-toggle {
-                display: block;
-            }
-
-            .mobile-menu-close {
-                display: block;
-            }
-
-            nav {
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100vh;
-                background: rgba(10, 10, 15, 0.98);
-                backdrop-filter: blur(20px);
-                -webkit-backdrop-filter: blur(20px);
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                transform: translateX(100%);
-                transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-                z-index: 999;
-            }
-
-            nav.active {
-                transform: translateX(0);
-            }
-
-            nav ul {
-                flex-direction: column;
-                align-items: center;
-                gap: 16px;
-            }
-
-            nav ul li a {
-                font-size: 24px;
-                padding: 12px 24px;
-            }
-
-            .mobile-menu-close {
-                position: absolute;
-                top: 24px;
-                right: 24px;
-                z-index: 1001;
-            }
-
-            .team-grid {
-                grid-template-columns: 1fr;
-                max-width: 500px;
-            }
-
-            .timeline-item {
-                width: 100%;
-                padding-left: 40px;
-                padding-right: 0;
-                margin-left: 0;
-            }
-
-            .timeline-item:nth-child(even) {
-                margin-left: 0;
-                padding-left: 40px;
-                padding-right: 0;
-            }
-
-            .timeline-line {
-                left: 8px;
-                transform: none;
-            }
-
-            .timeline-dot {
-                left: 0;
-                right: auto;
-            }
-
-            .timeline-item:nth-child(even) .timeline-dot {
-                left: 0;
-            }
-
-            .values-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .cta-buttons {
-                flex-direction: column;
-                align-items: stretch;
-            }
+            .mobile-menu-toggle { display: block; }
+            .mobile-menu-close { display: block; }
+            nav { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: rgba(10,10,15,0.98); backdrop-filter: blur(20px); display: flex; align-items: center; justify-content: center; transform: translateX(100%); transition: transform 0.4s cubic-bezier(0.4,0,0.2,1); z-index: 999; }
+            nav.active { transform: translateX(0); }
+            nav ul { flex-direction: column; align-items: center; gap: 16px; }
+            nav ul li a { font-size: 24px; padding: 12px 24px; }
+            .mobile-menu-close { position: absolute; top: 24px; right: 24px; z-index: 1001; }
+            .team-grid { grid-template-columns: 1fr; max-width: 500px; }
+            .timeline-item { width: 100%; padding-left: 40px; padding-right: 0; margin-left: 0; }
+            .timeline-item:nth-child(even) { margin-left: 0; padding-left: 40px; padding-right: 0; }
+            .timeline-line { left: 8px; transform: none; }
+            .timeline-dot { left: 0; right: auto; }
+            .timeline-item:nth-child(even) .timeline-dot { left: 0; }
+            .values-grid { grid-template-columns: 1fr; }
+            .cta-buttons { flex-direction: column; align-items: stretch; }
+            .differentiators { grid-template-columns: 1fr; }
         }
-
         @media (max-width: 576px) {
-            .page-hero h1 {
-                font-size: 32px;
-            }
-
-            .hero-buttons {
-                flex-direction: column;
-                align-items: stretch;
-            }
-
-            .btn {
-                justify-content: center;
-            }
-
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 16px;
-            }
-
-            .stat-number {
-                font-size: 36px;
-            }
-
-            .footer-grid {
-                grid-template-columns: 1fr;
-                gap: 32px;
-            }
-
-            .footer-bottom {
-                flex-direction: column;
-                gap: 12px;
-                text-align: center;
-            }
+            .page-hero h1 { font-size: 32px; }
+            .hero-buttons { flex-direction: column; align-items: stretch; }
+            .btn { justify-content: center; }
+            .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+            .stat-number { font-size: 36px; }
+            .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+            .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
         }
     </style>
 </head>
@@ -1073,13 +532,15 @@
     <header id="header">
         <div class="container header-content">
             <a href="index.html" class="logo">
-                <span class="logo-icon"><i class="fas fa-film"></i></span>
+                <span class="logo-icon">
+                    <img src="images/XLNZ Color White Border Logo.png" alt="XLNZ Productions">
+                </span>
                 XLNZ
             </a>
             <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Open menu">
                 <i class="fas fa-bars"></i>
             </button>
-            <nav id="nav">
+            <nav id="nav" aria-label="Main navigation">
                 <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">
                     <i class="fas fa-times"></i>
                 </button>
@@ -1100,8 +561,8 @@
         <div class="hero-grid"></div>
         <div class="container page-hero-content">
             <div class="section-label">Our Story</div>
-            <h1>About <span class="gradient-text">XLNZ Productions</span></h1>
-            <p>Philadelphia's premier video production studio—where creative vision meets technical excellence.</p>
+            <h1>Built Different.<br><span class="gradient-text">Built for Results.</span></h1>
+            <p>We think like marketers, shoot like filmmakers, and deliver content that turns your brand's story into measurable results.</p>
             <div class="hero-buttons">
                 <a href="#team" class="btn btn-primary"><i class="fas fa-users"></i> Meet the Team</a>
                 <a href="contact.html" class="btn btn-secondary"><i class="fas fa-envelope"></i> Get in Touch</a>
@@ -1109,19 +570,38 @@
         </div>
     </section>
 
-    <!-- Story Section 1 -->
+    <!-- Story Section 1 — How It Started -->
     <section class="story-section">
         <div class="container">
             <div class="story-grid reveal">
                 <div class="story-image-wrapper">
-                    <img src="https://picsum.photos/seed/xlnz-studio-team/600/450.jpg" alt="XLNZ Productions founders">
+                    <img src="images/XLNZ_About.jpeg" alt="Buhzz Taylor and Mike Salvi, Co-Founders of XLNZ Productions" loading="lazy">
                     <div class="story-image-accent"></div>
                 </div>
                 <div class="story-content">
                     <div class="section-label">How It Started</div>
-                    <h2>Born from <span class="gradient-text">Passion</span></h2>
-                    <p>Founded in 2023 by Buhzz Taylor and Mike Salvi, XLNZ Productions was born from a shared passion for storytelling and a commitment to excellence in video production. What started as a small operation has quickly grown into one of Philadelphia's most comprehensive production facilities.</p>
-                    <p>Our journey began with a simple mission: to provide high-quality, professional video production services that are accessible to everyone—from independent creators to established businesses. We believe that great stories deserve to be told beautifully, and we're dedicated to making that happen for every client who walks through our doors.</p>
+                    <h2>Born from <span class="gradient-text">Purpose</span></h2>
+                    <p>XLNZ Productions was founded in 2023 on a simple but powerful belief — that most brands are invisible not because they have a bad story, but because nobody is telling it the right way. Buhzz Taylor and Mike Salvi built XLNZ to change that.</p>
+                    <p>From day one, we approached this differently. We didn't just want to be another production company that hands you a finished file and disappears. We wanted to be the team that actually understands your audience, studies your competition, and builds content with a strategy behind it — content that performs, not just content that looks good.</p>
+                    <p>That's still exactly what we do today.</p>
+                    <div class="differentiators">
+                        <div class="diff-item">
+                            <div class="diff-icon"><i class="fas fa-chart-line"></i></div>
+                            <div class="diff-text">Strategy before camera</div>
+                        </div>
+                        <div class="diff-item">
+                            <div class="diff-icon"><i class="fas fa-film"></i></div>
+                            <div class="diff-text">Cinematic quality, every time</div>
+                        </div>
+                        <div class="diff-item">
+                            <div class="diff-icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div class="diff-text">Philadelphia rooted</div>
+                        </div>
+                        <div class="diff-item">
+                            <div class="diff-icon"><i class="fas fa-plane"></i></div>
+                            <div class="diff-text">Built to travel</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1132,30 +612,39 @@
         <div class="container">
             <div class="stats-grid">
                 <div class="stat-item reveal">
-                    <div class="stat-number">500+</div>
-                    <div class="stat-label">Projects Completed</div>
+                    <div class="stat-number">10+</div>
+                    <div class="stat-label">Active Podcast Clients</div>
                 </div>
                 <div class="stat-item reveal">
                     <div class="stat-number">6</div>
-                    <div class="stat-label">Service Categories</div>
+                    <div class="stat-label">Production Services</div>
+                </div>
+                <div class="stat-item reveal">
+                    <div class="stat-number">2+</div>
+                    <div class="stat-label">Years in Philadelphia</div>
+                </div>
+                <div class="stat-item reveal">
+                    <div class="stat-number">1</div>
+                    <div class="stat-label">Cinemark Horror Premiere</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Story Section 2 -->
+    <!-- Story Section 2 — Our Approach -->
     <section class="story-section">
         <div class="container">
             <div class="story-grid reversed reveal">
                 <div class="story-image-wrapper">
-                    <img src="images/XLNZ_studio_abyss_room_raheemroher_domdukes.jpg" alt="XLNZ Productions studio equipment">
+                    <img src="images/XLNZ_studio_abyss_room_raheemroher_domdukes.jpg" alt="XLNZ Productions studio in Philadelphia" loading="lazy">
                     <div class="story-image-accent"></div>
                 </div>
                 <div class="story-content">
                     <div class="section-label">Our Approach</div>
-                    <h2>Craft Meets <span class="gradient-text">Technology</span></h2>
-                    <p>At XLNZ Productions, we pride ourselves on our state-of-the-art equipment and facilities. Our studio features multiple recording spaces, editing suites, and a sound stage designed to accommodate projects of any scale. From podcast recording booths to a full film production set, we have everything needed to bring your creative vision to life.</p>
-                    <p>But it's not just about the equipment—it's about the people behind it. Our team of creative professionals brings years of experience in every aspect of production, from concept development to final delivery. We're not just technicians; we're storytellers who are passionate about creating content that resonates with audiences and achieves our clients' goals.</p>
+                    <h2>We Don't Just Show Up <span class="gradient-text">to Shoot.</span></h2>
+                    <p>Most production companies arrive on shoot day and execute what they're told. We show up having already done the work — understanding your brand, your goals, and what kind of content actually moves the needle for businesses like yours.</p>
+                    <p>We think like marketers first. That means every decision we make on set — the framing, the pacing, the story arc, the call to action — is made with your audience in mind. Then we bring the cinematic quality that makes your brand impossible to scroll past.</p>
+                    <p>From concept development and scripting through production and final delivery, we handle the full process in-house. One team. One vision. No handoffs, no outsourcing, no excuses.</p>
                 </div>
             </div>
         </div>
@@ -1165,46 +654,40 @@
     <section class="values-section">
         <div class="container">
             <div class="section-header reveal">
-                <div class="section-label" style="justify-content: center;">What Drives Us</div>
+                <div class="section-label">What Drives Us</div>
                 <h2>Our <span class="gradient-text">Values</span></h2>
-                <p>The principles that guide everything we do at XLNZ Productions</p>
+                <p>The principles that guide every project, every client, every time</p>
             </div>
-
             <div class="values-grid">
                 <div class="value-card reveal">
-                    <div class="value-icon"><i class="fas fa-star"></i></div>
-                    <h3>Quality First</h3>
-                    <p>We never compromise on production quality. Every project receives the same level of dedication and attention to detail, regardless of scope or budget.</p>
+                    <div class="value-icon"><i class="fas fa-bullseye"></i></div>
+                    <h3>Strategy First</h3>
+                    <p>We never pick up a camera without a plan. Every project starts with understanding your audience, your goals, and what success actually looks like for your business.</p>
                 </div>
-
                 <div class="value-card reveal">
-                    <div class="value-icon"><i class="fas fa-lightbulb"></i></div>
-                    <h3>Creative Vision</h3>
-                    <p>We bring fresh perspectives and innovative ideas to every project. Our goal isn't just to execute your vision—it's to elevate it beyond what you imagined possible.</p>
+                    <div class="value-icon"><i class="fas fa-film"></i></div>
+                    <h3>Cinematic Standard</h3>
+                    <p>We approach every brand video the way a director approaches a feature film — with intention, precision, and a relentless focus on quality that makes your content stand out.</p>
                 </div>
-
                 <div class="value-card reveal">
                     <div class="value-icon"><i class="fas fa-handshake"></i></div>
-                    <h3>Client Partnership</h3>
-                    <p>We see every project as a collaboration. Your input shapes the creative direction, and we keep you involved at every stage from concept to final delivery.</p>
+                    <h3>True Partnership</h3>
+                    <p>We don't take orders — we collaborate. Your vision shapes the direction, and our expertise elevates it. You're involved at every stage because this is your brand.</p>
                 </div>
-
                 <div class="value-card reveal">
                     <div class="value-icon"><i class="fas fa-clock"></i></div>
                     <h3>Reliability</h3>
-                    <p>Deadlines matter. We deliver on time and on budget, with clear communication throughout the process so you're never left wondering about progress.</p>
+                    <p>Deadlines aren't suggestions. We deliver on time, on budget, with clear communication throughout — so you always know exactly where your project stands.</p>
                 </div>
-
                 <div class="value-card reveal">
-                    <div class="value-icon"><i class="fas fa-heart"></i></div>
-                    <h3>Community Focus</h3>
-                    <p>As a Philadelphia-based studio, we're invested in our local creative community. We love working with local businesses, artists, and organizations.</p>
+                    <div class="value-icon"><i class="fas fa-chart-bar"></i></div>
+                    <h3>Results-Driven</h3>
+                    <p>Views don't pay the bills — results do. We measure success by what your content actually achieves: engagement, leads, conversions, and brand growth that you can see.</p>
                 </div>
-
                 <div class="value-card reveal">
                     <div class="value-icon"><i class="fas fa-rocket"></i></div>
-                    <h3>Continuous Growth</h3>
-                    <p>We stay ahead of industry trends and constantly upgrade our skills and equipment to deliver cutting-edge content that stands out in today's competitive landscape.</p>
+                    <h3>Always Evolving</h3>
+                    <p>The content landscape changes fast. We stay ahead of platform trends, algorithm shifts, and audience behavior so your brand is always ahead of the curve, never chasing it.</p>
                 </div>
             </div>
         </div>
@@ -1214,38 +697,38 @@
     <section class="team-section" id="team">
         <div class="container">
             <div class="section-header reveal">
-                <div class="section-label" style="justify-content: center;">The Crew</div>
-                <h2>Meet Our <span class="gradient-text">Team</span></h2>
-                <p>The creative minds behind XLNZ Productions</p>
+                <div class="section-label">The Founders</div>
+                <h2>Meet the <span class="gradient-text">Team</span></h2>
+                <p>The creative strategists behind XLNZ Productions</p>
             </div>
-
             <div class="team-grid">
                 <div class="team-card reveal">
                     <div class="team-card-image">
-                        <img src="images/Buhzz.jpg" alt="Buhzz Taylor">
+                        <img src="images/Buhzz.jpg" alt="Buhzz Taylor, Co-Founder and Creative Director of XLNZ Productions" loading="lazy">
                     </div>
                     <div class="team-card-body">
                         <h3 class="team-card-name">Buhzz Taylor</h3>
                         <div class="team-card-role">Co-Founder & Creative Director</div>
-                        <p class="team-card-desc">Buhzz brings creative vision and technical expertise to every project. His passion for storytelling and attention to detail ensure that every production meets the highest standards of quality.</p>
+                        <p class="team-card-desc">Buhzz leads creative strategy and vision at XLNZ with a filmmaker's eye and a marketer's instincts. He approaches every brand like it's a film production — with obsessive attention to detail, a clear narrative direction, and a standard of excellence that shows in the final product. His background in management gives XLNZ a business-forward perspective that most creative companies don't have.</p>
                         <div class="team-social">
-                            <a href="https://www.instagram.com/xlnzproductions" title="Instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                            <a href="https://www.youtube.com/@xlnzproductions" title="YouTube" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                            <a href="https://www.instagram.com/xlnzproductions" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.youtube.com/@xlnzproductions" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                            <a href="https://www.linkedin.com/company/xlnzproductions" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
                         </div>
                     </div>
                 </div>
-
                 <div class="team-card reveal">
                     <div class="team-card-image">
-                        <img src="images/Mike.jpg" alt="Mike Salvi">
+                        <img src="images/Mike.jpg" alt="Mike Salvi, Co-Founder and Production Director of XLNZ Productions" loading="lazy">
                     </div>
                     <div class="team-card-body">
                         <h3 class="team-card-name">Mike Salvi</h3>
-                        <div class="team-card-role">Co-Founder & Production Manager</div>
-                        <p class="team-card-desc">Mike combines stand up comey with his background in video production and project management to ensure that every XLNZ production runs smoothly from start to finish. His commitment to excellence and client satisfaction has been instrumental in establishing XLNZ as a trusted name in Philadelphia's production scene.</p>
+                        <div class="team-card-role">Co-Founder & Production Director</div>
+                        <p class="team-card-desc">Mike is the operational engine behind every XLNZ production. He combines deep production expertise with sharp project management instincts to make sure every shoot runs on time, on budget, and on brief. His commitment to process and precision means clients get a seamless experience from the first call to final delivery — no surprises, no excuses, just results.</p>
                         <div class="team-social">
-                            <a href="https://www.instagram.com/xlnzproductions" title="Instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                            <a href="https://www.youtube.com/@xlnzproductions" title="YouTube" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                            <a href="https://www.instagram.com/xlnzproductions" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.youtube.com/@xlnzproductions" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                            <a href="https://www.linkedin.com/company/xlnzproductions" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
                         </div>
                     </div>
                 </div>
@@ -1257,56 +740,58 @@
     <section class="timeline-section">
         <div class="container">
             <div class="section-header reveal">
-                <div class="section-label" style="justify-content: center;">Milestones</div>
+                <div class="section-label">Milestones</div>
                 <h2>Our <span class="gradient-text">Journey</span></h2>
                 <p>Key moments in the XLNZ Productions story</p>
             </div>
-
             <div class="timeline-container">
                 <div class="timeline-line"></div>
-
                 <div class="timeline-item reveal">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <div class="timeline-year">Early 2023</div>
-                        <h3>The Idea Takes Shape</h3>
-                        <p>Buhzz Taylor and Mike Salvi combine their creative visions and industry experience to conceptualize XLNZ Productions—a studio built on the belief that professional video production should be accessible to all.</p>
+                        <h3>The Vision Takes Shape</h3>
+                        <p>Buhzz Taylor and Mike Salvi identify a gap in Philadelphia's production market — brands with great stories but no team who knows how to tell them strategically on video. XLNZ is born to fill that gap.</p>
                     </div>
                 </div>
-
                 <div class="timeline-item reveal">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
-                        <div class="timeline-year">Mid 2023</div>
-                        <h3>Studio Launch</h3>
-                        <p>XLNZ Productions officially opens its doors in Philadelphia, equipped with state-of-the-art recording facilities, editing suites, and a dedicated sound stage ready for any production scale.</p>
+                        <div class="timeline-year">November 2023</div>
+                        <h3>XLNZ Productions Launches</h3>
+                        <p>The company officially opens with a full production setup — professional cameras, lighting, audio, and editing capabilities ready to serve clients at any scale from day one.</p>
                     </div>
                 </div>
-
                 <div class="timeline-item reveal">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
-                        <div class="timeline-year">Late 2023</div>
-                        <h3>First Major Projects</h3>
-                        <p>The studio completes its first batch of projects including podcasts, comedy specials, and local business commercials—establishing a reputation for quality and reliability in the Philadelphia market.</p>
+                        <div class="timeline-year">Late 2023 – 2024</div>
+                        <h3>Building the Podcast Roster</h3>
+                        <p>XLNZ rapidly builds Philadelphia's most active independent podcast production roster — signing 10+ shows and establishing a reputation for quality, reliability, and results that keep clients coming back season after season.</p>
                     </div>
                 </div>
-
                 <div class="timeline-item reveal">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
-                        <div class="timeline-year">Early 2024</div>
-                        <h3>Expanding Services</h3>
-                        <p>With a growing client base and portfolio, XLNZ expands its service offerings to include social media content packages and testimonial video production, meeting the evolving needs of modern businesses.</p>
+                        <div class="timeline-year">2024 – 2025</div>
+                        <h3>Expanding Into Film & Brand Video</h3>
+                        <p>With a proven production track record, XLNZ expands into full film production, commercials, and corporate brand video — bringing the same cinematic standard to business clients across Philadelphia and beyond.</p>
                     </div>
                 </div>
-
                 <div class="timeline-item reveal">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
-                        <div class="timeline-year">Present</div>
-                        <h3>Growing Strong</h3>
-                        <p>Today, XLNZ Productions continues to push creative boundaries, serving a diverse range of clients while staying true to our founding mission: making professional video production accessible, collaborative, and exceptional.</p>
+                        <div class="timeline-year">May 2026</div>
+                        <h3>Meet The Sickos — Cinemark Premiere</h3>
+                        <p>XLNZ independently writes, funds, and produces Philadelphia's first homegrown horror slasher film — Meet The Sickos — screening at Cinemark in West Philadelphia. A milestone that proves what's possible when the XLNZ standard meets full creative control.</p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">Now</div>
+                        <h3>Going Corporate. Going Bigger.</h3>
+                        <p>XLNZ is actively expanding into the corporate sector — bringing its strategy-first, filmmaker-quality approach to brands and businesses that are ready to stop being invisible and start building a real presence on video.</p>
                     </div>
                 </div>
             </div>
@@ -1318,11 +803,11 @@
         <div class="container">
             <div class="cta-content reveal">
                 <div class="section-label" style="justify-content: center;">Work With Us</div>
-                <h2>Ready to Bring Your <span class="gradient-text">Vision</span> to Life?</h2>
-                <p>Whether you have a clear concept or just a spark of an idea, we're here to help you develop it into something extraordinary. Let's create together.</p>
+                <h2>Ready to Make Your Brand <span class="gradient-text">Impossible to Ignore?</span></h2>
+                <p>Let's talk about where your brand is today and where great content can take it. First consultation is on us.</p>
                 <div class="cta-buttons">
                     <a href="contact.html" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Start Your Project</a>
-                    <a href="packages.html" class="btn btn-secondary"><i class="fas fa-tag"></i> View Packages</a>
+                    <a href="packages.html" class="btn btn-secondary"><i class="fas fa-box"></i> View Packages</a>
                 </div>
             </div>
         </div>
@@ -1334,13 +819,16 @@
             <div class="footer-grid">
                 <div class="footer-brand">
                     <a href="index.html" class="logo">
-                        <span class="logo-icon"><i class="fas fa-film"></i></span>
+                        <span class="logo-icon">
+                            <img src="images/XLNZ Color White Border Logo.png" alt="XLNZ Productions">
+                        </span>
                         XLNZ
                     </a>
-                    <p>Philadelphia's premier video production studio. Specializing in podcasts, comedy, films, documentaries, and commercial content.</p>
+                    <p>Philadelphia's full-service video production company. We think like marketers, shoot like filmmakers, and deliver content that builds brands.</p>
                     <div class="footer-social">
-                        <a href="https://www.instagram.com/xlnzproductions" title="Instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.youtube.com/@xlnzproductions" title="YouTube" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.instagram.com/xlnzproductions" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/@xlnzproductions" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.linkedin.com/company/xlnzproductions" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
                     </div>
                 </div>
                 <div class="footer-column">
@@ -1356,102 +844,55 @@
                 <div class="footer-column">
                     <h4>Services</h4>
                     <ul>
+                        <li><a href="services.html#social">Social Media for Brands</a></li>
+                        <li><a href="services.html#commercial">Commercials & Brand Video</a></li>
+                        <li><a href="services.html#testimonial">Testimonials</a></li>
                         <li><a href="services.html#podcast">Podcast Production</a></li>
-                        <li><a href="services.html#standup">Stand-Up Specials</a></li>
                         <li><a href="services.html#film">Film Production</a></li>
-                        <li><a href="services.html#commercial">Commercials/Skits</a></li>
-                        <li><a href="services.html#social">Social Media</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h4>Contact</h4>
                     <ul>
-                        <li><a href="mailto:xlnzproductions@gmail.com"><i class="fas fa-envelope" style="margin-right: 8px;"></i> xlnzproductions@gmail.com</a></li>
-                        <li><a href="tel:2155551234"><i class="fas fa-phone" style="margin-right: 8px;"></i> (215) 555-1234</a></li>
-                        <li><a href="#"><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i> Philadelphia, PA</a></li>
+                        <li><a href="mailto:xlnzproductions@gmail.com"><i class="fas fa-envelope" style="margin-right:8px"></i>xlnzproductions@gmail.com</a></li>
+                        <li><a href="#"><i class="fas fa-map-marker-alt" style="margin-right:8px"></i>Philadelphia, PA</a></li>
+                        <li><a href="https://www.linkedin.com/company/xlnzproductions"><i class="fab fa-linkedin" style="margin-right:8px"></i>LinkedIn</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <span>XLNZ Productions</span>
-                <span>Philadelphia, PA</span>
+                <span id="copyright"></span>
+                <div class="footer-legal">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
+                </div>
             </div>
         </div>
     </footer>
 
     <script>
-        // Mobile menu toggle
+        document.getElementById('copyright').textContent = '\u00A9 ' + new Date().getFullYear() + ' XLNZ Productions. All rights reserved.';
+
         const mobileMenuToggle = document.getElementById('mobileMenuToggle');
         const mobileMenuClose = document.getElementById('mobileMenuClose');
         const nav = document.getElementById('nav');
 
-        mobileMenuToggle.addEventListener('click', () => {
-            nav.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        });
+        mobileMenuToggle.addEventListener('click', () => { nav.classList.add('active'); document.body.style.overflow = 'hidden'; });
+        mobileMenuClose.addEventListener('click', () => { nav.classList.remove('active'); document.body.style.overflow = ''; });
+        document.querySelectorAll('#nav a').forEach(link => { link.addEventListener('click', () => { nav.classList.remove('active'); document.body.style.overflow = ''; }); });
+        document.addEventListener('click', (e) => { if (nav.classList.contains('active') && !nav.contains(e.target) && !mobileMenuToggle.contains(e.target)) { nav.classList.remove('active'); document.body.style.overflow = ''; } });
 
-        mobileMenuClose.addEventListener('click', () => {
-            nav.classList.remove('active');
-            document.body.style.overflow = '';
-        });
-
-        // Close mobile menu on link click
-        document.querySelectorAll('#nav a').forEach(link => {
-            link.addEventListener('click', () => {
-                nav.classList.remove('active');
-                document.body.style.overflow = '';
-            });
-        });
-
-        // Close mobile menu on outside click
-        document.addEventListener('click', (e) => {
-            if (nav.classList.contains('active') &&
-                !nav.contains(e.target) &&
-                !mobileMenuToggle.contains(e.target)) {
-                nav.classList.remove('active');
-                document.body.style.overflow = '';
-            }
-        });
-
-        // Header scroll effect
         const header = document.getElementById('header');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
+        window.addEventListener('scroll', () => { header.classList.toggle('scrolled', window.scrollY > 50); });
 
-        // Scroll reveal animation
-        const revealElements = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('active'); }); }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-        const revealObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                }
-            });
-        }, {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        });
-
-        revealElements.forEach(el => revealObserver.observe(el));
-
-        // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
+                const t = document.querySelector(this.getAttribute('href'));
+                if (t) window.scrollTo({ top: t.offsetTop - 80, behavior: 'smooth' });
             });
         });
     </script>
