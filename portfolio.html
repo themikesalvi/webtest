@@ -637,6 +637,79 @@
             font-size: 10px;
         }
 
+        /* ===== COUNTDOWN ===== */
+        .countdown-container {
+            margin-top: 12px;
+            padding: 12px 16px;
+            background: rgba(233, 69, 96, 0.08);
+            border: 1px solid rgba(233, 69, 96, 0.2);
+            border-radius: 10px;
+        }
+
+        .countdown-label {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--accent);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .countdown-label i {
+            font-size: 12px;
+        }
+
+        .countdown-timer {
+            display: flex;
+            gap: 8px;
+        }
+
+        .countdown-unit {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-width: 48px;
+            padding: 8px 6px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+
+        .countdown-number {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 20px;
+            font-weight: 800;
+            color: var(--text-primary);
+            line-height: 1;
+        }
+
+        .countdown-text {
+            font-size: 9px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+
+        .countdown-date {
+            font-size: 12px;
+            color: var(--text-secondary);
+            margin-top: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .countdown-date i {
+            color: var(--accent);
+            font-size: 11px;
+        }
+
         /* ===== COLLABORATION SECTION ===== */
         .collaboration-section {
             padding: 100px 0;
@@ -1234,6 +1307,19 @@
             .collaboration-grid {
                 grid-template-columns: 1fr;
             }
+
+            .countdown-timer {
+                gap: 6px;
+            }
+
+            .countdown-unit {
+                min-width: 40px;
+                padding: 6px 4px;
+            }
+
+            .countdown-number {
+                font-size: 16px;
+            }
         }
 
         @media (max-width: 576px) {
@@ -1276,6 +1362,23 @@
 
             .collaboration-info {
                 flex-direction: column;
+            }
+
+            .countdown-container {
+                padding: 10px 12px;
+            }
+
+            .countdown-unit {
+                min-width: 36px;
+                padding: 5px 3px;
+            }
+
+            .countdown-number {
+                font-size: 14px;
+            }
+
+            .countdown-text {
+                font-size: 8px;
             }
         }
     </style>
@@ -1362,7 +1465,7 @@
             <div class="section-header reveal">
                 <div class="section-label" style="justify-content: center;">Recent Work</div>
                 <h2>Featured <span class="gradient-text">Projects</span></h2>
-                <p>Watch our latest productions — from podcasts to comedy skits</p>
+                <p>Watch our latest productions — from podcasts to feature films</p>
             </div>
 
             <!-- Filter -->
@@ -1444,6 +1547,85 @@
                     </div>
                 </div>
 
+                <!-- The Rush -->
+                <div class="portfolio-card reveal" data-category="film">
+                    <div class="portfolio-card-video">
+                        <iframe src="https://www.youtube.com/embed/eGK84ZpOhys" title="The Rush - Official Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+                        <span class="portfolio-card-badge">Film</span>
+                    </div>
+                    <div class="portfolio-card-body">
+                        <div class="portfolio-card-client">Written & Directed by Raheem Roher</div>
+                        <h3 class="portfolio-card-title">The Rush</h3>
+                        <p class="portfolio-card-desc">A gripping film that showcases Raheem Roher's signature storytelling style — raw, authentic, and unflinching in its portrayal of real-life struggles and triumphs.</p>
+                        <div class="portfolio-card-meta">
+                            <span><i class="fas fa-film"></i> Feature Film</span>
+                            <span><i class="fas fa-handshake"></i> In Association</span>
+                        </div>
+                        <div class="portfolio-card-tubi">
+                            <i class="fas fa-tv"></i> Available on Tubi
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mistransaction -->
+                <div class="portfolio-card reveal" data-category="film">
+                    <div class="portfolio-card-video">
+                        <iframe src="https://www.youtube.com/embed/8nXm23rNbqA" title="Mistransaction - Official Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+                        <span class="portfolio-card-badge">Film</span>
+                    </div>
+                    <div class="portfolio-card-body">
+                        <div class="portfolio-card-client">Written & Directed by Raheem Roher</div>
+                        <h3 class="portfolio-card-title">Mistransaction</h3>
+                        <p class="portfolio-card-desc">The latest from Raheem Roher and No Egos World Media. A tense thriller exploring the consequences of choices made in desperation.</p>
+                        <div class="portfolio-card-meta">
+                            <span><i class="fas fa-film"></i> Feature Film</span>
+                            <span><i class="fas fa-handshake"></i> In Association</span>
+                        </div>
+                        <div class="countdown-container" id="mistransaction-countdown">
+                            <div class="countdown-label"><i class="fas fa-clock"></i> Premiere Countdown</div>
+                            <div class="countdown-timer" id="countdown-timer">
+                                <div class="countdown-unit">
+                                    <span class="countdown-number" id="countdown-days">--</span>
+                                    <span class="countdown-text">Days</span>
+                                </div>
+                                <div class="countdown-unit">
+                                    <span class="countdown-number" id="countdown-hours">--</span>
+                                    <span class="countdown-text">Hours</span>
+                                </div>
+                                <div class="countdown-unit">
+                                    <span class="countdown-number" id="countdown-minutes">--</span>
+                                    <span class="countdown-text">Mins</span>
+                                </div>
+                                <div class="countdown-unit">
+                                    <span class="countdown-number" id="countdown-seconds">--</span>
+                                    <span class="countdown-text">Secs</span>
+                                </div>
+                            </div>
+                            <div class="countdown-date"><i class="fas fa-calendar-alt"></i> Premieres May 16, 2026 on Tubi</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Unglorified -->
+                <div class="portfolio-card reveal" data-category="film">
+                    <div class="portfolio-card-video">
+                        <iframe src="https://www.youtube.com/embed/jvANB8i9rbM" title="Unglorified - Official Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+                        <span class="portfolio-card-badge">Film</span>
+                    </div>
+                    <div class="portfolio-card-body">
+                        <div class="portfolio-card-client">Written & Directed by Raheem Roher</div>
+                        <h3 class="portfolio-card-title">Unglorified</h3>
+                        <p class="portfolio-card-desc">A powerful narrative that pulls no punches. Raheem Roher delivers another unapologetic look at life through the lens of characters who refuse to be defined by their circumstances.</p>
+                        <div class="portfolio-card-meta">
+                            <span><i class="fas fa-film"></i> Feature Film</span>
+                            <span><i class="fas fa-handshake"></i> In Association</span>
+                        </div>
+                        <div class="portfolio-card-tubi">
+                            <i class="fas fa-tv"></i> Available on Tubi
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
@@ -1496,18 +1678,18 @@
                     <div class="collaboration-card-video">
                         <iframe src="https://www.youtube.com/embed/8nXm23rNbqA" title="Mistransaction - Official Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
                         <span class="collaboration-card-badge">Film</span>
-                        <span class="collaboration-card-status premiere">Premieres May 16</span>
+                        <span class="collaboration-card-status premiere">Premieres May 16, 2026</span>
                     </div>
                     <div class="collaboration-card-body">
                         <div class="collaboration-card-credit">Written & Directed by Raheem Roher</div>
                         <h3 class="collaboration-card-title">Mistransaction</h3>
-                        <p class="collaboration-card-desc">The latest from Raheem Roher and No Egos World Media. A tense thriller exploring the consequences of choices made in desperation, premiering on Tubi May 16, 2024.</p>
+                        <p class="collaboration-card-desc">The latest from Raheem Roher and No Egos World Media. A tense thriller exploring the consequences of choices made in desperation, premiering on Tubi May 16, 2026.</p>
                         <div class="collaboration-card-meta">
                             <span><i class="fas fa-film"></i> Feature Film</span>
                             <span><i class="fas fa-handshake"></i> In Association</span>
                         </div>
                         <div class="collaboration-card-tubi">
-                            <i class="fas fa-tv"></i> Coming to Tubi May 16, 2024
+                            <i class="fas fa-tv"></i> Coming to Tubi May 16, 2026
                         </div>
                     </div>
                 </div>
@@ -1649,7 +1831,7 @@
                     <h4>Contact</h4>
                     <ul>
                         <li><a href="mailto:xlnzproductions@gmail.com"><i class="fas fa-envelope" style="margin-right: 8px;"></i> xlnzproductions@gmail.com</a></li>
-                        <li><a href="#"><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i> Philadelphia, PA</a></li>
+                        <li><a href="contact.html"><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i> Philadelphia, PA</a></li>
                     </ul>
                 </div>
             </div>
@@ -1745,6 +1927,41 @@
                 });
             });
         });
+
+        // Mistransaction Countdown Timer
+        function updateCountdown() {
+            const premiereDate = new Date('2026-05-16T00:00:00-04:00'); // May 16, 2026 Eastern
+            const now = new Date();
+            const diff = premiereDate - now;
+
+            const countdownContainer = document.getElementById('mistransaction-countdown');
+            if (!countdownContainer) return;
+
+            if (diff <= 0) {
+                // Premiere has passed - show "Now Streaming" state
+                countdownContainer.innerHTML = `
+                    <div class="countdown-label"><i class="fas fa-check-circle"></i> Now Streaming</div>
+                    <div class="countdown-date"><i class="fas fa-tv"></i> Available on Tubi</div>
+                `;
+                countdownContainer.style.background = 'rgba(16, 185, 129, 0.08)';
+                countdownContainer.style.borderColor = 'rgba(16, 185, 129, 0.2)';
+                return;
+            }
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+            document.getElementById('countdown-days').textContent = days.toString().padStart(2, '0');
+            document.getElementById('countdown-hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('countdown-minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('countdown-seconds').textContent = seconds.toString().padStart(2, '0');
+        }
+
+        // Initial update and set interval
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
 
         // Scroll reveal animation
         const revealElements = document.querySelectorAll('.reveal');
