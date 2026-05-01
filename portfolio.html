@@ -53,8 +53,8 @@
             --accent-hover: #ff6b35;
             --accent-gradient: linear-gradient(135deg, #e94560, #ff6b35);
             --text-primary: #ffffff;
-            --text-secondary: #a0a0b8;
-            --text-muted: #6c6c80;
+            --text-secondary: #b0b0c8;
+            --text-muted: #7c7c92;
             --border: rgba(255, 255, 255, 0.08);
             --glow: 0 0 40px rgba(233, 69, 96, 0.15);
             --success: #10b981;
@@ -89,6 +89,24 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 24px;
+        }
+
+        /* ===== SKIP NAV ===== */
+        .skip-nav {
+            position: absolute;
+            top: -100%;
+            left: 0;
+            background: var(--accent);
+            color: var(--text-primary);
+            padding: 12px 24px;
+            z-index: 10000;
+            font-weight: 600;
+            text-decoration: none;
+            transition: top 0.3s;
+        }
+
+        .skip-nav:focus {
+            top: 0;
         }
 
         /* ===== HEADER ===== */
@@ -342,6 +360,20 @@
             font-size: 13px;
         }
 
+        .btn-outline {
+            background: transparent;
+            color: var(--accent);
+            border: 1px solid var(--accent);
+            padding: 10px 24px;
+            font-size: 14px;
+        }
+
+        .btn-outline:hover {
+            background: var(--accent);
+            color: var(--text-primary);
+            transform: translateY(-2px);
+        }
+
         /* ===== WHO WE ARE SECTION ===== */
         .who-we-are {
             padding: 120px 0;
@@ -541,6 +573,7 @@
             padding-bottom: 56.25%;
             height: 0;
             overflow: hidden;
+            cursor: pointer;
         }
 
         .portfolio-card-video iframe {
@@ -550,6 +583,68 @@
             width: 100%;
             height: 100%;
             border: 0;
+        }
+
+        /* Click-to-play thumbnail overlay */
+        .video-thumbnail {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 3;
+            transition: opacity 0.3s ease;
+        }
+
+        .video-thumbnail::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 10, 15, 0.4);
+            transition: background 0.3s ease;
+        }
+
+        .video-thumbnail:hover::after {
+            background: rgba(10, 10, 15, 0.2);
+        }
+
+        .video-play-btn {
+            position: relative;
+            z-index: 4;
+            width: 72px;
+            height: 72px;
+            background: var(--accent-gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 32px rgba(233, 69, 96, 0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .video-thumbnail:hover .video-play-btn {
+            transform: scale(1.1);
+            box-shadow: 0 12px 40px rgba(233, 69, 96, 0.5);
+        }
+
+        .video-play-btn i {
+            color: var(--text-primary);
+            font-size: 28px;
+            margin-left: 4px;
+        }
+
+        .video-thumbnail.hidden {
+            opacity: 0;
+            pointer-events: none;
         }
 
         .portfolio-card-badge {
@@ -567,7 +662,7 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             color: var(--accent);
-            z-index: 2;
+            z-index: 5;
         }
 
         .portfolio-card-body {
@@ -618,6 +713,12 @@
         .portfolio-card-meta i {
             font-size: 12px;
             color: var(--accent);
+        }
+
+        .portfolio-card-actions {
+            display: flex;
+            gap: 12px;
+            margin-top: 16px;
         }
 
         .portfolio-card-tubi {
@@ -708,6 +809,19 @@
         .countdown-date i {
             color: var(--accent);
             font-size: 11px;
+        }
+
+        .countdown-streaming {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--success);
+        }
+
+        .countdown-streaming i {
+            font-size: 16px;
         }
 
         /* ===== COLLABORATION SECTION ===== */
@@ -826,6 +940,7 @@
             padding-bottom: 56.25%;
             height: 0;
             overflow: hidden;
+            cursor: pointer;
         }
 
         .collaboration-card-video iframe {
@@ -852,7 +967,7 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             color: var(--accent);
-            z-index: 2;
+            z-index: 5;
         }
 
         .collaboration-card-status {
@@ -868,7 +983,7 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             color: #fff;
-            z-index: 2;
+            z-index: 5;
         }
 
         .collaboration-card-status.premiere {
@@ -993,7 +1108,7 @@
 
         .instagram-embed-container {
             position: relative;
-            min-height: 580px;
+            min-height: 480px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -1197,12 +1312,17 @@
 
         .footer-bottom a {
             color: var(--text-secondary);
-            textDecoration: none;
+            text-decoration: none;
             transition: color 0.3s ease;
         }
 
         .footer-bottom a:hover {
             color: var(--accent);
+        }
+
+        .footer-legal {
+            display: flex;
+            gap: 24px;
         }
 
         /* ===== SCROLL ANIMATIONS ===== */
@@ -1320,6 +1440,10 @@
             .countdown-number {
                 font-size: 16px;
             }
+
+            .portfolio-card-actions {
+                flex-direction: column;
+            }
         }
 
         @media (max-width: 576px) {
@@ -1356,8 +1480,14 @@
                 text-align: center;
             }
 
+            .footer-legal {
+                flex-direction: column;
+                gap: 12px;
+                align-items: center;
+            }
+
             .instagram-embed-container {
-                min-height: 400px;
+                min-height: 360px;
             }
 
             .collaboration-info {
@@ -1385,25 +1515,28 @@
 </head>
 <body>
 
+    <!-- Skip Navigation -->
+    <a href="#main-content" class="skip-nav">Skip to main content</a>
+
     <!-- Header -->
     <header id="header">
         <div class="container header-content">
-            <a href="index.html" class="logo">
-                <span class="logo-icon"><i class="fas fa-film"></i></span>
+            <a href="index.html" class="logo" aria-label="XLNZ Productions Home">
+                <span class="logo-icon"><i class="fas fa-film" aria-hidden="true"></i></span>
                 XLNZ
             </a>
-            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Open menu">
-                <i class="fas fa-bars"></i>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Open navigation menu" aria-expanded="false">
+                <i class="fas fa-bars" aria-hidden="true"></i>
             </button>
-            <nav id="nav">
-                <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">
-                    <i class="fas fa-times"></i>
+            <nav id="nav" role="navigation" aria-label="Main navigation">
+                <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close navigation menu">
+                    <i class="fas fa-times" aria-hidden="true"></i>
                 </button>
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="services.html">Services</a></li>
-                    <li><a href="portfolio.html" class="active">Portfolio</a></li>
+                    <li><a href="portfolio.html" class="active" aria-current="page">Portfolio</a></li>
                     <li><a href="packages.html">Packages</a></li>
                     <li><a href="contact.html" class="nav-cta">Get a Quote</a></li>
                 </ul>
@@ -1412,15 +1545,15 @@
     </header>
 
     <!-- Page Hero -->
-    <section class="page-hero">
-        <div class="hero-grid"></div>
+    <section class="page-hero" id="main-content">
+        <div class="hero-grid" aria-hidden="true"></div>
         <div class="container page-hero-content">
             <div class="section-label">Our Work</div>
             <h1>Project <span class="gradient-text">Portfolio</span></h1>
             <p>From podcasts to feature films, explore the stories we've helped bring to life across Philadelphia and beyond.</p>
             <div class="hero-buttons">
-                <a href="#who-we-are" class="btn btn-primary"><i class="fas fa-play-circle"></i> Watch Our Story</a>
-                <a href="#portfolio" class="btn btn-secondary"><i class="fas fa-th-large"></i> View Projects</a>
+                <a href="#who-we-are" class="btn btn-primary"><i class="fas fa-play-circle" aria-hidden="true"></i> Watch Our Story</a>
+                <a href="#portfolio" class="btn btn-secondary"><i class="fas fa-th-large" aria-hidden="true"></i> View Projects</a>
             </div>
         </div>
     </section>
@@ -1430,30 +1563,32 @@
         <div class="container">
             <div class="who-we-are-grid">
                 <div class="video-embed-container reveal">
-                    <div class="video-responsive">
-                        <iframe src="https://www.youtube.com/embed/ajysZ7bypAg" title="XLNZ Productions - Who We Are" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+                    <div class="video-responsive" data-video-id="ajysZ7bypAg" data-video-type="youtube">
+                        <div class="video-thumbnail" style="background-image: url('https://img.youtube.com/vi/ajysZ7bypAg/maxresdefault.jpg');" role="button" tabindex="0" aria-label="Play XLNZ Productions - Who We Are video">
+                            <div class="video-play-btn"><i class="fas fa-play" aria-hidden="true"></i></div>
+                        </div>
                     </div>
                 </div>
                 <div class="who-we-are-content reveal">
                     <div class="section-label">Who We Are</div>
-                    <h2>The Story Behind <span class="gradient-text">XLNZ Productions</span></h2>
+                    <h2>The Story Behind <a href="about.html" class="gradient-text" style="text-decoration: none;">XLNZ Productions</a></h2>
                     <p>Founded in 2023 by Buhzz Taylor and Mike Salvi, XLNZ Productions is Philadelphia's premier video production studio. We're not just creators — we're storytellers who bring creative visions to life.</p>
                     <p>From our state-of-the-art facility in Philly, we produce podcasts, comedy specials, films, documentaries, and commercial content that captivates audiences and delivers real results.</p>
                     <div class="who-we-are-features">
                         <div class="who-we-are-feature">
-                            <i class="fas fa-check"></i> Professional production quality
+                            <i class="fas fa-check" aria-hidden="true"></i> Professional production quality
                         </div>
                         <div class="who-we-are-feature">
-                            <i class="fas fa-check"></i> End-to-end creative services
+                            <i class="fas fa-check" aria-hidden="true"></i> End-to-end creative services
                         </div>
                         <div class="who-we-are-feature">
-                            <i class="fas fa-check"></i> Philadelphia-based studio
+                            <i class="fas fa-check" aria-hidden="true"></i> Philadelphia-based studio
                         </div>
                         <div class="who-we-are-feature">
-                            <i class="fas fa-check"></i> Custom solutions for every project
+                            <i class="fas fa-check" aria-hidden="true"></i> Custom solutions for every project
                         </div>
                     </div>
-                    <a href="contact.html" class="btn btn-primary" style="margin-top: 32px;">Start Your Project <i class="fas fa-arrow-right"></i></a>
+                    <a href="about.html" class="btn btn-primary" style="margin-top: 32px;">Learn More About Us <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
                 </div>
             </div>
         </div>
@@ -1465,11 +1600,11 @@
             <div class="section-header reveal">
                 <div class="section-label" style="justify-content: center;">Recent Work</div>
                 <h2>Featured <span class="gradient-text">Projects</span></h2>
-                <p>Watch our latest productions — from podcasts to feature films</p>
+                <p>Watch our latest productions — from podcasts to comedy content</p>
             </div>
 
             <!-- Filter -->
-            <div class="filter-bar reveal">
+            <div class="filter-bar reveal" role="group" aria-label="Filter projects by category">
                 <button class="filter-btn active" data-filter="all">All Projects</button>
                 <button class="filter-btn" data-filter="podcast">Podcasts</button>
                 <button class="filter-btn" data-filter="comedy">Comedy</button>
@@ -1481,25 +1616,32 @@
 
                 <!-- Comedy Skit with Dom Dukes -->
                 <div class="portfolio-card reveal" data-category="comedy">
-                    <div class="portfolio-card-video">
-                        <iframe src="https://www.youtube.com/embed/XnWgIaiz-_g" title="Comedy Skit with Dom Dukes - XLNZ Productions" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
-                        <span class="portfolio-card-badge">Comedy Skit</span>
+                    <div class="portfolio-card-video" data-video-id="XnWgIaiz-_g" data-video-type="youtube">
+                        <div class="video-thumbnail" style="background-image: url('https://img.youtube.com/vi/XnWgIaiz-_g/maxresdefault.jpg');" role="button" tabindex="0" aria-label="Play Comedy Skit with Dom Dukes video">
+                            <div class="video-play-btn"><i class="fas fa-play" aria-hidden="true"></i></div>
+                        </div>
+                        <span class="portfolio-card-badge">Comedy</span>
                     </div>
                     <div class="portfolio-card-body">
                         <div class="portfolio-card-client">Featuring Dom Dukes</div>
                         <h3 class="portfolio-card-title">Comedy Skit with Dom Dukes</h3>
                         <p class="portfolio-card-desc">Hilarious comedy skit filmed and starring alongside Dom Dukes. Showcasing our ability to write, produce, and perform in comedic content that keeps audiences laughing.</p>
                         <div class="portfolio-card-meta">
-                            <span><i class="fas fa-video"></i> Comedy Skit</span>
-                            <span><i class="fas fa-users"></i> Co-Produced</span>
+                            <span><i class="fas fa-video" aria-hidden="true"></i> Comedy Skit</span>
+                            <span><i class="fas fa-users" aria-hidden="true"></i> Co-Produced</span>
+                        </div>
+                        <div class="portfolio-card-actions">
+                            <a href="https://www.youtube.com/watch?v=XnWgIaiz-_g" class="btn btn-sm btn-primary" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube" aria-hidden="true"></i> Watch on YouTube</a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Dom Dukes & Friends Podcast -->
                 <div class="portfolio-card reveal" data-category="podcast">
-                    <div class="portfolio-card-video">
-                        <iframe src="https://www.youtube.com/embed/Il7gtF8vkuI" title="Dom Dukes & Friends Podcast - XLNZ Productions" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+                    <div class="portfolio-card-video" data-video-id="Il7gtF8vkuI" data-video-type="youtube">
+                        <div class="video-thumbnail" style="background-image: url('https://img.youtube.com/vi/Il7gtF8vkuI/maxresdefault.jpg');" role="button" tabindex="0" aria-label="Play Dom Dukes & Friends Podcast video">
+                            <div class="video-play-btn"><i class="fas fa-play" aria-hidden="true"></i></div>
+                        </div>
                         <span class="portfolio-card-badge">Podcast</span>
                     </div>
                     <div class="portfolio-card-body">
@@ -1507,16 +1649,21 @@
                         <h3 class="portfolio-card-title">Dom Dukes & Friends Podcast</h3>
                         <p class="portfolio-card-desc">Dynamic podcast series featuring Dom Dukes and friends discussing everything from comedy to culture. We handle full production from recording to final edit.</p>
                         <div class="portfolio-card-meta">
-                            <span><i class="fas fa-microphone"></i> Podcast Series</span>
-                            <span><i class="fas fa-video"></i> Full Production</span>
+                            <span><i class="fas fa-microphone" aria-hidden="true"></i> Podcast Series</span>
+                            <span><i class="fas fa-video" aria-hidden="true"></i> Full Production</span>
+                        </div>
+                        <div class="portfolio-card-actions">
+                            <a href="https://www.youtube.com/watch?v=Il7gtF8vkuI" class="btn btn-sm btn-primary" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube" aria-hidden="true"></i> Watch on YouTube</a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Bridgin The Gap Podcast -->
                 <div class="portfolio-card reveal" data-category="podcast">
-                    <div class="portfolio-card-video">
-                        <iframe src="https://www.youtube.com/embed/kFac72672gM" title="Bridgin The Gap Podcast - XLNZ Productions" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+                    <div class="portfolio-card-video" data-video-id="kFac72672gM" data-video-type="youtube">
+                        <div class="video-thumbnail" style="background-image: url('https://img.youtube.com/vi/kFac72672gM/maxresdefault.jpg');" role="button" tabindex="0" aria-label="Play Bridgin The Gap Podcast video">
+                            <div class="video-play-btn"><i class="fas fa-play" aria-hidden="true"></i></div>
+                        </div>
                         <span class="portfolio-card-badge">Podcast</span>
                     </div>
                     <div class="portfolio-card-body">
@@ -1524,16 +1671,21 @@
                         <h3 class="portfolio-card-title">Bridgin The Gap Podcast</h3>
                         <p class="portfolio-card-desc">Thought-provoking conversations that bridge perspectives and bring people together. Another podcast we produce with professional audio and video quality.</p>
                         <div class="portfolio-card-meta">
-                            <span><i class="fas fa-microphone"></i> Podcast Series</span>
-                            <span><i class="fas fa-video"></i> Full Production</span>
+                            <span><i class="fas fa-microphone" aria-hidden="true"></i> Podcast Series</span>
+                            <span><i class="fas fa-video" aria-hidden="true"></i> Full Production</span>
+                        </div>
+                        <div class="portfolio-card-actions">
+                            <a href="https://www.youtube.com/watch?v=kFac72672gM" class="btn btn-sm btn-primary" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube" aria-hidden="true"></i> Watch on YouTube</a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Common Ground Podcast 22 -->
+                <!-- Common Ground Podcast -->
                 <div class="portfolio-card reveal" data-category="podcast">
-                    <div class="portfolio-card-video">
-                        <iframe src="https://www.youtube.com/embed/6pBv8YsoLXs" title="Common Ground Podcast 22 - XLNZ Productions" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+                    <div class="portfolio-card-video" data-video-id="6pBv8YsoLXs" data-video-type="youtube">
+                        <div class="video-thumbnail" style="background-image: url('https://img.youtube.com/vi/6pBv8YsoLXs/maxresdefault.jpg');" role="button" tabindex="0" aria-label="Play Common Ground Podcast video">
+                            <div class="video-play-btn"><i class="fas fa-play" aria-hidden="true"></i></div>
+                        </div>
                         <span class="portfolio-card-badge">Podcast</span>
                     </div>
                     <div class="portfolio-card-body">
@@ -1541,48 +1693,86 @@
                         <h3 class="portfolio-card-title">Common Ground Podcast</h3>
                         <p class="portfolio-card-desc">Episode 22 of Common Ground Podcast, produced by XLNZ. Real conversations that find common ground on the topics that matter most.</p>
                         <div class="portfolio-card-meta">
-                            <span><i class="fas fa-microphone"></i> Podcast Series</span>
-                            <span><i class="fas fa-video"></i> Full Production</span>
+                            <span><i class="fas fa-microphone" aria-hidden="true"></i> Podcast Series</span>
+                            <span><i class="fas fa-video" aria-hidden="true"></i> Full Production</span>
+                        </div>
+                        <div class="portfolio-card-actions">
+                            <a href="https://www.youtube.com/watch?v=6pBv8YsoLXs" class="btn btn-sm btn-primary" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube" aria-hidden="true"></i> Watch on YouTube</a>
                         </div>
                     </div>
                 </div>
 
-                <!-- The Rush -->
-                <div class="portfolio-card reveal" data-category="film">
-                    <div class="portfolio-card-video">
-                        <iframe src="https://www.youtube.com/embed/eGK84ZpOhys" title="The Rush - Official Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
-                        <span class="portfolio-card-badge">Film</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- No Egos World Media Collaboration Section -->
+    <section class="collaboration-section" id="no-egos">
+        <div class="container">
+            <div class="collaboration-header reveal">
+                <div class="section-label" style="justify-content: center;">In Association With</div>
+                <h2>No Egos World Media <span class="gradient-text">Collaboration</span></h2>
+                <p>XLNZ Productions partners with Raheem Roher and No Egos World Media to bring powerful stories to the screen. Based in Philadelphia, Raheem is a writer and director creating films that resonate with authentic voices and raw storytelling.</p>
+                <div class="collaboration-info">
+                    <div class="collaboration-badge">
+                        <i class="fas fa-user" aria-hidden="true"></i> <strong>Raheem Roher</strong> — Writer/Director
                     </div>
-                    <div class="portfolio-card-body">
-                        <div class="portfolio-card-client">Written & Directed by Raheem Roher</div>
-                        <h3 class="portfolio-card-title">The Rush</h3>
-                        <p class="portfolio-card-desc">A gripping film that showcases Raheem Roher's signature storytelling style — raw, authentic, and unflinching in its portrayal of real-life struggles and triumphs.</p>
-                        <div class="portfolio-card-meta">
-                            <span><i class="fas fa-film"></i> Feature Film</span>
-                            <span><i class="fas fa-handshake"></i> In Association</span>
+                    <div class="collaboration-badge">
+                        <i class="fas fa-building" aria-hidden="true"></i> <strong>No Egos World Media</strong> — Production Company
+                    </div>
+                    <div class="collaboration-badge">
+                        <i class="fas fa-map-marker-alt" aria-hidden="true"></i> <strong>Philadelphia, PA</strong>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collaboration-grid">
+
+                <!-- The Rush -->
+                <div class="collaboration-card reveal">
+                    <div class="collaboration-card-video" data-video-id="eGK84ZpOhys" data-video-type="youtube">
+                        <div class="video-thumbnail" style="background-image: url('https://img.youtube.com/vi/eGK84ZpOhys/maxresdefault.jpg');" role="button" tabindex="0" aria-label="Play The Rush - Official Trailer video">
+                            <div class="video-play-btn"><i class="fas fa-play" aria-hidden="true"></i></div>
                         </div>
-                        <div class="portfolio-card-tubi">
-                            <i class="fas fa-tv"></i> Available on Tubi
+                        <span class="collaboration-card-badge">Film</span>
+                        <span class="collaboration-card-status">Streaming Now</span>
+                    </div>
+                    <div class="collaboration-card-body">
+                        <div class="collaboration-card-credit">Written & Directed by Raheem Roher</div>
+                        <h3 class="collaboration-card-title">The Rush</h3>
+                        <p class="collaboration-card-desc">A gripping film that showcases Raheem Roher's signature storytelling style — raw, authentic, and unflinching in its portrayal of real-life struggles and triumphs.</p>
+                        <div class="collaboration-card-meta">
+                            <span><i class="fas fa-film" aria-hidden="true"></i> Feature Film</span>
+                            <span><i class="fas fa-handshake" aria-hidden="true"></i> In Association</span>
+                        </div>
+                        <div class="collaboration-card-tubi">
+                            <i class="fas fa-tv" aria-hidden="true"></i> Available on Tubi
+                        </div>
+                        <div class="portfolio-card-actions" style="margin-top: 12px;">
+                            <a href="https://www.youtube.com/watch?v=eGK84ZpOhys" class="btn btn-sm btn-primary" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube" aria-hidden="true"></i> Watch Trailer</a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Mistransaction -->
-                <div class="portfolio-card reveal" data-category="film">
-                    <div class="portfolio-card-video">
-                        <iframe src="https://www.youtube.com/embed/8nXm23rNbqA" title="Mistransaction - Official Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
-                        <span class="portfolio-card-badge">Film</span>
+                <div class="collaboration-card reveal">
+                    <div class="collaboration-card-video" data-video-id="8nXm23rNbqA" data-video-type="youtube">
+                        <div class="video-thumbnail" style="background-image: url('https://img.youtube.com/vi/8nXm23rNbqA/maxresdefault.jpg');" role="button" tabindex="0" aria-label="Play Mistransaction - Official Trailer video">
+                            <div class="video-play-btn"><i class="fas fa-play" aria-hidden="true"></i></div>
+                        </div>
+                        <span class="collaboration-card-badge">Film</span>
+                        <span class="collaboration-card-status premiere">Premieres May 16, 2026</span>
                     </div>
-                    <div class="portfolio-card-body">
-                        <div class="portfolio-card-client">Written & Directed by Raheem Roher</div>
-                        <h3 class="portfolio-card-title">Mistransaction</h3>
-                        <p class="portfolio-card-desc">The latest from Raheem Roher and No Egos World Media. A tense thriller exploring the consequences of choices made in desperation.</p>
-                        <div class="portfolio-card-meta">
-                            <span><i class="fas fa-film"></i> Feature Film</span>
-                            <span><i class="fas fa-handshake"></i> In Association</span>
+                    <div class="collaboration-card-body">
+                        <div class="collaboration-card-credit">Written & Directed by Raheem Roher</div>
+                        <h3 class="collaboration-card-title">Mistransaction</h3>
+                        <p class="collaboration-card-desc">The latest from Raheem Roher and No Egos World Media. A tense thriller exploring the consequences of choices made in desperation, premiering on Tubi May 16, 2026.</p>
+                        <div class="collaboration-card-meta">
+                            <span><i class="fas fa-film" aria-hidden="true"></i> Feature Film</span>
+                            <span><i class="fas fa-handshake" aria-hidden="true"></i> In Association</span>
                         </div>
                         <div class="countdown-container" id="mistransaction-countdown">
-                            <div class="countdown-label"><i class="fas fa-clock"></i> Premiere Countdown</div>
+                            <div class="countdown-label"><i class="fas fa-clock" aria-hidden="true"></i> Premiere Countdown</div>
                             <div class="countdown-timer" id="countdown-timer">
                                 <div class="countdown-unit">
                                     <span class="countdown-number" id="countdown-days">--</span>
@@ -1601,103 +1791,20 @@
                                     <span class="countdown-text">Secs</span>
                                 </div>
                             </div>
-                            <div class="countdown-date"><i class="fas fa-calendar-alt"></i> Premieres May 16, 2026 on Tubi</div>
+                            <div class="countdown-date"><i class="fas fa-calendar-alt" aria-hidden="true"></i> Premieres May 16, 2026 on Tubi</div>
                         </div>
-                    </div>
-                </div>
-
-                <!-- Unglorified -->
-                <div class="portfolio-card reveal" data-category="film">
-                    <div class="portfolio-card-video">
-                        <iframe src="https://www.youtube.com/embed/jvANB8i9rbM" title="Unglorified - Official Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
-                        <span class="portfolio-card-badge">Film</span>
-                    </div>
-                    <div class="portfolio-card-body">
-                        <div class="portfolio-card-client">Written & Directed by Raheem Roher</div>
-                        <h3 class="portfolio-card-title">Unglorified</h3>
-                        <p class="portfolio-card-desc">A powerful narrative that pulls no punches. Raheem Roher delivers another unapologetic look at life through the lens of characters who refuse to be defined by their circumstances.</p>
-                        <div class="portfolio-card-meta">
-                            <span><i class="fas fa-film"></i> Feature Film</span>
-                            <span><i class="fas fa-handshake"></i> In Association</span>
-                        </div>
-                        <div class="portfolio-card-tubi">
-                            <i class="fas fa-tv"></i> Available on Tubi
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- No Egos World Media Collaboration Section -->
-    <section class="collaboration-section" id="no-egos">
-        <div class="container">
-            <div class="collaboration-header reveal">
-                <div class="section-label" style="justify-content: center;">In Association With</div>
-                <h2>No Egos World Media <span class="gradient-text">Collaboration</span></h2>
-                <p>XLNZ Productions partners with Raheem Roher and No Egos World Media to bring powerful stories to the screen. Based in Philadelphia, Raheem is a writer and director creating films that resonate with authentic voices and raw storytelling.</p>
-                <div class="collaboration-info">
-                    <div class="collaboration-badge">
-                        <i class="fas fa-user"></i> <strong>Raheem Roher</strong> — Writer/Director
-                    </div>
-                    <div class="collaboration-badge">
-                        <i class="fas fa-building"></i> <strong>No Egos World Media</strong> — Production Company
-                    </div>
-                    <div class="collaboration-badge">
-                        <i class="fas fa-map-marker-alt"></i> <strong>Philadelphia, PA</strong>
-                    </div>
-                </div>
-            </div>
-
-            <div class="collaboration-grid">
-
-                <!-- The Rush -->
-                <div class="collaboration-card reveal">
-                    <div class="collaboration-card-video">
-                        <iframe src="https://www.youtube.com/embed/eGK84ZpOhys" title="The Rush - Official Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
-                        <span class="collaboration-card-badge">Film</span>
-                        <span class="collaboration-card-status">Streaming Now</span>
-                    </div>
-                    <div class="collaboration-card-body">
-                        <div class="collaboration-card-credit">Written & Directed by Raheem Roher</div>
-                        <h3 class="collaboration-card-title">The Rush</h3>
-                        <p class="collaboration-card-desc">A gripping film that showcases Raheem Roher's signature storytelling style — raw, authentic, and unflinching in its portrayal of real-life struggles and triumphs.</p>
-                        <div class="collaboration-card-meta">
-                            <span><i class="fas fa-film"></i> Feature Film</span>
-                            <span><i class="fas fa-handshake"></i> In Association</span>
-                        </div>
-                        <div class="collaboration-card-tubi">
-                            <i class="fas fa-tv"></i> Available on Tubi
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Mistransaction -->
-                <div class="collaboration-card reveal">
-                    <div class="collaboration-card-video">
-                        <iframe src="https://www.youtube.com/embed/8nXm23rNbqA" title="Mistransaction - Official Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
-                        <span class="collaboration-card-badge">Film</span>
-                        <span class="collaboration-card-status premiere">Premieres May 16, 2026</span>
-                    </div>
-                    <div class="collaboration-card-body">
-                        <div class="collaboration-card-credit">Written & Directed by Raheem Roher</div>
-                        <h3 class="collaboration-card-title">Mistransaction</h3>
-                        <p class="collaboration-card-desc">The latest from Raheem Roher and No Egos World Media. A tense thriller exploring the consequences of choices made in desperation, premiering on Tubi May 16, 2026.</p>
-                        <div class="collaboration-card-meta">
-                            <span><i class="fas fa-film"></i> Feature Film</span>
-                            <span><i class="fas fa-handshake"></i> In Association</span>
-                        </div>
-                        <div class="collaboration-card-tubi">
-                            <i class="fas fa-tv"></i> Coming to Tubi May 16, 2026
+                        <div class="portfolio-card-actions" style="margin-top: 12px;">
+                            <a href="https://www.youtube.com/watch?v=8nXm23rNbqA" class="btn btn-sm btn-primary" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube" aria-hidden="true"></i> Watch Trailer</a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Unglorified -->
                 <div class="collaboration-card reveal">
-                    <div class="collaboration-card-video">
-                        <iframe src="https://www.youtube.com/embed/jvANB8i9rbM" title="Unglorified - Official Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+                    <div class="collaboration-card-video" data-video-id="jvANB8i9rbM" data-video-type="youtube">
+                        <div class="video-thumbnail" style="background-image: url('https://img.youtube.com/vi/jvANB8i9rbM/maxresdefault.jpg');" role="button" tabindex="0" aria-label="Play Unglorified - Official Trailer video">
+                            <div class="video-play-btn"><i class="fas fa-play" aria-hidden="true"></i></div>
+                        </div>
                         <span class="collaboration-card-badge">Film</span>
                         <span class="collaboration-card-status">Streaming Now</span>
                     </div>
@@ -1706,11 +1813,14 @@
                         <h3 class="collaboration-card-title">Unglorified</h3>
                         <p class="collaboration-card-desc">A powerful narrative that pulls no punches. Raheem Roher delivers another unapologetic look at life through the lens of characters who refuse to be defined by their circumstances.</p>
                         <div class="collaboration-card-meta">
-                            <span><i class="fas fa-film"></i> Feature Film</span>
-                            <span><i class="fas fa-handshake"></i> In Association</span>
+                            <span><i class="fas fa-film" aria-hidden="true"></i> Feature Film</span>
+                            <span><i class="fas fa-handshake" aria-hidden="true"></i> In Association</span>
                         </div>
                         <div class="collaboration-card-tubi">
-                            <i class="fas fa-tv"></i> Available on Tubi
+                            <i class="fas fa-tv" aria-hidden="true"></i> Available on Tubi
+                        </div>
+                        <div class="portfolio-card-actions" style="margin-top: 12px;">
+                            <a href="https://www.youtube.com/watch?v=jvANB8i9rbM" class="btn btn-sm btn-primary" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube" aria-hidden="true"></i> Watch Trailer</a>
                         </div>
                     </div>
                 </div>
@@ -1731,7 +1841,7 @@
             <div class="instagram-grid reveal">
                 <div class="instagram-embed-wrapper">
                     <div class="instagram-embed-container">
-                        <iframe src="https://www.instagram.com/reel/DVeCPX3jVVI/embed/" title="Brunch So Funny - Comedy Show Highlight Reel" frameborder="0" allowfullscreen allow="autoplay; encrypted-media" scrolling="no" loading="lazy" style="width: 100%; min-height: 580px;"></iframe>
+                        <iframe src="https://www.instagram.com/reel/DVeCPX3jVVI/embed/" title="Brunch So Funny - Comedy Show Highlight Reel" frameborder="0" allowfullscreen allow="autoplay; encrypted-media" scrolling="no" loading="lazy" style="width: 100%; min-height: 480px;"></iframe>
                     </div>
                 </div>
                 <div class="instagram-content">
@@ -1742,28 +1852,28 @@
 
                     <div class="project-details">
                         <div class="project-detail">
-                            <div class="project-detail-icon"><i class="fas fa-user"></i></div>
+                            <div class="project-detail-icon"><i class="fas fa-user" aria-hidden="true"></i></div>
                             <div class="project-detail-text">
                                 <div class="project-detail-label">Produced By</div>
                                 <div class="project-detail-value">Tu Rae</div>
                             </div>
                         </div>
                         <div class="project-detail">
-                            <div class="project-detail-icon"><i class="fas fa-laugh"></i></div>
+                            <div class="project-detail-icon"><i class="fas fa-laugh" aria-hidden="true"></i></div>
                             <div class="project-detail-text">
                                 <div class="project-detail-label">Category</div>
                                 <div class="project-detail-value">Comedy Show</div>
                             </div>
                         </div>
                         <div class="project-detail">
-                            <div class="project-detail-icon"><i class="fas fa-video"></i></div>
+                            <div class="project-detail-icon"><i class="fas fa-video" aria-hidden="true"></i></div>
                             <div class="project-detail-text">
                                 <div class="project-detail-label">Deliverable</div>
                                 <div class="project-detail-value">Highlight Reel / Ad</div>
                             </div>
                         </div>
                         <div class="project-detail">
-                            <div class="project-detail-icon"><i class="fab fa-instagram"></i></div>
+                            <div class="project-detail-icon"><i class="fab fa-instagram" aria-hidden="true"></i></div>
                             <div class="project-detail-text">
                                 <div class="project-detail-label">Platform</div>
                                 <div class="project-detail-value">Instagram Reel</div>
@@ -1771,7 +1881,7 @@
                         </div>
                     </div>
 
-                    <a href="https://www.instagram.com/comedybyturae/" class="btn btn-primary" style="margin-top: 32px;" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i> Follow Tu Rae on Instagram</a>
+                    <a href="https://www.instagram.com/comedybyturae/" class="btn btn-primary" style="margin-top: 32px;" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram" aria-hidden="true"></i> Follow Tu Rae on Instagram</a>
                 </div>
             </div>
         </div>
@@ -1785,8 +1895,8 @@
                 <h2>Ready to Create Something <span class="gradient-text">Amazing</span>?</h2>
                 <p>Whether you need a podcast, comedy special, commercial, or documentary, we'll bring your vision to life with professional quality and creative excellence.</p>
                 <div class="cta-buttons">
-                    <a href="contact.html" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Get a Quote</a>
-                    <a href="packages.html" class="btn btn-secondary"><i class="fas fa-tag"></i> View Packages</a>
+                    <a href="contact.html" class="btn btn-primary"><i class="fas fa-paper-plane" aria-hidden="true"></i> Get a Quote</a>
+                    <a href="packages.html" class="btn btn-secondary"><i class="fas fa-tag" aria-hidden="true"></i> View Packages</a>
                 </div>
             </div>
         </div>
@@ -1797,14 +1907,14 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <a href="index.html" class="logo">
-                        <span class="logo-icon"><i class="fas fa-film"></i></span>
+                    <a href="index.html" class="logo" aria-label="XLNZ Productions Home">
+                        <span class="logo-icon"><i class="fas fa-film" aria-hidden="true"></i></span>
                         XLNZ
                     </a>
                     <p>Philadelphia's premier video production studio. Specializing in podcasts, comedy, films, documentaries, and commercial content.</p>
                     <div class="footer-social">
-                        <a href="https://www.instagram.com/xlnzproductions" title="Instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.youtube.com/@xlnzproductions" title="YouTube" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.instagram.com/xlnzproductions" title="Instagram" aria-label="Follow XLNZ Productions on Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                        <a href="https://www.youtube.com/@xlnzproductions" title="YouTube" aria-label="Subscribe to XLNZ Productions on YouTube"><i class="fab fa-youtube" aria-hidden="true"></i></a>
                     </div>
                 </div>
                 <div class="footer-column">
@@ -1830,8 +1940,8 @@
                 <div class="footer-column">
                     <h4>Contact</h4>
                     <ul>
-                        <li><a href="mailto:xlnzproductions@gmail.com"><i class="fas fa-envelope" style="margin-right: 8px;"></i> xlnzproductions@gmail.com</a></li>
-                        <li><a href="contact.html"><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i> Philadelphia, PA</a></li>
+                        <li><a href="mailto:xlnzproductions@gmail.com"><i class="fas fa-envelope" style="margin-right: 8px;" aria-hidden="true"></i> xlnzproductions@gmail.com</a></li>
+                        <li><a href="contact.html"><i class="fas fa-map-marker-alt" style="margin-right: 8px;" aria-hidden="true"></i> Philadelphia, PA</a></li>
                     </ul>
                 </div>
             </div>
@@ -1857,11 +1967,13 @@
         mobileMenuToggle.addEventListener('click', () => {
             nav.classList.add('active');
             document.body.style.overflow = 'hidden';
+            mobileMenuToggle.setAttribute('aria-expanded', 'true');
         });
 
         mobileMenuClose.addEventListener('click', () => {
             nav.classList.remove('active');
             document.body.style.overflow = '';
+            mobileMenuToggle.setAttribute('aria-expanded', 'false');
         });
 
         // Close mobile menu on link click
@@ -1869,6 +1981,7 @@
             link.addEventListener('click', () => {
                 nav.classList.remove('active');
                 document.body.style.overflow = '';
+                mobileMenuToggle.setAttribute('aria-expanded', 'false');
             });
         });
 
@@ -1879,6 +1992,7 @@
                 !mobileMenuToggle.contains(e.target)) {
                 nav.classList.remove('active');
                 document.body.style.overflow = '';
+                mobileMenuToggle.setAttribute('aria-expanded', 'false');
             }
         });
 
@@ -1891,6 +2005,47 @@
                 header.classList.remove('scrolled');
             }
         });
+
+        // Click-to-play YouTube videos
+        function initVideoThumbnails() {
+            const videoThumbnails = document.querySelectorAll('.video-thumbnail');
+            
+            videoThumbnails.forEach(thumbnail => {
+                const videoContainer = thumbnail.parentElement;
+                const videoId = videoContainer.getAttribute('data-video-id');
+                const videoType = videoContainer.getAttribute('data-video-type');
+                
+                if (!videoId) return;
+
+                const playVideo = () => {
+                    if (videoType === 'youtube') {
+                        const iframe = document.createElement('iframe');
+                        iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
+                        iframe.title = videoContainer.closest('.portfolio-card, .collaboration-card, .video-embed-container')?.querySelector('.portfolio-card-title, .collaboration-card-title, h2')?.textContent || 'Video';
+                        iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+                        iframe.allowFullscreen = true;
+                        iframe.style.cssText = 'position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;';
+                        videoContainer.appendChild(iframe);
+                    }
+                    thumbnail.classList.add('hidden');
+                    // Remove thumbnail after transition
+                    setTimeout(() => {
+                        thumbnail.remove();
+                    }, 300);
+                };
+
+                thumbnail.addEventListener('click', playVideo);
+                thumbnail.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        playVideo();
+                    }
+                });
+            });
+        }
+
+        // Initialize video thumbnails
+        initVideoThumbnails();
 
         // Portfolio filter functionality
         const filterButtons = document.querySelectorAll('.filter-btn');
@@ -1940,8 +2095,7 @@
             if (diff <= 0) {
                 // Premiere has passed - show "Now Streaming" state
                 countdownContainer.innerHTML = `
-                    <div class="countdown-label"><i class="fas fa-check-circle"></i> Now Streaming</div>
-                    <div class="countdown-date"><i class="fas fa-tv"></i> Available on Tubi</div>
+                    <div class="countdown-streaming"><i class="fas fa-check-circle" aria-hidden="true"></i> Now Streaming on Tubi</div>
                 `;
                 countdownContainer.style.background = 'rgba(16, 185, 129, 0.08)';
                 countdownContainer.style.borderColor = 'rgba(16, 185, 129, 0.2)';
@@ -1953,10 +2107,15 @@
             const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
-            document.getElementById('countdown-days').textContent = days.toString().padStart(2, '0');
-            document.getElementById('countdown-hours').textContent = hours.toString().padStart(2, '0');
-            document.getElementById('countdown-minutes').textContent = minutes.toString().padStart(2, '0');
-            document.getElementById('countdown-seconds').textContent = seconds.toString().padStart(2, '0');
+            const daysEl = document.getElementById('countdown-days');
+            const hoursEl = document.getElementById('countdown-hours');
+            const minutesEl = document.getElementById('countdown-minutes');
+            const secondsEl = document.getElementById('countdown-seconds');
+
+            if (daysEl) daysEl.textContent = days.toString().padStart(2, '0');
+            if (hoursEl) hoursEl.textContent = hours.toString().padStart(2, '0');
+            if (minutesEl) minutesEl.textContent = minutes.toString().padStart(2, '0');
+            if (secondsEl) secondsEl.textContent = seconds.toString().padStart(2, '0');
         }
 
         // Initial update and set interval
