@@ -9,7 +9,6 @@
     <meta name="author" content="XLNZ Productions">
     <link rel="canonical" href="https://www.xlnzproductions.com/about">
 
-    <!-- Open Graph -->
     <meta property="og:title" content="About XLNZ Productions  Built Different. Built for Results.">
     <meta property="og:description" content="Philadelphia's full-service video production company. We think like marketers, shoot like filmmakers, and deliver content that turns your brand's story into results.">
     <meta property="og:type" content="website">
@@ -17,12 +16,10 @@
     <meta property="og:image" content="https://www.xlnzproductions.com/images/og-about.jpg">
     <meta property="og:locale" content="en_US">
 
-    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="About XLNZ Productions  Built Different. Built for Results.">
     <meta name="twitter:description" content="Philadelphia's full-service video production company. We think like marketers, shoot like filmmakers, and deliver content that converts.">
 
-    <!-- Schema.org -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -101,7 +98,6 @@
             padding: 0 24px;
         }
 
-        /* ===== HEADER ===== */
         header {
             position: fixed; top: 0; left: 0; width: 100%;
             z-index: 1000; padding: 20px 0;
@@ -161,7 +157,6 @@
             cursor: pointer; padding: 8px;
         }
 
-        /* ===== PAGE HERO ===== */
         .page-hero {
             min-height: 60vh; display: flex; align-items: center;
             position: relative; overflow: hidden; padding: 140px 0 80px;
@@ -220,7 +215,6 @@
         }
         .hero-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
 
-        /* ===== BUTTONS ===== */
         .btn {
             display: inline-flex; align-items: center;
             justify-content: center; gap: 10px;
@@ -242,7 +236,6 @@
         }
         .btn-secondary:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2); transform: translateY(-2px); }
 
-        /* ===== STORY SECTION ===== */
         .story-section { padding: 100px 0; position: relative; }
         .story-grid {
             display: grid; grid-template-columns: 1fr 1fr;
@@ -272,7 +265,6 @@
         }
         .story-content p:last-of-type { margin-bottom: 0; }
 
-        /* ===== DIFFERENTIATORS ===== */
         .differentiators {
             display: grid; grid-template-columns: 1fr 1fr;
             gap: 16px; margin-top: 32px;
@@ -289,7 +281,6 @@
         .diff-icon i { color: var(--accent); font-size: 14px; }
         .diff-text { font-size: 14px; color: var(--text-secondary); font-weight: 500; padding-top: 8px; }
 
-        /* ===== STATS BAR ===== */
         .stats-bar {
             padding: 80px 0; background: var(--bg-secondary);
             position: relative; overflow: hidden;
@@ -315,7 +306,6 @@
         }
         .stat-label { color: var(--text-secondary); font-size: 15px; font-weight: 500; }
 
-        /* ===== VALUES SECTION ===== */
         .values-section { padding: 100px 0; }
         .section-header { text-align: center; margin-bottom: 64px; }
         .section-header h2 { font-size: clamp(32px, 4vw, 48px); margin-bottom: 16px; }
@@ -348,7 +338,6 @@
         .value-card h3 { font-size: 20px; margin-bottom: 12px; }
         .value-card p { color: var(--text-secondary); font-size: 15px; line-height: 1.7; }
 
-        /* ===== TEAM SECTION ===== */
         .team-section {
             padding: 100px 0; background: var(--bg-secondary); position: relative;
         }
@@ -397,7 +386,6 @@
         }
         .team-social a:hover { background: var(--accent); border-color: var(--accent); color: white; transform: translateY(-3px); }
 
-        /* ===== TIMELINE SECTION ===== */
         .timeline-section { padding: 100px 0; }
         .timeline-container { position: relative; max-width: 800px; margin: 0 auto; }
         .timeline-line {
@@ -436,7 +424,6 @@
         .timeline-content h3 { font-size: 20px; margin-bottom: 8px; }
         .timeline-content p { color: var(--text-secondary); font-size: 14px; line-height: 1.6; }
 
-        /* ===== CTA ===== */
         .cta { padding: 100px 0; position: relative; overflow: hidden; }
         .cta::before {
             content: ''; position: absolute; top: 50%; left: 50%;
@@ -450,7 +437,6 @@
         .cta p { font-size: 18px; color: var(--text-secondary); margin-bottom: 40px; }
         .cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
 
-        /* ===== FOOTER ===== */
         footer { background: var(--bg-primary); border-top: 1px solid var(--border); padding: 64px 0 32px; }
         .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
         .footer-brand .logo { margin-bottom: 16px; }
@@ -483,11 +469,9 @@
         .footer-bottom a:hover { color: var(--accent); }
         .footer-legal { display: flex; gap: 16px; }
 
-        /* ===== ANIMATIONS ===== */
         .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1); }
         .reveal.active { opacity: 1; transform: translateY(0); }
 
-        /* ===== RESPONSIVE ===== */
         @media (max-width: 1024px) {
             .footer-grid { grid-template-columns: repeat(2, 1fr); }
             .values-grid { grid-template-columns: repeat(2, 1fr); }
@@ -528,7 +512,6 @@
 </head>
 <body>
 
-    <!-- Header -->
     <header id="header">
         <div class="container header-content">
             <a href="index.html" class="logo">
@@ -556,7 +539,6 @@
         </div>
     </header>
 
-    <!-- Page Hero -->
     <section class="page-hero">
         <div class="hero-grid"></div>
         <div class="container page-hero-content">
@@ -570,7 +552,6 @@
         </div>
     </section>
 
-    <!-- Story Section 1  How It Started -->
     <section class="story-section">
         <div class="container">
             <div class="story-grid reveal">
@@ -607,31 +588,29 @@
         </div>
     </section>
 
-    <!-- Stats Bar -->
     <section class="stats-bar">
         <div class="container">
             <div class="stats-grid">
                 <div class="stat-item reveal">
-                    <div class="stat-number">10+</div>
-                    <div class="stat-label">Active Podcast Clients</div>
+                    <div class="stat-number">250+</div>
+                    <div class="stat-label">Episodes Produced</div>
                 </div>
                 <div class="stat-item reveal">
-                    <div class="stat-number">6</div>
+                    <div class="stat-number">10+</div>
+                    <div class="stat-label">Active Shows</div>
+                </div>
+                <div class="stat-item reveal">
+                    <div class="stat-number">6+</div>
                     <div class="stat-label">Production Services</div>
                 </div>
                 <div class="stat-item reveal">
-                    <div class="stat-number">2+</div>
-                    <div class="stat-label">Years in Philadelphia</div>
-                </div>
-                <div class="stat-item reveal">
-                    <div class="stat-number">1</div>
-                    <div class="stat-label">Cinemark Horror Premiere</div>
+                    <div class="stat-number">3</div>
+                    <div class="stat-label">Feature Films</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Story Section 2  Our Approach -->
     <section class="story-section">
         <div class="container">
             <div class="story-grid reversed reveal">
@@ -650,7 +629,6 @@
         </div>
     </section>
 
-    <!-- Values Section -->
     <section class="values-section">
         <div class="container">
             <div class="section-header reveal">
@@ -693,7 +671,6 @@
         </div>
     </section>
 
-    <!-- Team Section -->
     <section class="team-section" id="team">
         <div class="container">
             <div class="section-header reveal">
@@ -736,7 +713,6 @@
         </div>
     </section>
 
-    <!-- Timeline Section -->
     <section class="timeline-section">
         <div class="container">
             <div class="section-header reveal">
@@ -798,7 +774,6 @@
         </div>
     </section>
 
-    <!-- CTA Section -->
     <section class="cta">
         <div class="container">
             <div class="cta-content reveal">
@@ -813,7 +788,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-grid">
