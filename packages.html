@@ -1278,7 +1278,12 @@
                 document.querySelectorAll('.packages-category').forEach(c => c.style.display='none');
                 const cat = document.getElementById(tab.dataset.category);
                 cat.style.display = 'block';
-                cat.querySelectorAll('.reveal').forEach(el => { el.classList.remove('active'); setTimeout(() => ro.observe(el), 100); });
+                // Force reveals visible immediately for hidden-then-shown tabs
+                cat.querySelectorAll('.reveal').forEach(el => el.classList.add('active'));
+                // Re-run calc if website tab
+                if (tab.dataset.category === 'website') updateCalc();
+            });
+        });
             });
         });
 
