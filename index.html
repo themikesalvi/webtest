@@ -274,8 +274,8 @@
         /* ===== STATS ===== */
         .stats { padding: 80px 0; position: relative; }
         .stats-grid {
-            display: grid; grid-template-columns: repeat(2, 1fr);
-            gap: 32px; max-width: 600px; margin: 0 auto;
+            display: grid; grid-template-columns: repeat(3, 1fr);
+            gap: 32px; max-width: 800px; margin: 0 auto;
         }
         .stat-item {
             text-align: center; padding: 32px 16px;
@@ -643,7 +643,7 @@
             nav ul { flex-direction: column; align-items: center; gap: 16px; }
             nav ul li a { font-size: 24px; padding: 12px 24px; }
             .about-grid { grid-template-columns: 1fr; gap: 40px; }
-            .stats-grid { grid-template-columns: 1fr 1fr; }
+            .stats-grid { grid-template-columns: 1fr 1fr 1fr; }
             .services-grid { grid-template-columns: 1fr; }
             .featured-grid { grid-template-columns: 1fr; }
             .team-grid { grid-template-columns: 1fr; }
@@ -660,6 +660,7 @@
             .btn { justify-content: center; }
             .about-features { grid-template-columns: 1fr; }
             .stat-number { font-size: 36px; }
+            .stats-grid { grid-template-columns: 1fr; }
             .sickos-game-area { height: 350px; }
             .sicko-avatar { width: 48px; height: 48px; font-size: 22px; }
         }
@@ -806,8 +807,12 @@
             <div class="container">
                 <div class="stats-grid">
                     <div class="stat-item reveal">
+                        <div class="stat-number" data-target="250">0</div>
+                        <div class="stat-label">Episodes Produced</div>
+                    </div>
+                    <div class="stat-item reveal">
                         <div class="stat-number" data-target="10">0</div>
-                        <div class="stat-label">Active Podcast Clients</div>
+                        <div class="stat-label">Active Shows</div>
                     </div>
                     <div class="stat-item reveal">
                         <div class="stat-number" data-target="6">0</div>
@@ -1105,7 +1110,7 @@
             requestAnimationFrame(step);
         }
         let statsAnimated = false;
-        const statsObserver = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting && !statsAnimated) { statsAnimated = true; document.querySelectorAll('.stat-number').forEach(stat => { const target = parseInt(stat.getAttribute('data-target')); animateValue(stat, 0, target, 2000, '+'); }); } }); }, { threshold: 0.5 });
+        const statsObserver = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting && !statsAnimated) { statsAnimated = true; document.querySelectorAll('.stat-number').forEach(stat => { const target = parseInt(stat.getAttribute('data-target')); const suffix = stat.getAttribute('data-suffix') || '+'; animateValue(stat, 0, target, 2000, suffix); }); } }); }, { threshold: 0.5 });
         const statsSection = document.querySelector('.stats');
         if (statsSection) statsObserver.observe(statsSection);
 
