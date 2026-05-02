@@ -78,9 +78,9 @@
         .package-card{background:rgba(255,255,255,0.02);border:1px solid var(--border);border-radius:16px;padding:40px 32px;position:relative;transition:all 0.4s;cursor:pointer}
         .package-card:hover{border-color:rgba(233,69,96,0.3);transform:translateY(-4px);box-shadow:0 20px 40px rgba(0,0,0,0.3)}
         .package-card.selected{border-color:var(--accent);background:rgba(233,69,96,0.03);box-shadow:0 0 40px rgba(233,69,96,0.1)}
-        .package-card.selected::after{content:'';position:absolute;top:0;left:0;width:100%;height:3px;background:var(--accent-gradient);border-radius:16px 16px 0 0}
-        .popular-badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--accent-gradient);color:white;padding:6px 20px;border-radius:50px;font-family:'Montserrat',sans-serif;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:1px;white-space:nowrap}
-        .value-badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,#1a1a2e,#2a2a4e);border:1px solid rgba(233,69,96,0.4);color:var(--accent);padding:6px 20px;border-radius:50px;font-family:'Montserrat',sans-serif;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:1px;white-space:nowrap}
+        .package-card.selected::after{content:'';position:absolute;top:0;left:0;width:100%;height:3px;background:var(--accent-gradient);border-radius:16px 16px 0 0;z-index:1}
+        .popular-badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--accent-gradient);color:white;padding:6px 20px;border-radius:50px;font-family:'Montserrat',sans-serif;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:1px;white-space:nowrap;z-index:2;box-shadow:0 0 0 4px var(--bg-primary)}
+        .value-badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,#1a1a2e,#2a2a4e);border:1px solid rgba(233,69,96,0.4);color:var(--accent);padding:6px 20px;border-radius:50px;font-family:'Montserrat',sans-serif;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:1px;white-space:nowrap;z-index:2;box-shadow:0 0 0 4px var(--bg-primary)}
         .package-name{font-size:20px;font-weight:700;margin-bottom:8px}
         .package-description{color:var(--text-secondary);font-size:14px;margin-bottom:24px}
         .package-price-wrapper{margin-bottom:28px;padding-bottom:28px;border-bottom:1px solid var(--border)}
@@ -112,14 +112,12 @@
         .payment-step-label{font-family:'Montserrat',sans-serif;font-weight:700;font-size:15px}
         .payment-step-detail{font-size:13px;color:var(--text-secondary);text-align:center;line-height:1.4}
         .payment-step-divider{color:var(--text-muted);font-size:20px;display:flex;align-items:center}
-        /* Session selector */
         .session-selector{margin-bottom:40px}
         .session-selector-label{text-align:center;font-family:'Montserrat',sans-serif;font-weight:700;font-size:15px;color:var(--text-secondary);margin-bottom:16px;text-transform:uppercase;letter-spacing:1px}
         .session-btns{display:flex;justify-content:center;gap:8px;flex-wrap:wrap}
         .session-btn{padding:10px 20px;background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:50px;color:var(--text-secondary);font-family:'Montserrat',sans-serif;font-weight:700;font-size:13px;cursor:pointer;transition:all 0.3s}
         .session-btn:hover{background:rgba(233,69,96,0.05);border-color:rgba(233,69,96,0.2);color:var(--text-primary)}
         .session-btn.active{background:var(--accent-gradient);border-color:transparent;color:white;box-shadow:0 4px 15px rgba(233,69,96,0.3)}
-        /* Summary */
         .summary-section{padding:80px 0;background:var(--bg-secondary);position:relative}
         .summary-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,rgba(233,69,96,0.05) 0%,transparent 60%);pointer-events:none}
         .summary-wrapper{max-width:800px;margin:0 auto;position:relative;z-index:1}
@@ -139,7 +137,6 @@
         .summary-savings-banner.visible{display:block}
         .summary-actions{display:flex;gap:16px;margin-top:24px}
         .summary-actions .btn{flex:1}
-        /* FAQ */
         .faq-section{padding:100px 0}
         .faq-container{max-width:800px;margin:0 auto}
         .faq-item{margin-bottom:16px;border:1px solid var(--border);border-radius:12px;overflow:hidden;transition:all 0.3s}
@@ -184,26 +181,21 @@
         @media(max-width:768px){.mobile-menu-toggle{display:block}.mobile-menu-close{display:block}nav{position:fixed;top:0;left:0;width:100%;height:100vh;background:rgba(10,10,15,0.98);backdrop-filter:blur(20px);display:flex;align-items:center;justify-content:center;transform:translateX(100%);transition:transform 0.4s;z-index:999}nav.active{transform:translateX(0)}nav ul{flex-direction:column;align-items:center;gap:16px}nav ul li a{font-size:24px;padding:12px 24px}.mobile-menu-close{position:absolute;top:24px;right:24px;background:none;border:none;color:var(--text-primary);font-size:28px;cursor:pointer;z-index:1001}.category-tab{padding:10px 16px;font-size:13px}.summary-actions{flex-direction:column}.category-note{flex-direction:column}.packages-grid-4{grid-template-columns:1fr;max-width:500px;margin-left:auto;margin-right:auto}}
         @media(max-width:576px){.page-hero h1{font-size:32px}.hero-buttons{flex-direction:column;align-items:stretch}.btn{justify-content:center}.package-card{padding:32px 24px}.summary-content{padding:24px}.footer-grid{grid-template-columns:1fr;gap:32px}.footer-bottom{flex-direction:column;gap:12px;text-align:center}}
 
-        /* SESSION SELECTOR */
         .session-toggle { display:flex; justify-content:center; gap:6px; margin-bottom:20px; flex-wrap:wrap; }
         .session-btn { padding:8px 16px; background:rgba(255,255,255,0.03); border:1px solid var(--border); border-radius:50px; color:var(--text-secondary); font-family:'Montserrat',sans-serif; font-weight:700; font-size:13px; cursor:pointer; transition:all 0.3s; }
         .session-btn:hover { background:rgba(233,69,96,0.05); border-color:rgba(233,69,96,0.2); color:var(--text-primary); }
         .session-btn.active { background:var(--accent-gradient); border-color:transparent; color:white; box-shadow:0 4px 15px rgba(233,69,96,0.3); }
 
-        /* WALKAWAY CALLOUT */
         .walkaway-callout { display:flex; align-items:center; gap:10px; margin-top:12px; padding:12px 16px; background:rgba(233,69,96,0.06); border:1px solid rgba(233,69,96,0.18); border-radius:10px; font-family:'Montserrat',sans-serif; font-weight:700; font-size:12px; color:var(--accent); line-height:1.4; }
         .walkaway-callout i { font-size:16px; flex-shrink:0; }
 
-        /* CONCEPT CARD */
         .concept-card-badge { display:inline-flex; align-items:center; gap:6px; background:rgba(255,215,0,0.12); border:1px solid rgba(255,215,0,0.3); color:#FFD700; font-family:'Montserrat',sans-serif; font-weight:700; font-size:11px; padding:4px 12px; border-radius:50px; margin-bottom:16px; }
 
-        /* DEPOSIT NOTE */
         .deposit-note { max-width:700px; margin:0 auto 32px; background:rgba(255,255,255,0.02); border:1px solid var(--border); border-radius:10px; padding:16px 24px; display:flex; align-items:center; gap:14px; }
         .deposit-note i { color:var(--accent); font-size:18px; flex-shrink:0; }
         .deposit-note p { color:var(--text-secondary); font-size:14px; line-height:1.5; }
         .deposit-note strong { color:var(--text-primary); }
 
-        /* CATEGORY NOTE */
         .category-note { max-width:700px; margin:0 auto 32px; background:rgba(233,69,96,0.05); border:1px solid rgba(233,69,96,0.15); border-radius:12px; padding:20px 28px; display:flex; align-items:flex-start; gap:14px; }
         .category-note i { color:var(--accent); font-size:18px; margin-top:2px; flex-shrink:0; }
         .category-note p { color:var(--text-secondary); font-size:14px; line-height:1.6; }
