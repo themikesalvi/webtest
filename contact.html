@@ -131,17 +131,25 @@
             align-items: center;
             gap: 12px;
             letter-spacing: -0.5px;
+            cursor: pointer;
+            user-select: none;
+            -webkit-user-select: none;
+            -webkit-tap-highlight-color: transparent;
         }
 
         .logo-icon {
             width: 40px;
             height: 40px;
-            background: var(--accent-gradient);
-            border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 18px;
+            overflow: hidden;
+        }
+
+        .logo-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
         }
 
         nav ul {
@@ -186,6 +194,10 @@
             font-size: 24px;
             cursor: pointer;
             padding: 8px;
+        }
+
+        .mobile-menu-close {
+            display: none;
         }
 
         /* ===== PAGE HERO ===== */
@@ -832,12 +844,12 @@
             line-height: 1.7;
         }
 
-        .footer-social {
+        .social-links {
             display: flex;
             gap: 12px;
         }
 
-        .footer-social a {
+        .social-links a {
             width: 44px;
             height: 44px;
             background: rgba(255, 255, 255, 0.05);
@@ -851,7 +863,7 @@
             transition: all 0.3s ease;
         }
 
-        .footer-social a:hover {
+        .social-links a:hover {
             background: var(--accent);
             border-color: var(--accent);
             color: var(--text-primary);
@@ -862,7 +874,6 @@
             font-size: 16px;
             font-weight: 700;
             margin-bottom: 20px;
-            color: var(--text-primary);
         }
 
         .footer-column ul {
@@ -908,6 +919,11 @@
             color: var(--accent);
         }
 
+        .footer-legal {
+            display: flex;
+            gap: 16px;
+        }
+
         /* ===== SCROLL ANIMATIONS ===== */
         .reveal {
             opacity: 0;
@@ -929,6 +945,10 @@
 
         @media (max-width: 768px) {
             .mobile-menu-toggle {
+                display: block;
+            }
+
+            .mobile-menu-close {
                 display: block;
             }
 
@@ -962,6 +982,18 @@
             nav ul li a {
                 font-size: 24px;
                 padding: 12px 24px;
+            }
+
+            .mobile-menu-close {
+                position: absolute;
+                top: 24px;
+                right: 24px;
+                background: none;
+                border: none;
+                color: var(--text-primary);
+                font-size: 28px;
+                cursor: pointer;
+                z-index: 1001;
             }
 
             .contact-grid {
@@ -1014,6 +1046,10 @@
                 padding: 24px 20px;
             }
         }
+
+        section {
+            scroll-margin-top: 80px;
+        }
     </style>
 </head>
 <body>
@@ -1022,13 +1058,14 @@
     <header id="header">
         <div class="container header-content">
             <a href="index.html" class="logo">
-                <span class="logo-icon"><i class="fas fa-film"></i></span>
+                <span class="logo-icon"><img src="images/XLNZ Color White Border Logo.png" alt="XLNZ"></span>
                 XLNZ
             </a>
-            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Open menu">
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav">
                 <i class="fas fa-bars"></i>
             </button>
-            <nav id="nav">
+            <nav id="nav" aria-label="Main navigation">
+                <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu"><i class="fas fa-times"></i></button>
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
@@ -1278,14 +1315,14 @@
             <div class="footer-grid">
                 <div class="footer-brand">
                     <a href="index.html" class="logo">
-                        <span class="logo-icon"><i class="fas fa-film"></i></span>
+                        <span class="logo-icon"><img src="images/XLNZ Color White Border Logo.png" alt="XLNZ"></span>
                         XLNZ
                     </a>
-                    <p>Philadelphia's premier video production studio. Specializing in podcasts, comedy, films, documentaries, and commercial content.</p>
-                    <div class="footer-social">
-                        <a href="https://www.instagram.com/xlnzproductions" title="Instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.youtube.com/@xlnzproductions" title="YouTube" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                        <a href="https://www.tiktok.com/@xlnzproductions" title="TikTok" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    <p>Philadelphia's full-service video production company. We think like marketers, shoot like filmmakers, and deliver content that builds brands.</p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/xlnzproductions" title="Instagram" aria-label="XLNZ on Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/@xlnzproductions" title="YouTube" aria-label="XLNZ on YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.linkedin.com/company/xlnzproductions" title="LinkedIn" aria-label="XLNZ on LinkedIn"><i class="fab fa-linkedin"></i></a>
                     </div>
                 </div>
                 <div class="footer-column">
@@ -1306,77 +1343,79 @@
                         <li><a href="services.html#film">Film Production</a></li>
                         <li><a href="services.html#commercial">Commercial / Skit</a></li>
                         <li><a href="services.html#social">Social Media</a></li>
+                        <li><a href="services.html#documentary">Documentaries</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h4>Contact</h4>
                     <ul>
-                        <li><a href="mailto:xlnzproductions@gmail.com"><i class="fas fa-envelope" style="margin-right: 8px;"></i> xlnzproductions@gmail.com</a></li>
-                        <li><a href="#"><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i> Philadelphia, PA</a></li>
-                        <li><a href="#"><i class="fas fa-clock" style="margin-right: 8px;"></i> By Appointment Only</a></li>
+                        <li><a href="mailto:xlnzproductions@gmail.com"><i class="fas fa-envelope" style="margin-right:8px"></i>xlnzproductions@gmail.com</a></li>
+                        <li><a href="#"><i class="fas fa-map-marker-alt" style="margin-right:8px"></i>Philadelphia, PA</a></li>
+                        <li><a href="https://www.linkedin.com/company/xlnzproductions"><i class="fab fa-linkedin" style="margin-right:8px"></i>LinkedIn</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <span>XLNZ Productions</span>
-                <span>Philadelphia, PA</span>
+                <span id="copyright"></span>
+                <div class="footer-legal">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
+                </div>
             </div>
         </div>
     </footer>
 
     <script>
-        // Mobile menu toggle
+        // Copyright
+        document.getElementById('copyright').textContent = '\u00A9 ' + new Date().getFullYear() + ' XLNZ Productions. All rights reserved.';
+
+        // Mobile menu
         const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const mobileMenuClose = document.getElementById('mobileMenuClose');
         const nav = document.getElementById('nav');
 
         mobileMenuToggle.addEventListener('click', () => {
             nav.classList.add('active');
-            document.body.style.overflow = 'hidden';
+            mobileMenuToggle.setAttribute('aria-expanded','true');
+            document.body.style.overflow='hidden';
         });
 
-        // Close mobile menu on link click
+        mobileMenuClose.addEventListener('click', () => {
+            nav.classList.remove('active');
+            mobileMenuToggle.setAttribute('aria-expanded','false');
+            document.body.style.overflow='';
+        });
+
         document.querySelectorAll('#nav a').forEach(link => {
             link.addEventListener('click', () => {
                 nav.classList.remove('active');
-                document.body.style.overflow = '';
+                mobileMenuToggle.setAttribute('aria-expanded','false');
+                document.body.style.overflow='';
             });
         });
 
-        // Close mobile menu on outside click
         document.addEventListener('click', (e) => {
-            if (nav.classList.contains('active') &&
-                !nav.contains(e.target) &&
-                !mobileMenuToggle.contains(e.target)) {
+            if (nav.classList.contains('active') && !nav.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
                 nav.classList.remove('active');
-                document.body.style.overflow = '';
+                mobileMenuToggle.setAttribute('aria-expanded','false');
+                document.body.style.overflow='';
             }
         });
 
-        // Header scroll effect
+        // Header scroll
         const header = document.getElementById('header');
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
+            header.classList.toggle('scrolled', window.scrollY > 50);
         });
 
-        // Scroll reveal animation
-        const revealElements = document.querySelectorAll('.reveal');
-
+        // Scroll reveal
         const revealObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                }
+            entries.forEach(e => {
+                if (e.isIntersecting) e.target.classList.add('active');
             });
-        }, {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
-        revealElements.forEach(el => revealObserver.observe(el));
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
         // Contact form submission with Web3Forms
         const contactForm = document.getElementById('contactForm');
@@ -1388,11 +1427,9 @@
         contactForm.addEventListener('submit', async function(e) {
             e.preventDefault();
 
-            // Disable submit button and show loading state
             submitBtn.disabled = true;
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
 
-            // Clear previous status messages
             formStatus.className = 'form-status';
             formStatus.style.display = 'none';
 
@@ -1406,42 +1443,35 @@
                 const data = await response.json();
 
                 if (response.ok && data.success) {
-                    // Show success message
                     formContainer.style.display = 'none';
                     formSuccess.classList.add('active');
 
-                    // Scroll to success message
                     document.querySelector('.contact-form-wrapper').scrollIntoView({
                         behavior: 'smooth',
                         block: 'center'
                     });
                 } else {
-                    // Show error message
                     formStatus.innerHTML = '<i class="fas fa-exclamation-circle"></i> ' + (data.message || 'Something went wrong. Please try again or email us directly.');
                     formStatus.className = 'form-status error';
                 }
             } catch (error) {
-                // Show error message for network errors
                 formStatus.innerHTML = '<i class="fas fa-exclamation-circle"></i> Network error. Please check your connection and try again.';
                 formStatus.className = 'form-status error';
             }
 
-            // Re-enable submit button
             submitBtn.disabled = false;
             submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
         });
 
-        // FAQ accordion functionality
+        // FAQ accordion
         const faqItems = document.querySelectorAll('.faq-item');
 
         faqItems.forEach(item => {
             const question = item.querySelector('.faq-question');
 
             question.addEventListener('click', function() {
-                // Toggle active class
                 item.classList.toggle('active');
 
-                // Close other items
                 faqItems.forEach(otherItem => {
                     if (otherItem !== item) {
                         otherItem.classList.remove('active');
@@ -1450,19 +1480,12 @@
             });
         });
 
-        // Smooth scrolling for anchor links
+        // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
+                const t = document.querySelector(this.getAttribute('href'));
+                if (t) window.scrollTo({ top: t.offsetTop - 80, behavior: 'smooth' });
             });
         });
     </script>
