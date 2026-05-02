@@ -3,22 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Video production packages from XLNZ Productions  Philadelphia's full-service video production company. Corporate retainer, podcast, stand-up, social media, and commercial packages.">
+    <meta name="description" content="Video production packages from XLNZ Productions — Philadelphia's full-service video production company. Corporate retainer, podcast, stand-up, social media, and commercial packages.">
     <meta name="keywords" content="video production packages Philadelphia, corporate video retainer, brand video production pricing, podcast production pricing, commercial video production">
     <meta name="robots" content="index, follow">
     <meta name="author" content="XLNZ Productions">
     <link rel="canonical" href="https://www.xlnzproductions.com/packages">
-    <meta property="og:title" content="Production Packages  XLNZ Productions">
+    <meta property="og:title" content="Production Packages — XLNZ Productions">
     <meta property="og:description" content="Transparent pricing for every project. Corporate retainer, podcast, social media, and commercial packages.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.xlnzproductions.com/packages">
     <meta property="og:image" content="https://www.xlnzproductions.com/images/og-image.jpg">
     <meta property="og:locale" content="en_US">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Production Packages  XLNZ Productions">
+    <meta name="twitter:title" content="Production Packages — XLNZ Productions">
     <meta name="twitter:description" content="Transparent pricing for every project. Corporate retainer, podcast, social media, and commercial packages.">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoProductionCompany","name":"XLNZ Productions","priceRange":"$100-$8500","url":"https://www.xlnzproductions.com","email":"xlnzproductions@gmail.com","address":{"@type":"PostalAddress","addressLocality":"Philadelphia","addressRegion":"PA","addressCountry":"US"}}</script>
-    <title>Production Packages  XLNZ Productions | Philadelphia</title>
+    <title>Production Packages — XLNZ Productions | Philadelphia</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -78,9 +78,9 @@
         .package-card{background:rgba(255,255,255,0.02);border:1px solid var(--border);border-radius:16px;padding:40px 32px;position:relative;transition:all 0.4s;cursor:pointer}
         .package-card:hover{border-color:rgba(233,69,96,0.3);transform:translateY(-4px);box-shadow:0 20px 40px rgba(0,0,0,0.3)}
         .package-card.selected{border-color:var(--accent);background:rgba(233,69,96,0.03);box-shadow:0 0 40px rgba(233,69,96,0.1)}
-        .package-card.selected::after{content:'';position:absolute;top:0;left:0;width:100%;height:3px;background:var(--accent-gradient);border-radius:16px 16px 0 0;z-index:1}
-        .popular-badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--accent-gradient);color:white;padding:6px 20px;border-radius:50px;font-family:'Montserrat',sans-serif;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:1px;white-space:nowrap;z-index:2;box-shadow:0 0 0 4px var(--bg-primary)}
-        .value-badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,#1a1a2e,#2a2a4e);border:1px solid rgba(233,69,96,0.4);color:var(--accent);padding:6px 20px;border-radius:50px;font-family:'Montserrat',sans-serif;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:1px;white-space:nowrap;z-index:2;box-shadow:0 0 0 4px var(--bg-primary)}
+        .package-card.selected::after{content:'';position:absolute;top:0;left:0;width:100%;height:3px;background:var(--accent-gradient);border-radius:16px 16px 0 0}
+        .popular-badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--accent-gradient);color:white;padding:6px 20px;border-radius:50px;font-family:'Montserrat',sans-serif;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:1px;white-space:nowrap}
+        .value-badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,#1a1a2e,#2a2a4e);border:1px solid rgba(233,69,96,0.4);color:var(--accent);padding:6px 20px;border-radius:50px;font-family:'Montserrat',sans-serif;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:1px;white-space:nowrap}
         .package-name{font-size:20px;font-weight:700;margin-bottom:8px}
         .package-description{color:var(--text-secondary);font-size:14px;margin-bottom:24px}
         .package-price-wrapper{margin-bottom:28px;padding-bottom:28px;border-bottom:1px solid var(--border)}
@@ -112,12 +112,14 @@
         .payment-step-label{font-family:'Montserrat',sans-serif;font-weight:700;font-size:15px}
         .payment-step-detail{font-size:13px;color:var(--text-secondary);text-align:center;line-height:1.4}
         .payment-step-divider{color:var(--text-muted);font-size:20px;display:flex;align-items:center}
+        /* Session selector */
         .session-selector{margin-bottom:40px}
         .session-selector-label{text-align:center;font-family:'Montserrat',sans-serif;font-weight:700;font-size:15px;color:var(--text-secondary);margin-bottom:16px;text-transform:uppercase;letter-spacing:1px}
         .session-btns{display:flex;justify-content:center;gap:8px;flex-wrap:wrap}
         .session-btn{padding:10px 20px;background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:50px;color:var(--text-secondary);font-family:'Montserrat',sans-serif;font-weight:700;font-size:13px;cursor:pointer;transition:all 0.3s}
         .session-btn:hover{background:rgba(233,69,96,0.05);border-color:rgba(233,69,96,0.2);color:var(--text-primary)}
         .session-btn.active{background:var(--accent-gradient);border-color:transparent;color:white;box-shadow:0 4px 15px rgba(233,69,96,0.3)}
+        /* Summary */
         .summary-section{padding:80px 0;background:var(--bg-secondary);position:relative}
         .summary-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,rgba(233,69,96,0.05) 0%,transparent 60%);pointer-events:none}
         .summary-wrapper{max-width:800px;margin:0 auto;position:relative;z-index:1}
@@ -137,6 +139,7 @@
         .summary-savings-banner.visible{display:block}
         .summary-actions{display:flex;gap:16px;margin-top:24px}
         .summary-actions .btn{flex:1}
+        /* FAQ */
         .faq-section{padding:100px 0}
         .faq-container{max-width:800px;margin:0 auto}
         .faq-item{margin-bottom:16px;border:1px solid var(--border);border-radius:12px;overflow:hidden;transition:all 0.3s}
@@ -181,25 +184,130 @@
         @media(max-width:768px){.mobile-menu-toggle{display:block}.mobile-menu-close{display:block}nav{position:fixed;top:0;left:0;width:100%;height:100vh;background:rgba(10,10,15,0.98);backdrop-filter:blur(20px);display:flex;align-items:center;justify-content:center;transform:translateX(100%);transition:transform 0.4s;z-index:999}nav.active{transform:translateX(0)}nav ul{flex-direction:column;align-items:center;gap:16px}nav ul li a{font-size:24px;padding:12px 24px}.mobile-menu-close{position:absolute;top:24px;right:24px;background:none;border:none;color:var(--text-primary);font-size:28px;cursor:pointer;z-index:1001}.category-tab{padding:10px 16px;font-size:13px}.summary-actions{flex-direction:column}.category-note{flex-direction:column}.packages-grid-4{grid-template-columns:1fr;max-width:500px;margin-left:auto;margin-right:auto}}
         @media(max-width:576px){.page-hero h1{font-size:32px}.hero-buttons{flex-direction:column;align-items:stretch}.btn{justify-content:center}.package-card{padding:32px 24px}.summary-content{padding:24px}.footer-grid{grid-template-columns:1fr;gap:32px}.footer-bottom{flex-direction:column;gap:12px;text-align:center}}
 
+        /* SESSION SELECTOR */
         .session-toggle { display:flex; justify-content:center; gap:6px; margin-bottom:20px; flex-wrap:wrap; }
         .session-btn { padding:8px 16px; background:rgba(255,255,255,0.03); border:1px solid var(--border); border-radius:50px; color:var(--text-secondary); font-family:'Montserrat',sans-serif; font-weight:700; font-size:13px; cursor:pointer; transition:all 0.3s; }
         .session-btn:hover { background:rgba(233,69,96,0.05); border-color:rgba(233,69,96,0.2); color:var(--text-primary); }
         .session-btn.active { background:var(--accent-gradient); border-color:transparent; color:white; box-shadow:0 4px 15px rgba(233,69,96,0.3); }
 
+        /* WALKAWAY CALLOUT */
         .walkaway-callout { display:flex; align-items:center; gap:10px; margin-top:12px; padding:12px 16px; background:rgba(233,69,96,0.06); border:1px solid rgba(233,69,96,0.18); border-radius:10px; font-family:'Montserrat',sans-serif; font-weight:700; font-size:12px; color:var(--accent); line-height:1.4; }
         .walkaway-callout i { font-size:16px; flex-shrink:0; }
 
+        /* CONCEPT CARD */
         .concept-card-badge { display:inline-flex; align-items:center; gap:6px; background:rgba(255,215,0,0.12); border:1px solid rgba(255,215,0,0.3); color:#FFD700; font-family:'Montserrat',sans-serif; font-weight:700; font-size:11px; padding:4px 12px; border-radius:50px; margin-bottom:16px; }
 
+        /* DEPOSIT NOTE */
         .deposit-note { max-width:700px; margin:0 auto 32px; background:rgba(255,255,255,0.02); border:1px solid var(--border); border-radius:10px; padding:16px 24px; display:flex; align-items:center; gap:14px; }
         .deposit-note i { color:var(--accent); font-size:18px; flex-shrink:0; }
         .deposit-note p { color:var(--text-secondary); font-size:14px; line-height:1.5; }
         .deposit-note strong { color:var(--text-primary); }
 
+        /* CATEGORY NOTE */
         .category-note { max-width:700px; margin:0 auto 32px; background:rgba(233,69,96,0.05); border:1px solid rgba(233,69,96,0.15); border-radius:12px; padding:20px 28px; display:flex; align-items:flex-start; gap:14px; }
         .category-note i { color:var(--accent); font-size:18px; margin-top:2px; flex-shrink:0; }
         .category-note p { color:var(--text-secondary); font-size:14px; line-height:1.6; }
         .category-note strong { color:var(--text-primary); }
+
+        /* ── WEB PREVIEW CARDS ───────────────────────────────────── */
+        .web-preview-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-bottom:64px; }
+        .web-preview-card { background:rgba(255,255,255,0.02); border:1px solid var(--border); border-radius:16px; overflow:hidden; transition:all 0.4s; }
+        .web-preview-card:hover { transform:translateY(-6px); border-color:rgba(233,69,96,0.3); box-shadow:0 20px 40px rgba(0,0,0,0.3); }
+        .web-preview-card.featured { border-color:rgba(233,69,96,0.4); box-shadow:0 0 30px rgba(233,69,96,0.08); }
+        .web-preview-badge { padding:6px 20px; font-family:'Montserrat',sans-serif; font-weight:700; font-size:11px; text-transform:uppercase; letter-spacing:1.5px; text-align:center; }
+        .web-preview-badge.starter { background:rgba(255,255,255,0.05); color:var(--text-secondary); }
+        .web-preview-badge.professional { background:var(--accent-gradient); color:white; }
+        .web-preview-badge.premium { background:linear-gradient(135deg,#FFD700,#FFA500); color:#0a0a0f; }
+
+        /* Screen mockup */
+        .web-preview-screen { padding:12px; background:#1a1a2e; min-height:180px; position:relative; overflow:hidden; }
+        .web-preview-screen.dark { background:#0a0a0f; }
+        .web-preview-screen.premium-screen { background:linear-gradient(135deg,#0a0a0f,#12122a); }
+        .web-preview-nav { display:flex; align-items:center; gap:8px; padding:6px 8px; background:rgba(255,255,255,0.04); border-radius:6px; margin-bottom:10px; }
+        .web-preview-nav.dark-nav { background:rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.06); }
+        .web-preview-nav.premium-nav { background:rgba(255,255,255,0.02); border:1px solid rgba(255,215,0,0.15); }
+        .wpn-logo { width:24px; height:8px; background:rgba(255,255,255,0.3); border-radius:3px; margin-right:auto; }
+        .wpn-logo.accent { background:var(--accent-gradient); }
+        .wpn-logo.gold { background:linear-gradient(135deg,#FFD700,#FFA500); }
+        .wpn-links { display:flex; gap:6px; }
+        .wpn-links span { width:20px; height:5px; background:rgba(255,255,255,0.15); border-radius:3px; }
+        .wpn-links.premium-links span { background:rgba(255,215,0,0.2); }
+        .wpn-cta { width:30px; height:8px; background:var(--accent); border-radius:3px; }
+        .wpn-cta.gold-cta { background:linear-gradient(135deg,#FFD700,#FFA500); }
+        .web-preview-hero { padding:8px; }
+        .web-preview-hero.dark-hero { padding:8px 10px; }
+        .web-preview-hero.premium-hero { padding:10px; }
+        .wph-tag { width:50px; height:6px; background:rgba(233,69,96,0.5); border-radius:3px; margin-bottom:6px; }
+        .wph-tag.accent { background:var(--accent); }
+        .wph-tag.gold-tag { background:linear-gradient(135deg,#FFD700,#FFA500); width:60px; }
+        .wph-h1 { height:8px; background:rgba(255,255,255,0.7); border-radius:3px; margin-bottom:5px; width:85%; }
+        .wph-h1.short { width:55%; }
+        .wph-h1.wide { width:95%; }
+        .wph-h1.medium { width:70%; }
+        .wph-h1.accent-line { background:var(--accent-gradient); width:60%; }
+        .wph-h1.gold-line { background:linear-gradient(135deg,#FFD700,#FFA500); width:65%; }
+        .wph-sub { height:5px; background:rgba(255,255,255,0.25); border-radius:3px; margin-bottom:8px; width:75%; }
+        .wph-btn { width:50px; height:10px; background:var(--accent); border-radius:4px; }
+        .wph-btn.accent { background:var(--accent); }
+        .wph-btn.ghost { width:40px; height:10px; border:1px solid rgba(255,255,255,0.2); border-radius:4px; background:transparent; }
+        .wph-btn.gold-btn { background:linear-gradient(135deg,#FFD700,#FFA500); }
+        .wph-btn.ghost-gold { width:40px; height:10px; border:1px solid rgba(255,215,0,0.3); border-radius:4px; background:transparent; }
+        .wph-btns { display:flex; gap:6px; }
+        .web-preview-stats { display:flex; gap:6px; padding:6px 8px; }
+        .web-preview-stats.premium-stats { padding:6px 10px; }
+        .wps { flex:1; height:20px; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.06); border-radius:4px; }
+        .wps.gold { border-color:rgba(255,215,0,0.15); background:rgba(255,215,0,0.03); }
+        .web-preview-cards-row { display:flex; gap:6px; padding:6px 8px; }
+        .wpc { flex:1; height:28px; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.06); border-radius:4px; }
+        .wpc.dark-card { background:rgba(255,255,255,0.02); border-color:rgba(233,69,96,0.1); }
+        .wpc.premium-card { background:rgba(255,215,0,0.02); border-color:rgba(255,215,0,0.1); }
+        .web-preview-section-bar { height:8px; background:var(--gold-gradient); opacity:0.3; margin:6px 8px; border-radius:3px; }
+        .web-preview-footer { height:16px; background:rgba(255,255,255,0.02); margin-top:8px; }
+        .web-preview-footer.dark-footer { background:rgba(0,0,0,0.3); border-top:1px solid rgba(255,255,255,0.04); }
+        .web-preview-footer.premium-footer { background:rgba(0,0,0,0.4); border-top:1px solid rgba(255,215,0,0.08); }
+
+        .web-preview-info { padding:20px 24px; }
+        .web-preview-info h4 { font-size:16px; font-weight:700; margin-bottom:6px; }
+        .web-preview-info p { color:var(--text-secondary); font-size:13px; line-height:1.6; margin-bottom:12px; }
+        .web-preview-range { display:inline-flex; align-items:center; background:rgba(233,69,96,0.08); border:1px solid rgba(233,69,96,0.2); color:var(--accent); font-family:'Montserrat',sans-serif; font-weight:700; font-size:13px; padding:4px 14px; border-radius:50px; }
+
+        /* ── CALCULATOR ───────────────────────────────────────────── */
+        .web-calculator { background:rgba(255,255,255,0.02); border:1px solid var(--border); border-radius:16px; padding:48px; margin-bottom:32px; }
+        .web-calc-header { text-align:center; margin-bottom:40px; }
+        .web-calc-header h3 { font-size:clamp(24px,3vw,36px); margin-bottom:10px; }
+        .web-calc-header p { color:var(--text-secondary); font-size:16px; }
+        .web-calc-grid { display:grid; grid-template-columns:1fr 340px; gap:32px; align-items:start; }
+        .calc-category-label { font-family:'Montserrat',sans-serif; font-weight:700; font-size:11px; text-transform:uppercase; letter-spacing:2px; color:var(--accent); margin:24px 0 8px; padding-bottom:8px; border-bottom:1px solid rgba(233,69,96,0.15); }
+        .calc-category-label:first-child { margin-top:0; }
+
+        .calc-item { display:flex; align-items:flex-start; gap:14px; padding:14px 16px; border:1px solid var(--border); border-radius:10px; cursor:pointer; transition:all 0.3s; margin-bottom:8px; }
+        .calc-item:hover { border-color:rgba(233,69,96,0.25); background:rgba(233,69,96,0.02); }
+        .calc-item.checked { border-color:rgba(233,69,96,0.35); background:rgba(233,69,96,0.04); }
+        .calc-item input[type="checkbox"] { width:18px; height:18px; accent-color:var(--accent); cursor:pointer; flex-shrink:0; margin-top:2px; }
+        .calc-item-info { flex:1; }
+        .calc-item-name { display:block; font-weight:600; font-size:14px; margin-bottom:3px; }
+        .calc-item-desc { display:block; color:var(--text-secondary); font-size:13px; line-height:1.5; }
+        .calc-required { display:inline-flex; align-items:center; background:rgba(233,69,96,0.1); color:var(--accent); font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:1px; padding:2px 8px; border-radius:50px; margin-left:8px; vertical-align:middle; }
+        .calc-item-price { font-family:'Montserrat',sans-serif; font-weight:700; font-size:13px; color:var(--accent); white-space:nowrap; flex-shrink:0; margin-top:2px; }
+
+        /* Summary card */
+        .web-calc-summary { position:sticky; top:100px; }
+        .web-calc-total-card { background:rgba(255,255,255,0.03); border:1px solid var(--border); border-radius:16px; padding:32px; }
+        .web-calc-total-header { display:flex; align-items:center; gap:12px; margin-bottom:24px; }
+        .web-calc-total-header i { font-size:24px; color:var(--accent); }
+        .web-calc-total-header h4 { font-size:20px; margin:0; }
+        .web-calc-selected-items { margin-bottom:20px; border-bottom:1px solid var(--border); padding-bottom:16px; max-height:280px; overflow-y:auto; }
+        .calc-selected-row { display:flex; justify-content:space-between; align-items:flex-start; gap:8px; padding:6px 0; font-size:13px; color:var(--text-secondary); }
+        .calc-selected-row span:last-child { font-weight:600; color:var(--text-primary); white-space:nowrap; flex-shrink:0; }
+        .web-calc-total-line { display:flex; justify-content:space-between; align-items:center; margin-bottom:16px; }
+        .web-calc-total-label { font-family:'Montserrat',sans-serif; font-weight:700; font-size:15px; }
+        .web-calc-total-price { font-family:'Montserrat',sans-serif; font-weight:900; font-size:36px; background:var(--accent-gradient); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+        .web-calc-deposit { display:flex; align-items:center; gap:8px; background:rgba(233,69,96,0.06); border:1px solid rgba(233,69,96,0.15); border-radius:8px; padding:10px 14px; font-size:13px; color:var(--text-secondary); }
+        .web-calc-deposit i { color:var(--accent); flex-shrink:0; }
+        .web-calc-deposit strong { color:var(--text-primary); }
+        .web-calc-disclaimer { color:var(--text-muted); font-size:12px; text-align:center; margin-top:14px; line-height:1.5; }
+
+        @media(max-width:1024px) { .web-calc-grid{grid-template-columns:1fr;} .web-calc-summary{position:static;} .web-preview-grid{grid-template-columns:1fr;max-width:500px;margin-left:auto;margin-right:auto;} }
     </style>
 </head>
 <body>
@@ -230,7 +338,7 @@
         <div class="container page-hero-content">
             <div class="section-label">Pricing</div>
             <h1>Production <span class="gradient-text">Packages</span></h1>
-            <p>Transparent pricing for every project. From content creator sessions to full corporate retainers  choose the package built for your goals.</p>
+            <p>Transparent pricing for every project. From content creator sessions to full corporate retainers — choose the package built for your goals.</p>
             <div class="hero-buttons">
                 <a href="#packages" class="btn btn-primary"><i class="fas fa-arrow-down"></i> View Packages</a>
                 <a href="contact.html" class="btn btn-secondary"><i class="fas fa-envelope"></i> Custom Quote</a>
@@ -251,13 +359,14 @@
                 <button class="category-tab" data-category="podcast"><i class="fas fa-podcast"></i> Podcasts</button>
                 <button class="category-tab" data-category="standup"><i class="fas fa-microphone-alt"></i> Stand-Up</button>
                 <button class="category-tab" data-category="social"><i class="fas fa-hashtag"></i> Social Media</button>
+                <button class="category-tab" data-category="website"><i class="fas fa-globe"></i> Web Design</button>
             </div>
 
             <!-- ===== CORPORATE ===== -->
             <div class="packages-category active" id="corporate">
                 <div class="category-note reveal">
                     <i class="fas fa-info-circle"></i>
-                    <p><strong>This tab is for businesses and brands.</strong> Corporate packages cover strategy-driven video content built for websites, paid ads, ecommerce, and ongoing brand growth  not casual social content. If you are a content creator looking to shoot skits or short-form content, the Social Media tab is your lane.</p>
+                    <p><strong>This tab is for businesses and brands.</strong> Corporate packages cover strategy-driven video content built for websites, paid ads, ecommerce, and ongoing brand growth — not casual social content. If you are a content creator looking to shoot skits or short-form content, the Social Media tab is your lane.</p>
                 </div>
                 <div class="deposit-note reveal">
                     <i class="fas fa-lock"></i>
@@ -278,7 +387,7 @@
                          data-price="1200"
                          data-period="one-time">
                         <h3 class="package-name">One-Off Commercial</h3>
-                        <p class="package-description">A single polished commercial delivered in portrait and widescreen  ready for paid ads, your website, and ecommerce</p>
+                        <p class="package-description">A single polished commercial delivered in portrait and widescreen — ready for paid ads, your website, and ecommerce</p>
                         <div class="package-price-wrapper">
                             <div class="package-price">$1,200</div>
                             <div class="package-price-period">one-time production</div>
@@ -307,7 +416,7 @@
                          data-s1="0"    data-s3="250"  data-s6="375"
                          data-period="per month">
                         <h3 class="package-name">Entry</h3>
-                        <p class="package-description">Get your brand consistently visible with professional content every month  the right starting point for businesses ready to show up</p>
+                        <p class="package-description">Get your brand consistently visible with professional content every month — the right starting point for businesses ready to show up</p>
                         <div class="package-price-wrapper">
                             <div class="package-price corp-price">$2,500</div>
                             <div class="package-price-period corp-period">per month &middot; 1 month commitment</div>
@@ -356,7 +465,7 @@
                          data-period="per month">
                         <div class="value-badge">Full Service</div>
                         <h3 class="package-name">Premium</h3>
-                        <p class="package-description">End-to-end brand content partnership  we become your in-house video team without the overhead of hiring one</p>
+                        <p class="package-description">End-to-end brand content partnership — we become your in-house video team without the overhead of hiring one</p>
                         <div class="package-price-wrapper">
                             <div class="package-price corp-price">$8,500</div>
                             <div class="package-price-period corp-period">per month &middot; 1 month commitment</div>
@@ -417,7 +526,7 @@
                 <div class="packages-grid reveal">
                     <div class="package-card" data-package="podcast-4" data-name="4 Episodes Podcast" data-price="480" data-period="one-time">
                         <h3 class="package-name">4 Episodes</h3>
-                        <p class="package-description">Get started and test the waters  a full mini-season to find your voice and build your audience</p>
+                        <p class="package-description">Get started and test the waters — a full mini-season to find your voice and build your audience</p>
                         <div class="package-price-wrapper">
                             <div class="package-price">$480</div>
                             <div class="package-price-period">one-time payment</div>
@@ -434,7 +543,7 @@
                     </div>
                     <div class="package-card" data-package="podcast-8" data-name="8 Episodes Podcast" data-price="800" data-period="one-time">
                         <h3 class="package-name">8 Episodes</h3>
-                        <p class="package-description">Build real consistency over a full run  enough content to establish your show and grow a loyal following</p>
+                        <p class="package-description">Build real consistency over a full run — enough content to establish your show and grow a loyal following</p>
                         <div class="package-price-wrapper">
                             <div class="package-price">$800</div>
                             <div class="package-price-period">one-time payment</div>
@@ -452,7 +561,7 @@
                     <div class="package-card selected" data-package="podcast-12" data-name="12 Episodes Podcast" data-price="1020" data-period="one-time">
                         <div class="popular-badge">Most Popular</div>
                         <h3 class="package-name">12 Episodes</h3>
-                        <p class="package-description">Best value and lowest cost per episode  a full season that gives your show the run time it needs to make real noise</p>
+                        <p class="package-description">Best value and lowest cost per episode — a full season that gives your show the run time it needs to make real noise</p>
                         <div class="package-price-wrapper">
                             <div class="package-price">$1,020</div>
                             <div class="package-price-period">one-time payment</div>
@@ -489,7 +598,7 @@
             <div class="packages-category" id="standup" style="display:none;">
                 <div class="category-note reveal">
                     <i class="fas fa-info-circle"></i>
-                    <p><strong>This tab is for comedians and performers.</strong> Stand-up packages are built for filming live sets and full comedy specials with professional multi-camera setups. This is not a studio skit session  for scripted short-form content, see the Social Media tab.</p>
+                    <p><strong>This tab is for comedians and performers.</strong> Stand-up packages are built for filming live sets and full comedy specials with professional multi-camera setups. This is not a studio skit session — for scripted short-form content, see the Social Media tab.</p>
                 </div>
                 <div class="deposit-note reveal">
                     <i class="fas fa-lock"></i>
@@ -498,7 +607,7 @@
                 <div class="packages-grid reveal">
                     <div class="package-card" data-package="standup-15" data-name="Up to 15 Min Stand-Up" data-price="500" data-period="one-time">
                         <h3 class="package-name">Up to 15 Minutes</h3>
-                        <p class="package-description">Short sets and showcase clips  perfect for building your reel and getting your face out there</p>
+                        <p class="package-description">Short sets and showcase clips — perfect for building your reel and getting your face out there</p>
                         <div class="package-price-wrapper"><div class="package-price">$500</div><div class="package-price-period">one-time payment</div></div>
                         <ul class="package-features">
                             <li><i class="fas fa-check"></i> Multi-camera setup</li>
@@ -513,7 +622,7 @@
                     <div class="package-card selected" data-package="standup-45" data-name="20 to 45 Min Stand-Up" data-price="750" data-period="one-time">
                         <div class="popular-badge">Most Popular</div>
                         <h3 class="package-name">20 to 45 Minutes</h3>
-                        <p class="package-description">The standard comedy special length  enough time to build a real arc and give the audience a full experience</p>
+                        <p class="package-description">The standard comedy special length — enough time to build a real arc and give the audience a full experience</p>
                         <div class="package-price-wrapper"><div class="package-price">$750</div><div class="package-price-period">one-time payment</div></div>
                         <ul class="package-features">
                             <li><i class="fas fa-check"></i> Multi-camera setup</li>
@@ -527,7 +636,7 @@
                     </div>
                     <div class="package-card" data-package="standup-90" data-name="60 to 90 Min Stand-Up" data-price="1200" data-period="one-time">
                         <h3 class="package-name">60 to 90 Minutes</h3>
-                        <p class="package-description">A full-length comedy special  this is the one that gets you on streaming platforms and puts your name on the map</p>
+                        <p class="package-description">A full-length comedy special — this is the one that gets you on streaming platforms and puts your name on the map</p>
                         <div class="package-price-wrapper"><div class="package-price">$1,200</div><div class="package-price-period">one-time payment</div></div>
                         <ul class="package-features">
                             <li><i class="fas fa-check"></i> Multi-camera setup</li>
@@ -552,7 +661,7 @@
 
                 <div class="category-note reveal">
                     <i class="fas fa-info-circle"></i>
-                    <p><strong>This tab is for content creators.</strong> Social media sessions are booked by the hour and are designed for creators who want to shoot skits, sketches, or short-form content with professional cameras and in-house editing. This is not a brand retainer  it is a production session. If you are a business looking for ongoing brand content, see the Corporate Retainer tab.</p>
+                    <p><strong>This tab is for content creators.</strong> Social media sessions are booked by the hour and are designed for creators who want to shoot skits, sketches, or short-form content with professional cameras and in-house editing. This is not a brand retainer — it is a production session. If you are a business looking for ongoing brand content, see the Corporate Retainer tab.</p>
                 </div>
 
                 <div class="packages-grid reveal">
@@ -728,7 +837,7 @@
                 <p>Answers to common questions about our packages and process</p>
             </div>
             <div class="faq-container">
-                <div class="faq-item reveal"><div class="faq-question"><h3>What is the difference between the Corporate and Social Media tabs?</h3><div class="faq-toggle"><i class="fas fa-chevron-down"></i></div></div><div class="faq-answer"><p>Corporate packages are built for businesses and brands  think paid ads, ecommerce, website video, and ongoing brand content strategy. Social Media packages are built for content creators who want to book studio time and shoot short-form skits and sketches. If you are a business, use the Corporate tab. If you are a creator, use the Social Media tab.</p></div></div>
+                <div class="faq-item reveal"><div class="faq-question"><h3>What is the difference between the Corporate and Social Media tabs?</h3><div class="faq-toggle"><i class="fas fa-chevron-down"></i></div></div><div class="faq-answer"><p>Corporate packages are built for businesses and brands — think paid ads, ecommerce, website video, and ongoing brand content strategy. Social Media packages are built for content creators who want to book studio time and shoot short-form skits and sketches. If you are a business, use the Corporate tab. If you are a creator, use the Social Media tab.</p></div></div>
                 <div class="faq-item reveal"><div class="faq-question"><h3>How does the corporate retainer work?</h3><div class="faq-toggle"><i class="fas fa-chevron-down"></i></div></div><div class="faq-answer"><p>We start with a discovery call to understand your brand, goals, and audience. From there we build a content strategy, agree on deliverables, and begin producing on a monthly cycle. Retainers are billed monthly and include a dedicated account contact who manages your relationship with XLNZ from start to finish.</p></div></div>
                 <div class="faq-item reveal"><div class="faq-question"><h3>What do I need to bring to a social media session?</h3><div class="faq-toggle"><i class="fas fa-chevron-down"></i></div></div><div class="faq-answer"><p>Your skit or concept must be fully written before you arrive. Session time is production time and we do not stop the clock for writing. If you need help developing concepts ahead of your session, add our Heavy in the Lab concept creation package and we will deliver 5 shoot-ready ideas to you before your session date.</p></div></div>
                 <div class="faq-item reveal"><div class="faq-question"><h3>Can I customize a package to fit my specific needs?</h3><div class="faq-toggle"><i class="fas fa-chevron-down"></i></div></div><div class="faq-answer"><p>Absolutely. Our packages are starting points. We can adjust deliverables, volume, and scope to fit your exact goals and budget. Reach out via our contact page and we will build something that works for you.</p></div></div>
@@ -952,6 +1061,44 @@
         });
 
  
+
+        // ── Website Calculator ────────────────────────────────────────────────
+        const calcItems = document.querySelectorAll('.calc-item input[type="checkbox"]');
+        const calcTotal = document.getElementById('calcTotal');
+        const calcDeposit = document.getElementById('calcDeposit');
+        const calcSelectedItems = document.getElementById('calcSelectedItems');
+
+        function updateCalc() {
+            let total = 0;
+            const selected = [];
+            document.querySelectorAll('.calc-item').forEach(item => {
+                const cb = item.querySelector('input[type="checkbox"]');
+                const price = parseInt(item.dataset.price);
+                const name = item.querySelector('.calc-item-name').textContent.replace('Required','').trim();
+                if (cb.checked) {
+                    total += price;
+                    selected.push({ name, price });
+                    item.classList.add('checked');
+                } else {
+                    item.classList.remove('checked');
+                }
+            });
+            if (calcTotal) calcTotal.textContent = '$' + total.toLocaleString();
+            if (calcDeposit) calcDeposit.textContent = '$' + Math.round(total * 0.25).toLocaleString();
+            if (calcSelectedItems) {
+                calcSelectedItems.innerHTML = selected.map(s =>
+                    '<div class="calc-selected-row"><span>' + s.name + '</span><span>$' + s.price.toLocaleString() + '</span></div>'
+                ).join('');
+            }
+        }
+
+        calcItems.forEach(cb => {
+            if (!cb.disabled) {
+                cb.addEventListener('change', updateCalc);
+            }
+        });
+        updateCalc();
+
         // Social Media Session Toggles
         function initSessionToggle(toggleId, priceClass, periodClass, walkawaySel) {
             const toggle = document.getElementById(toggleId);
@@ -990,3 +1137,252 @@
     </script>
 </body>
 </html>
+
+            <!-- ===== WEBSITE DESIGN ===== -->
+            <div class="packages-category" id="website" style="display:none;">
+
+                <div class="category-note reveal">
+                    <i class="fas fa-info-circle"></i>
+                    <p><strong>This tab is for businesses and brands that need a professional web presence.</strong> Use the calculator below to build your custom package by checking off exactly what your brand needs. The price updates live as you add features. Every website we build is custom designed, mobile ready, and strategy-first — the same approach we bring to every piece of content we produce.</p>
+                </div>
+
+                <!-- PREVIEW CARDS -->
+                <div class="web-preview-grid reveal">
+                    <div class="web-preview-card">
+                        <div class="web-preview-badge starter">Starter</div>
+                        <div class="web-preview-screen">
+                            <div class="web-preview-nav"><div class="wpn-logo"></div><div class="wpn-links"><span></span><span></span><span></span></div></div>
+                            <div class="web-preview-hero"><div class="wph-tag"></div><div class="wph-h1"></div><div class="wph-h1 short"></div><div class="wph-sub"></div><div class="wph-btn"></div></div>
+                            <div class="web-preview-cards-row"><div class="wpc"></div><div class="wpc"></div><div class="wpc"></div></div>
+                            <div class="web-preview-footer"></div>
+                        </div>
+                        <div class="web-preview-info">
+                            <h4>Starter Presence</h4>
+                            <p>3 pages, clean design, contact form, mobile ready. Everything you need to look professional and get found online.</p>
+                            <div class="web-preview-range">From $3,500</div>
+                        </div>
+                    </div>
+
+                    <div class="web-preview-card featured">
+                        <div class="web-preview-badge professional">Professional</div>
+                        <div class="web-preview-screen dark">
+                            <div class="web-preview-nav dark-nav"><div class="wpn-logo accent"></div><div class="wpn-links"><span></span><span></span><span></span><span></span></div><div class="wpn-cta"></div></div>
+                            <div class="web-preview-hero dark-hero"><div class="wph-tag accent"></div><div class="wph-h1 wide"></div><div class="wph-h1 short accent-line"></div><div class="wph-sub"></div><div class="wph-btns"><div class="wph-btn accent"></div><div class="wph-btn ghost"></div></div></div>
+                            <div class="web-preview-stats"><div class="wps"></div><div class="wps"></div><div class="wps"></div><div class="wps"></div></div>
+                            <div class="web-preview-cards-row"><div class="wpc dark-card"></div><div class="wpc dark-card"></div><div class="wpc dark-card"></div></div>
+                            <div class="web-preview-footer dark-footer"></div>
+                        </div>
+                        <div class="web-preview-info">
+                            <h4>Professional Brand Site</h4>
+                            <p>5 to 6 pages, custom dark design, portfolio section, pricing page, SEO setup, and brand copywriting included.</p>
+                            <div class="web-preview-range">From $7,500</div>
+                        </div>
+                    </div>
+
+                    <div class="web-preview-card">
+                        <div class="web-preview-badge premium">Full Custom</div>
+                        <div class="web-preview-screen premium-screen">
+                            <div class="web-preview-nav premium-nav"><div class="wpn-logo gold"></div><div class="wpn-links premium-links"><span></span><span></span><span></span><span></span><span></span></div><div class="wpn-cta gold-cta"></div></div>
+                            <div class="web-preview-hero premium-hero"><div class="wph-tag gold-tag"></div><div class="wph-h1 wide"></div><div class="wph-h1 medium gold-line"></div><div class="wph-h1 short"></div><div class="wph-sub"></div><div class="wph-btns"><div class="wph-btn gold-btn"></div><div class="wph-btn ghost-gold"></div></div></div>
+                            <div class="web-preview-stats premium-stats"><div class="wps gold"></div><div class="wps gold"></div><div class="wps gold"></div><div class="wps gold"></div></div>
+                            <div class="web-preview-cards-row"><div class="wpc premium-card"></div><div class="wpc premium-card"></div><div class="wpc premium-card"></div></div>
+                            <div class="web-preview-section-bar"></div>
+                            <div class="web-preview-footer premium-footer"></div>
+                        </div>
+                        <div class="web-preview-info">
+                            <h4>Full Custom Build</h4>
+                            <p>Everything. Custom features, live calculators, countdown timers, full copywriting, SEO, schema markup, and a site that no template can replicate.</p>
+                            <div class="web-preview-range">Up to $15,000</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CALCULATOR -->
+                <div class="web-calculator reveal">
+                    <div class="web-calc-header">
+                        <div class="section-label" style="justify-content:center;">Build Your Package</div>
+                        <h3>Custom Website <span class="gradient-text">Calculator</span></h3>
+                        <p>Check off what your brand needs. Your investment total updates live.</p>
+                    </div>
+
+                    <div class="web-calc-grid">
+                        <div class="web-calc-items">
+
+                            <div class="calc-category-label">Foundation</div>
+                            <label class="calc-item checked" data-price="3500">
+                                <input type="checkbox" checked disabled>
+                                <div class="calc-item-info">
+                                    <span class="calc-item-name">Base Website (3 Pages) <span class="calc-required">Required</span></span>
+                                    <span class="calc-item-desc">Home, About, and Contact pages. Mobile ready, professional design, working contact form.</span>
+                                </div>
+                                <span class="calc-item-price">$3,500</span>
+                            </label>
+
+                            <label class="calc-item" data-price="400">
+                                <input type="checkbox">
+                                <div class="calc-item-info">
+                                    <span class="calc-item-name">Additional Page</span>
+                                    <span class="calc-item-desc">Each additional page beyond the base 3. Services, Portfolio, Packages, FAQ, etc.</span>
+                                </div>
+                                <span class="calc-item-price">+$400 / page</span>
+                            </label>
+
+                            <label class="calc-item" data-price="400">
+                                <input type="checkbox">
+                                <div class="calc-item-info">
+                                    <span class="calc-item-name">Additional Page</span>
+                                    <span class="calc-item-desc">Add another page to your site.</span>
+                                </div>
+                                <span class="calc-item-price">+$400 / page</span>
+                            </label>
+
+                            <label class="calc-item" data-price="400">
+                                <input type="checkbox">
+                                <div class="calc-item-info">
+                                    <span class="calc-item-name">Additional Page</span>
+                                    <span class="calc-item-desc">Add another page to your site.</span>
+                                </div>
+                                <span class="calc-item-price">+$400 / page</span>
+                            </label>
+
+                            <div class="calc-category-label">Design</div>
+                            <label class="calc-item" data-price="1500">
+                                <input type="checkbox">
+                                <div class="calc-item-info">
+                                    <span class="calc-item-name">Custom UI and Dark Theme Design</span>
+                                    <span class="calc-item-desc">Premium custom visual design with dark theme, gradient accents, animated elements, and a look that is built for your brand specifically.</span>
+                                </div>
+                                <span class="calc-item-price">+$1,500</span>
+                            </label>
+
+                            <label class="calc-item" data-price="500">
+                                <input type="checkbox">
+                                <div class="calc-item-info">
+                                    <span class="calc-item-name">Logo and Brand Asset Integration</span>
+                                    <span class="calc-item-desc">Full integration of your existing logo, color palette, fonts, and brand assets throughout the site.</span>
+                                </div>
+                                <span class="calc-item-price">+$500</span>
+                            </label>
+
+                            <div class="calc-category-label">Content and Copy</div>
+                            <label class="calc-item" data-price="500">
+                                <input type="checkbox">
+                                <div class="calc-item-info">
+                                    <span class="calc-item-name">Brand Copywriting (per page)</span>
+                                    <span class="calc-item-desc">Strategy-first, brand-positioned copy written for one page. No generic filler. Every word written to convert.</span>
+                                </div>
+                                <span class="calc-item-price">+$500 / page</span>
+                            </label>
+
+                            <label class="calc-item" data-price="500">
+                                <input type="checkbox">
+                                <div class="calc-item-info">
+                                    <span class="calc-item-name">Brand Copywriting (per page)</span>
+                                    <span class="calc-item-desc">Strategy-first copy for an additional page.</span>
+                                </div>
+                                <span class="calc-item-price">+$500 / page</span>
+                            </label>
+
+                            <label class="calc-item" data-price="500">
+                                <input type="checkbox">
+                                <div class="calc-item-info">
+                                    <span class="calc-item-name">Brand Copywriting (per page)</span>
+                                    <span class="calc-item-desc">Strategy-first copy for an additional page.</span>
+                                </div>
+                                <span class="calc-item-price">+$500 / page</span>
+                            </label>
+
+                            <div class="calc-category-label">Features and Functionality</div>
+                            <label class="calc-item" data-price="750">
+                                <input type="checkbox">
+                                <div class="calc-item-info">
+                                    <span class="calc-item-name">Portfolio or Work Gallery</span>
+                                    <span class="calc-item-desc">Filterable gallery section showcasing your projects, work samples, or client results with embedded video support.</span>
+                                </div>
+                                <span class="calc-item-price">+$750</span>
+                            </label>
+
+                            <label class="calc-item" data-price="1200">
+                                <input type="checkbox">
+                                <div class="calc-item-info">
+                                    <span class="calc-item-name">Pricing and Packages Page with Calculator</span>
+                                    <span class="calc-item-desc">Full pricing page with interactive package cards, category tabs, and a live pricing calculator like this one.</span>
+                                </div>
+                                <span class="calc-item-price">+$1,200</span>
+                            </label>
+
+                            <label class="calc-item" data-price="500">
+                                <input type="checkbox">
+                                <div class="calc-item-info">
+                                    <span class="calc-item-name">Advanced Contact and Inquiry Form</span>
+                                    <span class="calc-item-desc">Custom multi-field contact form with service selection, budget range, project details, and direct email delivery.</span>
+                                </div>
+                                <span class="calc-item-price">+$500</span>
+                            </label>
+
+                            <label class="calc-item" data-price="1500">
+                                <input type="checkbox">
+                                <div class="calc-item-info">
+                                    <span class="calc-item-name">Custom JavaScript Features</span>
+                                    <span class="calc-item-desc">Live calculators, countdown timers, animated toggles, session selectors, savings displays, and any other interactive functionality your site needs.</span>
+                                </div>
+                                <span class="calc-item-price">+$1,500</span>
+                            </label>
+
+                            <div class="calc-category-label">SEO and Technical</div>
+                            <label class="calc-item" data-price="750">
+                                <input type="checkbox">
+                                <div class="calc-item-info">
+                                    <span class="calc-item-name">Full SEO Setup</span>
+                                    <span class="calc-item-desc">Meta titles, descriptions, canonical tags, Open Graph, Twitter Card, and keyword-optimized page structure on every page.</span>
+                                </div>
+                                <span class="calc-item-price">+$750</span>
+                            </label>
+
+                            <label class="calc-item" data-price="400">
+                                <input type="checkbox">
+                                <div class="calc-item-info">
+                                    <span class="calc-item-name">Schema Markup and Social Integration</span>
+                                    <span class="calc-item-desc">Structured data markup for Google, social media profile links, and all social sharing tags configured correctly.</span>
+                                </div>
+                                <span class="calc-item-price">+$400</span>
+                            </label>
+
+                        </div>
+
+                        <!-- LIVE TOTAL -->
+                        <div class="web-calc-summary">
+                            <div class="web-calc-total-card">
+                                <div class="web-calc-total-header">
+                                    <i class="fas fa-laptop-code"></i>
+                                    <h4>Your Estimate</h4>
+                                </div>
+                                <div class="web-calc-selected-items" id="calcSelectedItems">
+                                    <div class="calc-selected-row">
+                                        <span>Base Website (3 Pages)</span>
+                                        <span>$3,500</span>
+                                    </div>
+                                </div>
+                                <div class="web-calc-total-line">
+                                    <span class="web-calc-total-label">Total Estimate</span>
+                                    <span class="web-calc-total-price" id="calcTotal">$3,500</span>
+                                </div>
+                                <div class="web-calc-deposit">
+                                    <i class="fas fa-shield-alt"></i>
+                                    <span>25% deposit to begin: <strong id="calcDeposit">$875</strong></span>
+                                </div>
+                                <a href="contact.html" class="btn btn-primary" style="width:100%;margin-top:20px;justify-content:center;">
+                                    <i class="fas fa-paper-plane"></i> Start the Conversation
+                                </a>
+                                <p class="web-calc-disclaimer">This is an estimate. Final pricing is confirmed during your free consultation based on your specific project scope.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="deposit-note reveal">
+                    <i class="fas fa-shield-alt"></i>
+                    <p><strong>25% deposit required</strong> to begin pre-production on any website project. Remaining balance is structured in milestones agreed upon before work starts.</p>
+                </div>
+
+            </div>
