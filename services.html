@@ -3,873 +3,129 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Professional video production services from XLNZ Productions. Podcast production, stand-up specials, film production, commercials, social media content, and documentaries in Philadelphia.">
-    <meta name="keywords" content="video production services, podcast production, stand-up comedy filming, commercial production, social media video, documentary production, Philadelphia video production">
+    <meta name="description" content="Professional video production services from XLNZ Productions. Brand video, podcast production, stand-up specials, film production, commercials, social media content, and testimonials in Philadelphia.">
+    <meta name="keywords" content="video production services Philadelphia, brand video production, podcast production, stand-up comedy filming, commercial production, social media video, film production Philadelphia">
     <meta name="robots" content="index, follow">
     <meta name="author" content="XLNZ Productions">
     <link rel="canonical" href="https://www.xlnzproductions.com/services">
-
-    <!-- Open Graph -->
-    <meta property="og:title" content="Our Services - XLNZ Productions">
-    <meta property="og:description" content="Professional video production services including podcasts, stand-up specials, films, commercials, social media content, and documentaries.">
+    <meta property="og:title" content="Production Services — XLNZ Productions">
+    <meta property="og:description" content="Professional video production services including brand video, podcasts, stand-up specials, films, commercials, and social media content.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.xlnzproductions.com/services">
     <meta property="og:image" content="https://www.xlnzproductions.com/images/og-services.jpg">
     <meta property="og:locale" content="en_US">
-
-    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Our Services - XLNZ Productions">
-    <meta name="twitter:description" content="Professional video production services including podcasts, stand-up specials, films, commercials, social media content, and documentaries.">
-
-    <!-- Schema.org -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "VideoProductionCompany",
-        "name": "XLNZ Productions",
-        "url": "https://www.xlnzproductions.com",
-        "priceRange": "$400-$3600",
-        "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Philadelphia",
-            "addressRegion": "PA",
-            "addressCountry": "US"
-        }
-    }
-    </script>
-
-    <title>Our Services - XLNZ Productions | Philadelphia Video Production</title>
-
+    <meta name="twitter:title" content="Production Services — XLNZ Productions">
+    <meta name="twitter:description" content="Professional video production services including brand video, podcasts, stand-up specials, films, and social media content.">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoProductionCompany","name":"XLNZ Productions","url":"https://www.xlnzproductions.com","email":"xlnzproductions@gmail.com","address":{"@type":"PostalAddress","addressLocality":"Philadelphia","addressRegion":"PA","addressCountry":"US"},"sameAs":["https://www.instagram.com/xlnzproductions","https://www.youtube.com/@xlnzproductions","https://www.linkedin.com/company/xlnzproductions"]}</script>
+    <title>Production Services — XLNZ Productions | Philadelphia</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
     <style>
-        :root {
-            --bg-primary: #0a0a0f;
-            --bg-secondary: #12122a;
-            --bg-card: #1a1a2e;
-            --accent: #e94560;
-            --accent-hover: #ff6b35;
-            --accent-gradient: linear-gradient(135deg, #e94560, #ff6b35);
-            --text-primary: #ffffff;
-            --text-secondary: #a0a0b8;
-            --text-muted: #6c6c80;
-            --border: rgba(255, 255, 255, 0.08);
-            --glow: 0 0 40px rgba(233, 69, 96, 0.15);
-            --success: #10b981;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg-primary);
-            color: var(--text-primary);
-            line-height: 1.7;
-            overflow-x: hidden;
-        }
-
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            line-height: 1.2;
-        }
-
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-
-        /* ===== HEADER ===== */
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-            padding: 20px 0;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            background: transparent;
-        }
-
-        header.scrolled {
-            background: rgba(10, 10, 15, 0.95);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            padding: 12px 0;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
-        }
-
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 26px;
-            font-weight: 800;
-            color: var(--text-primary);
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            letter-spacing: -0.5px;
-            cursor: pointer;
-            user-select: none;
-            -webkit-user-select: none;
-            -webkit-tap-highlight-color: transparent;
-        }
-
-        .logo-icon {
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }
-
-        .logo-icon img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 8px;
-        }
-
-        nav ul li a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 15px;
-            padding: 8px 16px;
-            border-radius: 6px;
-            transition: all 0.3s ease;
-        }
-
-        nav ul li a:hover,
-        nav ul li a.active {
-            color: var(--text-primary);
-            background: rgba(233, 69, 96, 0.1);
-        }
-
-        .nav-cta {
-            background: var(--accent-gradient) !important;
-            color: var(--text-primary) !important;
-            font-weight: 600 !important;
-            padding: 10px 24px !important;
-        }
-
-        .nav-cta:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 8px 25px rgba(233, 69, 96, 0.3);
-        }
-
-        .mobile-menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            color: var(--text-primary);
-            font-size: 24px;
-            cursor: pointer;
-            padding: 8px;
-        }
-
-        .mobile-menu-close {
-            display: none;
-        }
-
-        /* ===== PAGE HERO ===== */
-        .page-hero {
-            min-height: 60vh;
-            display: flex;
-            align-items: center;
-            position: relative;
-            overflow: hidden;
-            padding: 140px 0 80px;
-        }
-
-        .page-hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(ellipse at 30% 50%, rgba(233, 69, 96, 0.08) 0%, transparent 60%),
-                        radial-gradient(ellipse at 70% 20%, rgba(255, 107, 53, 0.06) 0%, transparent 50%);
-            pointer-events: none;
-        }
-
-        .page-hero::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 200px;
-            background: linear-gradient(to top, var(--bg-primary), transparent);
-            pointer-events: none;
-        }
-
-        .hero-grid {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image:
-                linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-            background-size: 60px 60px;
-            mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
-            -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
-        }
-
-        .page-hero-content {
-            position: relative;
-            z-index: 2;
-            text-align: center;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .section-label {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            color: var(--accent);
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 16px;
-        }
-
-        .section-label::before {
-            content: '';
-            width: 30px;
-            height: 2px;
-            background: var(--accent-gradient);
-        }
-
-        .page-hero h1 {
-            font-size: clamp(36px, 6vw, 64px);
-            font-weight: 900;
-            margin-bottom: 20px;
-            letter-spacing: -1px;
-        }
-
-        .page-hero h1 .gradient-text {
-            background: var(--accent-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .page-hero p {
-            font-size: 18px;
-            color: var(--text-secondary);
-            max-width: 600px;
-            margin: 0 auto 32px;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 16px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        /* ===== BUTTONS ===== */
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            padding: 16px 36px;
-            border-radius: 8px;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            font-size: 16px;
-            text-decoration: none;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            cursor: pointer;
-            border: none;
-        }
-
-        .btn-primary {
-            background: var(--accent-gradient);
-            color: var(--text-primary);
-            box-shadow: 0 4px 15px rgba(233, 69, 96, 0.3);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 30px rgba(233, 69, 96, 0.4);
-        }
-
-        .btn-secondary {
-            background: rgba(255, 255, 255, 0.05);
-            color: var(--text-primary);
-            border: 1px solid var(--border);
-        }
-
-        .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: rgba(255, 255, 255, 0.2);
-            transform: translateY(-2px);
-        }
-
-        .btn-sm {
-            padding: 12px 24px;
-            font-size: 14px;
-        }
-
-        /* ===== SERVICES SECTION ===== */
-        .services-section {
-            padding: 100px 0;
-            position: relative;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 64px;
-        }
-
-        .section-header h2 {
-            font-size: clamp(32px, 4vw, 48px);
-            margin-bottom: 16px;
-        }
-
-        .section-header p {
-            color: var(--text-secondary);
-            font-size: 18px;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-        }
-
-        .service-card {
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            overflow: hidden;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-        }
-
-        .service-card:hover {
-            border-color: rgba(233, 69, 96, 0.3);
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-        }
-
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at 50% 0%, rgba(233, 69, 96, 0.05) 0%, transparent 60%);
-            opacity: 0;
-            transition: opacity 0.4s ease;
-            pointer-events: none;
-        }
-
-        .service-card:hover::before {
-            opacity: 1;
-        }
-
-        .service-image {
-            height: 200px;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .service-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .service-card:hover .service-image img {
-            transform: scale(1.1);
-        }
-
-        .service-image::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 60px;
-            background: linear-gradient(to top, var(--bg-card), transparent);
-            pointer-events: none;
-        }
-
-        .service-icon-wrapper {
-            width: 64px;
-            height: 64px;
-            background: var(--accent-gradient);
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: -32px 0 20px 0;
-            position: relative;
-            z-index: 2;
-            box-shadow: 0 8px 20px rgba(233, 69, 96, 0.3);
-        }
-
-        .service-icon-wrapper i {
-            font-size: 28px;
-            color: white;
-        }
-
-        .service-content {
-            padding: 0 32px 32px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .service-content h3 {
-            font-size: 22px;
-            margin-bottom: 12px;
-            color: var(--text-primary);
-        }
-
-        .service-content > p {
-            color: var(--text-secondary);
-            font-size: 15px;
-            margin-bottom: 20px;
-            line-height: 1.6;
-        }
-
-        .service-features {
-            list-style: none;
-            margin-bottom: 24px;
-        }
-
-        .service-features li {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding: 8px 0;
-            color: var(--text-secondary);
-            font-size: 14px;
-        }
-
-        .service-features li i {
-            color: var(--accent);
-            font-size: 12px;
-            flex-shrink: 0;
-        }
-
-        .service-price-range {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            background: rgba(233, 69, 96, 0.1);
-            border: 1px solid rgba(233, 69, 96, 0.2);
-            color: var(--accent);
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 600;
-            font-size: 13px;
-            padding: 6px 14px;
-            border-radius: 50px;
-            margin-bottom: 20px;
-        }
-
-        .service-price-range i {
-            font-size: 12px;
-        }
-
-        /* ===== PROCESS SECTION ===== */
-        .process-section {
-            padding: 100px 0;
-            background: var(--bg-secondary);
-            position: relative;
-        }
-
-        .process-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(ellipse at 50% 50%, rgba(233, 69, 96, 0.05) 0%, transparent 60%);
-            pointer-events: none;
-        }
-
-        .process-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 32px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .process-step {
-            text-align: center;
-            position: relative;
-        }
-
-        .process-step-number {
-            width: 72px;
-            height: 72px;
-            background: rgba(255, 255, 255, 0.03);
-            border: 2px solid var(--border);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 24px;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 28px;
-            font-weight: 900;
-            background: var(--accent-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            transition: all 0.3s ease;
-        }
-
-        .process-step:hover .process-step-number {
-            border-color: var(--accent);
-            box-shadow: 0 0 30px rgba(233, 69, 96, 0.2);
-        }
-
-        .process-step h3 {
-            font-size: 18px;
-            margin-bottom: 12px;
-        }
-
-        .process-step p {
-            color: var(--text-secondary);
-            font-size: 14px;
-            line-height: 1.6;
-        }
-
-        /* ===== CTA SECTION ===== */
-        .cta {
-            padding: 100px 0;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(233, 69, 96, 0.08) 0%, transparent 70%);
-            pointer-events: none;
-        }
-
-        .cta-content {
-            text-align: center;
-            position: relative;
-            z-index: 1;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .cta h2 {
-            font-size: clamp(32px, 5vw, 48px);
-            margin-bottom: 20px;
-        }
-
-        .cta p {
-            font-size: 18px;
-            color: var(--text-secondary);
-            margin-bottom: 40px;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 16px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        /* ===== FOOTER ===== */
-        footer {
-            background: var(--bg-primary);
-            border-top: 1px solid var(--border);
-            padding: 64px 0 32px;
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 48px;
-            margin-bottom: 48px;
-        }
-
-        .footer-brand .logo {
-            margin-bottom: 16px;
-        }
-
-        .footer-brand p {
-            color: var(--text-secondary);
-            font-size: 15px;
-            margin-bottom: 24px;
-            line-height: 1.7;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 12px;
-        }
-
-        .social-links a {
-            width: 44px;
-            height: 44px;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-secondary);
-            font-size: 18px;
-            transition: all 0.3s ease;
-        }
-
-        .social-links a:hover {
-            background: var(--accent);
-            border-color: var(--accent);
-            color: var(--text-primary);
-            transform: translateY(-3px);
-        }
-
-        .footer-column h4 {
-            font-size: 16px;
-            font-weight: 700;
-            margin-bottom: 20px;
-        }
-
-        .footer-column ul {
-            list-style: none;
-        }
-
-        .footer-column ul li {
-            margin-bottom: 12px;
-        }
-
-        .footer-column ul li a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-size: 15px;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .footer-column ul li a:hover {
-            color: var(--accent);
-            transform: translateX(4px);
-        }
-
-        .footer-bottom {
-            border-top: 1px solid var(--border);
-            padding-top: 24px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            color: var(--text-muted);
-            font-size: 14px;
-        }
-
-        .footer-bottom a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .footer-bottom a:hover {
-            color: var(--accent);
-        }
-
-        .footer-legal {
-            display: flex;
-            gap: 16px;
-        }
-
-        /* ===== SCROLL ANIMATIONS ===== */
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* ===== RESPONSIVE ===== */
-        @media (max-width: 1024px) {
-            .footer-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .process-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 992px) {
-            .services-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 768px) {
-            .mobile-menu-toggle {
-                display: block;
-            }
-
-            .mobile-menu-close {
-                display: block;
-            }
-
-            nav {
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100vh;
-                background: rgba(10, 10, 15, 0.98);
-                backdrop-filter: blur(20px);
-                -webkit-backdrop-filter: blur(20px);
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                transform: translateX(100%);
-                transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-                z-index: 999;
-            }
-
-            nav.active {
-                transform: translateX(0);
-            }
-
-            nav ul {
-                flex-direction: column;
-                align-items: center;
-                gap: 16px;
-            }
-
-            nav ul li a {
-                font-size: 24px;
-                padding: 12px 24px;
-            }
-
-            .mobile-menu-close {
-                position: absolute;
-                top: 24px;
-                right: 24px;
-                background: none;
-                border: none;
-                color: var(--text-primary);
-                font-size: 28px;
-                cursor: pointer;
-                z-index: 1001;
-            }
-
-            .services-grid {
-                grid-template-columns: 1fr;
-                max-width: 500px;
-                margin-left: auto;
-                margin-right: auto;
-            }
-
-            .process-grid {
-                grid-template-columns: 1fr;
-                max-width: 400px;
-                margin-left: auto;
-                margin-right: auto;
-            }
-
-            .cta-buttons {
-                flex-direction: column;
-                align-items: stretch;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .page-hero h1 {
-                font-size: 32px;
-            }
-
-            .hero-buttons {
-                flex-direction: column;
-                align-items: stretch;
-            }
-
-            .btn {
-                justify-content: center;
-            }
-
-            .service-content {
-                padding: 0 24px 24px;
-            }
-
-            .footer-grid {
-                grid-template-columns: 1fr;
-                gap: 32px;
-            }
-
-            .footer-bottom {
-                flex-direction: column;
-                gap: 12px;
-                text-align: center;
-            }
-        }
-
-        section {
-            scroll-margin-top: 80px;
-        }
+        :root{--bg-primary:#0a0a0f;--bg-secondary:#12122a;--bg-card:#1a1a2e;--accent:#e94560;--accent-gradient:linear-gradient(135deg,#e94560,#ff6b35);--text-primary:#ffffff;--text-secondary:#a0a0b8;--text-muted:#6c6c80;--border:rgba(255,255,255,0.08);--glow:0 0 40px rgba(233,69,96,0.15)}
+        *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+        body{font-family:'Inter',sans-serif;background:var(--bg-primary);color:var(--text-primary);line-height:1.7;overflow-x:hidden}
+        h1,h2,h3,h4,h5,h6{font-family:'Montserrat',sans-serif;font-weight:700;line-height:1.2}
+        .container{width:100%;max-width:1200px;margin:0 auto;padding:0 24px}
+        header{position:fixed;top:0;left:0;width:100%;z-index:1000;padding:20px 0;transition:all 0.4s cubic-bezier(0.4,0,0.2,1);background:transparent}
+        header.scrolled{background:rgba(10,10,15,0.95);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);padding:12px 0;box-shadow:0 4px 30px rgba(0,0,0,0.3)}
+        .header-content{display:flex;justify-content:space-between;align-items:center}
+        .logo{font-family:'Montserrat',sans-serif;font-size:26px;font-weight:800;color:var(--text-primary);text-decoration:none;display:flex;align-items:center;gap:12px;letter-spacing:-0.5px;cursor:pointer;user-select:none;-webkit-user-select:none;-webkit-tap-highlight-color:transparent}
+        .logo-icon{width:40px;height:40px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+        .logo-icon img{width:100%;height:100%;object-fit:contain}
+        nav ul{display:flex;list-style:none;gap:8px}
+        nav ul li a{color:var(--text-secondary);text-decoration:none;font-weight:500;font-size:15px;padding:8px 16px;border-radius:6px;transition:all 0.3s ease}
+        nav ul li a:hover,nav ul li a.active{color:var(--text-primary);background:rgba(233,69,96,0.1)}
+        .nav-cta{background:var(--accent-gradient)!important;color:var(--text-primary)!important;font-weight:600!important;padding:10px 24px!important}
+        .nav-cta:hover{transform:translateY(-1px);box-shadow:0 8px 25px rgba(233,69,96,0.3)}
+        .mobile-menu-toggle{display:none;background:none;border:none;color:var(--text-primary);font-size:24px;cursor:pointer;padding:8px}
+        .mobile-menu-close{display:none}
+        .page-hero{min-height:60vh;display:flex;align-items:center;position:relative;overflow:hidden;padding:140px 0 80px}
+        .page-hero::before{content:'';position:absolute;top:0;left:0;width:100%;height:100%;background:radial-gradient(ellipse at 30% 50%,rgba(233,69,96,0.08) 0%,transparent 60%),radial-gradient(ellipse at 70% 20%,rgba(255,107,53,0.06) 0%,transparent 50%);pointer-events:none}
+        .page-hero::after{content:'';position:absolute;bottom:0;left:0;width:100%;height:200px;background:linear-gradient(to top,var(--bg-primary),transparent);pointer-events:none}
+        .hero-grid{position:absolute;top:0;left:0;width:100%;height:100%;background-image:linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse at center,black 30%,transparent 70%);-webkit-mask-image:radial-gradient(ellipse at center,black 30%,transparent 70%)}
+        .page-hero-content{position:relative;z-index:2;text-align:center;max-width:700px;margin:0 auto}
+        .section-label{display:inline-flex;align-items:center;gap:8px;color:var(--accent);font-family:'Montserrat',sans-serif;font-weight:700;font-size:14px;text-transform:uppercase;letter-spacing:2px;margin-bottom:16px}
+        .section-label::before{content:'';width:30px;height:2px;background:var(--accent-gradient)}
+        .gradient-text{background:var(--accent-gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+        .page-hero h1{font-size:clamp(36px,6vw,64px);font-weight:900;margin-bottom:20px;letter-spacing:-1px}
+        .page-hero p{font-size:18px;color:var(--text-secondary);max-width:600px;margin:0 auto 32px}
+        .hero-buttons{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+        .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:16px 36px;border-radius:8px;font-family:'Montserrat',sans-serif;font-weight:700;font-size:16px;text-decoration:none;transition:all 0.3s cubic-bezier(0.4,0,0.2,1);cursor:pointer;border:none}
+        .btn-primary{background:var(--accent-gradient);color:var(--text-primary);box-shadow:0 4px 15px rgba(233,69,96,0.3)}
+        .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(233,69,96,0.4)}
+        .btn-secondary{background:rgba(255,255,255,0.05);color:var(--text-primary);border:1px solid var(--border)}
+        .btn-secondary:hover{background:rgba(255,255,255,0.1);border-color:rgba(255,255,255,0.2);transform:translateY(-2px)}
+        .btn-sm{padding:12px 24px;font-size:14px}
+        .services-section{padding:100px 0;position:relative}
+        .section-header{text-align:center;margin-bottom:64px}
+        .section-header h2{font-size:clamp(32px,4vw,48px);margin-bottom:16px}
+        .section-header p{color:var(--text-secondary);font-size:18px;max-width:600px;margin:0 auto}
+        .section-header .section-label{justify-content:center}
+        .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+        .service-card{background:rgba(255,255,255,0.02);border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:all 0.4s cubic-bezier(0.4,0,0.2,1);position:relative}
+        .service-card:hover{border-color:rgba(233,69,96,0.3);transform:translateY(-8px);box-shadow:0 20px 40px rgba(0,0,0,0.3)}
+        .service-card::before{content:'';position:absolute;top:0;left:0;width:100%;height:100%;background:radial-gradient(circle at 50% 0%,rgba(233,69,96,0.05) 0%,transparent 60%);opacity:0;transition:opacity 0.4s ease;pointer-events:none}
+        .service-card:hover::before{opacity:1}
+        .service-image{height:200px;overflow:hidden;position:relative}
+        .service-image img{width:100%;height:100%;object-fit:cover;transition:transform 0.6s cubic-bezier(0.4,0,0.2,1)}
+        .service-card:hover .service-image img{transform:scale(1.1)}
+        .service-image::after{content:'';position:absolute;bottom:0;left:0;width:100%;height:60px;background:linear-gradient(to top,var(--bg-card),transparent);pointer-events:none}
+        .service-icon-wrapper{width:64px;height:64px;background:var(--accent-gradient);border-radius:16px;display:flex;align-items:center;justify-content:center;margin:-32px 0 20px 0;position:relative;z-index:2;box-shadow:0 8px 20px rgba(233,69,96,0.3)}
+        .service-icon-wrapper i{font-size:28px;color:white}
+        .service-content{padding:0 32px 32px;position:relative;z-index:1}
+        .service-content h3{font-size:22px;margin-bottom:12px;color:var(--text-primary)}
+        .service-content > p{color:var(--text-secondary);font-size:15px;margin-bottom:20px;line-height:1.6}
+        .service-features{list-style:none;margin-bottom:24px}
+        .service-features li{display:flex;align-items:center;gap:10px;padding:8px 0;color:var(--text-secondary);font-size:14px}
+        .service-features li i{color:var(--accent);font-size:12px;flex-shrink:0}
+        .service-price-range{display:inline-flex;align-items:center;gap:6px;background:rgba(233,69,96,0.1);border:1px solid rgba(233,69,96,0.2);color:var(--accent);font-family:'Montserrat',sans-serif;font-weight:600;font-size:13px;padding:6px 14px;border-radius:50px;margin-bottom:20px}
+        .service-price-range i{font-size:12px}
+        .process-section{padding:100px 0;background:var(--bg-secondary);position:relative}
+        .process-section::before{content:'';position:absolute;top:0;left:0;width:100%;height:100%;background:radial-gradient(ellipse at 50% 50%,rgba(233,69,96,0.05) 0%,transparent 60%);pointer-events:none}
+        .process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;position:relative;z-index:1}
+        .process-step{text-align:center;position:relative}
+        .process-step-number{width:72px;height:72px;border:2px solid var(--border);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 24px;font-family:'Montserrat',sans-serif;font-size:28px;font-weight:900;background:var(--accent-gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;transition:all 0.3s ease}
+        .process-step:hover .process-step-number{border-color:var(--accent);box-shadow:0 0 30px rgba(233,69,96,0.2)}
+        .process-step h3{font-size:18px;margin-bottom:12px}
+        .process-step p{color:var(--text-secondary);font-size:14px;line-height:1.6}
+        .cta{padding:100px 0;position:relative;overflow:hidden}
+        .cta::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(233,69,96,0.08) 0%,transparent 70%);pointer-events:none}
+        .cta-content{text-align:center;position:relative;z-index:1;max-width:700px;margin:0 auto}
+        .cta h2{font-size:clamp(32px,5vw,48px);margin-bottom:20px}
+        .cta p{font-size:18px;color:var(--text-secondary);margin-bottom:40px}
+        .cta-buttons{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+        footer{background:var(--bg-primary);border-top:1px solid var(--border);padding:64px 0 32px}
+        .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
+        .footer-brand .logo{margin-bottom:16px}
+        .footer-brand p{color:var(--text-secondary);font-size:15px;margin-bottom:24px;line-height:1.7}
+        .social-links{display:flex;gap:12px}
+        .social-links a{width:44px;height:44px;background:rgba(255,255,255,0.05);border:1px solid var(--border);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--text-secondary);font-size:18px;transition:all 0.3s ease;text-decoration:none}
+        .social-links a:hover{background:var(--accent);border-color:var(--accent);color:var(--text-primary);transform:translateY(-3px)}
+        .footer-column h4{font-size:16px;font-weight:700;margin-bottom:20px}
+        .footer-column ul{list-style:none}
+        .footer-column ul li{margin-bottom:12px}
+        .footer-column ul li a{color:var(--text-secondary);text-decoration:none;font-size:15px;transition:all 0.3s ease;display:inline-flex;align-items:center;gap:6px}
+        .footer-column ul li a:hover{color:var(--accent);transform:translateX(4px)}
+        .footer-bottom{border-top:1px solid var(--border);padding-top:24px;display:flex;justify-content:space-between;align-items:center;color:var(--text-muted);font-size:14px}
+        .footer-bottom a{color:var(--text-secondary);text-decoration:none;transition:color 0.3s ease}
+        .footer-bottom a:hover{color:var(--accent)}
+        .footer-legal{display:flex;gap:16px}
+        .reveal{opacity:0;transform:translateY(30px);transition:all 0.8s cubic-bezier(0.4,0,0.2,1)}
+        .reveal.active{opacity:1;transform:translateY(0)}
+        section{scroll-margin-top:80px}
+        @media(max-width:1024px){.footer-grid{grid-template-columns:repeat(2,1fr)}.process-grid{grid-template-columns:repeat(2,1fr)}}
+        @media(max-width:992px){.services-grid{grid-template-columns:repeat(2,1fr)}}
+        @media(max-width:768px){.mobile-menu-toggle{display:block}.mobile-menu-close{display:block}nav{position:fixed;top:0;left:0;width:100%;height:100vh;background:rgba(10,10,15,0.98);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);display:flex;align-items:center;justify-content:center;transform:translateX(100%);transition:transform 0.4s cubic-bezier(0.4,0,0.2,1);z-index:999}nav.active{transform:translateX(0)}nav ul{flex-direction:column;align-items:center;gap:16px}nav ul li a{font-size:24px;padding:12px 24px}.mobile-menu-close{position:absolute;top:24px;right:24px;background:none;border:none;color:var(--text-primary);font-size:28px;cursor:pointer;z-index:1001}.services-grid{grid-template-columns:1fr;max-width:500px;margin-left:auto;margin-right:auto}.process-grid{grid-template-columns:1fr;max-width:400px;margin-left:auto;margin-right:auto}.cta-buttons{flex-direction:column;align-items:stretch}}
+        @media(max-width:576px){.page-hero h1{font-size:32px}.hero-buttons{flex-direction:column;align-items:stretch}.btn{justify-content:center}.service-content{padding:0 24px 24px}.footer-grid{grid-template-columns:1fr;gap:32px}.footer-bottom{flex-direction:column;gap:12px;text-align:center}}
     </style>
 </head>
 <body>
 
-    <!-- Header -->
     <header id="header">
         <div class="container header-content">
             <a href="index.html" class="logo">
-                <span class="logo-icon"><img src="images/XLNZ Color White Border Logo.png" alt="XLNZ"></span>
+                <span class="logo-icon"><img src="images/XLNZ Color White Border Logo.png" alt="XLNZ Productions"></span>
                 XLNZ
             </a>
             <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav">
@@ -889,50 +145,110 @@
         </div>
     </header>
 
-    <!-- Page Hero -->
     <section class="page-hero">
         <div class="hero-grid"></div>
         <div class="container page-hero-content">
             <div class="section-label">What We Do</div>
             <h1>Production <span class="gradient-text">Services</span></h1>
-            <p>From concept to final delivery, we provide professional video production services tailored to your creative vision and budget.</p>
+            <p>We think like marketers and shoot like filmmakers. Every service we offer starts with a strategy and ends with content that actually does something for your brand.</p>
             <div class="hero-buttons">
                 <a href="#services" class="btn btn-primary"><i class="fas fa-arrow-down"></i> Explore Services</a>
-                <a href="packages.html" class="btn btn-secondary"><i class="fas fa-tag"></i> View Packages</a>
+                <a href="packages.html" class="btn btn-secondary"><i class="fas fa-box"></i> View Packages</a>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
     <section class="services-section" id="services">
         <div class="container">
             <div class="section-header reveal">
-                <div class="section-label" style="justify-content: center;">Our Services</div>
+                <div class="section-label">Our Services</div>
                 <h2>What We <span class="gradient-text">Offer</span></h2>
-                <p>Professional production services tailored to your specific needs</p>
+                <p>Full-service production built around your goals, your audience, and your brand</p>
             </div>
 
             <div class="services-grid">
+
+                <!-- Social Media for Brands -->
+                <div class="service-card reveal" id="social">
+                    <div class="service-image">
+                        <img src="images/XLNZ_ditch_day_photo.jpg" alt="Social Media for Brands" loading="lazy" width="600" height="450">
+                    </div>
+                    <div class="service-content">
+                        <div class="service-icon-wrapper"><i class="fas fa-hashtag"></i></div>
+                        <h3>Social Media for Brands</h3>
+                        <p>Consistent, high-quality content that builds your brand's presence and turns followers into customers. We handle strategy, production, and delivery so you stay visible every month.</p>
+                        <div class="service-price-range"><i class="fas fa-tag"></i> $400 to $1,800</div>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Monthly content strategy</li>
+                            <li><i class="fas fa-check"></i> Promotional reels</li>
+                            <li><i class="fas fa-check"></i> Professional editing</li>
+                            <li><i class="fas fa-check"></i> Platform optimization</li>
+                            <li><i class="fas fa-check"></i> Digital delivery</li>
+                        </ul>
+                        <a href="packages.html" class="btn btn-primary btn-sm"><i class="fas fa-box"></i> View Packages</a>
+                    </div>
+                </div>
+
+                <!-- Commercials & Brand Video -->
+                <div class="service-card reveal" id="commercial">
+                    <div class="service-image">
+                        <img src="images/XLNZ_film_domdukes_mts.jpg" alt="Commercials and Brand Video" loading="lazy" width="600" height="450">
+                    </div>
+                    <div class="service-content">
+                        <div class="service-icon-wrapper"><i class="fas fa-bullhorn"></i></div>
+                        <h3>Commercials &amp; Brand Video</h3>
+                        <p>Compelling brand video shot with cinematic quality. We come in understanding your audience and your competition so every creative decision is made with a purpose behind it.</p>
+                        <div class="service-price-range"><i class="fas fa-tag"></i> $750 to $3,600</div>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Concept development</li>
+                            <li><i class="fas fa-check"></i> Script writing</li>
+                            <li><i class="fas fa-check"></i> Professional filming</li>
+                            <li><i class="fas fa-check"></i> Advanced editing</li>
+                            <li><i class="fas fa-check"></i> Strategy consultation</li>
+                        </ul>
+                        <a href="packages.html" class="btn btn-primary btn-sm"><i class="fas fa-box"></i> View Packages</a>
+                    </div>
+                </div>
+
+                <!-- Testimonials -->
+                <div class="service-card reveal" id="testimonial">
+                    <div class="service-image">
+                        <img src="images/XLNZ_testimonial_video.jpg" alt="Testimonial Videos" loading="lazy" width="600" height="450">
+                    </div>
+                    <div class="service-content">
+                        <div class="service-icon-wrapper"><i class="fas fa-users"></i></div>
+                        <h3>Testimonials</h3>
+                        <p>Professional testimonial videos that build trust and convert. Your best clients telling your story is the most powerful marketing you have. We make sure it looks like it too.</p>
+                        <div class="service-price-range"><i class="fas fa-tag"></i> Custom Quote</div>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Interview filming</li>
+                            <li><i class="fas fa-check"></i> Professional lighting</li>
+                            <li><i class="fas fa-check"></i> Audio editing and mixing</li>
+                            <li><i class="fas fa-check"></i> Color grading</li>
+                            <li><i class="fas fa-check"></i> Digital delivery</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-primary btn-sm"><i class="fas fa-envelope"></i> Get Quote</a>
+                    </div>
+                </div>
+
                 <!-- Podcast Production -->
                 <div class="service-card reveal" id="podcast">
                     <div class="service-image">
                         <img src="images/XLNZ_studio_podcast.jpg" alt="Podcast Production" loading="lazy" width="600" height="450">
                     </div>
                     <div class="service-content">
-                        <div class="service-icon-wrapper">
-                            <i class="fas fa-podcast"></i>
-                        </div>
+                        <div class="service-icon-wrapper"><i class="fas fa-podcast"></i></div>
                         <h3>Podcast Production</h3>
-                        <p>Professional podcast recording, editing, and distribution services to help you share your voice with the world.</p>
-                        <div class="service-price-range"><i class="fas fa-tag"></i> $480 – $1,020</div>
+                        <p>Professional podcast recording, editing, and delivery. We have built Philadelphia's most active independent podcast roster from the ground up. We know what it takes to keep listeners coming back.</p>
+                        <div class="service-price-range"><i class="fas fa-tag"></i> $480 to $1,020</div>
                         <ul class="service-features">
-                            <li><i class="fas fa-check"></i> Professional audio recording</li>
-                            <li><i class="fas fa-check"></i> Audio editing & mixing</li>
-                            <li><i class="fas fa-check"></i> Intro/outro music</li>
+                            <li><i class="fas fa-check"></i> Professional studio recording</li>
+                            <li><i class="fas fa-check"></i> Audio editing and mixing</li>
+                            <li><i class="fas fa-check"></i> Custom intro and outro music</li>
                             <li><i class="fas fa-check"></i> Sound design</li>
                             <li><i class="fas fa-check"></i> Strategy consultation</li>
                         </ul>
-                        <a href="packages.html" class="btn btn-primary btn-sm"><i class="fas fa-tag"></i> View Packages</a>
+                        <a href="packages.html" class="btn btn-primary btn-sm"><i class="fas fa-box"></i> View Packages</a>
                     </div>
                 </div>
 
@@ -942,66 +258,18 @@
                         <img src="images/XLNZ_stand_up_comedy_special.jpg" alt="Stand-Up Specials" loading="lazy" width="600" height="450">
                     </div>
                     <div class="service-content">
-                        <div class="service-icon-wrapper">
-                            <i class="fas fa-microphone-alt"></i>
-                        </div>
+                        <div class="service-icon-wrapper"><i class="fas fa-microphone-alt"></i></div>
                         <h3>Stand-Up Specials</h3>
-                        <p>Multi-camera comedy production that captures every punchline and audience reaction with cinematic quality.</p>
-                        <div class="service-price-range"><i class="fas fa-tag"></i> $500 – $1,200</div>
+                        <p>Multi-camera comedy production that captures every punchline and audience reaction with cinematic quality. We have filmed sets of every size and know how to make a live performance translate on screen.</p>
+                        <div class="service-price-range"><i class="fas fa-tag"></i> $500 to $1,200</div>
                         <ul class="service-features">
                             <li><i class="fas fa-check"></i> Multi-camera setup</li>
                             <li><i class="fas fa-check"></i> Professional recording</li>
-                            <li><i class="fas fa-check"></i> Audio editing & mixing</li>
+                            <li><i class="fas fa-check"></i> Audio editing and mixing</li>
+                            <li><i class="fas fa-check"></i> Color grading</li>
                             <li><i class="fas fa-check"></i> Digital delivery</li>
-                            <li><i class="fas fa-check"></i> Strategy consultation</li>
                         </ul>
-                        <a href="packages.html" class="btn btn-primary btn-sm"><i class="fas fa-tag"></i> View Packages</a>
-                    </div>
-                </div>
-
-                <!-- Commercials/Skits -->
-                <div class="service-card reveal" id="commercial">
-                    <div class="service-image">
-                        <img src="images/XLNZ_film_domdukes_mts.jpg" alt="Commercials/Skits" loading="lazy" width="600" height="450">
-                    </div>
-                    <div class="service-content">
-                        <div class="service-icon-wrapper">
-                            <i class="fas fa-bullhorn"></i>
-                        </div>
-                        <h3>Commercials / Skits</h3>
-                        <p>Compelling commercial and skit content that captures attention and drives results for your business.</p>
-                        <div class="service-price-range"><i class="fas fa-tag"></i> $750 – $3,600</div>
-                        <ul class="service-features">
-                            <li><i class="fas fa-check"></i> Concept development</li>
-                            <li><i class="fas fa-check"></i> Script writing</li>
-                            <li><i class="fas fa-check"></i> Professional filming</li>
-                            <li><i class="fas fa-check"></i> Advanced editing</li>
-                            <li><i class="fas fa-check"></i> Strategy consultation</li>
-                        </ul>
-                        <a href="packages.html" class="btn btn-primary btn-sm"><i class="fas fa-tag"></i> View Packages</a>
-                    </div>
-                </div>
-
-                <!-- Social Media -->
-                <div class="service-card reveal" id="social">
-                    <div class="service-image">
-                        <img src="images/XLNZ_ditch_day_photo.jpg" alt="Social Media Content" loading="lazy" width="600" height="450">
-                    </div>
-                    <div class="service-content">
-                        <div class="service-icon-wrapper">
-                            <i class="fas fa-hashtag"></i>
-                        </div>
-                        <h3>Social Media Content</h3>
-                        <p>Engaging social media content that builds brand awareness and drives engagement across platforms.</p>
-                        <div class="service-price-range"><i class="fas fa-tag"></i> $400 – $1,800</div>
-                        <ul class="service-features">
-                            <li><i class="fas fa-check"></i> Promotional reels</li>
-                            <li><i class="fas fa-check"></i> Professional editing</li>
-                            <li><i class="fas fa-check"></i> Digital delivery</li>
-                            <li><i class="fas fa-check"></i> Social media optimization</li>
-                            <li><i class="fas fa-check"></i> Strategy consultation</li>
-                        </ul>
-                        <a href="packages.html" class="btn btn-primary btn-sm"><i class="fas fa-tag"></i> View Packages</a>
+                        <a href="packages.html" class="btn btn-primary btn-sm"><i class="fas fa-box"></i> View Packages</a>
                     </div>
                 </div>
 
@@ -1011,45 +279,21 @@
                         <img src="images/XLNZ_film_studio_buhzz.jpg" alt="Film Production" loading="lazy" width="600" height="450">
                     </div>
                     <div class="service-content">
-                        <div class="service-icon-wrapper">
-                            <i class="fas fa-video"></i>
-                        </div>
+                        <div class="service-icon-wrapper"><i class="fas fa-video"></i></div>
                         <h3>Film Production</h3>
-                        <p>Full-service film production from pre-production planning to post-production and final delivery.</p>
+                        <p>Full-service film production from pre-production through final delivery. We approach every project with the discipline, vision, and attention to detail of a feature film director. Meet The Sickos is proof of what we can do with full creative control.</p>
                         <div class="service-price-range"><i class="fas fa-tag"></i> Custom Quote</div>
                         <ul class="service-features">
                             <li><i class="fas fa-check"></i> Script development</li>
                             <li><i class="fas fa-check"></i> Pre-production planning</li>
                             <li><i class="fas fa-check"></i> Professional filming</li>
-                            <li><i class="fas fa-check"></i> Post-production</li>
+                            <li><i class="fas fa-check"></i> Full post-production</li>
                             <li><i class="fas fa-check"></i> Strategy consultation</li>
                         </ul>
                         <a href="contact.html" class="btn btn-primary btn-sm"><i class="fas fa-envelope"></i> Get Quote</a>
                     </div>
                 </div>
 
-                <!-- Documentaries -->
-                <div class="service-card reveal" id="documentary">
-                    <div class="service-image">
-                        <img src="images/XLNZ_studio_abyss_room_lawrencekillebrew_documentary.jpg" alt="Documentary Production" loading="lazy" width="600" height="450">
-                    </div>
-                    <div class="service-content">
-                        <div class="service-icon-wrapper">
-                            <i class="fas fa-film"></i>
-                        </div>
-                        <h3>Documentaries</h3>
-                        <p>Compelling documentary production that tells powerful stories and brings important narratives to life.</p>
-                        <div class="service-price-range"><i class="fas fa-tag"></i> Custom Quote</div>
-                        <ul class="service-features">
-                            <li><i class="fas fa-check"></i> Story development</li>
-                            <li><i class="fas fa-check"></i> Interview filming</li>
-                            <li><i class="fas fa-check"></i> Cinematic coverage</li>
-                            <li><i class="fas fa-check"></i> Post-production</li>
-                            <li><i class="fas fa-check"></i> Strategy consultation</li>
-                        </ul>
-                        <a href="contact.html" class="btn btn-primary btn-sm"><i class="fas fa-envelope"></i> Get Quote</a>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -1058,49 +302,45 @@
     <section class="process-section">
         <div class="container">
             <div class="section-header reveal">
-                <div class="section-label" style="justify-content: center;">How It Works</div>
+                <div class="section-label" style="justify-content:center;">How It Works</div>
                 <h2>Our <span class="gradient-text">Process</span></h2>
-                <p>From concept to delivery, we make production simple and stress-free</p>
+                <p>From the first conversation to the final file, here is exactly what working with XLNZ looks like</p>
             </div>
-
             <div class="process-grid">
                 <div class="process-step reveal">
                     <div class="process-step-number">01</div>
-                    <h3>Consultation</h3>
-                    <p>We discuss your vision, goals, and budget to create a tailored production plan.</p>
+                    <h3>Strategy First</h3>
+                    <p>We study your brand, your audience, and your competition before a camera ever comes out. Every creative decision we make starts with understanding what success actually looks like for you.</p>
                 </div>
-
                 <div class="process-step reveal">
                     <div class="process-step-number">02</div>
                     <h3>Pre-Production</h3>
-                    <p>Scripting, storyboarding, location scouting, and all the planning needed for a smooth shoot.</p>
+                    <p>Scripting, storyboarding, location scouting, scheduling. We handle every detail of the planning phase so that shoot day runs smooth and nothing gets left to chance.</p>
                 </div>
-
                 <div class="process-step reveal">
                     <div class="process-step-number">03</div>
                     <h3>Production</h3>
-                    <p>Our professional crew captures your content with industry-leading equipment and techniques.</p>
+                    <p>Our crew shows up with professional gear, a clear plan, and the kind of on-set energy that makes great content happen. We treat every shoot like it matters because it does.</p>
                 </div>
-
                 <div class="process-step reveal">
                     <div class="process-step-number">04</div>
-                    <h3>Post-Production</h3>
-                    <p>Editing, color grading, sound mixing, and final delivery in your preferred formats.</p>
+                    <h3>Delivery</h3>
+                    <p>Editing, color grading, sound mixing, and final delivery in your preferred formats. Everything is done in-house so quality stays consistent from the first frame to the last.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
+    <!-- CTA -->
     <section class="cta">
         <div class="container">
             <div class="cta-content reveal">
-                <div class="section-label" style="justify-content: center;">Ready to Start?</div>
-                <h2>Let's Bring Your <span class="gradient-text">Vision to Life</span></h2>
-                <p>Whether you need a podcast, comedy special, commercial, or social media content, we're here to help make it happen.</p>
+                <div class="section-label" style="justify-content:center;">Ready to Go?</div>
+                <h2>Ready to Make Your Brand <span class="gradient-text">Impossible to Ignore?</span></h2>
+                <p>Pick the service that fits your goals or reach out and we will build a custom plan around exactly what your brand needs. First conversation is on us.</p>
                 <div class="cta-buttons">
-                    <a href="contact.html" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Get a Quote</a>
-                    <a href="packages.html" class="btn btn-secondary"><i class="fas fa-tag"></i> View Packages</a>
+                    <a href="contact.html" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Start the Conversation</a>
+                    <a href="packages.html" class="btn btn-secondary"><i class="fas fa-box"></i> View Packages</a>
                 </div>
             </div>
         </div>
@@ -1112,14 +352,14 @@
             <div class="footer-grid">
                 <div class="footer-brand">
                     <a href="index.html" class="logo">
-                        <span class="logo-icon"><img src="images/XLNZ Color White Border Logo.png" alt="XLNZ"></span>
+                        <span class="logo-icon"><img src="images/XLNZ Color White Border Logo.png" alt="XLNZ Productions"></span>
                         XLNZ
                     </a>
                     <p>Philadelphia's full-service video production company. We think like marketers, shoot like filmmakers, and deliver content that builds brands.</p>
                     <div class="social-links">
-                        <a href="https://www.instagram.com/xlnzproductions" title="Instagram" aria-label="XLNZ on Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.youtube.com/@xlnzproductions" title="YouTube" aria-label="XLNZ on YouTube"><i class="fab fa-youtube"></i></a>
-                        <a href="https://www.linkedin.com/company/xlnzproductions" title="LinkedIn" aria-label="XLNZ on LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.instagram.com/xlnzproductions" aria-label="XLNZ on Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/@xlnzproductions" aria-label="XLNZ on YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.linkedin.com/company/xlnzproductions" aria-label="XLNZ on LinkedIn"><i class="fab fa-linkedin"></i></a>
                     </div>
                 </div>
                 <div class="footer-column">
@@ -1135,12 +375,12 @@
                 <div class="footer-column">
                     <h4>Services</h4>
                     <ul>
+                        <li><a href="services.html#social">Social Media for Brands</a></li>
+                        <li><a href="services.html#commercial">Commercials &amp; Brand Video</a></li>
+                        <li><a href="services.html#testimonial">Testimonials</a></li>
                         <li><a href="services.html#podcast">Podcast Production</a></li>
                         <li><a href="services.html#standup">Stand-Up Specials</a></li>
                         <li><a href="services.html#film">Film Production</a></li>
-                        <li><a href="services.html#commercial">Commercial / Skit</a></li>
-                        <li><a href="services.html#social">Social Media</a></li>
-                        <li><a href="services.html#documentary">Documentaries</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
@@ -1149,6 +389,7 @@
                         <li><a href="mailto:xlnzproductions@gmail.com"><i class="fas fa-envelope" style="margin-right:8px"></i>xlnzproductions@gmail.com</a></li>
                         <li><a href="#"><i class="fas fa-map-marker-alt" style="margin-right:8px"></i>Philadelphia, PA</a></li>
                         <li><a href="https://www.linkedin.com/company/xlnzproductions"><i class="fab fa-linkedin" style="margin-right:8px"></i>LinkedIn</a></li>
+                        <li><a href="contact.html"><i class="fas fa-comment" style="margin-right:8px"></i>Contact Us</a></li>
                     </ul>
                 </div>
             </div>
@@ -1163,66 +404,29 @@
     </footer>
 
     <script>
-        // Copyright
         document.getElementById('copyright').textContent = '\u00A9 ' + new Date().getFullYear() + ' XLNZ Productions. All rights reserved.';
 
-        // Mobile menu
-        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-        const mobileMenuClose = document.getElementById('mobileMenuClose');
-        const nav = document.getElementById('nav');
+        const mmToggle = document.getElementById('mobileMenuToggle');
+        const mmClose  = document.getElementById('mobileMenuClose');
+        const nav      = document.getElementById('nav');
+        mmToggle.addEventListener('click', () => { nav.classList.add('active'); mmToggle.setAttribute('aria-expanded','true'); document.body.style.overflow='hidden'; });
+        mmClose.addEventListener('click',  () => { nav.classList.remove('active'); mmToggle.setAttribute('aria-expanded','false'); document.body.style.overflow=''; });
+        document.querySelectorAll('#nav a').forEach(l => l.addEventListener('click', () => { nav.classList.remove('active'); mmToggle.setAttribute('aria-expanded','false'); document.body.style.overflow=''; }));
+        document.addEventListener('click', e => { if (nav.classList.contains('active') && !nav.contains(e.target) && !mmToggle.contains(e.target)) { nav.classList.remove('active'); mmToggle.setAttribute('aria-expanded','false'); document.body.style.overflow=''; } });
 
-        mobileMenuToggle.addEventListener('click', () => {
-            nav.classList.add('active');
-            mobileMenuToggle.setAttribute('aria-expanded','true');
-            document.body.style.overflow='hidden';
-        });
-
-        mobileMenuClose.addEventListener('click', () => {
-            nav.classList.remove('active');
-            mobileMenuToggle.setAttribute('aria-expanded','false');
-            document.body.style.overflow='';
-        });
-
-        document.querySelectorAll('#nav a').forEach(link => {
-            link.addEventListener('click', () => {
-                nav.classList.remove('active');
-                mobileMenuToggle.setAttribute('aria-expanded','false');
-                document.body.style.overflow='';
-            });
-        });
-
-        document.addEventListener('click', (e) => {
-            if (nav.classList.contains('active') && !nav.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
-                nav.classList.remove('active');
-                mobileMenuToggle.setAttribute('aria-expanded','false');
-                document.body.style.overflow='';
-            }
-        });
-
-        // Header scroll
         const header = document.getElementById('header');
-        window.addEventListener('scroll', () => {
-            header.classList.toggle('scrolled', window.scrollY > 50);
-        });
+        window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 50));
 
-        // Scroll reveal
-        const revealObserver = new IntersectionObserver((entries) => {
-            entries.forEach(e => {
-                if (e.isIntersecting) e.target.classList.add('active');
-            });
-        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+        const ro = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('active'); }), { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+        document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
 
-        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
-
-        // Smooth scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', function(e) {
                 e.preventDefault();
                 const t = document.querySelector(this.getAttribute('href'));
                 if (t) window.scrollTo({ top: t.offsetTop - 80, behavior: 'smooth' });
             });
         });
     </script>
-
 </body>
 </html>
