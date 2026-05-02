@@ -1176,6 +1176,45 @@
     </footer>
 
     <script>
+
+        // ── Website Calculator ────────────────────────────────────────────────
+        const calcItems = document.querySelectorAll('.calc-item input[type="checkbox"]');
+        const calcTotal = document.getElementById('calcTotal');
+        const calcDeposit = document.getElementById('calcDeposit');
+        const calcSelectedItems = document.getElementById('calcSelectedItems');
+
+        function updateCalc() {
+            let total = 0;
+            const selected = [];
+            document.querySelectorAll('.calc-item').forEach(item => {
+                const cb = item.querySelector('input[type="checkbox"]');
+                const price = parseInt(item.dataset.price);
+                const name = item.querySelector('.calc-item-name').textContent.replace('Required','').trim();
+                if (cb.checked) {
+                    total += price;
+                    selected.push({ name, price });
+                    item.classList.add('checked');
+                } else {
+                    item.classList.remove('checked');
+                }
+            });
+            if (calcTotal) calcTotal.textContent = '$' + total.toLocaleString();
+            if (calcDeposit) calcDeposit.textContent = '$' + Math.round(total * 0.25).toLocaleString();
+            if (calcSelectedItems) {
+                calcSelectedItems.innerHTML = selected.map(s =>
+                    '<div class="calc-selected-row"><span>' + s.name + '</span><span>$' + s.price.toLocaleString() + '</span></div>'
+                ).join('');
+            }
+        }
+
+        calcItems.forEach(cb => {
+            if (!cb.disabled) {
+                cb.addEventListener('change', updateCalc);
+            }
+        });
+        updateCalc();
+
+
         document.getElementById('copyright').textContent = '\u00A9 ' + new Date().getFullYear() + ' XLNZ Productions. All rights reserved.';
 
         const mmToggle = document.getElementById('mobileMenuToggle');
@@ -1284,8 +1323,6 @@
                 if (tab.dataset.category === 'website') updateCalc();
             });
         });
-            });
-        });
 
         // Package card click
         document.querySelectorAll('.package-card').forEach(card => {
@@ -1322,43 +1359,6 @@
         });
 
  
-
-        // ── Website Calculator ────────────────────────────────────────────────
-        const calcItems = document.querySelectorAll('.calc-item input[type="checkbox"]');
-        const calcTotal = document.getElementById('calcTotal');
-        const calcDeposit = document.getElementById('calcDeposit');
-        const calcSelectedItems = document.getElementById('calcSelectedItems');
-
-        function updateCalc() {
-            let total = 0;
-            const selected = [];
-            document.querySelectorAll('.calc-item').forEach(item => {
-                const cb = item.querySelector('input[type="checkbox"]');
-                const price = parseInt(item.dataset.price);
-                const name = item.querySelector('.calc-item-name').textContent.replace('Required','').trim();
-                if (cb.checked) {
-                    total += price;
-                    selected.push({ name, price });
-                    item.classList.add('checked');
-                } else {
-                    item.classList.remove('checked');
-                }
-            });
-            if (calcTotal) calcTotal.textContent = '$' + total.toLocaleString();
-            if (calcDeposit) calcDeposit.textContent = '$' + Math.round(total * 0.25).toLocaleString();
-            if (calcSelectedItems) {
-                calcSelectedItems.innerHTML = selected.map(s =>
-                    '<div class="calc-selected-row"><span>' + s.name + '</span><span>$' + s.price.toLocaleString() + '</span></div>'
-                ).join('');
-            }
-        }
-
-        calcItems.forEach(cb => {
-            if (!cb.disabled) {
-                cb.addEventListener('change', updateCalc);
-            }
-        });
-        updateCalc();
 
         // Social Media Session Toggles
         function initSessionToggle(toggleId, priceClass, periodClass, walkawaySel) {
