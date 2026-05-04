@@ -883,6 +883,22 @@ function updateCalc() {
     if (elI) elI.innerHTML = selected.map(function(s) {
         return '<div class="calc-selected-row"><span>' + s.name + '</span><span>$' + s.price.toLocaleString() + '</span></div>';
     }).join('');
+    // Sync the Package Summary card when Web Design tab is active
+    var activeTab = document.querySelector('.category-tab.active');
+    if (activeTab && activeTab.dataset.category === 'website') {
+        var sPkg    = document.getElementById('selectedPackage');
+        var sBase   = document.getElementById('basePrice');
+        var sBill   = document.getElementById('billingPeriod');
+        var sTotal  = document.getElementById('totalPrice');
+        var sBanner = document.getElementById('summarySavingsBanner');
+        var sNote   = document.getElementById('summaryCalcNote');
+        if (sPkg)    sPkg.textContent   = 'Custom Website Build';
+        if (sBase)   sBase.textContent  = '$' + total.toLocaleString();
+        if (sBill)   sBill.textContent  = 'one-time project';
+        if (sTotal)  sTotal.textContent = '$' + total.toLocaleString();
+        if (sBanner) sBanner.classList.remove('visible');
+        if (sNote)   sNote.style.display = 'block';
+    }
 }
 document.querySelectorAll('.calc-item input[type="checkbox"]').forEach(function(cb) {
     if (!cb.disabled) cb.addEventListener('change', updateCalc);
@@ -1001,7 +1017,12 @@ document.querySelectorAll('.category-tab').forEach(function(tab) {
         var cat = document.getElementById(tab.dataset.category);
         cat.style.display = 'block';
         cat.querySelectorAll('.reveal').forEach(function(el) { el.classList.add('active'); });
-        if (tab.dataset.category === 'website') { updateCalc(); }
+        if (tab.dataset.category === 'website') {
+                    updateCalc(); // syncs summary automatically
+                } else {
+                    var calcNote = document.getElementById('summaryCalcNote');
+                    if (calcNote) calcNote.style.display = 'none';
+                }
     });
 });
 
