@@ -1,1 +1,40 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login | XLNZ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --bg-primary: #0a0a0f; --bg-secondary: #12122a; --accent: #e94560; --accent-gradient: linear-gradient(135deg, #e94560, #ff6b35); --text-primary: #ffffff; --text-secondary: #b0b0c8; }
+        body { font-family: 'Inter', sans-serif; background-color: var(--bg-primary); color: var(--text-primary); margin: 0; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+        .login-container { background: var(--bg-secondary); padding: 40px; border-radius: 8px; width: 100%; max-width: 400px; text-align: center; border: 1px solid rgba(255,255,255,0.08); }
+        h1 { font-family: 'Montserrat', sans-serif; font-weight: 800; background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 20px; }
+        input { width: 100%; padding: 15px; margin-bottom: 20px; background: var(--bg-primary); border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; color: var(--text-primary); box-sizing: border-box; }
+        button { width: 100%; padding: 15px; background: var(--accent-gradient); color: white; border: none; border-radius: 4px; font-weight: 600; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h1>XLNZ Admin</h1>
+        <p>Enter the password to continue.</p>
+        <form id="loginForm">
+            <input type="password" id="password" required>
+            <button type="submit">Enter</button>
+        </form>
+    </div>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const password = document.getElementById('password').value;
+            // IMPORTANT: Replace this with a strong password
+            if (password === 'YourStrongPassword123') {
+                localStorage.setItem('xlnz_auth', 'true');
+                window.location.href = 'index.html';
+            } else {
+                alert('Incorrect password');
+            }
+        });
+    </script>
+</body>
+</html>
