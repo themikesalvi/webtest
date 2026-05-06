@@ -10,8 +10,9 @@
         :root { --bg-primary: #0a0a0f; --bg-secondary: #12122a; --bg-card: #1a1a2e; --accent: #e94560; --accent-gradient: linear-gradient(135deg, #e94560, #ff6b35); --text-primary: #ffffff; --text-secondary: #b0b0c8; --text-muted: #7c7c92; --border: rgba(255,255,255,0.08); --success: #10b981; }
         body { font-family: 'Inter', sans-serif; background-color: var(--bg-primary); color: var(--text-primary); margin: 0; line-height: 1.6; }
         .container { max-width: 960px; margin: 20px auto; padding: 20px; }
-        .header { border-bottom: 2px solid var(--accent); padding-bottom: 20px; margin-bottom: 30px; }
+        .header { border-bottom: 2px solid var(--accent); padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: center; }
         .header h1 { margin: 0; font-family: 'Montserrat', sans-serif; font-weight: 800; background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .header-logout { float: right; background: var(--bg-card); color: var(--text-muted); border: 1px solid var(--border); padding: 8px 15px; border-radius: 4px; cursor: pointer; font-family: 'Inter', sans-serif; }
         .lead-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
         .lead-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; transition: transform 0.2s, box-shadow 0.2s; }
         .lead-card:hover { transform: translateY(-5px); box-shadow: var(--accent-gradient) 0 0 20px; }
@@ -28,7 +29,7 @@
     <div class="container">
         <div class="header">
             <h1>Lead Notification Center</h1>
-            <p>New corporate retainer inquiries will appear here.</p>
+            <button id="logoutBtn" class="header-logout">Logout</button>
         </div>
 
         <div id="leadContainer" class="lead-grid">
@@ -94,6 +95,12 @@
         if ("Notification" in window && Notification.permission !== "granted") {
             Notification.requestPermission();
         }
+
+        // Logout functionality
+        document.getElementById('logoutBtn').addEventListener('click', function() {
+            localStorage.removeItem('xlnz_auth');
+            window.location.href = 'login.html';
+        });
     </script>
 </body>
 </html>
