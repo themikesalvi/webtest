@@ -1,0 +1,1 @@
+We become our client's dedicated media department on a monthly retainer, ensuring a consistent flow of content gets produced. If having a predictable media pipeline is a priority for you now, what's the best way to get a brief call on the calendar?
