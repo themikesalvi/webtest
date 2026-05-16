@@ -36,71 +36,7 @@
             <!-- Leads will be dynamically inserted here -->
             <div class="no-leads">No new leads yet. This dashboard will update when a contact form is submitted.</div>
         </div>
-    </div>
-
-    <script>
-        // Check for authentication first
-        if (localStorage.getItem('xlnz_auth') !== 'true') {
-            window.location.href = 'login.html';
-        }
-
-        document.addEventListener('DOMContentLoaded', function() {
-            checkForNewLeads();
-        });
-        
-        function checkForNewLeads() {
-            const leads = JSON.parse(localStorage.getItem('xlnz_leads') || '[]');
-            displayLeads(leads);
-        }
-        
-        function displayLeads(leads) {
-            const container = document.getElementById('leadContainer');
-            
-            if (leads.length === 0) {
-                container.innerHTML = '<div class="no-leads">No new leads yet. This dashboard will update when a contact form is submitted.</div>';
-                return;
-            }
-            
-            container.innerHTML = leads.map(lead => `
-                <div class="lead-card">
-                    <h3>${lead.name}</h3>
-                    <div class="meta">${lead.email} • ${lead.phone}</div>
-                    <p><strong>Company:</strong> ${lead.company}</p>
-                    <p><strong>Message:</strong> ${lead.message}</p>
-                    <div class="meta">${lead.date}</div>
-                    <span class="status new">New</span>
-                </div>
-            `).join('');
-        }
-        
-        function addLead(leadData) {
-            const leads = JSON.parse(localStorage.getItem('xlnz_leads') || '[]');
-            const newLead = {
-                ...leadData,
-                date: new Date().toLocaleString(),
-                id: Date.now()
-            };
-            
-            leads.unshift(newLead);
-            localStorage.setItem('xlnz_leads', JSON.stringify(leads));
-            displayLeads(leads);
-            
-            if ("Notification" in window && Notification.permission === "granted") {
-                new Notification("New Lead from XLNZ", {
-                    body: `${leadData.name} from ${leadData.company} has submitted an inquiry.`
-                });
-            }
-        }
-        
-        if ("Notification" in window && Notification.permission !== "granted") {
-            Notification.requestPermission();
-        }
-
-        // Logout functionality
-        document.getElementById('logoutBtn').addEventListener('click', function() {
-            localStorage.removeItem('xlnz_auth');
-            window.location.href = 'login.html';
-        });
-    </script>
+   </div>
+    <script src="script.js"></script>
 </body>
 </html>
