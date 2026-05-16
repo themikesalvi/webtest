@@ -667,29 +667,49 @@
         const formData = new FormData(e.target);
         const data = Object.fromEntries(formData.entries());
 
-        const apiKey = '$2a$10$P.HLfSMwB7Y26Vho1PmvH.0E1JRdaCyJ1GUIiWT6xsVYhRceJV/DS';
+        // Your repository details
+        const repoOwner = 'themikesalvi';
+        const repoName = 'xlnzproductions.github.io';
+
+        // Format the lead data for the GitHub issue body
+        const issueBody = `
+**New Contact Form Submission!**
+
+- **Name:** ${data.first_name} ${data.last_name}
+- **Email:** ${data.email}
+- **Phone:** ${data.phone}
+- **Service:** ${data.service}
+- **Budget:** ${data.budget}
+- **Message:** ${data.message}
+
+**Timestamp:** ${new Date().toISOString()}
+        `;
+
+        const issueTitle = `New Lead: ${data.first_name} ${data.last_name}`;
+        
+        // The URL to pre-fill a new issue on GitHub
+        const githubIssueUrl = `https://github.com/${repoOwner}/${repoName}/issues/new?title=${encodeURIComponent(issueTitle)}&body=${encodeURIComponent(issueBody)}`;
 
         try {
-            const response = await fetch('https://api.jsonbin.io/v3/b', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'X-Master-Key': apiKey
-                },
-                body: JSON.stringify(data)
-            });
+            // Open the pre-filled issue in a new tab.
+            // The user must click "Submit new issue" to complete the process.
+            // This bypasses all CORS and authentication issues.
+            window.open(githubIssueUrl, '_blank');
 
-            if (response.ok) {
-                window.location.href = 'thank-you.html';
-            } else {
-                throw new Error('Failed to save data to JSONBin.');
-            }
+            // Give the user feedback and reset the form
+            statusDiv.innerHTML = `<i class="fas fa-check-circle"></i> Almost done! A new tab opened. Please click "Submit new issue" in GitHub to send your message.`;
+            statusDiv.classList.remove('error');
+            statusDiv.style.display = 'flex';
+            statusDiv.style.color = 'var(--success)';
+            e.target.reset();
 
         } catch (error) {
             console.error('Submission error:', error);
             statusDiv.innerHTML = `<i class="fas fa-exclamation-triangle"></i> Something went wrong. Please email us directly.`;
             statusDiv.classList.add('error');
             statusDiv.style.display = 'flex';
+        } finally {
+            // Re-enable the button regardless of outcome
             submitBtn.disabled = false;
             submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
         }
