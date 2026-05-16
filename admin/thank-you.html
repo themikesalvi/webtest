@@ -42,6 +42,50 @@
         @media(max-width:768px){.action-buttons{flex-direction:column;align-items:center}.btn{width:250px;}}
     </style>
 </head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Thank you for contacting XLNZ Productions. We have received your message and will be in touch soon for your free consultation.">
+    <meta name="robots" content="noindex, follow">
+    <title>Thank You | XLNZ Productions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root{--bg-primary:#0a0a0f;--bg-secondary:#12122a;--bg-card:#1a1a2e;--accent:#e94560;--accent-gradient:linear-gradient(135deg,#e94560,#ff6b35);--text-primary:#ffffff;--text-secondary:#a0a0b8;--text-muted:#6c6c80;--border:rgba(255,255,255,0.08);--success:#10b981}
+        *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+        body{font-family:'Inter',sans-serif;background:var(--bg-primary);color:var(--text-primary);line-height:1.7;overflow-x:hidden;min-height:100vh;display:flex;flex-direction:column}
+        h1,h2,h3,h4,h5,h6{font-family:'Montserrat',sans-serif;font-weight:700;line-height:1.2}
+        .container{width:100%;max-width:800px;margin:0 auto;padding:0 24px}
+        header{position:fixed;top:0;left:0;width:100%;z-index:1000;padding:20px 0;transition:all 0.4s cubic-bezier(0.4,0,0.2,1);background:transparent}
+        header.scrolled{background:rgba(10,10,15,0.95);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);padding:12px 0;box-shadow:0 4px 30px rgba(0,0,0,0.3)}
+        .header-content{display:flex;justify-content:space-between;align-items:center}
+        .logo{font-family:'Montserrat',sans-serif;font-size:26px;font-weight:800;color:var(--text-primary);text-decoration:none;display:flex;align-items:center;gap:12px;letter-spacing:-0.5px}
+        .logo-icon{width:40px;height:40px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+        .logo-icon img{width:100%;height:100%;object-fit:contain}
+        .thank-you-hero{flex-grow:1;display:flex;align-items:center;justify-content:center;text-align:center;padding:120px 0 80px}
+        .thank-you-hero::before{content:'';position:absolute;top:0;left:0;width:100%;height:100%;background:radial-gradient(ellipse at 30% 50%,rgba(233,69,96,0.08) 0%,transparent 60%),radial-gradient(ellipse at 70% 20%,rgba(255,107,53,0.06) 0%,transparent 50%);pointer-events:none}
+        .hero-grid{position:absolute;top:0;left:0;width:100%;height:100%;background-image:linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse at center,black 30%,transparent 70%);-webkit-mask-image:radial-gradient(ellipse at center,black 30%,transparent 70%)}
+        .thank-you-content{position:relative;z-index:2}
+        .success-icon{width:120px;height:120px;background:rgba(16,185,129,0.1);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 40px}
+        .success-icon i{font-size:56px;color:var(--success)}
+        .thank-you-content h1{font-size:clamp(40px,6vw,64px);font-weight:900;margin-bottom:20px;letter-spacing:-1px}
+        .thank-you-content p{font-size:20px;color:var(--text-secondary);max-width:600px;margin:0 auto 40px;line-height:1.8}
+        .gradient-text{background:var(--accent-gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+        .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:18px 40px;border-radius:8px;font-family:'Montserrat',sans-serif;font-weight:700;font-size:16px;text-decoration:none;transition:all 0.3s cubic-bezier(0.4,0,0.2,1);cursor:pointer;border:none}
+        .btn-primary{background:var(--accent-gradient);color:var(--text-primary);box-shadow:0 4px 15px rgba(233,69,96,0.3)}
+        .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(233,69,96,0.4)}
+        .btn-secondary{background:rgba(255,255,255,0.05);color:var(--text-primary);border:1px solid var(--border)}
+        .btn-secondary:hover{background:rgba(255,255,255,0.1);border-color:rgba(255,255,255,0.2);transform:translateY(-2px)}
+        .contact-info{margin-top:60px;padding:32px;background:rgba(255,255,255,0.02);border:1px solid var(--border);border-radius:16px}
+        .contact-info h3{font-size:18px;font-weight:600;margin-bottom:16px;color:var(--text-secondary)}
+        .contact-info a{color:var(--text-primary);font-weight:500;text-decoration:none;transition:color 0.3s ease}
+        .contact-info a:hover{color:var(--accent)}
+        .action-buttons{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+        @media(max-width:768px){.action-buttons{flex-direction:column;align-items:center}.btn{width:250px;}}
+    </style>
+</head>
 <body>
     <header id="header">
         <div class="container header-content">
