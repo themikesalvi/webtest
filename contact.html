@@ -127,6 +127,11 @@
             font-size: 24px;
             cursor: pointer;
         }
+        
+        /* Honeypot field */
+        .hidden {
+            display: none;
+        }
 
         .page-hero {
             min-height: 50vh;
@@ -230,11 +235,6 @@
             transform: translateY(-2px);
             box-shadow: 0 8px 30px rgba(233, 69, 96, 0.4);
         }
-        .btn-primary:disabled {
-            opacity: 0.6;
-            cursor: not-allowed;
-            transform: none;
-        }
 
         .contact-section {
             padding: 100px 0;
@@ -317,23 +317,6 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 20px;
-        }
-
-        .form-status {
-            display: none;
-            padding: 16px 20px;
-            border-radius: 8px;
-            margin-bottom: 24px;
-            font-size: 14px;
-            font-weight: 500;
-            align-items: center;
-            gap: 10px;
-        }
-        .form-status.error {
-            display: flex;
-            background: rgba(239, 68, 68, 0.1);
-            border: 1px solid rgba(239, 68, 68, 0.3);
-            color: #fca5a5;
         }
 
         .form-submit {
@@ -528,8 +511,10 @@
                         <h2>Send Us a Message</h2>
                         <p>Fill out the form below and we will get back to you within 24 to 48 hours.</p>
                     </div>
-                    <div class="form-status" id="formStatus"></div>
-                    <form id="contactForm">
+                    <form name="contact-form" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you.html">
+                        <p class="hidden">
+                            <label>Don't fill this out if you're human: <input name="bot-field"></label>
+                        </p>
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="firstName">First Name <span class="required">*</span></label>
@@ -642,78 +627,17 @@
     </footer>
 
     <script>
-    document.getElementById('currentYear').textContent = new Date().getFullYear();
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
 
-    // Header scroll effect
-    window.addEventListener('scroll', function() {
-        const header = document.getElementById('header');
-        if (window.scrollY > 50) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
-        }
-    });
-
-    document.getElementById('contactForm').addEventListener('submit', async function (e) {
-        e.preventDefault();
-
-        const submitBtn = e.target.querySelector('button[type="submit"]');
-        const statusDiv = document.getElementById('formStatus');
-        
-        submitBtn.disabled = true;
-        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-        statusDiv.style.display = 'none';
-
-        const formData = new FormData(e.target);
-        const data = Object.fromEntries(formData.entries());
-
-        // Your repository details
-        const repoOwner = 'themikesalvi';
-        const repoName = 'themikesalvi.github.io';
-
-        // Format the lead data for the GitHub issue body
-        const issueBody = `
-**New Contact Form Submission!**
-
-- **Name:** ${data.first_name} ${data.last_name}
-- **Email:** ${data.email}
-- **Phone:** ${data.phone}
-- **Service:** ${data.service}
-- **Budget:** ${data.budget}
-- **Message:** ${data.message}
-
-**Timestamp:** ${new Date().toISOString()}
-        `;
-
-        const issueTitle = `New Lead: ${data.first_name} ${data.last_name}`;
-        
-        // The URL to pre-fill a new issue on GitHub
-        const githubIssueUrl = `https://github.com/${repoOwner}/${repoName}/issues/new?title=${encodeURIComponent(issueTitle)}&body=${encodeURIComponent(issueBody)}`;
-
-        try {
-            // Open the pre-filled issue in a new tab.
-            // The user must click "Submit new issue" to complete the process.
-            // This bypasses all CORS and authentication issues.
-            window.open(githubIssueUrl, '_blank');
-
-            // Give the user feedback and reset the form
-            statusDiv.innerHTML = `<i class="fas fa-check-circle"></i> Almost done! A new tab opened. Please click "Submit new issue" in GitHub to send your message.`;
-            statusDiv.classList.remove('error');
-            statusDiv.style.display = 'flex';
-            statusDiv.style.color = 'var(--success)';
-            e.target.reset();
-
-        } catch (error) {
-            console.error('Submission error:', error);
-            statusDiv.innerHTML = `<i class="fas fa-exclamation-triangle"></i> Something went wrong. Please email us directly.`;
-            statusDiv.classList.add('error');
-            statusDiv.style.display = 'flex';
-        } finally {
-            // Re-enable the button regardless of outcome
-            submitBtn.disabled = false;
-            submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
-        }
-    });
-</script>
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
 </body>
 </html>
