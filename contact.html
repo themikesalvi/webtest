@@ -81,12 +81,6 @@
         .form-status{display:none;padding:16px 20px;border-radius:8px;margin-bottom:24px;font-size:14px;font-weight:500;align-items:center;gap:10px}
         .form-status.error{display:flex;background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.3);color:#fca5a5}
         .form-status.success{display:flex;background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.3);color:#6ee7b7}
-        .form-success{display:none;text-align:center;padding:48px 24px}
-        .form-success.active{display:block}
-        .form-success-icon{width:80px;height:80px;background:rgba(16,185,129,0.1);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 24px}
-        .form-success-icon i{font-size:36px;color:var(--success)}
-        .form-success h3{font-size:24px;margin-bottom:12px}
-        .form-success p{color:var(--text-secondary);margin-bottom:24px}
         .contact-info-wrapper{position:sticky;top:100px}
         .info-card{background:rgba(255,255,255,0.02);border:1px solid var(--border);border-radius:16px;padding:36px;margin-bottom:24px}
         .info-card h3{font-size:22px;margin-bottom:28px}
@@ -196,82 +190,73 @@
 
                 <!-- Contact Form -->
                 <div class="contact-form-wrapper reveal">
-                    <div id="contactFormContainer">
-                        <div class="form-header">
-                            <h2>Send Us a Message</h2>
-                            <p>Fill out the form below and we will get back to you within 24 to 48 hours.</p>
+                    <div class="form-header">
+                        <h2>Send Us a Message</h2>
+                        <p>Fill out the form below and we will get back to you within 24 to 48 hours.</p>
+                    </div>
+                    <div class="form-status" id="formStatus"></div>
+                    <form action="https://formspree.io/f/xjgjyjyy" method="POST">
+                        <input type="checkbox" name="botcheck" style="display:none;">
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name <span class="required">*</span></label>
+                                <input type="text" id="firstName" name="first_name" class="form-input" placeholder="John" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name <span class="required">*</span></label>
+                                <input type="text" id="lastName" name="last_name" class="form-input" placeholder="Doe" required>
+                            </div>
                         </div>
-                        <div class="form-status" id="formStatus"></div>
-                        <form id="contactForm" action="https://formspree.io/f/xjgjyjyy" method="POST">
-                            <input type="checkbox" name="botcheck" style="display:none;">
 
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="firstName">First Name <span class="required">*</span></label>
-                                    <input type="text" id="firstName" name="first_name" class="form-input" placeholder="John" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="lastName">Last Name <span class="required">*</span></label>
-                                    <input type="text" id="lastName" name="last_name" class="form-input" placeholder="Doe" required>
-                                </div>
-                            </div>
-
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="email">Email Address <span class="required">*</span></label>
-                                    <input type="email" id="email" name="email" class="form-input" placeholder="john@example.com" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="phone">Phone Number <span class="required">*</span></label>
-                                    <input type="tel" id="phone" name="phone" class="form-input" placeholder="(215) 555-0100" required>
-                                </div>
-                            </div>
-
+                        <div class="form-row">
                             <div class="form-group">
-                                <label for="service">Service Interested In <span class="required">*</span></label>
-                                <select id="service" name="service" class="form-input" required>
-                                    <option value="">Select a Service</option>
-                                    <option value="Social Media for Brands">Social Media for Brands</option>
-                                    <option value="Commercials and Brand Video">Commercials and Brand Video</option>
-                                    <option value="Testimonials">Testimonials</option>
-                                    <option value="Podcast Production">Podcast Production</option>
-                                    <option value="Stand-Up Specials">Stand-Up Specials</option>
-                                    <option value="Film Production">Film Production</option>
-                                    <option value="Corporate Retainer">Corporate Retainer</option>
-                                    <option value="Other">Other</option>
-                                </select>
+                                <label for="email">Email Address <span class="required">*</span></label>
+                                <input type="email" id="email" name="email" class="form-input" placeholder="john@example.com" required>
                             </div>
-
                             <div class="form-group">
-                                <label for="budget">Project Budget Range</label>
-                                <select id="budget" name="budget" class="form-input">
-                                    <option value="">Select Budget Range</option>
-                                    <option value="Under $5,000">Under $5,000</option>
-                                    <option value="$5,000 to $10,000">$5,000 to $10,000</option>
-                                    <option value="$10,000 to $25,000">$10,000 to $25,000</option>
-                                    <option value="$25,000 to $50,000">$25,000 to $50,000</option>
-                                    <option value="$50,000+">$50,000 and above</option>
-                                    <option value="Not Sure Yet">Not Sure Yet</option>
-                                </select>
+                                <label for="phone">Phone Number <span class="required">*</span></label>
+                                <input type="tel" id="phone" name="phone" class="form-input" placeholder="(215) 555-0100" required>
                             </div>
+                        </div>
 
-                            <div class="form-group">
-                                <label for="message">Project Details <span class="required">*</span></label>
-                                <textarea id="message" name="message" class="form-input" placeholder="Tell us about your project, your timeline, and anything specific you are looking to achieve..." required></textarea>
-                            </div>
+                        <div class="form-group">
+                            <label for="service">Service Interested In <span class="required">*</span></label>
+                            <select id="service" name="service" class="form-input" required>
+                                <option value="">Select a Service</option>
+                                <option value="Social Media for Brands">Social Media for Brands</option>
+                                <option value="Commercials and Brand Video">Commercials and Brand Video</option>
+                                <option value="Testimonials">Testimonials</option>
+                                <option value="Podcast Production">Podcast Production</option>
+                                <option value="Stand-Up Specials">Stand-Up Specials</option>
+                                <option value="Film Production">Film Production</option>
+                                <option value="Corporate Retainer">Corporate Retainer</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
 
-                            <div class="form-submit">
-                                <button type="submit" class="btn btn-primary" id="submitBtn"><i class="fas fa-paper-plane"></i> Send Message</button>
-                            </div>
-                        </form>
-                    </div>
+                        <div class="form-group">
+                            <label for="budget">Project Budget Range</label>
+                            <select id="budget" name="budget" class="form-input">
+                                <option value="">Select Budget Range</option>
+                                <option value="Under $5,000">Under $5,000</option>
+                                <option value="$5,000 to $10,000">$5,000 to $10,000</option>
+                                <option value="$10,000 to $25,000">$10,000 to $25,000</option>
+                                <option value="$25,000 to $50,000">$25,000 to $50,000</option>
+                                <option value="$50,000+">$50,000 and above</option>
+                                <option value="Not Sure Yet">Not Sure Yet</option>
+                            </select>
+                        </div>
 
-                    <div class="form-success" id="formSuccess">
-                        <div class="form-success-icon"><i class="fas fa-check"></i></div>
-                        <h3>Message Sent!</h3>
-                        <p>We have your information and will reach back out within 24 to 48 hours to set up your free consultation. We look forward to hearing more about your project.</p>
-                        <a href="index.html" class="btn btn-secondary"><i class="fas fa-home"></i> Back to Home</a>
-                    </div>
+                        <div class="form-group">
+                            <label for="message">Project Details <span class="required">*</span></label>
+                            <textarea id="message" name="message" class="form-input" placeholder="Tell us about your project, your timeline, and anything specific you are looking to achieve..." required></textarea>
+                        </div>
+
+                        <div class="form-submit">
+                            <button type="submit" class="btn btn-primary" id="submitBtn"><i class="fas fa-paper-plane"></i> Send Message</button>
+                        </div>
+                    </form>
                 </div>
 
                 <!-- Contact Info -->
@@ -457,42 +442,6 @@
 
         const header = document.getElementById('header');
         window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 50));
-
-        // Form submission
-        const contactForm = document.getElementById('contactForm');
-        const formContainer = document.getElementById('contactFormContainer');
-        const formSuccess = document.getElementById('formSuccess');
-        const formStatus = document.getElementById('formStatus');
-        const submitBtn = document.getElementById('submitBtn');
-
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            submitBtn.disabled = true;
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-            formStatus.style.display = 'none';
-
-            fetch(contactForm.action, {
-                method: 'POST',
-                body: new FormData(contactForm)
-            }).then(response => {
-                if (response.ok) {
-                    formContainer.style.display = 'none';
-                    formSuccess.classList.add('active');
-                    contactForm.reset();
-                    document.querySelector('.contact-form-wrapper').scrollIntoView({ behavior: 'smooth', block: 'center' });
-                } else {
-                    throw new Error('Form submission failed');
-                }
-            }).catch(error => {
-                console.error('Submission error:', error);
-                formStatus.innerHTML = '<i class="fas fa-exclamation-circle"></i> Something went wrong. Please try again or email us directly.';
-                formStatus.className = 'form-status error';
-                formStatus.style.display = 'flex';
-            }).finally(() => {
-                submitBtn.disabled = false;
-                submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
-            });
-        });
 
         // FAQ accordion
         document.querySelectorAll('.faq-item').forEach(item => {
