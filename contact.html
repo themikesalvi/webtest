@@ -548,64 +548,11 @@
                         <h2>Send Us a Message</h2>
                         <p>Fill out the form below and we will get back to you within 24 to 48 hours.</p>
                     </div>
-                    <form name="contact-form" id="contact-form-element">
-                        <p class="hidden">
-                            <label>Don't fill this out if you're human: <input name="bot-field"></label>
-                        </p>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="firstName">First Name <span class="required">*</span></label>
-                                <input type="text" id="firstName" name="first_name" class="form-input" placeholder="John" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="lastName">Last Name <span class="required">*</span></label>
-                                <input type="text" id="lastName" name="last_name" class="form-input" placeholder="Doe" required>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="email">Email Address <span class="required">*</span></label>
-                                <input type="email" id="email" name="email" class="form-input" placeholder="john@example.com" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="phone">Phone Number <span class="required">*</span></label>
-                                <input type="tel" id="phone" name="phone" class="form-input" placeholder="(215) 555-0100" required>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="service">Service Interested In <span class="required">*</span></label>
-                            <select id="service" name="service" class="form-input" required>
-                                <option value="">Select a Service</option>
-                                <option value="Social Media for Brands">Social Media for Brands</option>
-                                <option value="Commercials and Brand Video">Commercials and Brand Video</option>
-                                <option value="Testimonials">Testimonials</option>
-                                <option value="Podcast Production">Podcast Production</option>
-                                <option value="Stand-Up Specials">Stand-Up Specials</option>
-                                <option value="Film Production">Film Production</option>
-                                <option value="Corporate Retainer">Corporate Retainer</option>
-                                <option value="Other">Other</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="budget">Project Budget Range</label>
-                            <select id="budget" name="budget" class="form-input">
-                                <option value="">Select Budget Range</option>
-                                <option value="Under $5,000">Under $5,000</option>
-                                <option value="$5,000 to $10,000">$5,000 to $10,000</option>
-                                <option value="$10,000 to $25,000">$10,000 to $25,000</option>
-                                <option value="$25,000 to $50,000">$25,000 to $50,000</option>
-                                <option value="$50,000+">$50,000 and above</option>
-                                <option value="Not Sure Yet">Not Sure Yet</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Project Details <span class="required">*</span></label>
-                            <textarea id="message" name="message" class="form-input" placeholder="Tell us about your project..." required></textarea>
-                        </div>
-                        <div class="form-submit">
-                            <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Send Message</button>
-                        </div>
-                    </form>
+                    <!-- Netlify Form Registration Decoy -->
+<form name="contact-form" action="/success" netlify hidden>
+    <input type="text" name="name">
+    <input type="email" name="email">
+</form>
                 </div>
 
                 <!-- Contact Info -->
