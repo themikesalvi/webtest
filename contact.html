@@ -133,7 +133,7 @@
                         <p>Fill out the form below and we will get back to you within 24 to 48 hours.</p>
                     </div>
                     <!-- Forminit Form -->
-                    <form action="https://app.forminit.com/forms/dkwl4sozoq1" method="POST" data-forminit-id="dkwl4sozoq1">
+                    <form action="https://app.forminit.com/forms/dkwl4sozoq1" method="POST">
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="firstName">First Name <span class="required">*</span></label>
@@ -254,31 +254,53 @@
 
     <script src="https://cdn.jsdelivr.net/npm/@forminit/js"></script>
     <script>
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
-        window.addEventListener('scroll', function() {
-            const header = document.getElementById('header');
-            if (window.scrollY > 50) { header.classList.add('scrolled'); } else { header.classList.remove('scrolled'); }
-        });
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+    window.addEventListener('scroll', function() {
+        const header = document.getElementById('header');
+        if (window.scrollY > 50) { header.classList.add('scrolled'); } else { header.classList.remove('scrolled'); }
+    });
 
-        // Forminit handles the form submission and success message automatically.
-        // We just need to handle the close button for the modal.
-        document.addEventListener('DOMContentLoaded', function() {
-            const form = document.querySelector('form[data-forminit-id]');
-            const successModal = document.getElementById('form-success');
-            const closeButton = document.getElementById('close-success');
+    // Handle form submission without redirect
+    document.addEventListener('DOMContentLoaded', function() {
+        const form = document.querySelector('form');
+        const successModal = document.getElementById('form-success');
+        const closeButton = document.getElementById('close-success');
 
-            if(form) {
-                form.addEventListener('forMinit:success', function(event) {
+        form.addEventListener('submit', function(e) {
+            e.preventDefault(); // Stop the default redirect
+
+            const formData = new FormData(form);
+            const fetchUrl = 'https://submit-form.com/dkwl4sozoq1'; // Use Forminit's direct submit URL
+
+            fetch(fetchUrl, {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => {
+                // Check if the response is ok (status 200-299)
+                if (response.ok) {
+                    // Show success modal
                     successModal.style.display = 'flex';
-                });
-            }
-
-            if(closeButton) {
-                closeButton.addEventListener('click', function() {
-                    successModal.style.display = 'none';
-                });
-            }
+                    // Reset the form fields
+                    form.reset();
+                } else {
+                    // Handle errors
+                    throw new Error('Form submission failed.');
+                }
+            })
+            .catch(error => {
+                console.error('Error!', error.message);
+                alert('There was a problem submitting your form. Please try again.');
+            });
         });
-    </script>
+
+        // Handle closing the success modal
+        if(closeButton) {
+            closeButton.addEventListener('click', function() {
+                successModal.style.display = 'none';
+            });
+        }
+    });
+</script>
 </body>
 </html>
