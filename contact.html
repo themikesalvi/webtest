@@ -252,44 +252,66 @@
     </footer>
 
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script type="text/javascript">
-        (function() {
-            emailjs.init("eRiiZBXtULt8UDBAm"); // Your Public Key
-        })();
+<script type="text/javascript">
+    (function() {
+        emailjs.init("eRiiZBXtULt8UDBAm");
+    })();
 
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
 
-        window.addEventListener('scroll', function() {
-            const header = document.getElementById('header');
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
+    window.addEventListener('scroll', function() {
+        const header = document.getElementById('header');
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
 
-        const form = document.getElementById('xlnz-contact-form');
-        const successModal = document.getElementById('form-success');
-        const closeButton = document.getElementById('close-success');
+    const form = document.getElementById('xlnz-contact-form');
+    const successModal = document.getElementById('form-success');
+    const closeButton = document.getElementById('close-success');
 
-        form.addEventListener('submit', function(event) {
-            event.preventDefault();
-            
-            // This will automatically map the 'name' attributes from your form to the template variables.
-            emailjs.sendForm('service_z2k6cjr', 'template_hiteoqy', this)
-                .then(function(response) {
-                    console.log('SUCCESS!', response.status, response.text);
-                    form.reset();
-                    successModal.style.display = 'flex';
-                }, function(error) {
-                    console.log('FAILED...', error);
-                    alert('There was a problem submitting your form. Please try again.');
-                });
-        });
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
+        
+        const formData = new FormData(this);
+        const templateParams = {
+            from_name: formData.get('first_name') + ' ' + formData.get('last_name'),
+            user_email: formData.get('user_email'),
+            phone_number: formData.get('phone_number'),
+            service: formData.get('service'),
+            budget: formData.get('budget'),
+            message: formData.get('message'),
+        };
 
-        closeButton.addEventListener('click', function() {
-            successModal.style.display = 'none';
-        });
-    </script>
+        // Send notification to you
+        emailjs.send('service_z2k6cjr', 'template_hiteoqy', templateParams)
+            .then(function(response) {
+                console.log('Notification to you sent!', response.status, response.text);
+                
+                // Send auto-reply to the user
+                // Replace 'YOUR_NEW_AUTO_REPLY_TEMPLATE_ID' with the ID you just copied
+                emailjs.send('service_z2k6cjr', 'template_inqs45u', templateParams)
+                    .then(function(response) {
+                        console.log('Auto-reply sent!', response.status, response.text);
+                        form.reset();
+                        successModal.style.display = 'flex';
+                    }, function(error) {
+                        console.log('Auto-reply failed...', error);
+                        // Still show success to the user, but log the error
+                        form.reset();
+                        successModal.style.display = 'flex';
+                    });
+            }, function(error) {
+                console.log('FAILED to send notification...', error);
+                alert('There was a problem submitting your form. Please try again.');
+            });
+    });
+
+    closeButton.addEventListener('click', function() {
+        successModal.style.display = 'none';
+    });
+</script>
 </body>
 </html>
