@@ -132,8 +132,7 @@
                         <h2>Send Us a Message</h2>
                         <p>Fill out the form below and we will get back to you within 24 to 48 hours.</p>
                     </div>
-                    <!-- Forminit Form -->
-                    <form action="https://app.forminit.com/forms/dkwl4sozoq1" method="POST">
+                    <form action="https://app.forminit.com/forms/dkwl4sozoq1" method="POST" target="forminit-iframe" id="xlnz-contact-form">
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="firstName">First Name <span class="required">*</span></label>
@@ -245,6 +244,9 @@
             <button id="close-success" class="btn btn-primary">Close</button>
         </div>
     </div>
+    
+    <!-- Hidden Iframe to handle form submission -->
+    <iframe name="forminit-iframe" id="forminit-iframe" style="display:none;" onload="handleFormSubmit()"></iframe>
 
     <footer class="footer">
         <div class="container">
@@ -252,55 +254,37 @@
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/@forminit/js"></script>
     <script>
-    document.getElementById('currentYear').textContent = new Date().getFullYear();
-    window.addEventListener('scroll', function() {
-        const header = document.getElementById('header');
-        if (window.scrollY > 50) { header.classList.add('scrolled'); } else { header.classList.remove('scrolled'); }
-    });
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
 
-    // Handle form submission without redirect
-    document.addEventListener('DOMContentLoaded', function() {
-        const form = document.querySelector('form');
-        const successModal = document.getElementById('form-success');
-        const closeButton = document.getElementById('close-success');
-
-        form.addEventListener('submit', function(e) {
-            e.preventDefault(); // Stop the default redirect
-
-            const formData = new FormData(form);
-            const fetchUrl = 'https://submit-form.com/dkwl4sozoq1'; // Use Forminit's direct submit URL
-
-            fetch(fetchUrl, {
-                method: 'POST',
-                body: formData
-            })
-            .then(response => {
-                // Check if the response is ok (status 200-299)
-                if (response.ok) {
-                    // Show success modal
-                    successModal.style.display = 'flex';
-                    // Reset the form fields
-                    form.reset();
-                } else {
-                    // Handle errors
-                    throw new Error('Form submission failed.');
-                }
-            })
-            .catch(error => {
-                console.error('Error!', error.message);
-                alert('There was a problem submitting your form. Please try again.');
-            });
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
         });
 
         // Handle closing the success modal
-        if(closeButton) {
-            closeButton.addEventListener('click', function() {
-                successModal.style.display = 'none';
-            });
+        document.getElementById('close-success').addEventListener('click', function() {
+            document.getElementById('form-success').style.display = 'none';
+        });
+
+        // Set a flag when the form is submitted
+        document.getElementById('xlnz-contact-form').addEventListener('submit', function() {
+            window.formSubmitted = true;
+        });
+
+        // Handle the iframe onload event to show the success message
+        function handleFormSubmit() {
+            if (window.formSubmitted) {
+                window.formSubmitted = false;
+                document.getElementById('form-success').style.display = 'flex';
+                document.getElementById('xlnz-contact-form').reset();
+            }
         }
-    });
-</script>
+    </script>
 </body>
 </html>
