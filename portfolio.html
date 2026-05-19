@@ -364,16 +364,7 @@
                         <h3 class="collaboration-card-title">Mistransaction</h3>
                         <p class="collaboration-card-desc">The latest from Raheem Roher and No Egos World Media. A tense thriller exploring the consequences of choices made in desperation, premiering on Tubi May 16, 2026.</p>
                         <div class="collaboration-card-meta"><span><i class="fas fa-film" aria-hidden="true"></i> Feature Film</span><span><i class="fas fa-handshake" aria-hidden="true"></i> In Association</span></div>
-                        <div class="countdown-container" id="mistransaction-countdown">
-                            <div class="countdown-label"><i class="fas fa-clock" aria-hidden="true"></i> Premiere Countdown</div>
-                            <div class="countdown-timer" id="countdown-timer">
-                                <div class="countdown-unit"><span class="countdown-number" id="countdown-days">--</span><span class="countdown-text">Days</span></div>
-                                <div class="countdown-unit"><span class="countdown-number" id="countdown-hours">--</span><span class="countdown-text">Hours</span></div>
-                                <div class="countdown-unit"><span class="countdown-number" id="countdown-minutes">--</span><span class="countdown-text">Mins</span></div>
-                                <div class="countdown-unit"><span class="countdown-number" id="countdown-seconds">--</span><span class="countdown-text">Secs</span></div>
-                            </div>
-                            <div class="countdown-date"><i class="fas fa-calendar-alt" aria-hidden="true"></i> Premieres May 16, 2026 on Tubi</div>
-                        </div>
+                        <div class="collaboration-card-tubi"><i class="fas fa-tv" aria-hidden="true"></i> Available on Tubi</div>
                         <div class="portfolio-card-actions" style="margin-top:12px;"><a href="https://www.youtube.com/watch?v=8nXm23rNbqA" class="btn btn-sm btn-primary" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube" aria-hidden="true"></i> Watch Trailer</a></div>
                     </div>
                 </div>
@@ -546,36 +537,7 @@
             });
         });
 
-        // Mistransaction countdown
-        function updateCountdown() {
-            const premiereDate = new Date('2026-05-16T00:00:00-04:00');
-            const now = new Date();
-            const diff = premiereDate - now;
-            const container = document.getElementById('mistransaction-countdown');
-            const badge = document.getElementById('mistransactionBadge');
-            if (!container) return;
-            if (diff <= 0) {
-                container.innerHTML = '<div class="countdown-streaming"><i class="fas fa-check-circle" aria-hidden="true"></i> Now Streaming on Tubi</div>';
-                container.style.background = 'rgba(16,185,129,0.08)';
-                container.style.borderColor = 'rgba(16,185,129,0.2)';
-                if (badge) { badge.textContent = 'Streaming Now'; badge.classList.remove('premiere'); }
-                return;
-            }
-            const days    = Math.floor(diff / (1000*60*60*24));
-            const hours   = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
-            const minutes = Math.floor((diff % (1000*60*60)) / (1000*60));
-            const seconds = Math.floor((diff % (1000*60)) / 1000);
-            const d = document.getElementById('countdown-days');
-            const h = document.getElementById('countdown-hours');
-            const m = document.getElementById('countdown-minutes');
-            const s = document.getElementById('countdown-seconds');
-            if (d) d.textContent = days.toString().padStart(2,'0');
-            if (h) h.textContent = hours.toString().padStart(2,'0');
-            if (m) m.textContent = minutes.toString().padStart(2,'0');
-            if (s) s.textContent = seconds.toString().padStart(2,'0');
-        }
-        updateCountdown();
-        setInterval(updateCountdown, 1000);
+        
 
         // Reveal
         const ro = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('active'); }), { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
