@@ -29,6 +29,14 @@
         .container{width:100%;max-width:1200px;margin:0 auto;padding:0 24px}
         .skip-nav{position:absolute;top:-100%;left:0;background:var(--accent);color:var(--text-primary);padding:12px 24px;z-index:10000;font-weight:600;text-decoration:none;transition:top 0.3s}
         .skip-nav:focus{top:0}
+        /* NOW SHOWING BAR */
+        .now-showing-bar{background:linear-gradient(135deg,#e94560,#ff6b35);padding:14px 24px;position:relative;z-index:1001;}
+        .now-showing-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;text-align:center;}
+        .now-showing-badge{font-family:'Montserrat',sans-serif;font-weight:900;font-size:12px;text-transform:uppercase;letter-spacing:2px;background:rgba(0,0,0,0.25);padding:4px 12px;border-radius:50px;color:white;white-space:nowrap;}
+        .now-showing-text{font-size:14px;color:rgba(255,255,255,0.95);font-family:'Inter',sans-serif;}
+        .now-showing-text strong{color:white;}
+        .now-showing-btn{font-family:'Montserrat',sans-serif;font-weight:700;font-size:13px;color:white;background:rgba(0,0,0,0.3);padding:8px 18px;border-radius:6px;text-decoration:none;white-space:nowrap;transition:background 0.2s;border:1px solid rgba(255,255,255,0.3);}
+        .now-showing-btn:hover{background:rgba(0,0,0,0.5);}
         header{position:fixed;top:0;left:0;width:100%;z-index:1000;padding:20px 0;transition:all 0.4s cubic-bezier(0.4,0,0.2,1);background:transparent}
         header.scrolled{background:rgba(10,10,15,0.95);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);padding:12px 0;box-shadow:0 4px 30px rgba(0,0,0,0.3)}
         .header-content{display:flex;justify-content:space-between;align-items:center}
@@ -106,8 +114,6 @@
         .countdown-text{font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);margin-top:4px}
         .countdown-date{font-size:12px;color:var(--text-secondary);margin-top:8px;display:flex;align-items:center;gap:6px}
         .countdown-date i{color:var(--accent);font-size:11px}
-        .countdown-streaming{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:var(--success)}
-        .countdown-streaming i{font-size:16px}
         .collaboration-section{padding:100px 0;background:var(--bg-secondary);position:relative;overflow:hidden}
         .collaboration-section::before{content:'';position:absolute;top:0;left:0;width:100%;height:100%;background:radial-gradient(ellipse at 30% 50%,rgba(233,69,96,0.06) 0%,transparent 60%),radial-gradient(ellipse at 70% 80%,rgba(255,107,53,0.04) 0%,transparent 50%);pointer-events:none}
         .collaboration-header{text-align:center;margin-bottom:64px;position:relative;z-index:1}
@@ -117,16 +123,20 @@
         .collaboration-badge{display:inline-flex;align-items:center;gap:10px;padding:12px 24px;background:rgba(255,255,255,0.05);border:1px solid var(--border);border-radius:12px;font-size:14px;color:var(--text-secondary)}
         .collaboration-badge i{color:var(--accent);font-size:16px}
         .collaboration-badge strong{color:var(--text-primary)}
-        .collaboration-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;position:relative;z-index:1}
+        .collaboration-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:32px;position:relative;z-index:1}
         .collaboration-card{position:relative;border-radius:16px;overflow:hidden;background:rgba(255,255,255,0.02);border:1px solid var(--border);transition:all 0.4s cubic-bezier(0.4,0,0.2,1)}
         .collaboration-card:hover{transform:translateY(-4px);border-color:rgba(233,69,96,0.3);box-shadow:0 20px 40px rgba(0,0,0,0.3)}
         .collaboration-card::before{content:'';position:absolute;top:0;left:0;width:100%;height:100%;background:radial-gradient(circle at 50% 0%,rgba(233,69,96,0.05) 0%,transparent 60%);opacity:0;transition:opacity 0.4s ease;pointer-events:none;z-index:1}
         .collaboration-card:hover::before{opacity:1}
         .collaboration-card-video{position:relative;padding-bottom:56.25%;height:0;overflow:hidden}
         .collaboration-card-video iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
+        /* Meet The Sickos poster card */
+        .collaboration-card-poster{position:relative;overflow:hidden;border-radius:0}
+        .collaboration-card-poster img{width:100%;display:block;object-fit:cover;max-height:380px;transition:transform 0.4s ease}
+        .collaboration-card:hover .collaboration-card-poster img{transform:scale(1.03)}
         .collaboration-card-badge{position:absolute;top:16px;left:16px;padding:6px 14px;background:rgba(10,10,15,0.85);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-radius:100px;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--accent);z-index:5}
         .collaboration-card-status{position:absolute;top:16px;right:16px;padding:6px 14px;background:rgba(16,185,129,0.9);border-radius:100px;font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#fff;z-index:5}
-        .collaboration-card-status.premiere{background:rgba(233,69,96,0.9)}
+        .collaboration-card-status.premiere{background:rgba(233,69,96,0.95)}
         .collaboration-card-body{padding:24px;position:relative;z-index:2}
         .collaboration-card-title{font-size:20px;font-weight:700;margin-bottom:8px;color:var(--text-primary)}
         .collaboration-card-credit{font-size:13px;color:var(--accent);font-weight:600;margin-bottom:12px;text-transform:uppercase;letter-spacing:0.5px}
@@ -138,6 +148,9 @@
         .collaboration-card-tubi i{font-size:10px}
         .collaboration-card-tubi a{color:var(--accent);text-decoration:none;transition:color 0.3s ease}
         .collaboration-card-tubi a:hover{color:#ff6b35}
+        /* Sickos featured card — full width */
+        .sickos-card{grid-column:1 / -1;display:grid;grid-template-columns:1fr 1.4fr;gap:0;border:1px solid rgba(233,69,96,0.3);box-shadow:0 0 40px rgba(233,69,96,0.1)}
+        .sickos-card .collaboration-card-poster img{max-height:100%;height:100%;object-fit:cover}
         .instagram-section{padding:100px 0;background:var(--bg-primary);position:relative}
         .instagram-section::before{content:'';position:absolute;top:0;left:0;width:100%;height:100%;background:radial-gradient(ellipse at 50% 50%,rgba(233,69,96,0.04) 0%,transparent 60%);pointer-events:none}
         .instagram-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;position:relative;z-index:1}
@@ -178,16 +191,21 @@
         .footer-legal{display:flex;gap:24px}
         .reveal{opacity:0;transform:translateY(30px);transition:all 0.8s cubic-bezier(0.4,0,0.2,1)}
         .reveal.active{opacity:1;transform:translateY(0)}
-        @media(max-width:1024px){.footer-grid{grid-template-columns:repeat(2,1fr)}.who-we-are-grid{grid-template-columns:1fr;gap:40px}.instagram-grid{grid-template-columns:1fr;gap:40px}.collaboration-grid{grid-template-columns:1fr;max-width:700px;margin-left:auto;margin-right:auto}}
+        @media(max-width:1024px){.footer-grid{grid-template-columns:repeat(2,1fr)}.who-we-are-grid{grid-template-columns:1fr;gap:40px}.instagram-grid{grid-template-columns:1fr;gap:40px}.collaboration-grid{grid-template-columns:1fr;max-width:700px;margin-left:auto;margin-right:auto}.sickos-card{grid-column:1;grid-template-columns:1fr}}
         @media(max-width:992px){.portfolio-grid{grid-template-columns:1fr;max-width:700px;margin-left:auto;margin-right:auto}}
-        @media(max-width:768px){.mobile-menu-toggle{display:block}.mobile-menu-close{display:block;position:absolute;top:24px;right:24px}nav{position:fixed;top:0;left:0;width:100%;height:100vh;background:rgba(10,10,15,0.98);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);display:flex;align-items:center;justify-content:center;transform:translateX(100%);transition:transform 0.4s cubic-bezier(0.4,0,0.2,1);z-index:999}nav.active{transform:translateX(0)}nav ul{flex-direction:column;align-items:center;gap:16px}nav ul li a{font-size:24px;padding:12px 24px}.who-we-are-features{grid-template-columns:1fr}.project-details{grid-template-columns:1fr!important}.cta-buttons{flex-direction:column;align-items:stretch}.collaboration-grid{grid-template-columns:1fr}.countdown-timer{gap:6px}.countdown-unit{min-width:40px;padding:6px 4px}.countdown-number{font-size:16px}.portfolio-card-actions{flex-direction:column}}
-        @media(max-width:576px){.page-hero h1{font-size:32px}.hero-buttons{flex-direction:column;align-items:stretch}.btn{justify-content:center}.filter-bar{gap:8px}.filter-btn{padding:8px 16px;font-size:12px}.footer-grid{grid-template-columns:1fr;gap:32px}.footer-bottom{flex-direction:column;gap:12px;text-align:center}.footer-legal{flex-direction:column;gap:12px;align-items:center}.instagram-embed-container{min-height:360px}.collaboration-info{flex-direction:column}.countdown-container{padding:10px 12px}.countdown-unit{min-width:36px;padding:5px 3px}.countdown-number{font-size:14px}.countdown-text{font-size:8px}.logo-icon{width:36px;height:36px}.logo{font-size:22px}}
+        @media(max-width:768px){.mobile-menu-toggle{display:block}.mobile-menu-close{display:block;position:absolute;top:24px;right:24px}nav{position:fixed;top:0;left:0;width:100%;height:100vh;background:rgba(10,10,15,0.98);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);display:flex;align-items:center;justify-content:center;transform:translateX(100%);transition:transform 0.4s cubic-bezier(0.4,0,0.2,1);z-index:999}nav.active{transform:translateX(0)}nav ul{flex-direction:column;align-items:center;gap:16px}nav ul li a{font-size:24px;padding:12px 24px}.who-we-are-features{grid-template-columns:1fr}.project-details{grid-template-columns:1fr!important}.cta-buttons{flex-direction:column;align-items:stretch}.collaboration-grid{grid-template-columns:1fr}.sickos-card{grid-template-columns:1fr}.portfolio-card-actions{flex-direction:column}.now-showing-inner{gap:10px}.now-showing-text{font-size:13px}}
+        @media(max-width:576px){.page-hero h1{font-size:32px}.hero-buttons{flex-direction:column;align-items:stretch}.btn{justify-content:center}.filter-bar{gap:8px}.filter-btn{padding:8px 16px;font-size:12px}.footer-grid{grid-template-columns:1fr;gap:32px}.footer-bottom{flex-direction:column;gap:12px;text-align:center}.footer-legal{flex-direction:column;gap:12px;align-items:center}.instagram-embed-container{min-height:360px}.collaboration-info{flex-direction:column}.logo-icon{width:36px;height:36px}.logo{font-size:22px}}
     </style>
 </head>
 <body>
-
+    <div class="now-showing-bar">
+        <div class="now-showing-inner">
+            <span class="now-showing-badge">🎬 NOW SHOWING</span>
+            <span class="now-showing-text"><strong>Meet The Sickos</strong> — Philadelphia's first homegrown horror slasher film — <strong>June 12th at Cinemark, West Philadelphia</strong></span>
+            <a href="https://www.tickettailor.com/events/noegosworldmediallc/2163877" target="_blank" rel="noopener noreferrer" class="now-showing-btn">Get Tickets →</a>
+        </div>
+    </div>
     <a href="#main-content" class="skip-nav">Skip to main content</a>
-
     <header id="header">
         <div class="container header-content">
             <a href="index.html" class="logo" aria-label="XLNZ Productions Home">
@@ -336,6 +354,35 @@
                 </div>
             </div>
             <div class="collaboration-grid">
+
+                <!-- ═══ MEET THE SICKOS — FEATURED FULL WIDTH ═══ -->
+                <div class="collaboration-card sickos-card reveal">
+                    <div class="collaboration-card-poster">
+                        <span class="collaboration-card-badge">Feature Film</span>
+                        <span class="collaboration-card-status premiere">🎟️ June 12th</span>
+                        <img src="images/meet-the-sickos.jpeg" alt="Meet The Sickos Movie Poster — Philadelphia's first homegrown horror slasher film">
+                    </div>
+                    <div class="collaboration-card-body" style="display:flex;flex-direction:column;justify-content:center;">
+                        <div class="collaboration-card-credit">Written &amp; Directed by Raheem Roher</div>
+                        <h3 class="collaboration-card-title" style="font-size:28px;">Meet The Sickos</h3>
+                        <p class="collaboration-card-desc">Philadelphia's first homegrown horror slasher film. Starring Buhzz Taylor and directed by Raheem Roher of No Egos World Media, <em>Meet The Sickos</em> is a landmark moment for independent Philly filmmaking — raw, fearless, and built right here in the city.</p>
+                        <p class="collaboration-card-desc">Screening June 12th at Cinemark on 40th Street, West Philadelphia. Get your tickets now.</p>
+                        <div class="collaboration-card-meta"><span><i class="fas fa-film" aria-hidden="true"></i> Feature Film</span><span><i class="fas fa-handshake" aria-hidden="true"></i> Co-Produced</span><span><i class="fas fa-map-marker-alt" aria-hidden="true"></i> World Premiere</span></div>
+                        <div style="display:flex;gap:12px;margin-top:20px;flex-wrap:wrap;">
+                            <a href="https://www.tickettailor.com/events/noegosworldmediallc/2163877" target="_blank" rel="noopener noreferrer" class="btn btn-primary"><i class="fas fa-ticket-alt" aria-hidden="true"></i> Get Your Tickets</a>
+                            <a href="https://www.instagram.com/meet_the_sickos_movie" target="_blank" rel="noopener noreferrer" class="btn btn-secondary"><i class="fab fa-instagram" aria-hidden="true"></i> Follow the Film</a>
+                        </div>
+                        <!-- TRAILER: When YouTube trailer is live, uncomment and replace YOUR_TRAILER_ID -->
+                        <!--
+                        <div style="margin-top:24px;border-radius:10px;overflow:hidden;">
+                            <iframe width="100%" height="220" src="https://www.youtube.com/embed/YOUR_TRAILER_ID"
+                                frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen loading="lazy"></iframe>
+                        </div>
+                        -->
+                    </div>
+                </div>
+
                 <!-- The Rush -->
                 <div class="collaboration-card reveal">
                     <div class="collaboration-card-video">
@@ -352,11 +399,12 @@
                         <div class="portfolio-card-actions" style="margin-top:12px;"><a href="https://www.youtube.com/watch?v=eGK84ZpOhys" class="btn btn-sm btn-primary" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube" aria-hidden="true"></i> Watch Trailer</a></div>
                     </div>
                 </div>
+
                 <!-- Mistransaction -->
                 <div class="collaboration-card reveal">
                     <div class="collaboration-card-video">
                         <span class="collaboration-card-badge">Film</span>
-                        <span class="collaboration-card-status premiere" id="mistransactionBadge">Coming Soon</span>
+                        <span class="collaboration-card-status">Streaming Now</span>
                         <iframe src="https://www.youtube.com/embed/8nXm23rNbqA" title="Mistransaction - Official Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
                     </div>
                     <div class="collaboration-card-body">
@@ -368,6 +416,7 @@
                         <div class="portfolio-card-actions" style="margin-top:12px;"><a href="https://www.youtube.com/watch?v=8nXm23rNbqA" class="btn btn-sm btn-primary" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube" aria-hidden="true"></i> Watch Trailer</a></div>
                     </div>
                 </div>
+
                 <!-- Unglorified -->
                 <div class="collaboration-card reveal">
                     <div class="collaboration-card-video">
@@ -384,6 +433,7 @@
                         <div class="portfolio-card-actions" style="margin-top:12px;"><a href="https://www.youtube.com/watch?v=jvANB8i9rbM" class="btn btn-sm btn-primary" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube" aria-hidden="true"></i> Watch Trailer</a></div>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
@@ -536,8 +586,6 @@
                 });
             });
         });
-
-        
 
         // Reveal
         const ro = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('active'); }), { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
