@@ -578,27 +578,15 @@
             date: isoDate(now)
         };
 
+        // Write to localStorage FIRST — synchronous, guaranteed
         var data = loadData();
         data.unshift(record);
         saveData(data);
 
-        // Send to Google Sheets if connected
-        var sheetUrl = localStorage.getItem(SHEET_KEY);
-        if (sheetUrl) {
-            fetch(sheetUrl, {
-                method: 'POST',
-                mode: 'no-cors',
-                headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify({type: 'checkin', data: record})
-            }).catch(function(){});
-        }
-
-        // Email notification
-        emailjs.send('service_z2k6cjr', 'template_hiteoqy', {
-            from_name: fn + ' ' + ln,
-            user_email: 'xlnzproductions@gmail.com',
-            message: 'Studio Check-In: ' + fn + ' ' + ln + ' | Show: ' + show + ' | Role: ' + role + ' | ' + formatDT(now)
-        }).catch(function(){});
+        // Render immediately after save
+        renderToday();
+        renderAll();
+        showToast(fn + ' ' + ln + ' checked in.');
 
         // Reset form
         ['ciFirstName','ciLastName','ciShow','ciNotes'].forEach(function(id){ document.getElementById(id).value=''; });
@@ -606,8 +594,31 @@
         document.getElementById('ciSession').value='';
         document.getElementById('ciParty').value='1';
 
-        showToast(fn + ' ' + ln + ' checked in successfully.');
-        renderToday();
+        // Fire Google Sheets async — won't affect anything above
+        var sheetUrl = localStorage.getItem(SHEET_KEY);
+        if (sheetUrl) {
+            setTimeout(function(){
+                fetch(sheetUrl, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({type: 'checkin', data: record})
+                }).catch(function(){});
+            }, 0);
+        }
+
+        // Fire email async
+        setTimeout(function(){
+            emailjs.send('service_z2k6cjr', 'template_hiteoqy', {
+                from_name: fn + ' ' + ln,
+                user_email: 'xlnzproductions@gmail.com',
+                message: 'STUDIO CHECK-IN\nName: ' + fn + ' ' + ln +
+                    '\nShow: ' + show + '\nRole: ' + role +
+                    '\nSession: ' + (record.session||'—') +
+                    '\nParty: ' + record.party +
+                    '\nTime: ' + formatDT(now)
+            }).catch(function(){});
+        }, 0);
     }
 
     // ── RENDER ──
