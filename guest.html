@@ -8,178 +8,66 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <style>
-        :root {
-            --bg: #0a0a0f;
-            --bg2: #12122a;
-            --bg3: #1a1a2e;
-            --accent: #e94560;
-            --grad: linear-gradient(135deg, #e94560, #ff6b35);
-            --text: #ffffff;
-            --dim: #a0a0b8;
-            --muted: #6b6b80;
-            --border: rgba(255,255,255,0.08);
-            --green: #10b981;
-        }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Inter', sans-serif; background: var(--bg);
-            color: var(--text); min-height: 100vh;
-            display: flex; align-items: center; justify-content: center;
-            padding: 24px; position: relative; overflow-x: hidden;
-        }
-        body::before {
-            content: ''; position: absolute; inset: 0;
-            background: radial-gradient(ellipse at 30% 40%, rgba(233,69,96,0.07) 0%, transparent 60%),
-                        radial-gradient(ellipse at 70% 60%, rgba(255,107,53,0.05) 0%, transparent 50%);
-            pointer-events: none;
-        }
-        h1,h2,h3 { font-family: 'Montserrat', sans-serif; }
-
-        .card {
-            background: var(--bg2); border: 1px solid var(--border);
-            border-radius: 24px; width: 100%; max-width: 520px;
-            position: relative; overflow: hidden;
-        }
-        .card::before {
-            content: ''; position: absolute; top: 0; left: 0;
-            width: 100%; height: 4px; background: var(--grad);
-        }
-
-        /* HEADER */
-        .card-header {
-            padding: 36px 40px 28px; text-align: center;
-            border-bottom: 1px solid var(--border);
-        }
-        .xlnz-logo {
-            font-family: 'Montserrat', sans-serif; font-size: 34px;
-            font-weight: 900; letter-spacing: 3px;
-            background: var(--grad); -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent; background-clip: text;
-            margin-bottom: 4px;
-        }
-        .xlnz-tagline { font-size: 11px; color: var(--muted); text-transform: uppercase;
-            letter-spacing: 2px; margin-bottom: 20px; }
-        .welcome-title { font-size: 20px; font-weight: 800; margin-bottom: 6px; }
-        .welcome-sub { font-size: 14px; color: var(--dim); line-height: 1.5; }
-
-        /* TYPE SELECTOR */
-        .type-select { padding: 28px 40px; border-bottom: 1px solid var(--border); }
-        .type-label { font-size: 12px; font-weight: 700; text-transform: uppercase;
-            letter-spacing: 1.5px; color: var(--muted); margin-bottom: 14px;
-            text-align: center; }
-        .type-buttons { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-        .type-btn {
-            padding: 20px 16px; background: var(--bg3); border: 2px solid var(--border);
-            border-radius: 14px; cursor: pointer; transition: all 0.2s;
-            text-align: center; display: flex; flex-direction: column;
-            align-items: center; gap: 10px;
-        }
-        .type-btn:hover { border-color: rgba(233,69,96,0.4); background: rgba(233,69,96,0.04); }
-        .type-btn.selected { border-color: var(--accent); background: rgba(233,69,96,0.08); }
-        .type-btn i { font-size: 26px; color: var(--accent); }
-        .type-btn-title { font-family: 'Montserrat', sans-serif; font-weight: 800;
-            font-size: 15px; color: var(--text); }
-        .type-btn-sub { font-size: 12px; color: var(--muted); line-height: 1.4; }
-
-        /* FORMS */
-        .card-body { padding: 28px 40px 36px; display: none; }
-        .card-body.visible { display: block; }
-        .form-section {
-            font-size: 11px; font-weight: 700; text-transform: uppercase;
-            letter-spacing: 2px; color: var(--accent); margin-bottom: 18px;
-            display: flex; align-items: center; gap: 8px;
-        }
-        .form-group { margin-bottom: 16px; }
-        .form-label { display: block; font-size: 12px; font-weight: 600;
-            text-transform: uppercase; letter-spacing: 1px; color: var(--muted);
-            margin-bottom: 7px; }
-        .form-input {
-            width: 100%; padding: 13px 16px; background: var(--bg3);
-            border: 1px solid var(--border); border-radius: 10px;
-            color: var(--text); font-family: 'Inter', sans-serif; font-size: 15px;
-            outline: none; transition: border-color 0.2s;
-        }
-        .form-input:focus { border-color: var(--accent); background: rgba(233,69,96,0.03); }
-        .form-input::placeholder { color: var(--muted); }
-        select.form-input { cursor: pointer; background-color: var(--bg3); color: var(--text); }
-        select.form-input option { background-color: var(--bg3); color: var(--text); }
-        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-
-        /* INTERESTS */
-        .interest-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 4px; }
-        .interest-item {
-            display: flex; align-items: center; gap: 10px;
-            padding: 11px 13px; background: var(--bg3);
-            border: 1px solid var(--border); border-radius: 10px;
-            cursor: pointer; transition: all 0.2s; user-select: none;
-        }
-        .interest-item:hover { border-color: rgba(233,69,96,0.3); }
-        .interest-item.selected { border-color: var(--accent); background: rgba(233,69,96,0.06); }
-        .interest-check {
-            width: 18px; height: 18px; border-radius: 4px; flex-shrink: 0;
-            border: 2px solid var(--muted); display: flex; align-items: center;
-            justify-content: center; transition: all 0.2s;
-        }
-        .interest-item.selected .interest-check { background: var(--accent); border-color: var(--accent); }
-        .interest-check i { font-size: 9px; color: white; display: none; }
-        .interest-item.selected .interest-check i { display: block; }
-        .interest-label { font-size: 12px; font-weight: 500; line-height: 1.3; color: var(--dim); }
-        .interest-item.selected .interest-label { color: var(--text); }
-
-        /* SUBMIT */
-        .submit-btn {
-            width: 100%; padding: 15px; background: var(--grad); border: none;
-            border-radius: 12px; color: white; font-family: 'Montserrat', sans-serif;
-            font-weight: 800; font-size: 15px; cursor: pointer; transition: all 0.25s;
-            display: flex; align-items: center; justify-content: center; gap: 10px;
-            margin-top: 22px; letter-spacing: 0.5px;
-        }
-        .submit-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(233,69,96,0.35); }
-        .submit-btn:disabled { opacity: 0.6; cursor: not-allowed; transform: none; box-shadow: none; }
-        .privacy-note { font-size: 11px; color: var(--muted); text-align: center; margin-top: 10px; line-height: 1.5; }
-
-        /* BACK */
-        .back-btn {
-            display: inline-flex; align-items: center; gap: 6px;
-            font-size: 13px; color: var(--muted); cursor: pointer;
-            margin-bottom: 22px; transition: color 0.2s; background: none; border: none;
-            padding: 0; font-family: 'Inter', sans-serif;
-        }
-        .back-btn:hover { color: var(--accent); }
-
-        /* SUCCESS */
-        .success-screen {
-            display: none; padding: 56px 40px; text-align: center;
-        }
-        .success-icon {
-            width: 72px; height: 72px; background: rgba(16,185,129,0.1);
-            border-radius: 50%; display: flex; align-items: center; justify-content: center;
-            margin: 0 auto 20px; font-size: 32px; color: var(--green);
-        }
-        .success-title { font-size: 26px; font-weight: 900; margin-bottom: 10px; }
-        .success-sub { font-size: 15px; color: var(--dim); line-height: 1.6;
-            max-width: 360px; margin: 0 auto 28px; }
-        .success-logo { font-family: 'Montserrat', sans-serif; font-size: 18px; font-weight: 900;
-            background: var(--grad); -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent; background-clip: text;
-            letter-spacing: 2px; margin-top: 28px; padding-top: 20px;
-            border-top: 1px solid var(--border); }
-
-        @media(max-width: 560px) {
-            body { padding: 16px; align-items: flex-start; }
-            .card-header { padding: 28px 24px 22px; }
-            .type-select { padding: 22px 24px; }
-            .card-body { padding: 22px 24px 28px; }
-            .form-row { grid-template-columns: 1fr; }
-            .interest-grid { grid-template-columns: 1fr; }
-            .success-screen { padding: 40px 24px; }
-        }
+        :root{--bg:#0a0a0f;--bg2:#12122a;--bg3:#1a1a2e;--accent:#e94560;--grad:linear-gradient(135deg,#e94560,#ff6b35);--text:#ffffff;--dim:#a0a0b8;--muted:#6b6b80;--border:rgba(255,255,255,0.08);--green:#10b981}
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;position:relative;overflow-x:hidden}
+        body::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 40%,rgba(233,69,96,0.07) 0%,transparent 60%),radial-gradient(ellipse at 70% 60%,rgba(255,107,53,0.05) 0%,transparent 50%);pointer-events:none}
+        h1,h2,h3{font-family:'Montserrat',sans-serif}
+        .card{background:var(--bg2);border:1px solid var(--border);border-radius:24px;width:100%;max-width:520px;position:relative;overflow:hidden}
+        .card::before{content:'';position:absolute;top:0;left:0;width:100%;height:4px;background:var(--grad)}
+        .card-header{padding:36px 40px 28px;text-align:center;border-bottom:1px solid var(--border)}
+        .xlnz-logo{font-family:'Montserrat',sans-serif;font-size:34px;font-weight:900;letter-spacing:3px;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:4px}
+        .xlnz-tagline{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:2px;margin-bottom:20px}
+        .welcome-title{font-size:20px;font-weight:800;margin-bottom:6px}
+        .welcome-sub{font-size:14px;color:var(--dim);line-height:1.5}
+        .type-select{padding:28px 40px;border-bottom:1px solid var(--border)}
+        .type-label{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--muted);margin-bottom:14px;text-align:center}
+        .type-buttons{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+        .type-btn{padding:20px 16px;background:var(--bg3);border:2px solid var(--border);border-radius:14px;cursor:pointer;transition:all 0.2s;text-align:center;display:flex;flex-direction:column;align-items:center;gap:10px}
+        .type-btn:hover{border-color:rgba(233,69,96,0.4);background:rgba(233,69,96,0.04)}
+        .type-btn.selected{border-color:var(--accent);background:rgba(233,69,96,0.08)}
+        .type-btn i{font-size:26px;color:var(--accent)}
+        .type-btn-title{font-family:'Montserrat',sans-serif;font-weight:800;font-size:15px;color:var(--text)}
+        .type-btn-sub{font-size:12px;color:var(--muted);line-height:1.4}
+        .card-body{padding:28px 40px 36px;display:none}
+        .card-body.visible{display:block}
+        .form-section{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--accent);margin-bottom:18px;display:flex;align-items:center;gap:8px}
+        .form-group{margin-bottom:16px}
+        .form-label{display:block;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin-bottom:7px}
+        .form-input{width:100%;padding:13px 16px;background:var(--bg3);border:1px solid var(--border);border-radius:10px;color:var(--text);font-family:'Inter',sans-serif;font-size:15px;outline:none;transition:border-color 0.2s}
+        .form-input:focus{border-color:var(--accent);background:rgba(233,69,96,0.03)}
+        .form-input::placeholder{color:var(--muted)}
+        select.form-input{cursor:pointer;background-color:var(--bg3);color:var(--text)}
+        select.form-input option{background-color:var(--bg3);color:var(--text)}
+        .form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+        .interest-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:4px}
+        .interest-item{display:flex;align-items:center;gap:10px;padding:11px 13px;background:var(--bg3);border:1px solid var(--border);border-radius:10px;cursor:pointer;transition:all 0.2s;user-select:none}
+        .interest-item:hover{border-color:rgba(233,69,96,0.3)}
+        .interest-item.selected{border-color:var(--accent);background:rgba(233,69,96,0.06)}
+        .interest-check{width:18px;height:18px;border-radius:4px;flex-shrink:0;border:2px solid var(--muted);display:flex;align-items:center;justify-content:center;transition:all 0.2s}
+        .interest-item.selected .interest-check{background:var(--accent);border-color:var(--accent)}
+        .interest-check i{font-size:9px;color:white;display:none}
+        .interest-item.selected .interest-check i{display:block}
+        .interest-label{font-size:12px;font-weight:500;line-height:1.3;color:var(--dim)}
+        .interest-item.selected .interest-label{color:var(--text)}
+        .submit-btn{width:100%;padding:15px;background:var(--grad);border:none;border-radius:12px;color:white;font-family:'Montserrat',sans-serif;font-weight:800;font-size:15px;cursor:pointer;transition:all 0.25s;display:flex;align-items:center;justify-content:center;gap:10px;margin-top:22px;letter-spacing:0.5px}
+        .submit-btn:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(233,69,96,0.35)}
+        .submit-btn:disabled{opacity:0.6;cursor:not-allowed;transform:none;box-shadow:none}
+        .privacy-note{font-size:11px;color:var(--muted);text-align:center;margin-top:10px;line-height:1.5}
+        .back-btn{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--muted);cursor:pointer;margin-bottom:22px;transition:color 0.2s;background:none;border:none;padding:0;font-family:'Inter',sans-serif}
+        .back-btn:hover{color:var(--accent)}
+        .success-screen{display:none;padding:56px 40px;text-align:center}
+        .success-icon{width:72px;height:72px;background:rgba(16,185,129,0.1);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-size:32px;color:var(--green)}
+        .success-title{font-size:26px;font-weight:900;margin-bottom:10px}
+        .success-sub{font-size:15px;color:var(--dim);line-height:1.6;max-width:360px;margin:0 auto 28px}
+        .success-logo{font-family:'Montserrat',sans-serif;font-size:18px;font-weight:900;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:2px;margin-top:28px;padding-top:20px;border-top:1px solid var(--border)}
+        @media(max-width:560px){body{padding:16px;align-items:flex-start}.card-header{padding:28px 24px 22px}.type-select{padding:22px 24px}.card-body{padding:22px 24px 28px}.form-row{grid-template-columns:1fr}.interest-grid{grid-template-columns:1fr}.success-screen{padding:40px 24px}}
     </style>
 </head>
 <body>
-<div class="card">
+<iframe name="hidden_iframe" style="display:none;"></iframe>
 
-    <!-- HEADER -->
+<div class="card">
     <div class="card-header">
         <div class="xlnz-logo">XLNZ</div>
         <div class="xlnz-tagline">Productions · Philadelphia</div>
@@ -187,28 +75,25 @@
         <div class="welcome-sub">Sign in below so we know who's in the building.</div>
     </div>
 
-    <!-- TYPE SELECTOR -->
     <div class="type-select" id="typeSelect">
         <div class="type-label">How are you here today?</div>
         <div class="type-buttons">
             <div class="type-btn" id="btnClient" onclick="selectType('client')">
                 <i class="fas fa-microphone-alt"></i>
                 <div class="type-btn-title">I'm a Client</div>
-                <div class="type-btn-sub">Here for a session or production</div>
+                <div class="type-btn-sub">Here for your scheduled session</div>
             </div>
             <div class="type-btn" id="btnGuest" onclick="selectType('guest')">
                 <i class="fas fa-user-friends"></i>
                 <div class="type-btn-title">I'm a Guest</div>
-                <div class="type-btn-sub">Visiting, watching, or exploring</div>
+                <div class="type-btn-sub">On a show, visiting, or just stopping by</div>
             </div>
         </div>
     </div>
 
     <!-- CLIENT FORM -->
     <div class="card-body" id="clientForm">
-        <button class="back-btn" onclick="goBack()">
-            <i class="fas fa-chevron-left"></i> Back
-        </button>
+        <button class="back-btn" onclick="goBack()"><i class="fas fa-chevron-left"></i> Back</button>
         <div class="form-section"><i class="fas fa-microphone-alt"></i> Client Check-In</div>
         <div class="form-row">
             <div class="form-group">
@@ -228,7 +113,7 @@
             <label class="form-label">Your Role</label>
             <select class="form-input" id="cRole">
                 <option value="Host">Host</option>
-                <option value="Guest">Guest on the show</option>
+                <option value="Guest on the show">Guest on the show</option>
                 <option value="Crew">Crew</option>
                 <option value="Client">Client</option>
             </select>
@@ -250,9 +135,7 @@
 
     <!-- GUEST FORM -->
     <div class="card-body" id="guestForm">
-        <button class="back-btn" onclick="goBack()">
-            <i class="fas fa-chevron-left"></i> Back
-        </button>
+        <button class="back-btn" onclick="goBack()"><i class="fas fa-chevron-left"></i> Back</button>
         <div class="form-section"><i class="fas fa-user-friends"></i> Guest Sign-In</div>
         <div class="form-row">
             <div class="form-group">
@@ -332,156 +215,144 @@
         <div class="success-sub" id="successSub">Welcome to the studio. You're in the book.</div>
         <div class="success-logo">XLNZ PRODUCTIONS</div>
     </div>
-
 </div>
 
 <script>
     (function(){ emailjs.init("eRiiZBXtULt8UDBAm"); })();
 
-    var SHEET_KEY = 'xlnz_ci_sheet';
-    var currentType = null;
+    var SHEET_KEY='xlnz_ci_sheet';
 
-    function selectType(type) {
-        currentType = type;
-        document.getElementById('btnClient').classList.toggle('selected', type==='client');
-        document.getElementById('btnGuest').classList.toggle('selected', type==='guest');
-        document.getElementById('typeSelect').style.display = 'none';
-        document.getElementById('clientForm').classList.toggle('visible', type==='client');
-        document.getElementById('guestForm').classList.toggle('visible', type==='guest');
+    function selectType(type){
+        document.getElementById('btnClient').classList.toggle('selected',type==='client');
+        document.getElementById('btnGuest').classList.toggle('selected',type==='guest');
+        document.getElementById('typeSelect').style.display='none';
+        document.getElementById('clientForm').classList.toggle('visible',type==='client');
+        document.getElementById('guestForm').classList.toggle('visible',type==='guest');
     }
 
-    function goBack() {
-        document.getElementById('typeSelect').style.display = 'block';
+    function goBack(){
+        document.getElementById('typeSelect').style.display='block';
         document.getElementById('clientForm').classList.remove('visible');
         document.getElementById('guestForm').classList.remove('visible');
         document.getElementById('btnClient').classList.remove('selected');
         document.getElementById('btnGuest').classList.remove('selected');
-        currentType = null;
     }
 
-    function toggleInterest(el) {
-        el.classList.toggle('selected');
+    function toggleInterest(el){ el.classList.toggle('selected'); }
+
+    function getInterests(){
+        var s=[];
+        document.querySelectorAll('#guestForm .interest-item.selected').forEach(function(el){ s.push(el.getAttribute('data-val')); });
+        return s.join(', ');
     }
 
-    function getInterests() {
-        var selected = [];
-        document.querySelectorAll('#guestForm .interest-item.selected').forEach(function(el){
-            selected.push(el.getAttribute('data-val'));
-        });
-        return selected.join(', ');
+    function formatDT(dt){
+        return dt.toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric',year:'numeric'})+
+            ' at '+dt.toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'});
     }
 
-    function formatDT(dt) {
-        return dt.toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric',year:'numeric'}) +
-            ' at ' + dt.toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'});
+    // Send to Google Sheets via hidden form POST (bypasses CORS)
+    function sendToSheets(payload){
+        var url=localStorage.getItem(SHEET_KEY);
+        if(!url) return;
+        var form=document.createElement('form');
+        form.method='POST';
+        form.action=url;
+        form.target='hidden_iframe';
+        form.style.display='none';
+        var input=document.createElement('input');
+        input.type='hidden';
+        input.name='data';
+        input.value=JSON.stringify(payload);
+        form.appendChild(input);
+        document.body.appendChild(form);
+        form.submit();
+        setTimeout(function(){ if(form.parentNode) document.body.removeChild(form); },1000);
     }
 
-    function sendToSheets(payload) {
-        var url = localStorage.getItem(SHEET_KEY);
-        if (!url) return;
-        fetch(url, {
-            method: 'POST', mode: 'no-cors',
-            headers: {'Content-Type':'application/json'},
-            body: JSON.stringify(payload)
-        }).catch(function(){});
-    }
+    function submitClient(){
+        var fn=document.getElementById('cFirstName').value.trim();
+        var ln=document.getElementById('cLastName').value.trim();
+        var show=document.getElementById('cShow').value.trim();
+        if(!fn||!ln||!show){ alert('Please fill in your name and show.'); return; }
 
-    // CLIENT SUBMIT
-    function submitClient() {
-        var fn = document.getElementById('cFirstName').value.trim();
-        var ln = document.getElementById('cLastName').value.trim();
-        var show = document.getElementById('cShow').value.trim();
-        if (!fn || !ln || !show) { alert('Please fill in your name and show.'); return; }
+        var btn=document.getElementById('cSubmitBtn');
+        btn.disabled=true;
+        btn.innerHTML='<i class="fas fa-spinner fa-spin"></i> Checking in...';
 
-        var btn = document.getElementById('cSubmitBtn');
-        btn.disabled = true;
-        btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Checking in...';
-
-        var now = new Date();
-        var record = {
-            type: 'checkin',
-            data: {
-                id: 'ci_' + Date.now(),
-                firstName: fn, lastName: ln,
-                show: show,
-                role: document.getElementById('cRole').value,
-                session: 'Client Session',
-                party: document.getElementById('cParty').value,
-                notes: '',
-                timestamp: now.toISOString(),
-                displayTime: formatDT(now),
-                date: now.toISOString().split('T')[0]
+        var now=new Date();
+        var payload={
+            type:'checkin',
+            data:{
+                id:'ci_'+Date.now(),
+                firstName:fn,lastName:ln,
+                show:show,
+                role:document.getElementById('cRole').value,
+                session:'Client Session',
+                party:document.getElementById('cParty').value,
+                notes:'',
+                timestamp:now.toISOString(),
+                displayTime:formatDT(now),
+                date:now.toISOString().split('T')[0]
             }
         };
 
-        sendToSheets(record);
+        sendToSheets(payload);
 
-        emailjs.send('service_z2k6cjr', 'template_hiteoqy', {
-            from_name: fn + ' ' + ln,
-            user_email: 'xlnzproductions@gmail.com',
-            message: 'CLIENT CHECK-IN\nName: ' + fn + ' ' + ln +
-                '\nShow: ' + show +
-                '\nRole: ' + record.data.role +
-                '\nParty: ' + record.data.party +
-                '\nTime: ' + record.data.displayTime
+        emailjs.send('service_z2k6cjr','template_hiteoqy',{
+            from_name:fn+' '+ln,
+            user_email:'xlnzproductions@gmail.com',
+            message:'CLIENT CHECK-IN\nName: '+fn+' '+ln+'\nShow: '+show+'\nRole: '+payload.data.role+'\nParty: '+payload.data.party+'\nTime: '+payload.data.displayTime
         }).catch(function(){});
 
-        showSuccess(fn, 'client');
+        showSuccess(fn,'client');
     }
 
-    // GUEST SUBMIT
-    function submitGuest() {
-        var fn = document.getElementById('gFirstName').value.trim();
-        var ln = document.getElementById('gLastName').value.trim();
-        var email = document.getElementById('gEmail').value.trim();
-        if (!fn || !ln || !email) { alert('Please fill in your name and email.'); return; }
+    function submitGuest(){
+        var fn=document.getElementById('gFirstName').value.trim();
+        var ln=document.getElementById('gLastName').value.trim();
+        var email=document.getElementById('gEmail').value.trim();
+        if(!fn||!ln||!email){ alert('Please fill in your name and email.'); return; }
 
-        var btn = document.getElementById('gSubmitBtn');
-        btn.disabled = true;
-        btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+        var btn=document.getElementById('gSubmitBtn');
+        btn.disabled=true;
+        btn.innerHTML='<i class="fas fa-spinner fa-spin"></i> Sending...';
 
-        var now = new Date();
-        var record = {
-            type: 'guest_lead',
-            firstName: fn, lastName: ln,
-            email: email,
-            phone: document.getElementById('gPhone').value.trim(),
-            what: document.getElementById('gWhat').value.trim(),
-            how: document.getElementById('gHow').value.trim(),
-            interests: getInterests(),
-            timestamp: now.toISOString(),
-            displayTime: formatDT(now)
+        var now=new Date();
+        var payload={
+            type:'guest_lead',
+            firstName:fn,lastName:ln,
+            email:email,
+            phone:document.getElementById('gPhone').value.trim(),
+            what:document.getElementById('gWhat').value.trim(),
+            how:document.getElementById('gHow').value.trim(),
+            interests:getInterests(),
+            timestamp:now.toISOString(),
+            displayTime:formatDT(now)
         };
 
-        sendToSheets(record);
+        sendToSheets(payload);
 
-        emailjs.send('service_z2k6cjr', 'template_hiteoqy', {
-            from_name: fn + ' ' + ln,
-            user_email: 'xlnzproductions@gmail.com',
-            message: 'STUDIO GUEST LEAD\nName: ' + fn + ' ' + ln +
-                '\nEmail: ' + email +
-                '\nPhone: ' + (record.phone||'—') +
-                '\nWhat they do: ' + (record.what||'—') +
-                '\nHow they got here: ' + (record.how||'—') +
-                '\nInterested in: ' + (record.interests||'None selected') +
-                '\nTime: ' + record.displayTime
+        emailjs.send('service_z2k6cjr','template_hiteoqy',{
+            from_name:fn+' '+ln,
+            user_email:'xlnzproductions@gmail.com',
+            message:'STUDIO GUEST LEAD\nName: '+fn+' '+ln+'\nEmail: '+email+'\nPhone: '+(payload.phone||'—')+'\nWhat they do: '+(payload.what||'—')+'\nHow they got here: '+(payload.how||'—')+'\nInterested in: '+(payload.interests||'None selected')+'\nTime: '+payload.displayTime
         }).catch(function(){});
 
-        showSuccess(fn, 'guest');
+        showSuccess(fn,'guest');
     }
 
-    function showSuccess(firstName, type) {
+    function showSuccess(firstName,type){
         document.getElementById('clientForm').classList.remove('visible');
         document.getElementById('guestForm').classList.remove('visible');
-        document.getElementById('typeSelect').style.display = 'none';
-        var screen = document.getElementById('successScreen');
-        screen.style.display = 'block';
-        if (type === 'client') {
-            document.getElementById('successTitle').textContent = "You're checked in, " + firstName + ".";
-            document.getElementById('successSub').textContent = "Welcome back. You're in the book — go ahead in.";
+        document.getElementById('typeSelect').style.display='none';
+        document.getElementById('successScreen').style.display='block';
+        if(type==='client'){
+            document.getElementById('successTitle').textContent="You're checked in, "+firstName+".";
+            document.getElementById('successSub').textContent="Welcome back. You're in the book — go ahead in.";
         } else {
-            document.getElementById('successTitle').textContent = "You're in the book, " + firstName + ".";
-            document.getElementById('successSub').textContent = "Thanks for stopping by. Someone from XLNZ will be in touch — keep doing what you do.";
+            document.getElementById('successTitle').textContent="You're in the book, "+firstName+".";
+            document.getElementById('successSub').textContent="Thanks for stopping by. Someone from XLNZ will be in touch — keep doing what you do.";
         }
     }
 </script>
