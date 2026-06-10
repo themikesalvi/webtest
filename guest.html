@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to XLNZ Productions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <style>
+        :root {
+            --bg: #0a0a0f;
+            --bg2: #12122a;
+            --bg3: #1a1a2e;
+            --accent: #e94560;
+            --grad: linear-gradient(135deg, #e94560, #ff6b35);
+            --text: #ffffff;
+            --dim: #a0a0b8;
+            --muted: #6b6b80;
+            --border: rgba(255,255,255,0.08);
+            --green: #10b981;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', sans-serif; background: var(--bg);
+            color: var(--text); min-height: 100vh;
+            display: flex; align-items: center; justify-content: center;
+            padding: 24px; position: relative; overflow: hidden;
+        }
+        body::before {
+            content: ''; position: absolute; inset: 0;
+            background: radial-gradient(ellipse at 30% 40%, rgba(233,69,96,0.07) 0%, transparent 60%),
+                        radial-gradient(ellipse at 70% 60%, rgba(255,107,53,0.05) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        h1,h2,h3 { font-family: 'Montserrat', sans-serif; }
+
+        .card {
+            background: var(--bg2); border: 1px solid var(--border);
+            border-radius: 24px; width: 100%; max-width: 560px;
+            position: relative; overflow: hidden;
+        }
+        .card::before {
+            content: ''; position: absolute; top: 0; left: 0;
+            width: 100%; height: 4px; background: var(--grad);
+        }
+
+        /* HERO */
+        .card-hero {
+            padding: 40px 40px 32px; text-align: center;
+            border-bottom: 1px solid var(--border);
+        }
+        .xlnz-logo {
+            font-family: 'Montserrat', sans-serif; font-size: 36px;
+            font-weight: 900; letter-spacing: 3px;
+            background: var(--grad); -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent; background-clip: text;
+            margin-bottom: 4px;
+        }
+        .xlnz-tagline {
+            font-size: 12px; color: var(--muted); text-transform: uppercase;
+            letter-spacing: 2px; margin-bottom: 24px;
+        }
+        .welcome-text {
+            font-size: 22px; font-weight: 800; margin-bottom: 8px; line-height: 1.3;
+        }
+        .welcome-sub {
+            font-size: 15px; color: var(--dim); line-height: 1.6;
+        }
+
+        /* FORM */
+        .card-body { padding: 32px 40px 40px; }
+        .form-section-label {
+            font-size: 11px; font-weight: 700; text-transform: uppercase;
+            letter-spacing: 2px; color: var(--accent); margin-bottom: 16px;
+            padding-bottom: 8px; border-bottom: 1px solid rgba(233,69,96,0.15);
+            display: flex; align-items: center; gap: 8px;
+        }
+        .form-group { margin-bottom: 18px; }
+        .form-label { display: block; font-size: 12px; font-weight: 600;
+            text-transform: uppercase; letter-spacing: 1px; color: var(--muted); margin-bottom: 8px; }
+        .form-input {
+            width: 100%; padding: 13px 16px; background: var(--bg3);
+            border: 1px solid var(--border); border-radius: 10px;
+            color: var(--text); font-family: 'Inter', sans-serif;
+            font-size: 15px; outline: none; transition: border-color 0.2s;
+        }
+        .form-input:focus { border-color: var(--accent); background: rgba(233,69,96,0.03); }
+        .form-input::placeholder { color: var(--muted); }
+        select.form-input { cursor: pointer; }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+        /* INTEREST TOGGLES */
+        .interest-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        .interest-item {
+            display: flex; align-items: center; gap: 10px;
+            padding: 12px 14px; background: var(--bg3);
+            border: 1px solid var(--border); border-radius: 10px;
+            cursor: pointer; transition: all 0.2s; user-select: none;
+        }
+        .interest-item:hover { border-color: rgba(233,69,96,0.3); }
+        .interest-item.selected {
+            border-color: var(--accent); background: rgba(233,69,96,0.06);
+        }
+        .interest-item input { display: none; }
+        .interest-check {
+            width: 18px; height: 18px; border-radius: 4px;
+            border: 2px solid var(--muted); display: flex; align-items: center;
+            justify-content: center; flex-shrink: 0; transition: all 0.2s;
+        }
+        .interest-item.selected .interest-check {
+            background: var(--accent); border-color: var(--accent);
+        }
+        .interest-check i { font-size: 10px; color: white; display: none; }
+        .interest-item.selected .interest-check i { display: block; }
+        .interest-label { font-size: 13px; font-weight: 500; line-height: 1.3; }
+
+        /* SUBMIT */
+        .submit-btn {
+            width: 100%; padding: 16px; background: var(--grad);
+            border: none; border-radius: 12px; color: white;
+            font-family: 'Montserrat', sans-serif; font-weight: 800;
+            font-size: 16px; cursor: pointer; transition: all 0.25s;
+            display: flex; align-items: center; justify-content: center; gap: 10px;
+            margin-top: 24px; letter-spacing: 0.5px;
+        }
+        .submit-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(233,69,96,0.35); }
+        .submit-btn:disabled { opacity: 0.6; cursor: not-allowed; transform: none; box-shadow: none; }
+        .privacy-note { font-size: 12px; color: var(--muted); text-align: center;
+            margin-top: 12px; line-height: 1.5; }
+
+        /* SUCCESS */
+        .success-screen {
+            display: none; padding: 60px 40px; text-align: center;
+        }
+        .success-icon {
+            width: 80px; height: 80px; background: rgba(16,185,129,0.1);
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 24px; font-size: 36px; color: var(--green);
+        }
+        .success-title { font-size: 28px; font-weight: 900; margin-bottom: 12px; }
+        .success-sub { font-size: 16px; color: var(--dim); line-height: 1.6; max-width: 380px; margin: 0 auto 32px; }
+        .success-logo { font-family: 'Montserrat', sans-serif; font-size: 20px; font-weight: 900;
+            background: var(--grad); -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent; background-clip: text;
+            letter-spacing: 2px; margin-top: 32px; padding-top: 24px;
+            border-top: 1px solid var(--border); }
+
+        @media(max-width: 600px) {
+            body { padding: 16px; align-items: flex-start; }
+            .card-hero { padding: 32px 24px 24px; }
+            .card-body { padding: 24px; }
+            .form-row { grid-template-columns: 1fr; }
+            .interest-grid { grid-template-columns: 1fr; }
+            .success-screen { padding: 40px 24px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+
+        <!-- FORM VIEW -->
+        <div id="formView">
+            <div class="card-hero">
+                <div class="xlnz-logo">XLNZ</div>
+                <div class="xlnz-tagline">Productions</div>
+                <div class="welcome-text">Welcome to the Studio 👋</div>
+                <div class="welcome-sub">Take 60 seconds to introduce yourself. We'd love to stay in touch.</div>
+            </div>
+
+            <div class="card-body">
+                <div class="form-section-label">
+                    <i class="fas fa-user"></i> About You
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">First Name *</label>
+                        <input type="text" class="form-input" id="gFirstName" placeholder="First name">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Last Name *</label>
+                        <input type="text" class="form-input" id="gLastName" placeholder="Last name">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">Email *</label>
+                        <input type="email" class="form-input" id="gEmail" placeholder="your@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Phone</label>
+                        <input type="tel" class="form-input" id="gPhone" placeholder="(215) 555-0100">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">What do you do?</label>
+                    <input type="text" class="form-input" id="gWhat" placeholder="Comedian, podcaster, brand owner, filmmaker...">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">How did you end up here today?</label>
+                    <input type="text" class="form-input" id="gHow" placeholder="Guest on a show, friend brought me, client referral...">
+                </div>
+
+                <div class="form-section-label" style="margin-top:28px;">
+                    <i class="fas fa-lightbulb"></i> Are You Interested In Any of Our Services?
+                </div>
+                <div class="form-group">
+                    <div class="interest-grid" id="interestGrid">
+                        <label class="interest-item" onclick="toggleInterest(this)">
+                            <input type="checkbox" value="Social Media for Brands">
+                            <div class="interest-check"><i class="fas fa-check"></i></div>
+                            <div class="interest-label">Social Media for Brands</div>
+                        </label>
+                        <label class="interest-item" onclick="toggleInterest(this)">
+                            <input type="checkbox" value="Podcast Production">
+                            <div class="interest-check"><i class="fas fa-check"></i></div>
+                            <div class="interest-label">Podcast Production</div>
+                        </label>
+                        <label class="interest-item" onclick="toggleInterest(this)">
+                            <input type="checkbox" value="Commercials & Brand Video">
+                            <div class="interest-check"><i class="fas fa-check"></i></div>
+                            <div class="interest-label">Commercials & Brand Video</div>
+                        </label>
+                        <label class="interest-item" onclick="toggleInterest(this)">
+                            <input type="checkbox" value="Stand-Up Specials">
+                            <div class="interest-check"><i class="fas fa-check"></i></div>
+                            <div class="interest-label">Stand-Up Specials</div>
+                        </label>
+                        <label class="interest-item" onclick="toggleInterest(this)">
+                            <input type="checkbox" value="Film Production">
+                            <div class="interest-check"><i class="fas fa-check"></i></div>
+                            <div class="interest-label">Film Production</div>
+                        </label>
+                        <label class="interest-item" onclick="toggleInterest(this)">
+                            <input type="checkbox" value="Web Design">
+                            <div class="interest-check"><i class="fas fa-check"></i></div>
+                            <div class="interest-label">Web Design</div>
+                        </label>
+                        <label class="interest-item" onclick="toggleInterest(this)">
+                            <input type="checkbox" value="Corporate Retainer">
+                            <div class="interest-check"><i class="fas fa-check"></i></div>
+                            <div class="interest-label">Corporate Retainer</div>
+                        </label>
+                        <label class="interest-item" onclick="toggleInterest(this)">
+                            <input type="checkbox" value="Just exploring">
+                            <div class="interest-check"><i class="fas fa-check"></i></div>
+                            <div class="interest-label">Just exploring for now</div>
+                        </label>
+                    </div>
+                </div>
+
+                <button class="submit-btn" id="gSubmitBtn" onclick="submitGuest()">
+                    <i class="fas fa-paper-plane"></i> Submit & Stay Connected
+                </button>
+                <div class="privacy-note">
+                    Your info stays with XLNZ Productions only. We'll reach out personally — no spam.
+                </div>
+            </div>
+        </div>
+
+        <!-- SUCCESS VIEW -->
+        <div class="success-screen" id="successView">
+            <div class="success-icon"><i class="fas fa-check"></i></div>
+            <div class="success-title">You're in the book.</div>
+            <div class="success-sub" id="successMsg">
+                Thanks for taking a minute. Someone from XLNZ will be in touch.
+            </div>
+            <div class="success-logo">XLNZ PRODUCTIONS</div>
+        </div>
+
+    </div>
+
+    <script>
+        (function(){ emailjs.init("eRiiZBXtULt8UDBAm"); })();
+
+        var SHEET_KEY = 'xlnz_ci_sheet';
+
+        function toggleInterest(el) {
+            el.classList.toggle('selected');
+            var cb = el.querySelector('input[type="checkbox"]');
+            cb.checked = !cb.checked;
+        }
+
+        function getInterests() {
+            var selected = [];
+            document.querySelectorAll('#interestGrid input:checked').forEach(function(cb){
+                selected.push(cb.value);
+            });
+            return selected.join(', ');
+        }
+
+        function submitGuest() {
+            var fn = document.getElementById('gFirstName').value.trim();
+            var ln = document.getElementById('gLastName').value.trim();
+            var email = document.getElementById('gEmail').value.trim();
+            if (!fn || !ln || !email) {
+                alert('Please fill in your name and email.');
+                return;
+            }
+
+            var btn = document.getElementById('gSubmitBtn');
+            btn.disabled = true;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+
+            var now = new Date();
+            var record = {
+                type: 'guest_lead',
+                firstName: fn, lastName: ln,
+                email: email,
+                phone: document.getElementById('gPhone').value.trim(),
+                what: document.getElementById('gWhat').value.trim(),
+                how: document.getElementById('gHow').value.trim(),
+                interests: getInterests(),
+                timestamp: now.toISOString(),
+                displayTime: now.toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'}) +
+                    ' at ' + now.toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'})
+            };
+
+            // Send to Google Sheets
+            var sheetUrl = localStorage.getItem(SHEET_KEY);
+            if (sheetUrl) {
+                fetch(sheetUrl, {
+                    method: 'POST', mode: 'no-cors',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify(record)
+                }).catch(function(){});
+            }
+
+            // Email notification to XLNZ
+            emailjs.send('service_z2k6cjr', 'template_hiteoqy', {
+                from_name: fn + ' ' + ln,
+                user_email: email,
+                phone_number: record.phone || 'Not provided',
+                service: record.interests || 'Not specified',
+                budget: 'Studio guest lead',
+                message: 'Studio Guest Lead\n\nName: ' + fn + ' ' + ln +
+                    '\nEmail: ' + email +
+                    '\nPhone: ' + (record.phone||'—') +
+                    '\nWhat they do: ' + (record.what||'—') +
+                    '\nHow they got here: ' + (record.how||'—') +
+                    '\nInterested in: ' + (record.interests||'—') +
+                    '\nTimestamp: ' + record.displayTime
+            }).then(function(){
+                showSuccess(fn);
+            }).catch(function(){
+                // Still show success even if email fails
+                showSuccess(fn);
+            });
+        }
+
+        function showSuccess(firstName) {
+            document.getElementById('formView').style.display = 'none';
+            document.getElementById('successView').style.display = 'block';
+            document.getElementById('successMsg').textContent =
+                'Thanks ' + firstName + '. Someone from XLNZ will be in touch — keep doing what you do.';
+        }
+    </script>
+</body>
+</html>
