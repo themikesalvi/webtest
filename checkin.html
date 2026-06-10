@@ -141,7 +141,8 @@
             font-size: 15px; outline: none; transition: border-color 0.2s;
         }
         .form-input:focus { border-color: var(--accent); }
-        select.form-input { cursor: pointer; }
+        select.form-input { cursor: pointer; background-color: var(--bg3); color: var(--text); }
+        select.form-input option { background-color: var(--bg3); color: var(--text); }
         .timestamp-display {
             background: var(--bg3); border: 1px solid rgba(233,69,96,0.2);
             border-radius: 8px; padding: 12px 16px; font-family: 'Montserrat', sans-serif;
@@ -285,8 +286,7 @@
     </div>
 
     <div class="tabs">
-        <div class="tab active" onclick="switchTab('checkin')">Check In</div>
-        <div class="tab" onclick="switchTab('log')">Today's Log</div>
+        <div class="tab active" onclick="switchTab('log')">Today's Log</div>
         <div class="tab" onclick="switchTab('all')">All Records</div>
         <div class="tab" onclick="switchTab('settings')">Settings</div>
     </div>
@@ -294,7 +294,7 @@
     <div class="content">
 
         <!-- CHECK IN PANEL -->
-        <div class="panel active" id="panel-checkin">
+        <div class="panel" id="panel-checkin">
             <div class="form-card">
                 <div class="form-title">Studio Check-In</div>
                 <div class="form-sub">Fill out all fields. Timestamp is applied automatically.</div>
@@ -363,7 +363,7 @@
         </div>
 
         <!-- TODAY'S LOG -->
-        <div class="panel" id="panel-log">
+        <div class="panel active" id="panel-log">
             <div class="log-header">
                 <div>
                     <div class="log-title">Today's Check-Ins</div>
@@ -542,12 +542,14 @@
         }
         renderToday();
         renderAll();
+        // Default to log tab
+        switchTab('log');
     }
 
     // ── TABS ──
     function switchTab(tab) {
         document.querySelectorAll('.tab').forEach(function(t,i){
-            var tabs = ['checkin','log','all','settings'];
+            var tabs = ['log','all','settings'];
             t.classList.toggle('active', tabs[i]===tab);
         });
         document.querySelectorAll('.panel').forEach(function(p){
